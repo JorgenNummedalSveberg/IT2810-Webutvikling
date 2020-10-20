@@ -10,25 +10,34 @@ import {Card, Icon, Image, Dropdown} from 'semantic-ui-react';
 function App() {
     const [movies, setMovies] = useState(undefined);
     const [genres, setGenres] = useState(undefined);
-    useEffect( () => {fetchMovies(setMovies, setGenres)}, [])
+    useEffect( () => {fetchMovies(setMovies, setGenres, undefined)}, [])
+    function updateMovies(genre: any) {
+        fetchMovies(setMovies, setGenres, genre)
+    }
   return (
     <div className="App">
       <Header/>
       <MainContent/>
       <header className="App-header">
-          <GenreSelector genres={genres}/>
+          <GenreSelector update={updateMovies} genres={genres}/>
           <MovieCardGroup movies={movies}/>
       </header>
     </div>
   );
 }
 
-function fetchMovies(setMovies: any, setGenres: any) {
-    fetch('http://localhost:5000/api/movies')
+function fetchMovies(setMovies: any, setGenres: any, genre: any) {
+    let url = 'http://localhost:5000/api/movies';
+    console.log(genre);
+    if (genre) {
+        url = 'http://localhost:5000/api/searchByGenre/'+genre;
+    }
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             setMovies(data);
-            setGenres(genreUpdate(data));
+            const genres = genreUpdate(data);
+            setGenres(genres);
         });
 }
 
@@ -37,31 +46,31 @@ interface genre {
 }
 
 function genreUpdate(movies: any) {
-    console.log(movies);
     const genreList = movies.map((movie: any) => movie.genres)
-    console.log(genreList);
     let genres: string[] = [];
     genreList.forEach((movieGenres: string[]) => {
-        if (movieGenres) {
-            genres = movieGenres.filter(genre => {
-                if (!genres.includes(genre)) {
-                    return genre
-                }
-            })
-        }
+        movieGenres.forEach((genre: string) => {
+            if (!genres.includes(genre)) {
+                genres.push(genre);
+            }
+        })
     })
     return genres.map(genre => {
-        return {text: genre};
+        return {key: genre, text: genre, value: genre};
     });
 }
 
-function GenreSelector(props: {genres: any}) {
+function GenreSelector(props: {genres: any, update: any}) {
+    function onSearchChange(e: any, data: any) {
+        props.update(data.value);
+    }
     return (
         <Dropdown
             placeholder={"Select genre"}
             fluid
             selection
-            options={props.genres ? [{text: "No options"}] : props.genres}
+            onChange={onSearchChange}
+            options={props.genres}
         />
     )
 }
