@@ -37,6 +37,7 @@
 .SortButton:hover h3, svg{
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
+
 .SortButton:hover svg{
     filter: drop-shadow( 3px 3px 1px rgba(0, 0, 0, 0.4));
 }
