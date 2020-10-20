@@ -1,9 +1,8 @@
 .GridView{
     height: 100%;
     width: 80%;
-    display: flex;
-    flex-wrap: wrap;
     overflow-y: auto;
+    padding: 20px;
     /*Brukt https://www.cssmatic.com/gradient-generator#' for å finne alle*/
     background: rgba(229,223,202,1);
     background: -moz-linear-gradient(top, rgba(229,223,202,1) 0%, rgba(255,255,255,0) 100%);

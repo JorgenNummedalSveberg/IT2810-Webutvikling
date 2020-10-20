@@ -1,11 +1,13 @@
 import React from 'react';
 import './CSS/SearchField.css';
+import {Input} from 'semantic-ui-react';
 
-const SearchField = () => {
+function SearchField(props: {updateSearch: any}) {
+    function onChange(e: any,  data: any) {
+        props.updateSearch(data.value);
+    }
     return (
-        <input type="text" className="SearchField" placeholder="Search">
-
-        </input>
+        <Input className={"SearchField"} onChange={() => onChange} icon='search' placeholder='Search...' />
     );
   }
   

@@ -1,33 +1,85 @@
 import React from 'react';
 import './CSS/GridView.css';
-import Movieposter from "./Movieposter";
-import Popup from './Popup';
+import {Card, Icon, Image} from 'semantic-ui-react';
 
-function GridView() {
-    const movies = [
-    {title: "Mulan", duration: "PT103M", year: "2017", imdbRating: "8.2", poster: "test_posters/mulan.jpg"}, 
-    {title: "Back to the Future",duration: "PT103M", year: "1985", imdbRating: "8.2", poster: "test_posters/back_to_the_future.jpg"}, 
-    {title: "Lion King",duration: "PT103M", year: "1994", imdbRating: "8.1", poster: "test_posters/lion_king.jpg"},
-    {title: "Black Panther",duration: "PT103M", year: "2018", imdbRating: "8.0", poster: "test_posters/black_panther.jpg"},
-    {title: "Harry Potter: And the Sorcerer's Stone",duration: "PT103M", year: "2002", imdbRating: "7.8", poster: "test_posters/harry_potter.png"},
-    {title: "Moonlight",duration: "PT103M", year: "2017", imdbRating: "8.3", poster: "test_posters/moonlight.png"},
-    {title: "Parasite",duration: "PT103M", year: "2019", imdbRating: "8.7", poster: "test_posters/parasite.jpg"},
-    {title: "Spiderman: Into the spiderwerse",duration: "PT103M", year: "2019", imdbRating: "7.7", poster: "test_posters/spiderman.jpg"},
-    {title: "Aladdin",duration: "PT103M", year: "2020", imdbRating: "6.8", poster: "test_posters/aladdin.jpg"},
-    {title: "Blade Runner 2049",duration: "PT103M", year: "2017", imdbRating: "7.9", poster: "test_posters/blade_runner.jpg"},
-    {title: "Jaws",duration: "PT103M", year: "2974", imdbRating: "8.3", poster: "test_posters/jaws.jpg"}
-  ]
-
-  const openPopup = (id:any) => {
-  }
-  
+function GridView(props: {movies: any | string}) {
+    const movieCards = (typeof props.movies === "undefined") ? (
+        <div>
+        </div>
+    ) : props.movies.map((movie: any, index: number) => {
+        return (
+            <MovieCard movie={movie} key={index}/>
+        )
+    })
     return (
-      <div className="GridView">
-        {movies.map((movie) => (
-          <Movieposter tittel={movie.title} year={movie.year} rating={movie.imdbRating} poster={movie.poster}/>
-        ))}
-      </div>
-    );
-  }
-  
-  export default GridView;
+        <Card.Group className={"GridView"} centered>
+            {movieCards}
+        </Card.Group>
+    )
+}
+
+interface Movie {
+    actors: string[],
+    genres: string[],
+    averageRating: number,
+    contentRating: string,
+    duration: string,
+    id: string,
+    imdbRating: number,
+    originalTitle: string,
+    poster: string,
+    posterurl: string,
+    ratings: number[],
+    releaseDate: string,
+    storyline: string,
+    title: string,
+    year: string,
+    _id: string
+}
+
+function MovieCard(props: {movie: any}) {
+    const textStyle = {
+        color: '#e5dfca'
+    }
+    return(
+        <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={() => {}}>
+            <Image src={props.movie.posterurl} wrapped ui={false} />
+            <Card.Content>
+                <Card.Header style={{color: 'white'}} >{props.movie.title}</Card.Header>
+                <Card.Meta>
+            <span className='date' style={textStyle}>
+                <p>Rating: {parseAverage(props.movie.ratings)}</p>
+                <p>Imdb: {props.movie.imdbRating}</p>
+            </span>
+                </Card.Meta>
+                <Card.Description style={textStyle}>
+                    Genres: {props.movie.genres}
+                </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <a style={textStyle}>
+                    <Icon name='hourglass' />
+                    {parseTime(props.movie.duration)}
+                </a>
+            </Card.Content>
+        </Card>
+    )
+}
+
+function parseAverage(ratings: number[]) {
+    let sum = 0;
+    ratings.forEach(x => sum += x);
+    return Math.floor(sum*10/ratings.length)/10;
+}
+
+function parseTime(time: string) {
+    let minutes = parseInt(time.substring(2).slice(0, -1));
+    let hours = 0;
+    while (minutes-60 > 0){
+        minutes -= 60;
+        hours++;
+    }
+    return (hours+"h "+ minutes+"m");
+}
+
+export default GridView;
