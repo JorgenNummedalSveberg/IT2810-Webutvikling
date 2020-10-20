@@ -28,7 +28,7 @@ function fetchMovies(setMovies: any, setGenres: any) {
         .then(response => response.json())
         .then(data => {
             setMovies(data);
-            setGenres(genreUpdate(data))
+            setGenres(genreUpdate(data));
         });
 }
 
@@ -37,16 +37,22 @@ interface genre {
 }
 
 function genreUpdate(movies: any) {
+    console.log(movies);
     const genreList = movies.map((movie: any) => movie.genres)
-    let genres: genre[] = [];
+    console.log(genreList);
+    let genres: string[] = [];
     genreList.forEach((movieGenres: string[]) => {
-        movieGenres.forEach(genre => {
-            if (!genres.includes({text: genre})) {
-                genres.push({text: genre});
-            }
-        })
+        if (movieGenres) {
+            genres = movieGenres.filter(genre => {
+                if (!genres.includes(genre)) {
+                    return genre
+                }
+            })
+        }
     })
-    return genres;
+    return genres.map(genre => {
+        return {text: genre};
+    });
 }
 
 function GenreSelector(props: {genres: any}) {
@@ -55,7 +61,7 @@ function GenreSelector(props: {genres: any}) {
             placeholder={"Select genre"}
             fluid
             selection
-            options={props.genres}
+            options={props.genres ? [{text: "No options"}] : props.genres}
         />
     )
 }
