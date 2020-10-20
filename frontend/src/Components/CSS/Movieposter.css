@@ -18,16 +18,18 @@
     min-height: 300px;
     height: 300px;
     max-height: 300px;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px 8px 0px 0px;
     -webkit-box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
     -moz-box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
     box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
+}
+.Movieposter:hover{
+    box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.45);
 }
 
 .movieInfo{
     position: relative;
     z-index: 8;
-    top: -70px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -40,11 +42,6 @@
     border-radius: 8px 8px 0px 0px;
     transition: all 0.5s ease, ease-out 0.5s;
     cursor: pointer;
-}
-
-.Movieposter:hover .movieInfo{
-    top: -1px;
-    transition: all 0.5s ease, ease-out 0.5s;
 }
 
 .Movieposter h3, h4{
