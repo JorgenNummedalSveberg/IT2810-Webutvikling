@@ -3,17 +3,18 @@ import './CSS/SortingPanel.css';
 import SortButton from "./SortButton";
 
 function SortingPanel() {
-    return (
-      <div className="SortingPanelWrapper">
-        <div className="SortingPanel">
-          <SortButton/>
-          <SortButton/>
-          <SortButton/>
-          <SortButton/>
-          <SortButton/>
-        </div>
+  /*Ulike ting vi skal sortere fra (dette må håndteres av redux)*/
+  const sortBy = ["Name", "Rating", "Duration", "Year"];
+
+  return (
+    <div className="SortingPanelWrapper">
+      <div className="SortingPanel">
+      {sortBy.map((sort) => (
+        <SortButton sort={sort}/>
+      ))}
       </div>
-    );
-  }
+    </div>
+  );
+}
   
-  export default SortingPanel;
+export default SortingPanel;

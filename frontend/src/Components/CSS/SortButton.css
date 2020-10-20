@@ -5,18 +5,17 @@
     justify-content: center;
     border: 0;
     padding: 0;
-    max-width: 120px;
+    max-width: 200px;
     width: 25%;
     height: auto;
     min-width: none;
-    overflow: hidden;
     cursor: pointer;
 }
 
 .SortButton svg{
     height: 100%;
-    width: 9%;
-    min-width: 5px;
+    width: 7%;
+    min-width: 7%;
     -webkit-filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
     filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
     margin-left: 10px;

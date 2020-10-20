@@ -1,13 +1,17 @@
 import React,{useState} from 'react';
 import './CSS/SortButton.css';
 
-function SortButton() {
+function SortButton(props:any) {
     const [isActive, toggleActive] = useState(false);
-
     
     function toggleSort() {
       toggleActive((isActive)  => !isActive);
       console.log("clicked");
+    }
+
+    /* Skal brukes til å laste inn en ny liste basert på sortering og filter*/
+    function loadList(){
+
     }
     
     return (
@@ -17,7 +21,7 @@ function SortButton() {
         </svg>
 
 
-        <h3 style={{"color":(isActive ? "#DEDA77" : "#D1D1D1")}}>Tekst</h3>
+        <h3 style={{"color":(isActive ? "#DEDA77" : "#D1D1D1")}}>{props.sort}</h3>
       </div>
     );
   }
