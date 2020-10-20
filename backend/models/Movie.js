@@ -4,7 +4,7 @@ const schema = mongoose.Schema({
     id: String,
     title: String,
     year: String,
-    genres: Array,
+    genres: [String],
     ratings: Array,
     poster: String,
     contentRating: String,
