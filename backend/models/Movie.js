@@ -5,7 +5,7 @@ const schema = mongoose.Schema({
     title: String,
     year: String,
     genres: [String],
-    ratings: Array,
+    ratings: [Number],
     poster: String,
     contentRating: String,
     duration: String,
@@ -13,7 +13,7 @@ const schema = mongoose.Schema({
     averageRating: Number,
     originalTitle: String,
     storyline: String,
-    actors: Array,
+    actors: [String],
     imdbRating: Number,
     posterurl: String,
 });
