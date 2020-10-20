@@ -13,6 +13,17 @@ router.get("/movies", async (req, res,e) => {
     }
 });
 
+router.get("/searchByGenre/:genre", async (req, res,e) => {
+    try{
+        const movie = await Movie.find({'genres': req.params.genre});
+        /* res.status(404).json({message: "funker"}) */
+        res.send(movie);
+
+    } catch(e){
+        res.status(404).json({message: e})
+    }
+});
+
 router.post("/movie", async (req, res) => {
     const movie = new Movie({
         id: req.body.id,
