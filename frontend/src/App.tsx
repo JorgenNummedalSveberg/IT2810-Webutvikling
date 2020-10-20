@@ -10,7 +10,7 @@ import {Card, Icon, Image, Dropdown} from 'semantic-ui-react';
 function App() {
     const [movies, setMovies] = useState(undefined);
     const [genres, setGenres] = useState(undefined);
-    useEffect( () => {fetchMovies(setMovies, setGenres, undefined)}, [])
+    useEffect( () => {fetchMovies(setMovies, setGenres, "Select genre")}, [])
     function updateMovies(genre: any) {
         fetchMovies(setMovies, setGenres, genre)
     }
@@ -29,7 +29,7 @@ function App() {
 function fetchMovies(setMovies: any, setGenres: any, genre: any) {
     let url = 'http://localhost:5000/api/movies';
     console.log(genre);
-    if (genre) {
+    if (genre !== "Select genre") {
         url = 'http://localhost:5000/api/searchByGenre/'+genre;
     }
     fetch(url)
@@ -41,13 +41,9 @@ function fetchMovies(setMovies: any, setGenres: any, genre: any) {
         });
 }
 
-interface genre {
-    text: string
-}
-
 function genreUpdate(movies: any) {
     const genreList = movies.map((movie: any) => movie.genres)
-    let genres: string[] = [];
+    let genres = ["Select genre"];
     genreList.forEach((movieGenres: string[]) => {
         movieGenres.forEach((genre: string) => {
             if (!genres.includes(genre)) {
@@ -66,7 +62,6 @@ function GenreSelector(props: {genres: any, update: any}) {
     }
     return (
         <Dropdown
-            placeholder={"Select genre"}
             fluid
             selection
             onChange={onSearchChange}
