@@ -1,8 +1,8 @@
-To run backend:
-Be on VPN / NTNU network.
-cd to backend
-`npm install express mongoose --save cors`
-`node index.js` 
+# To run backend:
+* Make sure to be on VPN/NTNU network
+* cd to backend
+* `npm install express mongoose --save cors`
+* `node index.js` 
 
 
 
