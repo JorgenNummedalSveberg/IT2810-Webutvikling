@@ -7,14 +7,12 @@ import 'semantic-ui-css/semantic.min.css'
 function App() {
     const [movies, setMovies] = useState(undefined);
     const [genres, setGenres] = useState(undefined);
-    const [search, setSearch] = useState(undefined);
-    useEffect( () => {fetchMovies(setMovies, setGenres, true, "Select genre")}, [])
+    useEffect( () => {fetchMovies(setMovies, setGenres, false, "")}, [])
     function updateMovies(genre: any) {
         fetchMovies(setMovies, setGenres, true, genre)
     }
-
     function updateSearch(string: string) {
-        fetchMovies(setMovies, setGenres, false, string === "" ? undefined : string);
+        fetchMovies(setMovies, setGenres, false, string);
     }
   return (
     <div className="App">
@@ -25,12 +23,12 @@ function App() {
 }
 
 function fetchMovies(setMovies: any, setGenres: any, genreSearch: boolean, search: any) {
-    let url = 'http://localhost:5000/api/movies';
-    console.log(search);
-    if (search !== "Select genre") {
+    let url;
+    if (search === "") {
+        url = 'http://localhost:5000/api/movies';
+    } else if (genreSearch) {
         url = 'http://localhost:5000/api/searchByGenre/'+search;
-    }
-    if (!genreSearch) {
+    } else {
         url = 'http://localhost:5000/api/movie/'+search
     }
     fetch(url)
@@ -44,7 +42,7 @@ function fetchMovies(setMovies: any, setGenres: any, genreSearch: boolean, searc
 
 function genreUpdate(movies: any) {
     const genreList = movies.map((movie: any) => movie.genres)
-    let genres = ["Select genre"];
+    let genres = ["Select genre..."];
     genreList.forEach((movieGenres: string[]) => {
         movieGenres.forEach((genre: string) => {
             if (!genres.includes(genre)) {
@@ -52,8 +50,12 @@ function genreUpdate(movies: any) {
             }
         })
     })
-    return genres.map(genre => {
-        return {key: genre, text: genre, value: genre};
+    return genres.map((genre, index) => {
+        if (index === 0) {
+            return {key: "", text: "Select genre...", value: ""}
+        } else {
+            return {key: genre, text: genre, value: genre};
+        }
     });
 }
 

@@ -7,7 +7,7 @@ function SearchField(props: {updateSearch: any}) {
         props.updateSearch(data.value);
     }
     return (
-        <Input className={"SearchField"} onChange={() => onChange} icon='search' placeholder='Search...' />
+        <Input className={"SearchField"} onChange={onChange} placeholder='Search...' />
     );
   }
   

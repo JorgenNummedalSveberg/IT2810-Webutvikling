@@ -17,6 +17,7 @@ function GenreSelector(props: {genres: any, update: any}) {
     }
     return (
         <Dropdown
+            placeholder={"Select genre..."}
             className={"Dropdown"}
             fluid
             selection
