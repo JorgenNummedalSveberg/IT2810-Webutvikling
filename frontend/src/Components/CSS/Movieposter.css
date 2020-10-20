@@ -1,0 +1,63 @@
+.Movieposter{
+    margin: 0;
+    border-radius: 8px;
+    width: 25%;
+    margin: 30px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 370px;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Movieposter img{
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 300px;
+    height: 300px;
+    max-height: 300px;
+    border-radius: 8px 8px 0px 0px;
+    -webkit-box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
+    box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.35);
+}
+.Movieposter:hover{
+    box-shadow: 0px 3px 16px 4px rgba(0,0,0,0.45);
+}
+
+.movieInfo{
+    position: relative;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 0px 0px 8px 8px;
+    transition: all 0.5s ease, ease-out 0.5s;
+}
+
+.Movieposter:hover img{
+    border-radius: 8px 8px 0px 0px;
+    transition: all 0.5s ease, ease-out 0.5s;
+    cursor: pointer;
+}
+
+.Movieposter h3, h4{
+    margin: 0;
+    width: 80%;
+    margin-top: 5%;
+    font-size: 1em;
+    color: cornsilk;
+}
+
+.Movieposter h3{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.Movieposter h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.SortButton{
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+    max-width: 200px;
+    width: 25%;
+    height: auto;
+    min-width: none;
+    cursor: pointer;
+}
+
+.SortButton svg{
+    height: 100%;
+    width: 7%;
+    min-width: 7%;
+    -webkit-filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
+    margin-left: 10px;
+    transition: all 0.5s ease, ease-out 0.5s;
+}
+
+.SortButton h3{
+    font-family: "Roboto";
+    user-select: none;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 150%;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease, ease-out 0.5s;
+}
+
+.SortButton:hover h3, svg{
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.SortButton:hover svg{
+    filter: drop-shadow( 3px 3px 1px rgba(0, 0, 0, 0.4));
+}
