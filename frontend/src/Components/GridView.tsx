@@ -1,6 +1,7 @@
 import React from 'react';
 import './CSS/GridView.css';
-import {Card, Icon, Image} from 'semantic-ui-react';
+import {Card, Icon, Grid, Image} from 'semantic-ui-react';
+import ImdbIcon from "./ImdbIcon";
 
 function GridView(props: {movies: any | string}) {
     const movieCards = (typeof props.movies === "undefined") ? (
@@ -41,26 +42,25 @@ function MovieCard(props: {movie: any}) {
     const textStyle = {
         color: '#e5dfca'
     }
+    const imdbstyle = {
+    }
     return(
         <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={() => {}}>
             <Image src={props.movie.posterurl} wrapped ui={false} />
             <Card.Content>
                 <Card.Header style={{color: 'white'}} >{props.movie.title}</Card.Header>
-                <Card.Meta>
-            <span className='date' style={textStyle}>
-                <p>Rating: {parseAverage(props.movie.ratings)}</p>
-                <p>Imdb: {props.movie.imdbRating}</p>
-            </span>
-                </Card.Meta>
                 <Card.Description style={textStyle}>
                     Genres: {props.movie.genres}
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <a style={textStyle}>
-                    <Icon name='hourglass' />
-                    {parseTime(props.movie.duration)}
-                </a>
+                <Grid centered style={{margin: '5px'}}>
+                    <div style={{color: '#e5dfca', margin: 'auto'}}>
+                        <Icon name='hourglass' />
+                        {parseTime(props.movie.duration)}
+                    </div>
+                    <ImdbIcon rating={props.movie.imdbRating}/>
+                </Grid>
             </Card.Content>
         </Card>
     )
@@ -79,7 +79,8 @@ function parseTime(time: string) {
         minutes -= 60;
         hours++;
     }
-    return (hours+"h "+ minutes+"m");
+    let returnString = hours+"h "+ minutes+"m"
+    return isNaN(minutes) ? "--:--" : returnString;
 }
 
 export default GridView;
