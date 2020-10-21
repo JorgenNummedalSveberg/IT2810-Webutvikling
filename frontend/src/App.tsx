@@ -3,16 +3,31 @@ import './CSS/App.css';
 import Header from "./Components/Header";
 import MainContent from './Components/MainContent';
 import 'semantic-ui-css/semantic.min.css'
+import {useSelector, useDispatch} from "react-redux";
+import {setFilterState, setGenresState, setMovieState} from "./actions";
+import {filter} from "./types/filter";
+import {state} from "./types/state";
 
 function App() {
-    const [movies, setMovies] = useState(undefined);
-    const [genres, setGenres] = useState(undefined);
-    useEffect( () => {fetchMovies(setMovies, setGenres, false, "")}, [])
+    const dispatch = useDispatch();
+    function setMovies(movies: any[]) {
+        dispatch(setMovieState(movies));
+    }
+    function setGenres(genres: string[]) {
+        dispatch(setGenresState(genres))
+    }
+    const filter = useSelector((state: state) => state.filter);
+    const movies = useSelector((state: state) => state.movies);
+    const genres = useSelector((state: state) => state.genres);
+    useEffect( () => {
+        fetchMovies(setMovies, filter)
+
+    }, [])
     function updateMovies(genre: any) {
-        fetchMovies(setMovies, setGenres, true, genre)
+        fetchMovies(setMovies, filter)
     }
     function updateSearch(string: string) {
-        fetchMovies(setMovies, setGenres, false, string);
+        fetchMovies(setMovies, filter)
     }
   return (
     <div className="App">
@@ -22,25 +37,23 @@ function App() {
   );
 }
 
-function fetchMovies(setMovies: any, setGenres: any, genreSearch: boolean, search: any) {
-    let url;
-    if (search === "") {
-        url = 'http://localhost:5000/api/movies';
-    } else if (genreSearch) {
-        url = 'http://localhost:5000/api/searchByGenre/'+search;
-    } else {
-        url = 'http://localhost:5000/api/movie/'+search
+function fetchMovies(setMovies: any, filter: filter) {
+    let url = 'http://localhost:5000/api/movies';
+    if (filter.genre !== "" && filter.search !== "") {
+        url = 'http://localhost:5000/api/movies/'+filter.genre+'/'+filter.search;
+    } else if (filter.genre !== "") {
+        url = 'http://localhost:5000/api/searchByGenre/'+filter.search;
+    } else if (filter.search !== "") {
+        url = 'http://localhost:5000/api/movie/'+filter.search
     }
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            setMovies(data);
-            const genres = genreUpdate(data);
-            setGenres(genres);
+            setMovies(data)
         });
 }
 
-function genreUpdate(movies: any) {
+function genreUpdate(movies: any[]) {
     const genreList = movies.map((movie: any) => movie.genres)
     let genres = ["Select genre..."];
     genreList.forEach((movieGenres: string[]) => {

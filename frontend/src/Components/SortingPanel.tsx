@@ -9,8 +9,8 @@ function SortingPanel() {
   return (
     <div className="SortingPanelWrapper">
       <div className="SortingPanel">
-      {sortBy.map((sort) => (
-        <SortButton sort={sort}/>
+      {sortBy.map((sort, index) => (
+        <SortButton key={index} sort={sort}/>
       ))}
       </div>
     </div>

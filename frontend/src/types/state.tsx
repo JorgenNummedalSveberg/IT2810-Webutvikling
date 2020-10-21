@@ -1,0 +1,1 @@
+export interface state {movies: any[], genres: string[], filter: any};

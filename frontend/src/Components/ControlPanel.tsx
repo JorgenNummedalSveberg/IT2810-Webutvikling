@@ -1,6 +1,6 @@
 import React from 'react';
 import './CSS/ControlPanel.css';
-import { Dropdown} from 'semantic-ui-react';
+import {Dropdown} from 'semantic-ui-react';
 
 
 function ControlPanel(props: {update: any, genres: any, movies: any}) {
