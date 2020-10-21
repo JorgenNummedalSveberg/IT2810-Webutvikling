@@ -36,6 +36,8 @@
     background-color: rgb(70, 70, 70);
     border-radius: 0px 0px 8px 8px;
     transition: all 0.5s ease, ease-out 0.5s;
+    position: relative;
+    padding: 5px;
 }
 
 .Movieposter:hover img{
@@ -57,7 +59,19 @@
     margin-bottom: 0;
 }
 
+.Movieposter h4{
+    margin: 0;
+    width: 20%;
+}
+
 .Movieposter h3:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+.ImdbIcon{
+    max-width: 90px;
+    right: 0;
+    top: 0;
+    right: 0;
+    
 }

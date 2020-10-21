@@ -48,7 +48,7 @@ router.post("/movie", async (req, res) => {
 
 router.get("/movie/:title", async (req, res) => {
     try {
-        const movie = await Movie.findOne({ 'title': { $regex: req.params.title, $options: "i" } });
+        const movie = await Movie.find({ 'title': { $regex: req.params.title, $options: "i" } });
         res.send(movie);
     } catch {
         res.status(404);
