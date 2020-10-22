@@ -81,15 +81,19 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
             }
         });
 }
-export function parseTime(time: string) {
+export function parseTime(time: string, minFormat: boolean): number | string {
     let minutes = parseInt(time.substring(2).slice(0, -1));
-    let hours = 0;
-    while (minutes-60 > 0){
-        minutes -= 60;
-        hours++;
+    if (minFormat) {
+        return minutes;
+    } else {
+        let hours = 0;
+        while (minutes-60 > 0){
+            minutes -= 60;
+            hours++;
+        }
+        let returnString = hours+"h "+ minutes+"m"
+        return isNaN(minutes) ? "--:--" : returnString;
     }
-    let returnString = hours+"h "+ minutes+"m"
-    return isNaN(minutes) ? "--:--" : returnString;
 }
 
 function genreUpdate(movies: any[], setGenres: any) {

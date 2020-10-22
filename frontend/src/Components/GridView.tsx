@@ -42,7 +42,7 @@ function MovieCard(props: {movie: any}) {
                 <Grid centered style={{margin: '5px'}}>
                     <div style={{color: '#e5dfca', margin: 'auto'}}>
                         <Icon name='hourglass' />
-                        {parseTime(props.movie.duration)}
+                        {parseTime(props.movie.duration, false)}
                     </div>
                     <ImdbIcon rating={props.movie.imdbRating}/>
                 </Grid>
