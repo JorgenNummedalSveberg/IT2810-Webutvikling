@@ -4,6 +4,7 @@ import {Card, Icon, Grid, Image} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
 import {useSelector} from "react-redux";
 import {state} from "../types/state";
+import {parseTime} from '../App';
 
 function GridView(props: {movies: any | string}) {
     const movies = useSelector((state: state) => state.movies);
@@ -54,17 +55,6 @@ function parseAverage(ratings: number[]) {
     let sum = 0;
     ratings.forEach(x => sum += x);
     return Math.floor(sum*10/ratings.length)/10;
-}
-
-function parseTime(time: string) {
-    let minutes = parseInt(time.substring(2).slice(0, -1));
-    let hours = 0;
-    while (minutes-60 > 0){
-        minutes -= 60;
-        hours++;
-    }
-    let returnString = hours+"h "+ minutes+"m"
-    return isNaN(minutes) ? "--:--" : returnString;
 }
 
 export default GridView;
