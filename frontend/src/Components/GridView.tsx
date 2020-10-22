@@ -6,12 +6,15 @@ import {useSelector} from "react-redux";
 import {state} from "../types/state";
 import {parseTime} from '../App';
 
-function GridView(props: {movies: any | string}) {
+
+// Komponent som viser frem alle filmene i en responsiv grid
+function GridView() {
+
+    // Henter filmene inn fra state
     const movies = useSelector((state: state) => state.movies);
-    const movieCards = (typeof movies === "undefined") ? (
-        <div>
-        </div>
-    ) : movies.map((movie: any, index: number) => {
+
+    // Lager en liste av alle MovieCards som skal med i Griden
+    const movieCards = movies.map((movie: any, index: number) => {
         return (
             <MovieCard movie={movie} key={index}/>
         )
@@ -23,18 +26,14 @@ function GridView(props: {movies: any | string}) {
     )
 }
 
+// Komponent for å vise frem en film
 function MovieCard(props: {movie: any}) {
-    const textStyle = {
-        color: '#e5dfca'
-    }
-    const imdbstyle = {
-    }
     return(
         <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={() => {}}>
             <Image src={props.movie.posterurl} wrapped ui={false} />
             <Card.Content>
                 <Card.Header style={{color: 'white'}} >{props.movie.title}</Card.Header>
-                <Card.Description style={textStyle}>
+                <Card.Description style={{color: '#e5dfca'}}>
                     Genres: {props.movie.genres}
                 </Card.Description>
             </Card.Content>
@@ -49,12 +48,6 @@ function MovieCard(props: {movie: any}) {
             </Card.Content>
         </Card>
     )
-}
-
-function parseAverage(ratings: number[]) {
-    let sum = 0;
-    ratings.forEach(x => sum += x);
-    return Math.floor(sum*10/ratings.length)/10;
 }
 
 export default GridView;

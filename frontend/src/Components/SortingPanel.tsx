@@ -2,8 +2,9 @@ import React from 'react';
 import './CSS/SortingPanel.css';
 import SortButton from "./SortButton";
 
+// Panelet med sorteringskategorier
 function SortingPanel(props: {refresh: any}) {
-  /*Ulike ting vi skal sortere fra (dette må håndteres av redux)*/
+  // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
   const sortBy = ["Name", "Rating", "Duration", "Year"];
 
   return (

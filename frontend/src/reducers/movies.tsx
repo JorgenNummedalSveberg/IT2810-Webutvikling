@@ -1,3 +1,4 @@
+// Reducer for lagring av filmer
 const moviesReducer = (movies = [], action: { type: string; payload: any[]; }) => {
     switch (action.type) {
         case 'setMovies':
