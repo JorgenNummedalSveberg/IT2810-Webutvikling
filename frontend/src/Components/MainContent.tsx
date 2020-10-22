@@ -3,11 +3,11 @@ import './CSS/MainContent.css';
 import ControlPanel from "./ControlPanel";
 import GridView from "./GridView";
 
-function MainContent(props: {update: any, genres: any, movies: any}) {
+function MainContent(props: {refresh: any, movies: any}) {
 
     return (
       <div className="MainContent">
-          <ControlPanel update={props.update} genres={props.genres} movies={props.movies} />
+          <ControlPanel refresh={props.refresh}/>
           <GridView movies={props.movies} />
       </div>
     );

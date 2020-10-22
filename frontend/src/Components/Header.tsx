@@ -3,10 +3,10 @@ import './CSS/Header.css';
 import SortingPanel from "./SortingPanel";
 import SearchField from "./SearchField";
 
-function Header(props: {updateSearch: any}) {
+function Header(props: {refresh: any}) {
     return (
       <div className="Header">
-        <SearchField updateSearch={props.updateSearch}/>
+        <SearchField refresh={props.refresh}/>
         <SortingPanel/>
       </div>
     );

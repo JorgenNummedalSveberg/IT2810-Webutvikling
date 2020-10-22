@@ -1,19 +1,32 @@
 import React from 'react';
 import './CSS/ControlPanel.css';
 import {Dropdown} from 'semantic-ui-react';
+import {useDispatch, useSelector} from "react-redux";
+import {state} from "../types/state";
+import {setGenre} from "../actions";
 
 
-function ControlPanel(props: {update: any, genres: any, movies: any}) {
+function ControlPanel(props: {refresh: any}) {
     return (
       <div className="ControlPanel">
-          <GenreSelector update={props.update} genres={props.genres}/>
+          <GenreSelector refresh={props.refresh}/>
       </div>
     );
   }
 
-function GenreSelector(props: {genres: any, update: any}) {
+function GenreSelector(props: {refresh: any}) {
+    const dispatch = useDispatch();
+    const genres = useSelector((state: state) => state.genres);
+    const genreOptions = genres.map((genre, index) => {
+        if (index === 0) {
+            return {key: "", text: "Select genre...", value: ""}
+        } else {
+            return {key: genre, text: genre, value: genre};
+        }
+    });
     function onSearchChange(e: any, data: any) {
-        props.update(data.value);
+        dispatch(setGenre(data.value));
+        props.refresh();
     }
     return (
         <Dropdown
@@ -22,7 +35,7 @@ function GenreSelector(props: {genres: any, update: any}) {
             fluid
             selection
             onChange={onSearchChange}
-            options={props.genres}
+            options={genreOptions}
         />
     )
 }

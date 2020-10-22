@@ -2,12 +2,15 @@ import React from 'react';
 import './CSS/GridView.css';
 import {Card, Icon, Grid, Image} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
+import {useSelector} from "react-redux";
+import {state} from "../types/state";
 
 function GridView(props: {movies: any | string}) {
-    const movieCards = (typeof props.movies === "undefined") ? (
+    const movies = useSelector((state: state) => state.movies);
+    const movieCards = (typeof movies === "undefined") ? (
         <div>
         </div>
-    ) : props.movies.map((movie: any, index: number) => {
+    ) : movies.map((movie: any, index: number) => {
         return (
             <MovieCard movie={movie} key={index}/>
         )

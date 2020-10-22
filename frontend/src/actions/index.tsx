@@ -2,14 +2,14 @@ import {filter} from "../types/filter";
 
 export function setMovieState(movies: any[]) {
     return {
-        type: 'set',
+        type: 'setMovies',
         payload: movies
     }
 }
 
 export function setGenresState(genres: string[]) {
     return {
-        type: 'set',
+        type: 'setGenres',
         payload: genres
     }
 }

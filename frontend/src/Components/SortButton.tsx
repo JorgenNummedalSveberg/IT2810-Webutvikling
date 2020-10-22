@@ -6,7 +6,6 @@ function SortButton(props:any) {
     
     function toggleSort() {
       toggleActive((isActive)  => !isActive);
-      console.log("clicked");
     }
 
     /* Skal brukes til å laste inn en ny liste basert på sortering og filter*/
