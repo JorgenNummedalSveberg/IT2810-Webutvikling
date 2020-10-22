@@ -3,60 +3,110 @@ import './CSS/App.css';
 import Header from "./Components/Header";
 import MainContent from './Components/MainContent';
 import 'semantic-ui-css/semantic.min.css'
+import {useSelector, useDispatch} from "react-redux";
+import {setDesc, setFilterState, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
+import {filter} from "./types/filter";
+import {state} from "./types/state";
+import {Movie} from "./types/Movie";
 
 function App() {
-    const [movies, setMovies] = useState(undefined);
-    const [genres, setGenres] = useState(undefined);
-    useEffect( () => {fetchMovies(setMovies, setGenres, false, "")}, [])
-    function updateMovies(genre: any) {
-        fetchMovies(setMovies, setGenres, true, genre)
+    const dispatch = useDispatch();
+    function setMovies(movies: any[]) {
+        dispatch(setMovieState(movies));
     }
-    function updateSearch(string: string) {
-        fetchMovies(setMovies, setGenres, false, string);
+    function setGenres(genres: string[]) {
+        dispatch(setGenresState(genres))
     }
-  return (
+    function setFilter(filter: filter) {
+        dispatch(setDesc(filter.desc));
+        dispatch(setSearch(filter.search));
+        dispatch(setGenre(filter.genre));
+        dispatch(setSort(filter.sort));
+    }
+    const filter = useSelector((state: state) => state.filter);
+    const movies = useSelector((state: state) => state.movies);
+    useEffect( () => {
+        setFilter({desc: true, sort: "Name", search: "", genre: ""});
+        fetchMovies(setMovies, setGenres, filter, true)
+    }, [])
+    function refresh() {
+        fetchMovies(setMovies, setGenres, filter, false)
+    }
+    return (
     <div className="App">
-      <Header updateSearch={updateSearch}/>
-      <MainContent update={updateMovies} genres={genres} movies={movies}/>
+      <Header refresh={refresh}/>
+      <MainContent refresh={refresh} movies={movies}/>
     </div>
   );
 }
 
-function fetchMovies(setMovies: any, setGenres: any, genreSearch: boolean, search: any) {
-    let url;
-    if (search === "") {
-        url = 'http://localhost:5000/api/movies';
-    } else if (genreSearch) {
-        url = 'http://localhost:5000/api/searchByGenre/'+search;
-    } else {
-        url = 'http://localhost:5000/api/movie/'+search
+function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
+    let url = 'http://localhost:5000/api/movies';
+    console.log(filter);
+    if (filter.genre !== "" && filter.search !== "") {
+        url = 'http://localhost:5000/api/movies/'+filter.genre+'/'+filter.search;
+    } else if (filter.genre !== "") {
+        url = 'http://localhost:5000/api/searchByGenre/'+filter.genre;
+    } else if (filter.search !== "") {
+        url = 'http://localhost:5000/api/movie/'+filter.search
     }
     fetch(url)
         .then(response => response.json())
-        .then(data => {
-            setMovies(data);
-            const genres = genreUpdate(data);
-            setGenres(genres);
+        .then((data: any[]) => {
+            switch (filter.sort) {
+                case "Name":
+                    // @ts-ignore
+                    data.sort((b: Movie, a: Movie) => {
+                        if(a.title < b.title) { return -1; }
+                        if(a.title > b.title) { return 1; }
+                        return 0;
+                    });
+                    break;
+                case "Rating":
+                    // @ts-ignore
+                    data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
+                    break
+                case "Duration":
+                    // @ts-ignore
+                    data.sort((a: Movie, b: Movie) => {
+                        return (parseTime(a.duration, true) as number) - (parseTime(b.duration, true) as number);
+                    });
+                    break;
+                case "Yeah":
+                    // @ts-ignore
+                    data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
+            }
+            setMovies(filter.desc ? data.reverse() : data);
+            if (first) {
+                genreUpdate(data.map((movie: any) => movie.genres), setGenres);
+            }
         });
 }
+export function parseTime(time: string, minFormat: boolean): number | string {
+    let minutes = parseInt(time.substring(2).slice(0, -1));
+    if (minFormat) {
+        return minutes;
+    } else {
+        let hours = 0;
+        while (minutes-60 > 0){
+            minutes -= 60;
+            hours++;
+        }
+        let returnString = hours+"h "+ minutes+"m"
+        return isNaN(minutes) ? "--:--" : returnString;
+    }
+}
 
-function genreUpdate(movies: any) {
-    const genreList = movies.map((movie: any) => movie.genres)
+function genreUpdate(movies: any[], setGenres: any) {
     let genres = ["Select genre..."];
-    genreList.forEach((movieGenres: string[]) => {
+    movies.forEach((movieGenres: string[]) => {
         movieGenres.forEach((genre: string) => {
             if (!genres.includes(genre)) {
                 genres.push(genre);
             }
         })
     })
-    return genres.map((genre, index) => {
-        if (index === 0) {
-            return {key: "", text: "Select genre...", value: ""}
-        } else {
-            return {key: genre, text: genre, value: genre};
-        }
-    });
+    setGenres(genres);
 }
 
 export default App;

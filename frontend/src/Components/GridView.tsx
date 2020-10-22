@@ -2,12 +2,16 @@ import React from 'react';
 import './CSS/GridView.css';
 import {Card, Icon, Grid, Image} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
+import {useSelector} from "react-redux";
+import {state} from "../types/state";
+import {parseTime} from '../App';
 
 function GridView(props: {movies: any | string}) {
-    const movieCards = (typeof props.movies === "undefined") ? (
+    const movies = useSelector((state: state) => state.movies);
+    const movieCards = (typeof movies === "undefined") ? (
         <div>
         </div>
-    ) : props.movies.map((movie: any, index: number) => {
+    ) : movies.map((movie: any, index: number) => {
         return (
             <MovieCard movie={movie} key={index}/>
         )
@@ -17,25 +21,6 @@ function GridView(props: {movies: any | string}) {
             {movieCards}
         </Card.Group>
     )
-}
-
-interface Movie {
-    actors: string[],
-    genres: string[],
-    averageRating: number,
-    contentRating: string,
-    duration: string,
-    id: string,
-    imdbRating: number,
-    originalTitle: string,
-    poster: string,
-    posterurl: string,
-    ratings: number[],
-    releaseDate: string,
-    storyline: string,
-    title: string,
-    year: string,
-    _id: string
 }
 
 function MovieCard(props: {movie: any}) {
@@ -57,7 +42,7 @@ function MovieCard(props: {movie: any}) {
                 <Grid centered style={{margin: '5px'}}>
                     <div style={{color: '#e5dfca', margin: 'auto'}}>
                         <Icon name='hourglass' />
-                        {parseTime(props.movie.duration)}
+                        {parseTime(props.movie.duration, false)}
                     </div>
                     <ImdbIcon rating={props.movie.imdbRating}/>
                 </Grid>
@@ -70,17 +55,6 @@ function parseAverage(ratings: number[]) {
     let sum = 0;
     ratings.forEach(x => sum += x);
     return Math.floor(sum*10/ratings.length)/10;
-}
-
-function parseTime(time: string) {
-    let minutes = parseInt(time.substring(2).slice(0, -1));
-    let hours = 0;
-    while (minutes-60 > 0){
-        minutes -= 60;
-        hours++;
-    }
-    let returnString = hours+"h "+ minutes+"m"
-    return isNaN(minutes) ? "--:--" : returnString;
 }
 
 export default GridView;
