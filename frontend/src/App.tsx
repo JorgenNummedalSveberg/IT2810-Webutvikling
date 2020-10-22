@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {setDesc, setFilterState, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
 import {filter} from "./types/filter";
 import {state} from "./types/state";
+import {Movie} from "./types/Movie";
 
 function App() {
     const dispatch = useDispatch();
@@ -75,7 +76,7 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                     // @ts-ignore
                     data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
             }
-            setMovies(data);
+            setMovies(filter.desc ? data.reverse() : data);
             if (first) {
                 genreUpdate(data.map((movie: any) => movie.genres), setGenres);
             }

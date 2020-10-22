@@ -1,1 +1,3 @@
-export interface state {movies: any[], genres: string[], filter: any};
+import {filter} from "./filter";
+
+export interface state {movies: any[], genres: string[], filter: filter};

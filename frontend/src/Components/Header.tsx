@@ -7,7 +7,7 @@ function Header(props: {refresh: any}) {
     return (
       <div className="Header">
         <SearchField refresh={props.refresh}/>
-        <SortingPanel/>
+        <SortingPanel refresh={props.refresh}/>
       </div>
     );
   }

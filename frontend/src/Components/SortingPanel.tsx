@@ -2,7 +2,7 @@ import React from 'react';
 import './CSS/SortingPanel.css';
 import SortButton from "./SortButton";
 
-function SortingPanel() {
+function SortingPanel(props: {refresh: any}) {
   /*Ulike ting vi skal sortere fra (dette må håndteres av redux)*/
   const sortBy = ["Name", "Rating", "Duration", "Year"];
 
@@ -10,7 +10,7 @@ function SortingPanel() {
     <div className="SortingPanelWrapper">
       <div className="SortingPanel">
       {sortBy.map((sort, index) => (
-        <SortButton key={index} sort={sort}/>
+        <SortButton key={index} sort={sort} refresh={props.refresh}/>
       ))}
       </div>
     </div>
