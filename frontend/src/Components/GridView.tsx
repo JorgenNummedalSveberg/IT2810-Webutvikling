@@ -7,6 +7,7 @@ import {state} from "../types/state";
 import {parseTime} from '../App';
 import {setPopup, showPopup} from "../actions";
 import Popup from './Popup';
+import {Movie} from "../types/Movie";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
@@ -41,13 +42,20 @@ function GridView() {
 }
 
 // Komponent for å vise frem en film
-function MovieCard(props: {movie: any}) {
+function MovieCard(props: {movie: Movie}) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
 
+    // Legger til en visit på filmen
+    function addVisit(id: any) {
+        fetch('http://localhost:5000/api/movie/addVisit/'+id);
+    }
 
+    // Håndterer alt når du trykker på Card. Legger til visit og får opp Popup.
     function handleClick() {
+        addVisit(props.movie._id);
+        props.movie.visits ++;
         dispatch(setPopup(props.movie));
         dispatch(showPopup(true));
     }
