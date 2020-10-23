@@ -9,10 +9,18 @@ export function setMovieState(movies: any[]) {
 }
 
 // Bytter ut filmen som vises på popup
-export function setDetailsState(details: {show: boolean, movie: Movie }) {
+export function setPopup(movie: Movie) {
     return {
         type: 'setMovie',
-        payload: details
+        payload: movie
+    }
+}
+
+// Viser/gjemmer popup
+export function showPopup(show: boolean) {
+    return {
+        type: 'showPopup',
+        payload: show
     }
 }
 

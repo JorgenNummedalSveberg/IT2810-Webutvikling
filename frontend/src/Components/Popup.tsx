@@ -1,27 +1,48 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import './CSS/Popup.css';
-import {Movie} from "../types/Movie";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
+import { Image, Grid, Header, Button} from "semantic-ui-react";
+import {showPopup} from "../actions";
+import ImdbIcon from "./ImdbIcon";
 
 
 function Popup() {
 
+    // Nødvendig for redux
+    const dispatch = useDispatch();
+
+    // Lukker popup
+    function hidePopup() {
+        dispatch(showPopup(false));
+    }
+
     // Henter filmen fra redux
-    const movie = useSelector((state: state) => state.movie);
+    const movie = useSelector((state: state) => state.details.movie);
+
     return (
-        <div className="Popup">
-            <div className="ButtonSection">
-                <button>Back</button>
-            </div>
-            <div className="MovieSection">
-                <img src={movie.posterurl} alt=""/>
-                <div className="MovieInfo">
-                    <h2>{movie.title}</h2>
-                    <h3>{movie.year}</h3>
-                    <p>{movie.storyline}</p>
-                </div>
-            </div>
+        // marginRight her er 20px større fordi den blir offset av GridView
+        // @ts-ignore
+        <div style={{marginRight: '50px', marginLeft: '30px', position: 'fixed', zIndex: '1000', backgroundColor: 'white', padding: '10px', borderRadius: '16px'}}>
+            <Button style={{margin: '20px'}} onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
+            <Grid>
+                <Grid.Row>
+                    <Grid.Column width={3}>
+                        <Image src={movie.posterurl} />
+                    </Grid.Column>
+                    <Grid.Column width={10}>
+                        <Header>
+                            {movie.title}
+                        </Header>
+                        <ImdbIcon rating={movie.imdbRating}/>
+                        <h1>{movie.year}</h1>
+                        <h2>{movie.genres}</h2>
+                        <p>
+                            {movie.storyline}
+                        </p>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         </div>
     )
 }
