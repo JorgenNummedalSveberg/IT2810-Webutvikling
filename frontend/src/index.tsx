@@ -6,6 +6,8 @@ import {Provider} from "react-redux";
 import {createStore} from "redux";
 import reducers from "./reducers";
 
+
+// Lager samlet redux store
 const store = createStore(
     reducers,
     // @ts-ignore

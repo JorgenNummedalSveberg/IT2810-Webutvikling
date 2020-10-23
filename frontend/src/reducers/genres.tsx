@@ -1,3 +1,4 @@
+// Reducer for å endre sjangerlisten
 const genresReducer = (genres = [], action: { type: any; payload: any; }) => {
     switch (action.type) {
         case 'setGenres':
