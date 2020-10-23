@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header";
-import MainContent from './Components/MainContent';
 import 'semantic-ui-css/semantic.min.css'
 import {useSelector, useDispatch} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
 import {filter} from "./types/filter";
 import {state} from "./types/state";
 import {Movie} from "./types/Movie";
+import ControlPanel from "./Components/ControlPanel";
+import GridView from "./Components/GridView";
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
@@ -53,7 +54,10 @@ function App() {
     return (
     <div className="App">
       <Header refresh={refresh}/>
-      <MainContent refresh={refresh}/>
+      <div className="MainContent">
+          <ControlPanel refresh={refresh}/>
+          <GridView/>
+      </div>
     </div>
   );
 }
