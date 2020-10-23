@@ -40,7 +40,7 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: ""});
+        setFilter({desc: true, sort: "Name", search: "", genre: "Action"});
         fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 
@@ -53,7 +53,7 @@ function App() {
     return (
     <div className="App">
       <Header refresh={refresh}/>
-      <MainContent refresh={refresh} movies={movies}/>
+      <MainContent refresh={refresh}/>
     </div>
   );
 }
@@ -61,48 +61,41 @@ function App() {
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
-
-    // Setter en base url, og endrer basert på filteret
-    let url = 'http://localhost:5000/api/movies';
-    if (filter.genre !== "" && filter.search !== "") {
-        url = 'http://localhost:5000/api/movies/'+filter.genre+'/'+filter.search;
-    } else if (filter.genre !== "") {
-        url = 'http://localhost:5000/api/searchByGenre/'+filter.genre;
-    } else if (filter.search !== "") {
-        url = 'http://localhost:5000/api/movie/'+filter.search
-    }
-    fetch(url)
+    fetch('http://localhost:5000/api/movies/genres:'+filter.genre+'/title:'+filter.search)
         .then(response => response.json())
         .then((data: any[]) => {
+            if (data.length > 0) {
 
-            // Sorterer filmene basert på hvilken kategori vi sorterer etter
-            switch (filter.sort) {
-                case "Name":
-                    data.sort((b: Movie, a: Movie) => {
-                        if(a.title < b.title) { return -1; }
-                        if(a.title > b.title) { return 1; }
-                        return 0;
-                    });
-                    break;
-                case "Rating":
-                    data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
-                    break
-                case "Duration":
-                    data.sort((a: Movie, b: Movie) => {
-                        return (parseTime(a.duration, true) as number) - (parseTime(b.duration, true) as number);
-                    });
-                    break;
-                case "Year":
-                    data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
+                // Sorterer filmene basert på hvilken kategori vi sorterer etter
+                switch (filter.sort) {
+                    case "Name":
+                        data.sort((b: Movie, a: Movie) => {
+                            if(a.title < b.title) { return -1; }
+                            if(a.title > b.title) { return 1; }
+                            return 0;
+                        });
+                        break;
+                    case "Rating":
+                        data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
+                        break
+                    case "Duration":
+                        data.sort((a: Movie, b: Movie) => {
+                            return (parseTime(a.duration, true) as number) - (parseTime(b.duration, true) as number);
+                        });
+                        break;
+                    case "Year":
+                        data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
+                }
+
+                // Setter filmene i redux state, reverserer listen om vi sorterer descending
+                setMovies(filter.desc ? data.reverse() : data);
+
+                // Bare oppdater sjanger listen hvis det er første gang vi laster inn
+                if (first) {
+                    genreUpdate(data.map((movie: any) => movie.genres), setGenres);
+                }
             }
 
-            // Setter filmene i redux state, reverserer listen om vi sorterer descending
-            setMovies(filter.desc ? data.reverse() : data);
-
-            // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-            if (first) {
-                genreUpdate(data.map((movie: any) => movie.genres), setGenres);
-            }
         });
 }
 
