@@ -40,7 +40,7 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: "Action"});
+        setFilter({desc: true, sort: "Name", search: "", genre: ""});
         fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 
