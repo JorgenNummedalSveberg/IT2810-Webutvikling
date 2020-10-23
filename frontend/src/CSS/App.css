@@ -7,3 +7,12 @@
 .CardGroup {
   margin: 20px !important;
 }
+.MainContent{
+  position: relative;
+  height: calc(100vh - 70px);
+  max-height: 94vh;
+  width: 100vw;
+  display: flex;
+  background-color: #6A6A6A;
+  overflow: hidden;
+}
