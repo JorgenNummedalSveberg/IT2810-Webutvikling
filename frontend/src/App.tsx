@@ -62,7 +62,6 @@ function App() {
   );
 }
 
-
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
     fetch('http://localhost:5000/api/movies/genres:'+filter.genre+'/title:'+filter.search)

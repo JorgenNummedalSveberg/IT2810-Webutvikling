@@ -16,7 +16,8 @@ const schema = mongoose.Schema({
     actors: [String],
     imdbRating: Number,
     posterurl: String,
-    visits: Number
+    visits: Number,
+    watches: Number
 });
 
 module.exports = mongoose.model("Movie", schema);

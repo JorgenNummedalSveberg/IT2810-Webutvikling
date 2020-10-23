@@ -1,13 +1,21 @@
-import React, {CSSProperties} from 'react';
+import React, {CSSProperties, useEffect, useState} from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
 import { Image, Grid, Header, Button} from "semantic-ui-react";
-import {showPopup} from "../actions";
+import {setPopup, showPopup} from "../actions";
 import ImdbIcon from "./ImdbIcon";
 
 
 function Popup() {
+
+    // Henter filmen fra redux
+    const movie = useSelector((state: state) => state.details.movie);
+
+    const [views, setViews] = useState(0);
+    useEffect(() => {
+        setViews(movie.watches);
+    })
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -17,8 +25,12 @@ function Popup() {
         dispatch(showPopup(false));
     }
 
-    // Henter filmen fra redux
-    const movie = useSelector((state: state) => state.details.movie);
+    // Legger til en view
+    function addView() {
+        movie.watches ++;
+        setViews(views+1);
+        fetch('http://localhost:5000/api/movie/addView/'+movie._id);
+    }
 
     return (
         // marginRight her er 20px større fordi den blir offset av GridView
@@ -35,6 +47,7 @@ function Popup() {
                             {movie.title} | Visits: {movie.visits}
                         </Header>
                         <ImdbIcon rating={movie.imdbRating}/>
+                        <Button onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: views }}/>
                         <h1>{movie.year}</h1>
                         <h2>{movie.genres}</h2>
                         <p>
