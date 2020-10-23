@@ -2,9 +2,11 @@ import React from 'react';
 import './CSS/GridView.css';
 import {Card, Icon, Grid, Image} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
 import {parseTime} from '../App';
+import {setDetailsState} from "../actions";
+import {Movie} from "../types/Movie";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
@@ -28,8 +30,15 @@ function GridView() {
 
 // Komponent for å vise frem en film
 function MovieCard(props: {movie: any}) {
+
+    // Nødvendig for redux
+    const dispatch = useDispatch();
+
+    function handleClick() {
+        dispatch(setDetailsState({show: true, movie: (props.movie as Movie)}))
+    }
     return(
-        <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={() => {}}>
+        <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={handleClick}>
             <Image src={props.movie.posterurl} wrapped ui={false} />
             <Card.Content>
                 <Card.Header style={{color: 'white'}} >{props.movie.title}</Card.Header>

@@ -1,8 +1,18 @@
 // Bytter ut filmene
+import {Movie} from "../types/Movie";
+
 export function setMovieState(movies: any[]) {
     return {
         type: 'setMovies',
         payload: movies
+    }
+}
+
+// Bytter ut filmen som vises på popup
+export function setDetailsState(details: {show: boolean, movie: Movie }) {
+    return {
+        type: 'setMovie',
+        payload: details
     }
 }
 
