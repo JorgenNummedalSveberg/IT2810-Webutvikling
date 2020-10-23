@@ -28,7 +28,7 @@ function Popup() {
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={3}>
-                        <Image src={movie.posterurl} />
+                        <Image style={{border: 'solid 5px grey'}} src={movie.posterurl} />
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Header>
