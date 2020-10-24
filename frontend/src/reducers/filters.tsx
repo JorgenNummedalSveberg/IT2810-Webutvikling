@@ -19,7 +19,7 @@ const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", mi
             result.sort = action.payload as string;
             break;
         // Endrer rating søkekriterie
-        case 'setMinScore':
+        case 'setScore':
             result.minScore = action.payload as number[];
             break;
     }

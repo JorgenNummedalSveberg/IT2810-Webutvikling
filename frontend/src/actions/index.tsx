@@ -65,9 +65,9 @@ export function setSort(sort: string) {
 }
 
 // Endrer minimumscoren
-export function setMinScore(sort: number[]) {
+export function setScore(score: number[]) {
     return {
-        type: 'setMinScore',
-        payload: sort
+        type: 'setScore',
+        payload: score
     }
 }
