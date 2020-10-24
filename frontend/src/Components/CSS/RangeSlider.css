@@ -1,0 +1,11 @@
+.RangeSlider{
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    border-radius: 8px;
+    padding: 10px;
+}
+.RangeSlider h2{
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}

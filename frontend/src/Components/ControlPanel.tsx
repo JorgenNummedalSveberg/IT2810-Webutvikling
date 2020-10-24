@@ -4,12 +4,14 @@ import {Dropdown} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
 import {setGenre} from "../actions";
+import RangeSlider from "./RangeSlider";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: {refresh: any}) {
     return (
       <div className="ControlPanel">
           <GenreSelector refresh={props.refresh}/>
+          <RangeSlider />
       </div>
     );
 }
