@@ -47,6 +47,7 @@ function App() {
 
     // Funksjon som refresher filmene
     function refresh() {
+        setMovies([]);
         fetchMovies(setMovies, setGenres, filter, false)
     }
 
