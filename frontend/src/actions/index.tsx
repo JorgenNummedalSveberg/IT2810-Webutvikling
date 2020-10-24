@@ -71,3 +71,11 @@ export function setScore(score: number[]) {
         payload: score
     }
 }
+
+// Endrer årsperioden
+export function setYears(year: number[]) {
+    return {
+        type: 'setYears',
+        payload: year
+    }
+}
