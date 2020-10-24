@@ -41,7 +41,7 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: "", minScore: [10,100]});
+        setFilter({desc: true, sort: "Name", search: "", genre: "", score: [10,100]});
         fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 

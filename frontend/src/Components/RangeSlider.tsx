@@ -23,9 +23,9 @@ export default function RangeSlider() {
     const dispatch = useDispatch();
 
     // Henter inn sjangre fra redux state
-    const minScore = useSelector((state: state) => state.filter.minScore);
+    const score = useSelector((state: state) => state.filter.score);
 
-    const [value, setValue] = React.useState<number[]>([minScore[0], minScore[1]]);
+    const [value, setValue] = React.useState<number[]>([score[0], score[1]]);
 
 
 
