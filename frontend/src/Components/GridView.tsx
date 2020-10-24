@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './CSS/GridView.css';
-import {Card, Icon, Grid, Image} from 'semantic-ui-react';
+import {Card, Icon, Grid, Image, Pagination} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
@@ -12,17 +12,34 @@ import Popup from './Popup';
 // Komponent som viser frem alle filmene i en responsiv grid
 function GridView() {
 
+    const [page, setPage] = useState(0);
 
 
     // Henter filmene inn fra state
     const movies = useSelector((state: state) => state.movies);
 
-    // Lager en liste av alle MovieCards som skal med i Griden
-    const movieCards = movies.map((movie: any, index: number) => {
-        return (
-            <MovieCard movie={movie} key={index}/>
-        )
+    const movieList: any[] = [];
+    movies.forEach((movie, index) => {
+        if (!movieList[Math.floor(index/20)]) {
+            movieList[Math.floor(index/20)] = [];
+        }
+        movieList[Math.floor(index/20)].push(movie);
     })
+
+    // Lager en liste av alle MovieCards som skal med i Griden
+    let movieCards: any[] = []
+    if (typeof movieList[page] !== "undefined") {
+        movieCards = movieList[page].map((movie: any, index: number) => {
+            return (
+                <MovieCard movie={movie} key={index}/>
+            )
+        })
+    }
+
+    function updatePage(value: any) {
+        setPage(value);
+        console.log(value);
+    }
 
 
     // Henter popup details fra state
@@ -33,7 +50,8 @@ function GridView() {
             {showPopup ?
                 <Popup/> : null
             }
-            <Card.Group centered>
+            <Pagination onPageChange={(event, {activePage}) => {updatePage(activePage)}} defaultActivePage={1} totalPages={movieList.length-1} />
+            <Card.Group style={{padding: '20px'}} centered>
                 {movieCards}
             </Card.Group>
         </div>

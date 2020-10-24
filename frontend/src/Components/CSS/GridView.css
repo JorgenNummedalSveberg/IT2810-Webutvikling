@@ -1,4 +1,7 @@
 .GridView{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     height: 100%;
     width: 80%;
     overflow-y: auto;
