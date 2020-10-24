@@ -11,9 +11,11 @@ import Popup from './Popup';
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function GridView() {
+    // Henter popup details fra state
+    const showPopup = useSelector((state: state) => state.details.show);
 
+    // State for å holde styr på hvilen side vi er på
     const [page, setPage] = useState(0);
-
 
     // Henter filmene inn fra state
     const movies = useSelector((state: state) => state.movies);
@@ -36,21 +38,15 @@ function GridView() {
         })
     }
 
-    function updatePage(value: any) {
-        setPage(value);
-        console.log(value);
-    }
-
-
-    // Henter popup details fra state
-    const showPopup = useSelector((state: state) => state.details.show);
-
     return (
         <div className={"GridView"}>
             {showPopup ?
                 <Popup/> : null
             }
-            <Pagination onPageChange={(event, {activePage}) => {updatePage(activePage)}} defaultActivePage={1} totalPages={movieList.length-1} />
+            <Pagination
+                onPageChange={(e, {activePage}) => {setPage((activePage as number)-1)}}
+                defaultActivePage={1}
+                totalPages={movieList.length} />
             <Card.Group style={{padding: '20px'}} centered>
                 {movieCards}
             </Card.Group>
