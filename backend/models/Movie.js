@@ -16,7 +16,6 @@ const schema = mongoose.Schema({
     actors: [String],
     imdbRating: Number,
     posterurl: String,
-    visits: Number,
     watches: Number
 });
 

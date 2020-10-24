@@ -35,21 +35,7 @@ router.get("/movies/:genre/:title", async (req, res,e) => {
     }
 });
 
-// Legger til en visitt på filmern
-router.get("/movie/addVisit/:id", async (req, res) => {
-    try {
-        const movie = await Movie.findOne({ '_id': req.params.id });
-        movie.visits++;
-        await movie.save();
-        res.send("1 visit added to "+movie.title);
-    } catch {
-        res.status(404);
-        res.send({ error: "Movie doesn't exist!" });
-    }
-});
-
-
-
+// Legger til en view på filmen
 router.get("/movie/addView/:id", async (req, res) => {
     try {
         const movie = await Movie.findOne({ '_id': req.params.id });

@@ -47,11 +47,7 @@ function MovieCard(props: {movie: Movie}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
 
-    // Legger til en visit på filmen
-    function addVisit(id: any) {
-    }
-
-    // Håndterer alt når du trykker på Card. Legger til visit og får opp Popup.
+    // Åpner opp Popup.
     function handleClick() {
         dispatch(setPopup(props.movie));
         dispatch(showPopup(true));

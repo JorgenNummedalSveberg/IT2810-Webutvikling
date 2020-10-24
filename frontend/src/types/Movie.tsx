@@ -1,6 +1,5 @@
 export interface Movie {
-    visits: number,
-    watches: number;
+    watches: number,
     actors: string[],
     genres: string[],
     averageRating: number,
