@@ -1,3 +1,3 @@
 export interface filter {
-    desc: boolean, search: string, genre: string, sort: string
+    desc: boolean, search: string, genre: string, sort: string, minScore:number[]
 }

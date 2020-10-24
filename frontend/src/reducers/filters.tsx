@@ -1,5 +1,5 @@
 // Samlet reducer for alle filterene
-const filterReducer = (filters = {desc:true, genre: "", search: "", sort: ""}, action: { type: string; payload: string | boolean; }) => {
+const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", minScore: [0,100]}, action: { type: string; payload: string | boolean | number[]; }) => {
     let result = filters;
     switch (action.type) {
         // Endrer retning vi sorterer i
@@ -17,6 +17,10 @@ const filterReducer = (filters = {desc:true, genre: "", search: "", sort: ""}, a
         // Endrer hva vi sorterer etter
         case 'setSort':
             result.sort = action.payload as string;
+            break;
+        // Endrer rating søkekriterie
+        case 'setMinScore':
+            result.minScore = action.payload as number[];
             break;
     }
     return result;

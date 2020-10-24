@@ -10,7 +10,7 @@ const reducers = combineReducers({
     movies: moviesReducer,
     genres: genresReducer,
     filter: filterReducer,
-    details: movieReducer
+    details: movieReducer,
 })
 
 export default reducers;
