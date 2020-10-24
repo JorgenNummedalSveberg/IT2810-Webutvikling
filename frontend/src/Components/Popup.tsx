@@ -1,10 +1,11 @@
-import React, {CSSProperties, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
 import { Image, Grid, Header, Button} from "semantic-ui-react";
 import {setPopup, showPopup} from "../actions";
 import ImdbIcon from "./ImdbIcon";
+import {stringify} from "querystring";
 
 
 function Popup() {
@@ -12,10 +13,21 @@ function Popup() {
     // Henter filmen fra redux
     const movie = useSelector((state: state) => state.details.movie);
 
-    const [views, setViews] = useState(0);
+    const [viewedMovies, setViewedMovies]: any[] = useState([]);
+    const [watches, setWatches] = useState(movie.watches);
+
+    function fetchViewed(): any[] {
+        try {
+            const item = localStorage.getItem('viewed');
+            return item ? JSON.parse(item) : []
+        } catch (e) {
+            return [];
+        }
+    }
+
     useEffect(() => {
-        setViews(movie.watches);
-    })
+        setViewedMovies(fetchViewed());
+    }, [])
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -27,9 +39,12 @@ function Popup() {
 
     // Legger til en view
     function addView() {
-        movie.watches ++;
-        setViews(views+1);
+        setWatches(watches+1);
         fetch('http://localhost:5000/api/movie/addView/'+movie._id);
+        let tempViewedMovies = viewedMovies;
+        tempViewedMovies.push(movie._id);
+        localStorage.setItem('viewed', JSON.stringify(tempViewedMovies));
+        setViewedMovies(tempViewedMovies);
     }
 
     return (
@@ -44,10 +59,10 @@ function Popup() {
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Header>
-                            {movie.title} | Visits: {movie.visits}
+                            {movie.title}}
                         </Header>
                         <ImdbIcon rating={movie.imdbRating}/>
-                        <Button onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: views }}/>
+                        <Button disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: watches }}/>
                         <h1>{movie.year}</h1>
                         <h2>{movie.genres}</h2>
                         <p>
@@ -59,4 +74,5 @@ function Popup() {
         </div>
     )
 }
+
 export default Popup;

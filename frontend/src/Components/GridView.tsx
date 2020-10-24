@@ -49,13 +49,10 @@ function MovieCard(props: {movie: Movie}) {
 
     // Legger til en visit på filmen
     function addVisit(id: any) {
-        fetch('http://localhost:5000/api/movie/addVisit/'+id);
     }
 
     // Håndterer alt når du trykker på Card. Legger til visit og får opp Popup.
     function handleClick() {
-        addVisit(props.movie._id);
-        props.movie.visits ++;
         dispatch(setPopup(props.movie));
         dispatch(showPopup(true));
     }
