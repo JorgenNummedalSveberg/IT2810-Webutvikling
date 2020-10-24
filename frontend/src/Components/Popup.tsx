@@ -9,7 +9,6 @@ import {stringify} from "querystring";
 
 
 function Popup() {
-
     // Henter filmen fra redux
     const movie = useSelector((state: state) => state.details.movie);
 
@@ -39,12 +38,14 @@ function Popup() {
 
     // Legger til en view
     function addView() {
+        movie.watches++;
         setWatches(watches+1);
         fetch('http://localhost:5000/api/movie/addView/'+movie._id);
         let tempViewedMovies = viewedMovies;
         tempViewedMovies.push(movie._id);
         localStorage.setItem('viewed', JSON.stringify(tempViewedMovies));
         setViewedMovies(tempViewedMovies);
+        dispatch(setPopup(movie));
     }
 
     return (
@@ -52,7 +53,7 @@ function Popup() {
         // @ts-ignore
         <div style={{marginRight: '50px', marginLeft: '30px', position: 'fixed', zIndex: '1000', backgroundColor: 'white', padding: '10px', borderRadius: '16px'}}>
             <Button style={{margin: '20px'}} onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
-            <Grid>
+            <Grid style={{margin: '20px'}}>
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <Image style={{border: 'solid 5px grey'}} src={movie.posterurl} />
@@ -61,9 +62,9 @@ function Popup() {
                         <Header>
                             {movie.title}}
                         </Header>
+                        <p>{movie.year}</p>
                         <ImdbIcon rating={movie.imdbRating}/>
-                        <Button disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: watches }}/>
-                        <h1>{movie.year}</h1>
+                        <Button disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: movie.watches }}/>
                         <h2>{movie.genres}</h2>
                         <p>
                             {movie.storyline}
