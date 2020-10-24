@@ -50,6 +50,8 @@ function App() {
         setMovies([]);
         fetchMovies(setMovies, setGenres, filter, false)
     }
+    // Henter inn sjangre fra redux state
+    const score = useSelector((state: state) => state.filter.score);
 
     // Returnerer Main appen
     return (

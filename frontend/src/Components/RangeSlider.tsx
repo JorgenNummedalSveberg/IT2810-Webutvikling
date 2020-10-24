@@ -17,15 +17,12 @@ function valuetext(value: number) {
   return `${value}°C`;
 }
 
-export default function RangeSlider() {
+export default function RangeSlider(props: {score:number[]}) {
     
     // Nødvendig for redux
     const dispatch = useDispatch();
 
-    // Henter inn sjangre fra redux state
-    const score = useSelector((state: state) => state.filter.score);
-
-    const [value, setValue] = React.useState<number[]>([score[0], score[1]]);
+    const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
 
 
 
