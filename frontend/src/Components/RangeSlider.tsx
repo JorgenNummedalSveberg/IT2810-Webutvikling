@@ -6,6 +6,7 @@ import './CSS/RangeSlider.css';
 import {state} from "../types/state";
 import {useDispatch, useSelector} from "react-redux";
 import { setMinScore } from '../actions';
+import { setSort } from '../actions';
 
 const useStyles = makeStyles({
   root: {
@@ -25,13 +26,15 @@ export default function RangeSlider() {
     // Henter inn sjangre fra redux state
     const minScore = useSelector((state: state) => state.filter.minScore);
 
-    const [value, setValue] = React.useState<number[]>(minScore);
+    const [value, setValue] = React.useState<number[]>([minScore[0], minScore[1]]);
 
 
 
     const handleChange = (event: any, newValue: number | number[]) => {
         setValue(newValue as number[]);
         dispatch(setMinScore(newValue as number[]));
+        //Kan legge til at det automatisk skal byttes til rating sortering
+        //dispatch(setSort("Rating"));
     };
 
   return (

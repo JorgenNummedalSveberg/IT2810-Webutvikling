@@ -18,16 +18,10 @@ function GridView() {
     const [page, setPage] = useState(0);
 
     // Henter filmene inn fra state
-    let movies = useSelector((state: state) => state.movies);
-
-    movies = movies.map(movie => {
-        const movieRating = movie.imdbRating;
-        if(movieRating > score[0]/10 && movieRating<score[1]/10){
-            return (
-                movie
-            )
-        }
-    })
+    const movies = useSelector((state: state) => state.movies
+        .filter(movie =>
+            movie.imdbRating >= state.filter.minScore[0]/10 &&
+            movie.imdbRating <= state.filter.minScore[1]/10))
 
 
     //Filtreringscoren
@@ -43,11 +37,12 @@ function GridView() {
 
     const dimList = () => {
         const list = [];
-        for(let i = 0; i < 20; i++) {
+        for (let i = 0; i < 20; i++) {
             list.push(<DimCard key={i}/>);
         }
         return list;
     }
+
     // Lager en liste av alle MovieCards som skal med i Griden
     let movieCards: any[] = dimList();
     if (typeof movieList[page] !== "undefined") {
