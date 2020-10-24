@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './CSS/GridView.css';
-import {Card, Icon, Grid, Image, Pagination} from 'semantic-ui-react';
+import {Card, Icon, Grid, Image, Pagination, Dimmer, Loader} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
@@ -28,8 +28,15 @@ function GridView() {
         movieList[Math.floor(index/20)].push(movie);
     })
 
+    const dimList = () => {
+        const list = [];
+        for(let i = 0; i < 20; i++) {
+            list.push(<DimCard key={i}/>);
+        }
+        return list;
+    }
     // Lager en liste av alle MovieCards som skal med i Griden
-    let movieCards: any[] = []
+    let movieCards: any[] = dimList();
     if (typeof movieList[page] !== "undefined") {
         movieCards = movieList[page].map((movie: any, index: number) => {
             return (
@@ -84,6 +91,18 @@ function MovieCard(props: {movie: any}) {
                     <ImdbIcon rating={props.movie.imdbRating}/>
                 </Grid>
             </Card.Content>
+        </Card>
+    )
+}
+
+function DimCard() {
+    return (
+        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden'}}>
+                <Dimmer active>
+                    <Loader size='massive'>Loading</Loader>
+                </Dimmer>
+
+            <Image src={'../../dimPoster.png'} wrapped ui={false}/>
         </Card>
     )
 }
