@@ -42,7 +42,7 @@ function App() {
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
         setFilter({desc: true, sort: "Name", search: "", genre: ""});
-        fetchMovies(setMovies, setGenres, filter, true)
+        fetchMovies(setMovies, setGenres, filter, true);
     }, [])
 
     // Funksjon som refresher filmene
@@ -62,7 +62,6 @@ function App() {
     </div>
   );
 }
-
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
@@ -100,7 +99,6 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                     genreUpdate(data.map((movie: any) => movie.genres), setGenres);
                 }
             }
-
         });
 }
 

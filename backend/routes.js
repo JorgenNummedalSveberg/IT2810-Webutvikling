@@ -35,4 +35,17 @@ router.get("/movies/:genre/:title", async (req, res,e) => {
     }
 });
 
+// Legger til en view på filmen
+router.get("/movie/addView/:id", async (req, res) => {
+    try {
+        const movie = await Movie.findOne({ '_id': req.params.id });
+        movie.watches++;
+        await movie.save();
+        res.send("1 view to "+movie.title);
+    } catch {
+        res.status(404);
+        res.send({ error: "Movie doesn't exist!" });
+    }
+});
+
 module.exports = router;
