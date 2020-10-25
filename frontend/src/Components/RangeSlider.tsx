@@ -1,17 +1,33 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import './CSS/RangeSlider.css';
-import {state} from "../types/state";
 import {useDispatch, useSelector} from "react-redux";
 import { setScore } from '../actions';
 import { setYears } from '../actions';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 const useStyles = makeStyles({
   root: {
     width: 200,
   },    
+});
+
+const muiTheme = createMuiTheme({
+  overrides:{
+    MuiSlider: {
+      thumb:{
+      color: "#C0BE7B",
+      },
+      track: {
+        color: '#ACA501'
+      },
+      rail: {
+        color: '#484848'
+      }
+    }
+}
 });
 
 function valuetext(value: number) {
@@ -41,6 +57,7 @@ export default function RangeSlider(props: {score:number[], type:string}) {
   return (
     <div className={"RangeSlider"}>
         <h2>{props.type ==='year' ? "Year range":"Rating range"}</h2>
+        <ThemeProvider theme={muiTheme}>
         <Slider className="Slider"
             value={value}
             onChange={handleChange}
@@ -52,6 +69,7 @@ export default function RangeSlider(props: {score:number[], type:string}) {
             min={props.type === 'year' ? 1900:0}
             max={props.type === 'year' ? 2020:10}
         />
+        </ThemeProvider>
     </div>
   );
 }
