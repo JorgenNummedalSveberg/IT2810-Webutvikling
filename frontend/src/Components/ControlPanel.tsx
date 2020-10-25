@@ -9,13 +9,16 @@ import RangeSlider from "./RangeSlider";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: {refresh: any}) {
-    // Henter inn sjangre fra redux state
+    // Henter inn score fra redux state
     const score = useSelector((state: state) => state.filter.score);
+    // Henter årstall fra redux state
+    const year = useSelector((state: state) => state.filter.year);
     
     return (
       <div className="ControlPanel">
           <GenreSelector refresh={props.refresh}/>
-          <RangeSlider score={score}/>
+          <RangeSlider score={score} type="score"/>
+          <RangeSlider score={year} type="year"/>
       </div>
     );
 }

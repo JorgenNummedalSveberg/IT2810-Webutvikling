@@ -1,5 +1,5 @@
 // Samlet reducer for alle filterene
-const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", score: [0,100], year: [1900,2020]}, action: { type: string; payload: string | boolean | number[]; }) => {
+const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", score: [0,10], year: [1900,2020]}, action: { type: string; payload: string | boolean | number[]; }) => {
     let result = filters;
     switch (action.type) {
         // Endrer retning vi sorterer i
@@ -23,7 +23,7 @@ const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", sc
             result.score = action.payload as number[];
             break;
         // Endrer årstall søkekriterie
-        case 'setScore':
+        case 'setYears':
             result.year = action.payload as number[];
             break;
     }

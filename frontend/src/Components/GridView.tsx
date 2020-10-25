@@ -20,8 +20,10 @@ function GridView() {
     // Henter filmene inn fra state
     const movies = useSelector((state: state) => state.movies
         .filter(movie =>
-            movie.imdbRating >= state.filter.score[0]/10 &&
-            movie.imdbRating <= state.filter.score[1]/10))
+            movie.imdbRating >= state.filter.score[0] &&
+            movie.imdbRating <= state.filter.score[1] &&
+            parseInt(movie.year) >= state.filter.year[0] &&
+            parseInt(movie.year) <= state.filter.year[1]));
 
 
     //Filtreringscoren
