@@ -17,7 +17,7 @@ function GridView() {
     // State for å holde styr på hvilen side vi er på
     const [page, setPage] = useState(0);
 
-    // Henter filmene inn fra state
+    // Henter filmene inn fra state (filtrerer utvalget basert på rating og årstall)
     const movies = useSelector((state: state) => state.movies
         .filter(movie =>
             movie.imdbRating >= state.filter.score[0] &&

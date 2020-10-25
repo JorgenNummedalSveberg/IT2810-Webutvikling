@@ -79,3 +79,10 @@ export function setYears(year: number[]) {
         payload: year
     }
 }
+// Endrer varighet på filmen
+export function setDuration(duration: number[]) {
+    return {
+        type: 'setDuration',
+        payload: duration
+    }
+}
