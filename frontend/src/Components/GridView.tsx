@@ -4,7 +4,6 @@ import {Card, Icon, Grid, Image, Pagination, Dimmer, Loader} from 'semantic-ui-r
 import ImdbIcon from "./ImdbIcon";
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {parseTime} from '../App';
 import {setPopup, showPopup} from "../actions";
 import Popup from './Popup';
 import {Movie} from "../types/Movie";
@@ -87,13 +86,24 @@ function MovieCard(props: {movie: Movie}) {
                 <Grid centered style={{margin: '5px'}}>
                     <div style={{color: '#e5dfca', margin: 'auto'}}>
                         <Icon name='hourglass'/>
-                        {parseTime(props.movie.duration, false)}
+                        {parseTime(props.movie.duration)}
                     </div>
                     <ImdbIcon rating={props.movie.imdbRating}/>
                 </Grid>
             </Card.Content>
         </Card>
     )
+}
+
+// Tar inn tid i formatet på databasen og gjør det om til presentabel string, eller rein minuttverdi
+function parseTime(time: number): string {
+    let minutes = time;
+    let hours = 0;
+    while (minutes-60 > 0) {
+        minutes -= 60;
+        hours++;
+    }
+    return hours+'h'+minutes+'m';
 }
 
 function DimCard() {

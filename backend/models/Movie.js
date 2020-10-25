@@ -8,7 +8,7 @@ const schema = mongoose.Schema({
     ratings: [Number],
     poster: String,
     contentRating: String,
-    duration: String,
+    duration: Number,
     releaseDate: String,
     averageRating: Number,
     originalTitle: String,
