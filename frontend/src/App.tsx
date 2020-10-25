@@ -84,7 +84,7 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                         break
                     case "Duration":
                         data.sort((a: Movie, b: Movie) => {
-                            return (parseTime(a.duration, true) as number) - (parseTime(b.duration, true) as number);
+                            return a.duration - b.duration;
                         });
                         break;
                     case "Year":
@@ -100,22 +100,6 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                 }
             }
         });
-}
-
-// Tar inn tid i formatet på databasen og gjør det om til presentabel string, eller rein minuttverdi
-export function parseTime(time: string, minFormat: boolean): number | string {
-    let minutes = parseInt(time.substring(2).slice(0, -1));
-    if (minFormat) {
-        return minutes;
-    } else {
-        let hours = 0;
-        while (minutes-60 > 0){
-            minutes -= 60;
-            hours++;
-        }
-        let returnString = hours+"h "+ minutes+"m"
-        return isNaN(minutes) ? "--:--" : returnString;
-    }
 }
 
 // Setter sjangrene i state

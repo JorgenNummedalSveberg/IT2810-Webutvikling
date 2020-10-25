@@ -4,7 +4,7 @@ export interface Movie {
     genres: string[],
     averageRating: number,
     contentRating: string,
-    duration: string,
+    duration: number,
     id: string,
     imdbRating: number,
     originalTitle: string,
