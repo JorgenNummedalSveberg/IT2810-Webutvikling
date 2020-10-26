@@ -2,10 +2,9 @@ import React, {useEffect, useState} from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import { Image, Grid, Header, Button} from "semantic-ui-react";
+import { Button} from "semantic-ui-react";
 import {setPopup, showPopup} from "../actions";
 import ImdbIcon from "./ImdbIcon";
-import {stringify} from "querystring";
 
 
 function Popup() {
@@ -53,25 +52,19 @@ function Popup() {
         // @ts-ignore
         <div className="Popup">
             <Button className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
-            <Grid>
-                <Grid.Row>
-                    <Grid.Column width={3}>
-                        <Image src={movie.posterurl} />
-                    </Grid.Column>
-                    <Grid.Column width={10}>
-                        <Header>
-                            {movie.title}
-                        </Header>
-                        <p>{movie.year}</p>
+            <div className="movieContent">
+                <img src={movie.posterurl} />
+                <div className="info">
+                    <h1>{movie.title}</h1>
+                    <h2>{movie.year}</h2>
+                    <div className="lables">
+                        <Button className="button" disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: movie.watches }}/>
                         <ImdbIcon rating={movie.imdbRating}/>
-                        <Button disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: movie.watches }}/>
-                        <h2>{movie.genres}</h2>
-                        <p>
-                            {movie.storyline}
-                        </p>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                    </div>
+                    <h3>{movie.genres}</h3>
+                    <p>{movie.storyline}</p>
+                </div>
+            </div>
         </div>
     )
 }

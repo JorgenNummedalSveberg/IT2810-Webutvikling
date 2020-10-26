@@ -113,7 +113,6 @@ function DimCard() {
             <Dimmer active>
                 <Loader size='massive'>Loading</Loader>
             </Dimmer>
-
             <Image src={'../../dimPoster.png'} wrapped ui={false}/>
         </Card>
     )
