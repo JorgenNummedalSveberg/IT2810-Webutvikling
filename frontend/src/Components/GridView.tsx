@@ -55,30 +55,27 @@ function GridView() {
         })
     }
 
+    const pagination = (
+        <Pagination
+            style={{margin: "20px"}}
+            onPageChange={(e, {activePage}) => {
+                dispatch(setPage((activePage as number)-1));
+            }}
+            activePage={page+1}
+            defaultActivePage={1}
+            totalPages={movieList.length} />
+    )
+
     return (
         <div className={"GridView"}>
             {showPopup ?
                 <Popup/> : null
             }
-            <Pagination
-                style={{margin: "20px"}}
-                onPageChange={(e, {activePage}) => {
-                    dispatch(setPage((activePage as number)-1));
-                }}
-                activePage={page+1}
-                defaultActivePage={1}
-                totalPages={movieList.length} />
+            {pagination}
             <Card.Group style={{marginBottom: "20px"}} centered>
                 {movieCards}
             </Card.Group>
-            <Pagination
-                style={{margin: "20px"}}
-                onPageChange={(e, {activePage}) => {
-                    dispatch(setPage((activePage as number)-1));
-                }}
-                activePage={page+1}
-                defaultActivePage={1}
-                totalPages={movieList.length} />
+            {pagination}
         </div>
     )
 }
