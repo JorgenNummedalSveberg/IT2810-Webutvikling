@@ -5,7 +5,9 @@
     "concurrently": "^5.3.0"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"cd backend && node index.js\" \"cd frontend && npm start\"",
+    "start": "concurrently --kill-others \"cd backend && npm start\" \"cd frontend && npm start\"",
+    "setup": "npm install & cd backend && npm install & cd.. && cd frontend && npm install",
+    "firstStart": "npm run setup & npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
