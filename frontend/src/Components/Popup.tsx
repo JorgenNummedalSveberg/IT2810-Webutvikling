@@ -59,7 +59,7 @@ function Popup() {
                     <h2>{movie.year}</h2>
                     <div className="lables">
                         <Button className="button" disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: movie.watches }}/>
-                        <ImdbIcon rating={movie.imdbRating}/>
+                        <ImdbIcon rating={movie.imdbRating} height={50}/>
                     </div>
                     <h3>{movie.genres}</h3>
                     <p>{movie.storyline}</p>
