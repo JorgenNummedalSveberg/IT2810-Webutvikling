@@ -13,3 +13,8 @@
     max-width: 95%;
     margin: 2.5%;
 }
+@media only screen and (max-width: 1200px) {
+    .ControlPanel{
+        display: none;
+    }
+}
