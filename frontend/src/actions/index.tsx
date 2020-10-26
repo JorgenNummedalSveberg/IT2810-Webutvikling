@@ -40,6 +40,14 @@ export function setDesc(desc: boolean) {
     }
 }
 
+// Endrer siden vi er på
+export function setPage(page: number) {
+    return {
+        type: 'setPage',
+        payload: page
+    }
+}
+
 // Endrer tittel søkekriterie
 export function setSearch(search: string) {
     return {
@@ -61,5 +69,28 @@ export function setSort(sort: string) {
     return {
         type: 'setSort',
         payload: sort
+    }
+}
+
+// Endrer minimumscoren
+export function setScore(score: number[]) {
+    return {
+        type: 'setScore',
+        payload: score
+    }
+}
+
+// Endrer årsperioden
+export function setYears(year: number[]) {
+    return {
+        type: 'setYears',
+        payload: year
+    }
+}
+// Endrer varighet på filmen
+export function setDuration(duration: number[]) {
+    return {
+        type: 'setDuration',
+        payload: duration
     }
 }

@@ -4,12 +4,21 @@ import {Dropdown} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
 import {setGenre} from "../actions";
+import RangeSlider from "./RangeSlider";
+
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: {refresh: any}) {
+    // Henter inn score fra redux state
+    const score = useSelector((state: state) => state.filter.score);
+    // Henter årstall fra redux state
+    const year = useSelector((state: state) => state.filter.year);
+    
     return (
       <div className="ControlPanel">
           <GenreSelector refresh={props.refresh}/>
+          <RangeSlider score={score} type="score"/>
+          <RangeSlider score={year} type="year"/>
       </div>
     );
 }

@@ -41,8 +41,8 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: ""});
-        fetchMovies(setMovies, setGenres, filter, true);
+        setFilter({desc: true, sort: "Name", search: "", genre: "", score: [0,10], year:[1900,2020], duration: [0,320]});
+        fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 
     // Funksjon som refresher filmene
@@ -50,6 +50,8 @@ function App() {
         setMovies([]);
         fetchMovies(setMovies, setGenres, filter, false)
     }
+    // Henter inn sjangre fra redux state
+    const score = useSelector((state: state) => state.filter.score);
 
     // Returnerer Main appen
     return (
