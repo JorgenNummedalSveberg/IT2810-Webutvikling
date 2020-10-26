@@ -60,7 +60,7 @@ function Popup() {
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Header>
-                            {movie.title}}
+                            {movie.title}
                         </Header>
                         <p>{movie.year}</p>
                         <ImdbIcon rating={movie.imdbRating}/>

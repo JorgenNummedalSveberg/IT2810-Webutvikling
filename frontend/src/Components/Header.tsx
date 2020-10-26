@@ -9,11 +9,17 @@ import {useDispatch} from "react-redux";
 function Header(props: {refresh: any}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
+    let time = 0;
 
     // Når input endres, bytt ut search filter i state og refresh
     function onChange(e: any,  data: any) {
-        dispatch(setSearch(data.value))
-        props.refresh();
+        let text = data.value;
+        if(time) clearTimeout(time);
+        // @ts-ignore
+        time = setTimeout(() => {
+            dispatch(setSearch(data.value))
+            props.refresh();
+        }, 500);
     }
     return (
       <div className="Header">
