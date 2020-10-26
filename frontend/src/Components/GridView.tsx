@@ -62,7 +62,6 @@ function GridView() {
                 dispatch(setPage((activePage as number)-1));
             }}
             activePage={page+1}
-            defaultActivePage={1}
             totalPages={movieList.length} />
     )
 
