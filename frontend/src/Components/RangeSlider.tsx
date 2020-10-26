@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
+import {Slider} from '@material-ui/core';
 import './CSS/RangeSlider.css';
 import {useDispatch, useSelector} from "react-redux";
 import { setScore } from '../actions';
