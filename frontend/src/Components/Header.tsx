@@ -11,19 +11,26 @@ function Header(props: {refresh: any}) {
     const dispatch = useDispatch();
     let time = 0;
 
-    // Når input endres, bytt ut search filter i state og refresh
-    function onChange(e: any,  data: any) {
-        let text = data.value;
-        if(time) clearTimeout(time);
-        // @ts-ignore
-        time = setTimeout(() => {
-            dispatch(setSearch(data.value))
+    // State som holder styr på loading icon på input
+    const [loading, setLoading] = useState(false);
+
+
+    // Tom timeout ref som defineres først;
+    let timeoutRef = useRef(setTimeout(() => {}, 0));
+
+    // Når input endres tømmer vi den aktive timeouten og starter på nytt. Når der har gått 300ms, bytt ut search filter i state og refresh
+    function onChange(e: any, data: any) {
+        setLoading(true)
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+            setLoading(false);
+            dispatch(setSearch(data.value));
             props.refresh();
-        }, 500);
+        }, 300);
     }
     return (
       <div className="Header">
-          <Input className={"SearchField"} onChange={onChange} placeholder='Search...' />
+          <Input onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' />
           <SortingPanel refresh={props.refresh}/>
       </div>
     );
