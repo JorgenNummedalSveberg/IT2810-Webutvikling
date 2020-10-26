@@ -50,13 +50,14 @@ function GridView() {
             {showPopup ?
                 <Popup/> : null
             }
+            <Card.Group style={{marginBottom: "20px", marginTop:"20px"}} centered>
+                {movieCards}
+            </Card.Group>
             <Pagination
+                style={{marginBottom: "20px"}}
                 onPageChange={(e, {activePage}) => {setPage((activePage as number)-1)}}
                 defaultActivePage={1}
                 totalPages={movieList.length} />
-            <Card.Group style={{padding: '20px'}} centered>
-                {movieCards}
-            </Card.Group>
         </div>
     )
 }
@@ -85,10 +86,10 @@ function MovieCard(props: {movie: Movie}) {
             <Card.Content extra>
                 <Grid centered style={{margin: '5px'}}>
                     <div style={{color: '#e5dfca', margin: 'auto'}}>
-                        <Icon name='hourglass'/>
+                        <Icon size='large' name='hourglass'/>
                         {parseTime(props.movie.duration)}
                     </div>
-                    <ImdbIcon rating={props.movie.imdbRating}/>
+                    <ImdbIcon rating={props.movie.imdbRating} height={35}/>
                 </Grid>
             </Card.Content>
         </Card>
@@ -108,11 +109,10 @@ function parseTime(time: number): string {
 
 function DimCard() {
     return (
-        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden'}}>
-                <Dimmer active>
-                    <Loader size='massive'>Loading</Loader>
-                </Dimmer>
-
+        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex:"8"}}>
+            <Dimmer active>
+                <Loader size='massive'>Loading</Loader>
+            </Dimmer>
             <Image src={'../../dimPoster.png'} wrapped ui={false}/>
         </Card>
     )

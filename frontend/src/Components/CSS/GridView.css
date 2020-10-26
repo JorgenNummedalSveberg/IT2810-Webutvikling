@@ -5,7 +5,7 @@
     height: 100%;
     width: 80%;
     overflow-y: auto;
-    padding: 20px;
+    overflow-x: hidden;
     /*Brukt https://www.cssmatic.com/gradient-generator#' for å finne alle*/
     background: rgba(229,223,202,1);
     background: -moz-linear-gradient(top, rgba(229,223,202,1) 0%, rgba(255,255,255,0) 100%);
@@ -15,4 +15,9 @@
     background: -ms-linear-gradient(top, rgba(229,223,202,1) 0%, rgba(255,255,255,0) 100%);
     background: linear-gradient(to bottom, rgba(229,223,202,1) 0%, rgba(255,255,255,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5dfca', endColorstr='#ffffff', GradientType=0 );
+}
+@media only screen and (max-width: 1200px) {
+    .GridView{
+        width: 100%;
+    }
 }
