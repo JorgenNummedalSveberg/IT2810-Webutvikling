@@ -39,18 +39,21 @@ export default function RangeSlider(props: {score:number[], type:string}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
 
-    const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
+    // Tom timeout ref som defineres først;
+    let timeoutRef = useRef(setTimeout(() => {}, 0));
 
-
-
-    const handleChange = (event: any, newValue: number | number[]) => {
-      setValue(newValue as number[]);  
-      if(props.type === 'score'){
-        dispatch(setScore(newValue as number[]));
-      } else{
-          dispatch(setYears(newValue as number[]));
-      } 
-        //Kan legge til at det automatisk skal byttes til rating sortering
+    // Når input endres tømmer vi den aktive timeouten og starter på nytt. Når der har gått 300ms, oppdater score range
+    function handleChange(e: any, data: number | number[]) {
+        clearTimeout(timeoutRef.current);
+        setValue(data as number[]);
+        timeoutRef.current = setTimeout(() => {
+            if(props.type === 'score'){
+                dispatch(setScore(data as number[]));
+            } else{
+                dispatch(setYears(data as number[]));
+            }
+        }, 300);
+    }
         //dispatch(setSort("Rating"));
     };
 
