@@ -1,6 +1,6 @@
 # To run:
 * Make sure to be on VPN/NTNU network
-* first time:`npm run setup` => `npm start`
+* first time(or when package.json is changed):`npm run firstStart`
 * otherwise: `npm start`
 
 # To run only backend:
