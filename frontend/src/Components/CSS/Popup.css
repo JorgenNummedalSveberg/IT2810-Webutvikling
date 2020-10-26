@@ -1,62 +1,18 @@
 .Popup{
-    z-index: 10;
-    background-color: rgb(223, 222, 182);
-    position: absolute;
-    height: 100%;
+    background-color: #6A6A6A;
+    background-image: linear-gradient(#E5DFCA, #6A6A6A);
+    z-index: 9;
+    position: fixed;
+    padding: 40px;
     max-width: calc(100vw - 350px);
     width: 80vw;
-    overflow: visible;
+    right: 0;
+    height: 100vh;
 }
-
-.Popup .ButtonSection{
-    width: 100%;
-    height: 5%;
-    min-height: 80px;
-    border: 1px solid black;
+.Popup .BackButton{
+    margin-bottom: 20px;
 }
-
-.Popup .MovieSection{
-    height: 95%;
-    width: 100%;
-    max-width: 100%;
-    max-height: calc(100% - 80px);
-    min-height: 80px;
-    border: 1px solid black;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: auto;
-}
-
-.Popup .MovieSection img{
-    position: relative;
-    width: 50%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.Popup .MovieSection .MovieInfo{
-    position: relative;
-    flex: 1;
-    height: 20%;
-    width: 50%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-
-}
-
-.Popup .MovieSection p{
-    font-style: italic;
-    font-size: 1.2em;
-}
-
-.Popup .MovieSection h2{
-    color: #383838;
+.Popup .ImdbIcon{
+    width: 40%;
     margin: 0;
-    font-size: 3em;
-}
-
-.Popup .MovieSection h3{
-    margin: 0;
-    font-size: 2em;
-    color: #5A5A5A;
 }

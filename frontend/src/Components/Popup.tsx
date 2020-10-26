@@ -51,16 +51,16 @@ function Popup() {
     return (
         // marginRight her er 20px større fordi den blir offset av GridView
         // @ts-ignore
-        <div style={{marginRight: '50px', marginLeft: '30px', position: 'fixed', zIndex: '1000', backgroundColor: 'white', padding: '10px', borderRadius: '16px'}}>
-            <Button style={{margin: '20px'}} onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
-            <Grid style={{margin: '20px'}}>
+        <div className="Popup">
+            <Button className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
+            <Grid>
                 <Grid.Row>
                     <Grid.Column width={3}>
-                        <Image style={{border: 'solid 5px grey'}} src={movie.posterurl} />
+                        <Image src={movie.posterurl} />
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Header>
-                            {movie.title}}
+                            {movie.title}
                         </Header>
                         <p>{movie.year}</p>
                         <ImdbIcon rating={movie.imdbRating}/>
