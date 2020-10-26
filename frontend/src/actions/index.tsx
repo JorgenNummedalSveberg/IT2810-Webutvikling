@@ -40,6 +40,14 @@ export function setDesc(desc: boolean) {
     }
 }
 
+// Endrer siden vi er på
+export function setPage(page: number) {
+    return {
+        type: 'setPage',
+        payload: page
+    }
+}
+
 // Endrer tittel søkekriterie
 export function setSearch(search: string) {
     return {

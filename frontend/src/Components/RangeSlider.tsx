@@ -1,18 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Slider} from '@material-ui/core';
 import './CSS/RangeSlider.css';
 import {useDispatch, useSelector} from "react-redux";
-import { setScore } from '../actions';
+import {setPage, setScore} from '../actions';
 import { setYears } from '../actions';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-
-const useStyles = makeStyles({
-  root: {
-    width: 200,
-  },    
-});
 
 const muiTheme = createMuiTheme({
   overrides:{
@@ -30,12 +24,12 @@ const muiTheme = createMuiTheme({
 }
 });
 
-function valuetext(value: number) {
-  return `${value}°C`;
-}
 
 export default function RangeSlider(props: {score:number[], type:string}) {
-    
+
+    // Value som setter verdien på slidern
+    const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
+
     // Nødvendig for redux
     const dispatch = useDispatch();
 
@@ -47,6 +41,7 @@ export default function RangeSlider(props: {score:number[], type:string}) {
         clearTimeout(timeoutRef.current);
         setValue(data as number[]);
         timeoutRef.current = setTimeout(() => {
+            dispatch(setPage(0));
             if(props.type === 'score'){
                 dispatch(setScore(data as number[]));
             } else{
@@ -54,8 +49,6 @@ export default function RangeSlider(props: {score:number[], type:string}) {
             }
         }, 300);
     }
-        //dispatch(setSort("Rating"));
-    };
 
   return (
     <div className={"RangeSlider"}>
@@ -65,8 +58,6 @@ export default function RangeSlider(props: {score:number[], type:string}) {
             value={value}
             onChange={handleChange}
             valueLabelDisplay="auto"
-            aria-labelledby="range-slider"
-            getAriaValueText={valuetext}
             step={props.type === 'year' ? 5:0.5}
             marks
             min={props.type === 'year' ? 1900:0}
@@ -74,5 +65,5 @@ export default function RangeSlider(props: {score:number[], type:string}) {
         />
         </ThemeProvider>
     </div>
-  );
+  )
 }

@@ -4,18 +4,21 @@ import {Card, Icon, Grid, Image, Pagination, Dimmer, Loader} from 'semantic-ui-r
 import ImdbIcon from "./ImdbIcon";
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {setPopup, showPopup} from "../actions";
+import {setPage, setPopup, showPopup} from "../actions";
 import Popup from './Popup';
 import {Movie} from "../types/Movie";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function GridView() {
+    // Nødvendig for redux
+    const dispatch = useDispatch();
+
     // Henter popup details fra state
     const showPopup = useSelector((state: state) => state.details.show);
 
-    // State for å holde styr på hvilen side vi er på
-    const [page, setPage] = useState(0);
+    // Redux tate for å holde styr på hvilen side vi er på
+    const page = useSelector((state: state) => state.page);
 
     // Henter filmene inn fra state (filtrerer utvalget basert på rating og årstall)
     const movies = useSelector((state: state) => state.movies
@@ -25,9 +28,6 @@ function GridView() {
             parseInt(movie.year) >= state.filter.year[0] &&
             parseInt(movie.year) <= state.filter.year[1]));
 
-
-    //Filtreringscoren
-    const score = useSelector((state: state) => state.filter.score);
 
     const movieList: any[] = [];
     movies.forEach((movie, index) => {
@@ -60,12 +60,23 @@ function GridView() {
             {showPopup ?
                 <Popup/> : null
             }
-            <Card.Group style={{marginBottom: "20px", marginTop:"20px"}} centered>
+            <Pagination
+                style={{margin: "20px"}}
+                onPageChange={(e, {activePage}) => {
+                    dispatch(setPage((activePage as number)-1));
+                }}
+                activePage={page+1}
+                defaultActivePage={1}
+                totalPages={movieList.length} />
+            <Card.Group style={{marginBottom: "20px"}} centered>
                 {movieCards}
             </Card.Group>
             <Pagination
-                style={{marginBottom: "20px"}}
-                onPageChange={(e, {activePage}) => {setPage((activePage as number)-1)}}
+                style={{margin: "20px"}}
+                onPageChange={(e, {activePage}) => {
+                    dispatch(setPage((activePage as number)-1));
+                }}
+                activePage={page+1}
                 defaultActivePage={1}
                 totalPages={movieList.length} />
         </div>
