@@ -1,0 +1,728 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div>
+  (
+  <div
+    class="App"
+  >
+    <div
+      class="Header"
+    >
+      <div
+        class="ui input SearchField"
+      >
+        <input
+          placeholder="Search..."
+          type="text"
+        />
+      </div>
+      <div
+        class="SortingPanelWrapper"
+      >
+        <div
+          class="SortingPanel"
+        >
+          <div
+            class="SortButton"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(-90deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#DEDA77"
+              />
+            </svg>
+            <h3
+              style="color: rgb(222, 218, 119);"
+            >
+              Name
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Rating
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Duration
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Year
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MainContent"
+    >
+      <div
+        class="ControlPanel"
+      >
+        <div
+          aria-expanded="false"
+          class="ui fluid selection dropdown Dropdown"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            class="divider default text"
+            role="alert"
+          >
+            Select genre...
+          </div>
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          />
+        </div>
+      </div>
+      <div
+        class="GridView"
+      >
+        <div
+          aria-label="Pagination Navigation"
+          class="ui pagination menu"
+          role="navigation"
+        >
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="First item"
+            class="item"
+            tabindex="0"
+            type="firstItem"
+            value="1"
+          >
+            «
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Previous item"
+            class="item"
+            tabindex="0"
+            type="prevItem"
+            value="1"
+          >
+            ⟨
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Next item"
+            class="item"
+            tabindex="0"
+            type="nextItem"
+            value="0"
+          >
+            ⟩
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Last item"
+            class="item"
+            tabindex="0"
+            type="lastItem"
+            value="0"
+          >
+            »
+          </a>
+        </div>
+        <div
+          class="ui centered cards"
+          style="padding: 20px;"
+        >
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

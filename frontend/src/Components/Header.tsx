@@ -6,6 +6,8 @@ import {Input} from "semantic-ui-react";
 import {setSearch} from "../actions";
 import {useDispatch} from "react-redux";
 
+
+
 function Header(props: {refresh: any}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
