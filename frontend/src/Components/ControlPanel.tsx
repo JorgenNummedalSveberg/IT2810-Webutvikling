@@ -37,7 +37,7 @@ function GenreSelector(props: {refresh: any}) {
         if (index === 0) {
             return {key: "", text: "Select genre...", value: ""}
         } else {
-            return {key: genre, text: genre, value: genre};
+            return {key: genre, text: genre, value: genre, id: genre};
         }
     });
 
@@ -54,6 +54,7 @@ function GenreSelector(props: {refresh: any}) {
             selection
             onChange={onSearchChange}
             options={genreOptions}
+            id={"dropdownmenu"}
         />
     )
 }

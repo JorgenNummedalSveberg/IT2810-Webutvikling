@@ -11,7 +11,7 @@ function SortingPanel(props: {refresh: any}) {
     <div className="SortingPanelWrapper">
       <div className="SortingPanel">
       {sortBy.map((sort, index) => (
-        <SortButton key={index} sort={sort} refresh={props.refresh}/>
+        <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
       ))}
       </div>
     </div>
