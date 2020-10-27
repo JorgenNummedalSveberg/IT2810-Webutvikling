@@ -9,7 +9,7 @@ function SortingPanel(props: {refresh: any}) {
 
   return (
     <div className="SortingPanelWrapper">
-      <div className="SortingPanel">
+      <div className="SortingPanel" id={"panelID"}>
       {sortBy.map((sort, index) => (
         <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
       ))}

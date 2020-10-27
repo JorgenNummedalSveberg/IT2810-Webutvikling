@@ -8,7 +8,7 @@ import {useDispatch} from "react-redux";
 
 
 
-function Header(props: {refresh: any}) {
+function Header(props: {refresh: ()=>void}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
     let time = 0;
@@ -32,7 +32,7 @@ function Header(props: {refresh: any}) {
     }
     return (
       <div className="Header">
-          <Input onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' />
+          <Input data-testid="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' />
           <SortingPanel refresh={props.refresh}/>
       </div>
     );
