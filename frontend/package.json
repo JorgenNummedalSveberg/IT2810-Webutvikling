@@ -4,9 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@types/enzyme": "^3.10.7",
     "@types/jest": "^24.9.1",
     "@types/lodash": "^4.14.162",
     "@types/node": "^12.12.67",
@@ -14,14 +13,15 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
     "@types/redux": "^3.6.0",
+    "helpers-utils": "^0.2.3",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
     "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.0",
-    "typescript": "^3.7.5"
+    "semantic-ui-react": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +43,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.26.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/redux-mock-store": "^1.0.2",
+    "cypress": "^5.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^24.9.0",
+    "msw": "^0.21.3",
+    "typescript": "^3.9.7"
   }
 }

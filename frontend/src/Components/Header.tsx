@@ -6,7 +6,9 @@ import {Input} from "semantic-ui-react";
 import {setSearch} from "../actions";
 import {useDispatch} from "react-redux";
 
-function Header(props: {refresh: any}) {
+
+
+function Header(props: {refresh: ()=>void}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
     let time = 0;
@@ -26,11 +28,12 @@ function Header(props: {refresh: any}) {
             setLoading(false);
             dispatch(setSearch(data.value));
             props.refresh();
+            console.log("HEHE XD")
         }, 300);
     }
     return (
       <div className="Header">
-          <Input onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' />
+          <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <SortingPanel refresh={props.refresh}/>
       </div>
     );

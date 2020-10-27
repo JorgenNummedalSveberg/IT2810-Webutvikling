@@ -8,7 +8,7 @@ import RangeSlider from "./RangeSlider";
 
 
 // Holder styr på parametere å endre søket etter
-function ControlPanel(props: {refresh: any}) {
+function ControlPanel(props: {refresh: ()=>void}) {
     // Henter inn score fra redux state
     const score = useSelector((state: state) => state.filter.score);
     // Henter årstall fra redux state
@@ -24,7 +24,7 @@ function ControlPanel(props: {refresh: any}) {
 }
 
 // Endrer sjanger vi søker etter
-function GenreSelector(props: {refresh: any}) {
+function GenreSelector(props: {refresh: ()=>void}) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -37,7 +37,7 @@ function GenreSelector(props: {refresh: any}) {
         if (index === 0) {
             return {key: "", text: "Select genre...", value: ""}
         } else {
-            return {key: genre, text: genre, value: genre};
+            return {key: genre, text: genre, value: genre, id: genre};
         }
     });
 
@@ -54,6 +54,7 @@ function GenreSelector(props: {refresh: any}) {
             selection
             onChange={onSearchChange}
             options={genreOptions}
+            id={"dropdownmenu"}
         />
     )
 }

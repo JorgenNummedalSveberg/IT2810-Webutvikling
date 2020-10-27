@@ -1,0 +1,1166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot test for the whole App renders, and matches with snapshot 1`] = `
+<div>
+  (
+  <div
+    class="App"
+  >
+    <div
+      class="Header"
+    >
+      <div
+        class="ui input SearchField"
+      >
+        <input
+          id="searchbar"
+          placeholder="Search..."
+          role="searcher"
+          type="text"
+        />
+      </div>
+      <div
+        class="SortingPanelWrapper"
+      >
+        <div
+          class="SortingPanel"
+          id="panelID"
+        >
+          <div
+            class="SortButton"
+            data-testid="sortbutton0"
+            id="sortbutton0"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(-90deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#DEDA77"
+              />
+            </svg>
+            <h3
+              style="color: rgb(222, 218, 119);"
+            >
+              Name
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton1"
+            id="sortbutton1"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Rating
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton2"
+            id="sortbutton2"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Duration
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton3"
+            id="sortbutton3"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Year
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MainContent"
+    >
+      <div
+        class="ControlPanel"
+      >
+        <div
+          aria-expanded="false"
+          class="ui fluid selection dropdown Dropdown"
+          id="dropdownmenu"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            class="divider default text"
+            role="alert"
+          >
+            Select genre...
+          </div>
+          <i
+            aria-hidden="true"
+            class="dropdown icon"
+          />
+          <div
+            class="menu transition"
+          />
+        </div>
+        <div
+          class="RangeSlider"
+        >
+          <h2>
+            Rating range
+          </h2>
+          <span
+            class="MuiSlider-root MuiSlider-colorPrimary Slider"
+          >
+            <span
+              class="MuiSlider-rail"
+            />
+            <span
+              class="MuiSlider-track"
+              style="left: 0%; width: 100%;"
+            />
+            <input
+              type="hidden"
+              value="0,10"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="0"
+              style="left: 0%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="1"
+              style="left: 5%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="2"
+              style="left: 10%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="3"
+              style="left: 15%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="4"
+              style="left: 20%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="5"
+              style="left: 25%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="6"
+              style="left: 30%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="7"
+              style="left: 35%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="8"
+              style="left: 40%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="9"
+              style="left: 45%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="10"
+              style="left: 50%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="11"
+              style="left: 55%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="12"
+              style="left: 60%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="13"
+              style="left: 65%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="14"
+              style="left: 70%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="15"
+              style="left: 75%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="16"
+              style="left: 80%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="17"
+              style="left: 85%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="18"
+              style="left: 90%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="19"
+              style="left: 95%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="20"
+              style="left: 100%;"
+            />
+            <span
+              aria-orientation="horizontal"
+              aria-valuemax="10"
+              aria-valuemin="0"
+              aria-valuenow="0"
+              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+              data-index="0"
+              role="slider"
+              style="left: 0%;"
+              tabindex="0"
+            >
+              <span
+                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+              >
+                <span
+                  class="PrivateValueLabel-circle-4"
+                >
+                  <span
+                    class="PrivateValueLabel-label-5"
+                  >
+                    0
+                  </span>
+                </span>
+              </span>
+            </span>
+            <span
+              aria-orientation="horizontal"
+              aria-valuemax="10"
+              aria-valuemin="0"
+              aria-valuenow="10"
+              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+              data-index="1"
+              role="slider"
+              style="left: 100%;"
+              tabindex="0"
+            >
+              <span
+                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+              >
+                <span
+                  class="PrivateValueLabel-circle-4"
+                >
+                  <span
+                    class="PrivateValueLabel-label-5"
+                  >
+                    10
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </div>
+        <div
+          class="RangeSlider"
+        >
+          <h2>
+            Year range
+          </h2>
+          <span
+            class="MuiSlider-root MuiSlider-colorPrimary Slider"
+          >
+            <span
+              class="MuiSlider-rail"
+            />
+            <span
+              class="MuiSlider-track"
+              style="left: 0%; width: 100%;"
+            />
+            <input
+              type="hidden"
+              value="1900,2020"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="0"
+              style="left: 0%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="1"
+              style="left: 4.166666666666667%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="2"
+              style="left: 8.333333333333334%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="3"
+              style="left: 12.5%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="4"
+              style="left: 16.666666666666668%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="5"
+              style="left: 20.833333333333332%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="6"
+              style="left: 25%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="7"
+              style="left: 29.166666666666668%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="8"
+              style="left: 33.333333333333336%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="9"
+              style="left: 37.5%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="10"
+              style="left: 41.666666666666664%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="11"
+              style="left: 45.833333333333336%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="12"
+              style="left: 50%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="13"
+              style="left: 54.166666666666664%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="14"
+              style="left: 58.333333333333336%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="15"
+              style="left: 62.5%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="16"
+              style="left: 66.66666666666667%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="17"
+              style="left: 70.83333333333333%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="18"
+              style="left: 75%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="19"
+              style="left: 79.16666666666667%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="20"
+              style="left: 83.33333333333333%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="21"
+              style="left: 87.5%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="22"
+              style="left: 91.66666666666667%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="23"
+              style="left: 95.83333333333333%;"
+            />
+            <span
+              class="MuiSlider-mark MuiSlider-markActive"
+              data-index="24"
+              style="left: 100%;"
+            />
+            <span
+              aria-orientation="horizontal"
+              aria-valuemax="2020"
+              aria-valuemin="1900"
+              aria-valuenow="1900"
+              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+              data-index="0"
+              role="slider"
+              style="left: 0%;"
+              tabindex="0"
+            >
+              <span
+                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+              >
+                <span
+                  class="PrivateValueLabel-circle-4"
+                >
+                  <span
+                    class="PrivateValueLabel-label-5"
+                  >
+                    1900
+                  </span>
+                </span>
+              </span>
+            </span>
+            <span
+              aria-orientation="horizontal"
+              aria-valuemax="2020"
+              aria-valuemin="1900"
+              aria-valuenow="2020"
+              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
+              data-index="1"
+              role="slider"
+              style="left: 100%;"
+              tabindex="0"
+            >
+              <span
+                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
+              >
+                <span
+                  class="PrivateValueLabel-circle-4"
+                >
+                  <span
+                    class="PrivateValueLabel-label-5"
+                  >
+                    2020
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="GridView"
+      >
+        <div
+          aria-label="Pagination Navigation"
+          class="ui pagination menu"
+          role="navigation"
+          style="margin: 20px;"
+        >
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="First item"
+            class="item"
+            tabindex="0"
+            type="firstItem"
+            value="1"
+          >
+            «
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Previous item"
+            class="item"
+            tabindex="0"
+            type="prevItem"
+            value="1"
+          >
+            ⟨
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Next item"
+            class="item"
+            tabindex="0"
+            type="nextItem"
+            value="0"
+          >
+            ⟩
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Last item"
+            class="item"
+            tabindex="0"
+            type="lastItem"
+            value="0"
+          >
+            »
+          </a>
+        </div>
+        <div
+          class="ui centered cards"
+          style="margin-bottom: 20px;"
+        >
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+          <div
+            class="ui card movieCard"
+            style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+          >
+            <div
+              class="ui active transition visible dimmer"
+              style="display: flex;"
+            >
+              <div
+                class="content"
+              >
+                <div
+                  class="ui massive text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+            <div
+              class="image"
+            >
+              <img
+                src="../../dimPoster.png"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          aria-label="Pagination Navigation"
+          class="ui pagination menu"
+          role="navigation"
+          style="margin: 20px;"
+        >
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="First item"
+            class="item"
+            tabindex="0"
+            type="firstItem"
+            value="1"
+          >
+            «
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Previous item"
+            class="item"
+            tabindex="0"
+            type="prevItem"
+            value="1"
+          >
+            ⟨
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Next item"
+            class="item"
+            tabindex="0"
+            type="nextItem"
+            value="0"
+          >
+            ⟩
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Last item"
+            class="item"
+            tabindex="0"
+            type="lastItem"
+            value="0"
+          >
+            »
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
