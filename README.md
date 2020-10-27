@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.idi.ntnu.no/#https://gitlab.stud.idi.ntnu.no/it2810-h20/team-55/prosjekt-3) 
+
 # To run:
 * Make sure to be on VPN/NTNU network
 * first time(or when package.json is changed):`npm run firstStart`
