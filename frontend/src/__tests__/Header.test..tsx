@@ -1,29 +1,20 @@
 import React from 'react';
-import {act, render} from '@testing-library/react';
-import App from '../App';
+import {render} from '@testing-library/react';
 import { Provider } from 'react-redux'
 import {store} from '../reducers/store'
-import {shallow} from "enzyme";
 import Header from "../Components/Header";
+import userEvent from '@testing-library/user-event'
 
-
-test("render1", () => {
-    const container = shallow(<Provider store={store}>(<App /></Provider>)
-    console.log(container.getElement())
-})
-let counter = 0;
 function mock() {
-    counter++;
+    return null;
 }
-test("render", () => {
-    const header = render(<Provider store={store}><Header refresh={mock}/></Provider>)
-    const searchbar = header.getByTestId("searchbar")
-    expect(searchbar).toBeInTheDocument();
+describe("Header only testing searchbar, sortbuttons have its own file",()=> {
+    test("Check if searchbar renders, and typing works", () => {
+        const container = render(<Provider store={store}><Header refresh={mock}/></Provider>)
+        const as = container.getByRole('searcher')
+        expect(as).toBeInTheDocument()
+        userEvent.type(as,"This is a test input")
+        expect(as).toHaveValue("This is a test input")
+    })
 })
 
-test("renders", () => {
-    const  app = render(<Provider store={store}>(<App /></Provider>);
-    /*expect(container).toMatchSnapshot();*/
-    const ts = app.getByTestId("searchbar")
-    expect(ts).toBeInTheDocument()
-});

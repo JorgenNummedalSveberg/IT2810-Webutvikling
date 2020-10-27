@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders 1`] = `
+exports[`A snapshot test for the whole App renders, and matches with snapshot 1`] = `
 <div>
   (
   <div
@@ -15,6 +15,7 @@ exports[`renders 1`] = `
         <input
           id="searchbar"
           placeholder="Search..."
+          role="searcher"
           type="text"
         />
       </div>
@@ -27,6 +28,7 @@ exports[`renders 1`] = `
         >
           <div
             class="SortButton"
+            data-testid="sortbutton0"
             id="sortbutton0"
           >
             <svg
@@ -50,6 +52,7 @@ exports[`renders 1`] = `
           </div>
           <div
             class="SortButton"
+            data-testid="sortbutton1"
             id="sortbutton1"
           >
             <svg
@@ -73,6 +76,7 @@ exports[`renders 1`] = `
           </div>
           <div
             class="SortButton"
+            data-testid="sortbutton2"
             id="sortbutton2"
           >
             <svg
@@ -96,6 +100,7 @@ exports[`renders 1`] = `
           </div>
           <div
             class="SortButton"
+            data-testid="sortbutton3"
             id="sortbutton3"
           >
             <svg

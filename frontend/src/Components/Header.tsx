@@ -28,11 +28,12 @@ function Header(props: {refresh: ()=>void}) {
             setLoading(false);
             dispatch(setSearch(data.value));
             props.refresh();
+            console.log("HEHE XD")
         }, 300);
     }
     return (
       <div className="Header">
-          <Input data-testid="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' />
+          <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <SortingPanel refresh={props.refresh}/>
       </div>
     );
