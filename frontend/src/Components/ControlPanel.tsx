@@ -13,9 +13,28 @@ function ControlPanel(props: {refresh: ()=>void}) {
     const score = useSelector((state: state) => state.filter.score);
     // Henter årstall fra redux state
     const year = useSelector((state: state) => state.filter.year);
+
+    const user = {
+        userName:"jorgen", password: "123843", movies: []
+    };
+    const req = {
+    method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    }
+
+    function fetchpost() {
+        fetch('http://localhost:5000/api/user/add', req)
+            .then(() => console.log('User Created'))
+            .catch(err => {
+                console.error(err);
+            });
+    }
     
     return (
-      <div className="ControlPanel">
+      <div className="ControlPanel" onClick={fetchpost}>
           <GenreSelector refresh={props.refresh}/>
           <RangeSlider score={score} type="score"/>
           <RangeSlider score={year} type="year"/>
