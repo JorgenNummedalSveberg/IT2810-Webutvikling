@@ -1,43 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CSS/ControlPanel.css';
-import {Dropdown} from 'semantic-ui-react';
+import {Button, Checkbox, Dropdown, Form, Input} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {setGenre} from "../actions";
+import {login, logout, myMovies, setGenre} from "../actions";
 import RangeSlider from "./RangeSlider";
+import {User} from "../types/user";
+import SignLogIn from "./SignLogIn";
 
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: {refresh: ()=>void}) {
+
+    const dispatch = useDispatch();
     // Henter inn score fra redux state
     const score = useSelector((state: state) => state.filter.score);
     // Henter årstall fra redux state
     const year = useSelector((state: state) => state.filter.year);
+    const user = useSelector((state: state) => state.user);
 
-    const user = {
-        userName:"jorgen", password: "123843", movies: []
-    };
-    const req = {
-    method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-        'Content-Type': 'application/json'
-        }
+    const req = (reqUser: User) => {
+        return ({
+            method: 'POST',
+            body: JSON.stringify(reqUser),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
     }
 
-    function fetchpost() {
-        fetch('http://localhost:5000/api/user/add', req)
-            .then(() => console.log('User Created'))
-            .catch(err => {
-                console.error(err);
-            });
+    function handleTick() {
+        dispatch(myMovies())
     }
-    
+
     return (
-      <div className="ControlPanel" onClick={fetchpost}>
+      <div className="ControlPanel">
           <GenreSelector refresh={props.refresh}/>
           <RangeSlider score={score} type="score"/>
           <RangeSlider score={year} type="year"/>
+          {!!user ? <div className={"ControlElement Checkbox"}>
+              <h2>My movies</h2>
+              <Checkbox style={{margin: '10px'}} onChange={handleTick} toggle />
+          </div> : <div/>}
       </div>
     );
 }

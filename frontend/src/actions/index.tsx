@@ -1,9 +1,35 @@
 // Bytter ut filmene
 import {Movie} from "../types/Movie";
+import {User} from "../types/user";
 
 export function setMovieState(movies: any[]) {
     return {
         type: 'setMovies',
+        payload: movies
+    }
+}
+
+export function myMovies() {
+    return {
+        type: 'myMovies'
+    }
+}
+
+export function logout() {
+    return {
+        type: 'logout'
+    }
+}
+
+export function login(user: User) {
+    return {
+        type: 'login',
+        payload: user
+    }
+}
+export function setViewed(movies: []) {
+    return {
+        type: 'login',
         payload: movies
     }
 }

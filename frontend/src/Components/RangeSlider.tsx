@@ -51,7 +51,7 @@ export default function RangeSlider(props: {score:number[], type:string}) {
     }
 
   return (
-    <div className={"RangeSlider"}>
+    <div className={"ControlElement RangeSlider"}>
         <h2>{props.type ==='year' ? "Year range":"Rating range"}</h2>
         <ThemeProvider theme={muiTheme}>
         <Slider className="Slider"
