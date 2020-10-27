@@ -2,30 +2,19 @@ import React, {useEffect, useState} from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import { Button} from "semantic-ui-react";
-import {setPopup, showPopup} from "../actions";
+import {Button, Form} from "semantic-ui-react";
+import {login, logout, setPopup, showPopup} from "../actions";
 import ImdbIcon from "./ImdbIcon";
+import {User} from "../types/user";
 
 
 function Popup() {
     // Henter filmen fra redux
     const movie = useSelector((state: state) => state.details.movie);
+    // Henter innlogget bruker
+    const user = useSelector((state: state) => state.user);
 
-    const [viewedMovies, setViewedMovies]: any[] = useState([]);
     const [watches, setWatches] = useState(movie.watches);
-
-    function fetchViewed(): any[] {
-        try {
-            const item = localStorage.getItem('viewed');
-            return item ? JSON.parse(item) : []
-        } catch (e) {
-            return [];
-        }
-    }
-
-    useEffect(() => {
-        setViewedMovies(fetchViewed());
-    }, [])
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -34,16 +23,30 @@ function Popup() {
     function hidePopup() {
         dispatch(showPopup(false));
     }
+    let req = {};
+    if (!!user) {
+        req = ({
+            method: 'POST',
+            body: JSON.stringify({userName: user.userName, movieId: movie._id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
+    function postView() {
+        fetch('http://localhost:5000/api/user/addMovie', req)
+    }
 
     // Legger til en view
     function addView() {
         movie.watches++;
         setWatches(watches+1);
-        fetch('http://localhost:5000/api/movie/addView/'+movie._id);
-        let tempViewedMovies = viewedMovies;
+        postView();
+        let tempViewedMovies = user.movies;
         tempViewedMovies.push(movie._id);
-        localStorage.setItem('viewed', JSON.stringify(tempViewedMovies));
-        setViewedMovies(tempViewedMovies);
+        user.movies = tempViewedMovies;
+        dispatch(login(user));
         dispatch(setPopup(movie));
     }
 
@@ -58,7 +61,9 @@ function Popup() {
                     <h1>{movie.title}</h1>
                     <h2>{movie.year}</h2>
                     <div className="lables">
-                        <Button className="button" disabled={viewedMovies.includes(movie._id)} onClick={addView} color='blue' content='Watched' icon='eye' label={{ basic: true, color: 'blue', pointing: 'left', content: movie.watches }}/>
+                        {!!user ? <Button className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
+                                 color='blue' content='Watched' icon='eye'
+                                 label={{basic: true, color: 'blue', pointing: 'left', content: movie.watches}}/>: null}
                         <ImdbIcon rating={movie.imdbRating} height={50}/>
                     </div>
                     <h3>{movie.genres}</h3>

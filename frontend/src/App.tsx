@@ -41,7 +41,7 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: "", score: [0,10], year:[1900,2020], duration: [0,320]});
+        setFilter({desc: true, sort: "Name", search: "", genre: "", score: [0,10], year:[1900,2020], duration: [0,320], myMovies: false});
         fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 
@@ -67,11 +67,10 @@ function App() {
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
-    fetch('http://localhost:5000/api/movies/genres:'+filter.genre+'/title:'+filter.search)
+    fetch('http://localhost:5000/api/movies?genre='+filter.genre+'&title='+filter.search)
         .then(response => response.json())
         .then((data: any[]) => {
             if (data.length > 0) {
-
                 // Sorterer filmene basert på hvilken kategori vi sorterer etter
                 switch (filter.sort) {
                     case "Name":

@@ -26,7 +26,7 @@ function GridView() {
             movie.imdbRating >= state.filter.score[0] &&
             movie.imdbRating <= state.filter.score[1] &&
             parseInt(movie.year) >= state.filter.year[0] &&
-            parseInt(movie.year) <= state.filter.year[1]));
+            parseInt(movie.year) <= state.filter.year[1] && (!state.user || !!state.user && (!state.filter.myMovies || state.user.movies.includes(movie._id)))));
 
 
     const movieList: any[] = [];

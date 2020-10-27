@@ -1,13 +1,20 @@
 .RangeSlider{
     width: 100%;
+}
+.RangeSlider h2{
+    width: 100%;
+}
+.ControlElement{
     background-color: rgb(250, 250, 250);
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 20px;
-    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25); 
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
-.RangeSlider h2{
+.ControlElement h2{
     font-size: 1.2em;
-    width: 100%;
+}
+.Checkbox {
+    width: 50%;
 }

@@ -2,9 +2,11 @@ import React, {useState, useRef} from 'react';
 import './CSS/Header.css';
 import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
-import {Input} from "semantic-ui-react";
-import {setSearch} from "../actions";
-import {useDispatch} from "react-redux";
+import {Button, Form, Input} from "semantic-ui-react";
+import {login, logout, setSearch} from "../actions";
+import {useDispatch, useSelector} from "react-redux";
+import SignLogIn from "./SignLogIn";
+import {state} from "../types/state";
 
 
 
@@ -31,10 +33,19 @@ function Header(props: {refresh: ()=>void}) {
             console.log("HEHE XD")
         }, 300);
     }
+
+    const user = useSelector((state: state) => state.user);
+
     return (
       <div className="Header">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <SortingPanel refresh={props.refresh}/>
+          {!!user ? (
+              <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
+          ) : (
+            <SignLogIn/>
+          )
+          }
       </div>
     );
   }
