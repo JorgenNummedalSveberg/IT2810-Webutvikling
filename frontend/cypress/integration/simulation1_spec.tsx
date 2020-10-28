@@ -1,30 +1,59 @@
 import cypress from "cypress";
 
 describe('Simulating a user who wants to log a movie he watched', () => {
-    it('Search for movie and confirms it is the correct one', () => {
-        cy.viewport(1300,800)
-        cy.visit('http://localhost:3000/');
-        cy.get('#searchbar').should('have.value', "")
+    Cypress.config({
+        viewportWidth: 1300,
+        viewportHeight: 800,
+    })
+    it('test, pwd works as a test user, logs an confirms you are logged in', () => {
+        cy.visit('http://localhost:3000/')
+            .wait(1000);
+        cy.get('#HeaderID > button').as("LoginButton")
+            .should('have.text', "Log in/Sign up")
+            .click();
+        cy.get('#UsernameID')
+            .should('have.text', "")
+            .type('test')
+        cy.get('#PasswordID')
+            .should('have.text', "")
+            .type('pwd')
+        cy.get('#submitButtonID') //submitButtonID //loginButtonID
+            .click()
+        cy.get('@LoginButton')
+            .should('have.text', "Log out")
+    })
+    it('Searches the movie to add to watched list. Confirms the amount of watched is +1', () => {
+        cy.get('#searchbar')
+            .should('have.value', "")
             .type('Black panther')
-             .wait(1500);
+            .wait(1500);
         cy.get('#id_BlackPanther')
             .should('have.text', 'Black Panther')
             .click();
-        cy.get('.ui.labeled.button:not([class*="left labeled"])>.label')
+        cy.get('#watchButton > div').as('watchedNr')
             .then(($span) => {
                 const number = parseInt($span.text())
-                cy.get('.ui.labeled.button:not([class*="left labeled"])>.label')
+                cy.get('@watchedNr')
                     .click()
-                    .should('have.text', (number+1).toString())
+                    .should('have.text', (number + 1).toString());
             })
-        cy.get('.ui.labeled.button:not([class*="left labeled"])>.button').should("be.disabled")
-            .wait(1000);
-        cy.reload()
-        cy.get('#searchbar')
-            .type('Black Panther')
-            .wait(1500);
-        cy.get('.ui.card > .content > .header:not(.ui), .ui.cards > .card > .content > .header:not(.ui)')
-            .click();
-        cy.get('.ui.labeled.button:not([class*="left labeled"])>.button').should("be.disabled")
     })
+    it('Searches for another movie to add to watched', () => {
+        cy.get('#watchButton > button')
+            .should("be.disabled")
+            .wait(1000);
+        cy.get('#backButtonID')
+            .click()
+        cy.get('#searchbar').clear()
+            .should('have.value', "")
+            .type('the prestige')
+            .wait(1500);
+        cy.get('#id_ThePrestige')
+            .click();
+        cy.get('#watchButton > div')
+            .click();
+        cy.get('#backButtonID')
+            .click()
+    })
+    it('clear searchbar, and ')
 })

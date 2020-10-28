@@ -54,14 +54,14 @@ function Popup() {
         // marginRight her er 20px større fordi den blir offset av GridView
         // @ts-ignore
         <div className="Popup">
-            <Button className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
+            <Button id={"backButtonID"} className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
             <div className="movieContent">
                 <img src={movie.posterurl} />
                 <div className="info">
                     <h1>{movie.title}</h1>
                     <h2>{movie.year}</h2>
                     <div className="lables">
-                        {!!user ? <Button className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
+                        {!!user ? <Button id={"watchButton"} className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
                                  color='blue' content='Watched' icon='eye'
                                  label={{basic: true, color: 'blue', pointing: 'left', content: movie.watches}}/>: null}
                         <ImdbIcon rating={movie.imdbRating} height={50}/>
