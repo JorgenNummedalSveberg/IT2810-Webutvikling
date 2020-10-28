@@ -98,7 +98,6 @@ mongoose
                 const movie = await Movie.findOne({ '_id': movieId }).exec();
                 movie.watches--;
                 if (user.movies.includes(movieId)) {
-                    console.log("yes, it includes")
                     user.movies = user.movies.filter(movie => movie !== movieId);
                     await movie.save();
                     await user.save();

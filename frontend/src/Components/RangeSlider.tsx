@@ -1,8 +1,7 @@
 import React, {useRef} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {Slider} from '@material-ui/core';
 import './CSS/RangeSlider.css';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setPage, setScore} from '../actions';
 import { setYears } from '../actions';
 import { createMuiTheme } from '@material-ui/core/styles';
