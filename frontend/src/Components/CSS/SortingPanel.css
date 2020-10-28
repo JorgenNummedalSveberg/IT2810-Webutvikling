@@ -1,6 +1,6 @@
 .SortingPanelWrapper{
-    max-width: calc(100% - 350px);
-    width: 80%;
+    max-width: calc(100% - 500px);
+    width: 70%;
     height: 50%;
     position: absolute;
     right: 0;
@@ -12,12 +12,12 @@
     right: 0;
     height: 100%;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     display: flex;
     justify-content: space-evenly;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .SortingPanelWrapper{
         display: none;
     }
