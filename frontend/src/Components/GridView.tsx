@@ -71,7 +71,7 @@ function GridView() {
                 <Popup/> : null
             }
             {pagination}
-            <Card.Group style={{marginBottom: "20px"}} centered>
+            <Card.Group stackable doubling style={{marginBottom: "20px"}} centered>
                 {movieCards}
             </Card.Group>
             {pagination}

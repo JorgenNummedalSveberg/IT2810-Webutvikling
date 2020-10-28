@@ -34,20 +34,40 @@ function Popup() {
         })
     }
 
-    function postView() {
-        fetch('http://localhost:5000/api/user/addMovie', req)
+    function postView(action: string) {
+        fetch('http://localhost:5000/api/user/'+action, req)
     }
 
-    // Legger til en view
+    // Legger til en view og legger den til i lista di
     function addView() {
-        movie.watches++;
-        setWatches(watches+1);
-        postView();
-        let tempViewedMovies = user.movies;
-        tempViewedMovies.push(movie._id);
-        user.movies = tempViewedMovies;
-        dispatch(login(user));
-        dispatch(setPopup(movie));
+        fetch('http://localhost:5000/api/user/addMovie', req)
+            .then(response => {
+                if (response.ok) {
+                    movie.watches++;
+                    setWatches(watches+1);
+                    postView("addMovie");
+                    let tempViewedMovies = user.movies;
+                    tempViewedMovies.push(movie._id);
+                    user.movies = tempViewedMovies;
+                    dispatch(login(user));
+                    dispatch(setPopup(movie));
+                }
+            })
+    }
+
+    // Tar vekk en view og fjerner den fra lista di
+    function removeView() {
+        fetch('http://localhost:5000/api/user/removeMovie', req)
+            .then(response => {
+                if (response.ok) {
+                    movie.watches--;
+                    setWatches(watches-1);
+                    user.movies = user.movies.filter(movieId => movieId !== movie._id);;
+                    dispatch(login(user));
+                    dispatch(setPopup(movie));
+                }
+            })
+
     }
 
     return (
@@ -64,6 +84,8 @@ function Popup() {
                         {!!user ? <Button className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
                                  color='blue' content='Watched' icon='eye'
                                  label={{basic: true, color: 'blue', pointing: 'left', content: movie.watches}}/>: null}
+                        {!!user && user.movies.includes(movie._id) ? <Button className="button" onClick={removeView}
+                            color='red' content='Remove from my list' icon='trash'/> : null}
                         <ImdbIcon rating={movie.imdbRating} height={50}/>
                     </div>
                     <h3>{movie.genres}</h3>
