@@ -71,9 +71,11 @@ function GridView() {
                 <Popup/> : null
             }
             {pagination}
-            <Card.Group style={{marginBottom: "20px"}} centered>
-                {movieCards}
-            </Card.Group>
+            <section>
+                <Card.Group style={{marginBottom: "20px"}} centered>
+                    {movieCards}
+                </Card.Group>
+            </section>
             {pagination}
         </div>
     )
