@@ -74,7 +74,7 @@ function GridView() {
                 <Popup/> : null
             }
             {pagination}
-            <Grid relaxed={false} style={{margin: "20px"}} centered>
+            <Grid style={{margin: "20px"}} centered>
                 {movieCards}
             </Grid>
             {pagination}
