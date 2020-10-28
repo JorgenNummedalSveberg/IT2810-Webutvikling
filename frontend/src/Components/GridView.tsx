@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './CSS/GridView.css';
 import {Card, Icon, Grid, Image, Pagination, Dimmer, Loader} from 'semantic-ui-react';
 import ImdbIcon from "./ImdbIcon";

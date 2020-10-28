@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './CSS/ControlPanel.css';
-import {Button, Checkbox, Dropdown, Form, Input} from 'semantic-ui-react';
+import {Checkbox, Dropdown} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {login, logout, myMovies, setGenre} from "../actions";
+import {myMovies, setGenre} from "../actions";
 import RangeSlider from "./RangeSlider";
 import {User} from "../types/user";
-import SignLogIn from "./SignLogIn";
 
 
 // Holder styr på parametere å endre søket etter
@@ -40,7 +39,7 @@ function ControlPanel(props: {refresh: ()=>void}) {
           <RangeSlider score={year} type="year"/>
           {!!user ? <div className={"ControlElement Checkbox"}>
               <h2>My movies</h2>
-              <Checkbox style={{margin: '10px'}} onChange={handleTick} toggle />
+              <Checkbox id={"checkboxMovie"} style={{margin: '10px'}} onChange={handleTick} toggle />
           </div> : <div/>}
       </div>
     );

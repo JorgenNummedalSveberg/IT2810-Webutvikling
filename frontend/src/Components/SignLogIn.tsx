@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Form, Input, Modal} from "semantic-ui-react";
+import {Button, Input, Modal} from "semantic-ui-react";
 import {useDispatch} from "react-redux";
 import {User} from "../types/user";
 import {login} from "../actions";
