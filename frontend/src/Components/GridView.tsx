@@ -57,6 +57,9 @@ function GridView() {
 
     const pagination = (
         <Pagination
+            siblingRange={0}
+            pointing
+            secondary
             style={{margin: "20px"}}
             onPageChange={(e, {activePage}) => {
                 dispatch(setPage((activePage as number)-1));
@@ -71,9 +74,9 @@ function GridView() {
                 <Popup/> : null
             }
             {pagination}
-            <Card.Group stackable style={{marginBottom: "20px"}} centered>
+            <Grid relaxed={false} style={{margin: "20px"}} centered>
                 {movieCards}
-            </Card.Group>
+            </Grid>
             {pagination}
         </div>
     )
@@ -92,25 +95,28 @@ function MovieCard(props: {movie: Movie}) {
     }
 
     return(
-        <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={handleClick}>
-            <Image src={props.movie.posterurl} wrapped ui={false}/>
-            <Card.Content>
-                <Card.Header id={"id_"+(props.movie.title).replace(/\s/g, "")} style={{color: 'white'}}>{props.movie.title}</Card.Header>
-                <Card.Description style={{color: '#e5dfca'}}>
-                    <div role={"showGenre"}> Genres: {props.movie.genres} </div>
-                    <div id={"year_"+(props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
-                </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-                <Grid centered style={{margin: '5px'}}>
-                    <div style={{color: '#e5dfca', margin: 'auto'}}>
-                        <Icon size='large' name='hourglass'/>
-                        {parseTime(props.movie.duration)}
-                    </div>
-                    <ImdbIcon rating={props.movie.imdbRating} height={35}/>
-                </Grid>
-            </Card.Content>
-        </Card>
+        <Grid.Column tablet={5} mobile={8} computer={3}>
+            <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={handleClick}>
+                <Image src={props.movie.posterurl} wrapped ui={false}/>
+                <Card.Content>
+                    <Card.Header id={"id_"+(props.movie.title).replace(/\s/g, "")} style={{color: 'white'}}>{props.movie.title}</Card.Header>
+                    <Card.Description style={{color: '#e5dfca'}}>
+                        <div role={"showGenre"}> Genres: {props.movie.genres.join(", ")} </div>
+                        <div id={"year_"+(props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <Grid centered style={{margin: '5px'}}>
+                        <div style={{color: '#e5dfca', margin: 'auto'}}>
+                            <Icon size='large' name='hourglass'/>
+                            {parseTime(props.movie.duration)}
+                        </div>
+                        <ImdbIcon rating={props.movie.imdbRating} height={35}/>
+                    </Grid>
+                </Card.Content>
+            </Card>
+        </Grid.Column>
+
     )
 }
 
