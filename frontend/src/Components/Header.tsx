@@ -2,8 +2,8 @@ import React, {useState, useRef} from 'react';
 import './CSS/Header.css';
 import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
-import {Button, Form, Input} from "semantic-ui-react";
-import {login, logout, setSearch} from "../actions";
+import {Button, Input} from "semantic-ui-react";
+import {logout, setSearch} from "../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {state} from "../types/state";
@@ -13,8 +13,6 @@ import {state} from "../types/state";
 function Header(props: {refresh: ()=>void}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
-    let time = 0;
-
     // State som holder styr på loading icon på input
     const [loading, setLoading] = useState(false);
 
@@ -30,29 +28,27 @@ function Header(props: {refresh: ()=>void}) {
             setLoading(false);
             dispatch(setSearch(data.value));
             props.refresh();
-            console.log("HEHE XD")
         }, 300);
     }
 
     const user = useSelector((state: state) => state.user);
     function toggleMenu(){
-      console.log("Switch of hamburger menu");
+        console.log("Switch of hamburger menu");
     }
-
     return (
-      <div className="Header">
+      <div className="Header" id="HeaderID">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <button className="HamburgerButton" onClick={toggleMenu}> Hamburger</button>
           <div className="ActionMenu">
-            <div className="loginButtons">
-              {!!user ? (
-                  <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
-              ) : (
-                <SignLogIn/>
-              )
-              }
+              <div className="loginButtons">
+                  {!!user ? (
+                      <Button id={"loginButton"} onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
+                  ) : (
+                      <SignLogIn/>
+                  )
+                  }
               </div>
-            <SortingPanel refresh={props.refresh}/>
+              <SortingPanel refresh={props.refresh}/>
           </div>
       </div>
     );

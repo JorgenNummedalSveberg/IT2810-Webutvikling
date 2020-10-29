@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {Button, Form} from "semantic-ui-react";
-import {login, logout, setPopup, showPopup} from "../actions";
+import {Button} from "semantic-ui-react";
+import {login, setPopup, showPopup} from "../actions";
 import ImdbIcon from "./ImdbIcon";
-import {User} from "../types/user";
 
 
 function Popup() {
@@ -74,17 +73,17 @@ function Popup() {
         // marginRight her er 20px større fordi den blir offset av GridView
         // @ts-ignore
         <div className="Popup">
-            <Button className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
+            <Button id={"backButtonID"} className="BackButton" onClick={hidePopup} content='Back' icon='left arrow' labelPosition='left' />
             <div className="movieContent">
                 <img src={movie.posterurl} />
                 <div className="info">
                     <h1>{movie.title}</h1>
                     <h2>{movie.year}</h2>
                     <div className="lables">
-                        {!!user ? <Button className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
+                        {!!user ? <Button id={"watchButton"} className="button" disabled={user.movies.includes(movie._id)} onClick={addView}
                                  color='blue' content='Watched' icon='eye'
                                  label={{basic: true, color: 'blue', pointing: 'left', content: movie.watches}}/>: null}
-                        {!!user && user.movies.includes(movie._id) ? <Button className="button" onClick={removeView}
+                        {!!user && user.movies.includes(movie._id) ? <Button id={"removeButton"} className="button" onClick={removeView}
                             color='red' content='Remove from my list' icon='trash'/> : null}
                         <ImdbIcon rating={movie.imdbRating} height={50}/>
                     </div>

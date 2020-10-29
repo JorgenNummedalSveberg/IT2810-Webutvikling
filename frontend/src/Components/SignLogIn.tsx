@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Form, Input, Modal} from "semantic-ui-react";
+import {Button, Input, Modal} from "semantic-ui-react";
 import {useDispatch} from "react-redux";
 import {User} from "../types/user";
 import {login} from "../actions";
@@ -67,20 +67,20 @@ function SignLogIn () {
         >
             <Modal.Header>Log in / Sign in</Modal.Header>
             <Modal.Content>
-                <Input autoFocus label={"Username"} onChange={(e, {value}) => handleNameChange(value)} name={"userName"} placeholder='Username'/>
+                <Input id={"UsernameID"} autoFocus label={"Username"} onChange={(e, {value}) => handleNameChange(value)} name={"userName"} placeholder='Username'/>
 
             </Modal.Content>
             <Modal.Content>
-                <Input label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)} name={"password"} placeholder='Password'/>
+                <Input id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)} name={"password"} placeholder='Password'/>
 
             </Modal.Content>
             <Modal.Actions>
-                <Button onClick={() => onLogin({
+                <Button id={"loginButtonID"} onClick={() => onLogin({
                     userName: userName,
                     password: password,
                     movies: []
                 })} type='submit'>Log in</Button>
-                <Button onClick={() => addUser({userName: userName, password: password, movies: []})} type='submit'>Sign up</Button>
+                <Button id={"submitButtonID"} onClick={() => addUser({userName: userName, password: password, movies: []})} type='submit'>Sign up</Button>
             </Modal.Actions>
         </Modal>
     )
