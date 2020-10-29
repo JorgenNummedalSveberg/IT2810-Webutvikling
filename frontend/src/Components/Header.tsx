@@ -35,15 +35,23 @@ function Header(props: {refresh: ()=>void}) {
     }
 
     const user = useSelector((state: state) => state.user);
-    function toggleMenu(){
-      console.log("Switch of hamburger menu");
-    }
+    
+    //Brukes for å skru av og på burgermenyen
+    let [showMenu, toggleShowMenu] = useState(true);
 
+    function toggleMenu(){
+      toggleShowMenu(!showMenu);
+    }
+    
     return (
       <div className="Header">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
-          <button className="HamburgerButton" onClick={toggleMenu}> Hamburger</button>
-          <div className="ActionMenu">
+          <svg className={"BurgerButton"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="5" x2="150" y2={showMenu ? "122":"5"} stroke="white" stroke-width="10"/>
+            <line y1="65" x2="150" y2="65" stroke="white" stroke-width="10" visibility={showMenu ? "hidden":"visible"}/>
+            <line y1="122" x2="150" y2={showMenu ? "5":"122"} stroke="white" stroke-width="10"/>
+          </svg>
+          <div className="ActionMenu" style={{visibility: showMenu ? "visible":"hidden"}}>
             <div className="loginButtons">
               {!!user ? (
                   <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
