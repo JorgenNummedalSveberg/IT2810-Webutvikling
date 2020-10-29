@@ -37,7 +37,13 @@ mongoose
                         return Movie.find()
                     }
                 }
-                movies().then(movieList => res.status(200).send(movieList));
+                movies().then(movieList => {
+                    if (movieList.length === 0) {
+                        res.status(404).send({error:'No movies'})
+                    } else {
+                        res.status(200).send(movieList)
+                    }
+                });
             } catch{
                 res.status(404).send({error: "Couldn't fetch movies"})
             }
