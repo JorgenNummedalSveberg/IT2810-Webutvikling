@@ -40,9 +40,8 @@ function Popup() {
                     }
                     dispatch(setPopup(state.details.movie));
                     dispatch(login(state.user));
-
-                }
-            })
+                }})
+            .catch(error => console.log(error));
     }
 
     return (

@@ -10,7 +10,6 @@ mongoose
     .then(() => {
         const app = express();
         const jsonParser = bodyParser.json()
-        const urlencodedParser = bodyParser.urlencoded({ extended: false })
         app.use(
             cors({
                 origin: 'http://localhost:3000',
@@ -18,47 +17,60 @@ mongoose
             })
         );
 
-        // Gets movies, filters depending on queries
+        // Henter filmer, filtrert basert på queries
         app.get("/api/movies", async (req, res,e) => {
             try{
                 const genre = req.query.genre as string;
                 const title = req.query.title as string;
-                if (genre !== "" && title !== "") {
-                    // Hvis sjanger og tittel er søkt på
-                    Movie.find({'genres': genre}).find({ 'title': { $regex: title, $options: "i" }})
-                        .then(movies => res.send(movies));
-                } else if (genre !== "") {
-                    // Hvis bare sjanger er søkt på
-                    Movie.find({'genres': genre})
-                        .then(movies => res.send(movies));
-                } else if (title !== "") {
-                    // Hvis bare tittel er søkt på
-                    Movie.find({ 'title': { $regex: title, $options: "i" }})
-                        .then(movies => res.send(movies));
-                } else {
-                    // Hvis ingen kriterer er søkt på
-                    Movie.find().then(movies => res.send(movies));
+                const movies = async ()=> {
+                    if (genre !== "" && title !== "") {
+                        // Hvis sjanger og tittel er søkt på
+                        return Movie.find({'genres': genre}).find({'title': {$regex: title, $options: "i"}});
+                    } else if (genre !== "") {
+                        // Hvis bare sjanger er søkt på
+                        return Movie.find({'genres': genre})
+                    } else if (title !== "") {
+                        // Hvis bare tittel er søkt på
+                        return Movie.find({ 'title': { $regex: title, $options: "i" }})
+                    } else {
+                        // Hvis ingen kriterer er søkt på
+                        return Movie.find()
+                    }
                 }
-            } catch(e){
-                res.status(404).json({message: "Couldn't fetch movies"})
+                movies().then(movieList => res.status(200).send(movieList));
+            } catch{
+                res.status(404).send({error: "Couldn't fetch movies"})
             }
         });
 
-        // Gets movies viewed by the user
+        // Henter filmene fra watchlist til en bruker
         app.get("/api/user", async (req, res,e) => {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
             try{
                 const userName = req.query.userName as string;
                 const user = await User.findOne({ 'userName': userName }).exec();
-                res.send(user.movies);
-            } catch(e){
-                res.status(404).json({message: "Couldn't fetch movies"})
+                res.status(200).send(user.movies);
+            } catch{
+                res.status(404).json({error: "Couldn't fetch movies"})
             }
         });
 
-        // Legger til en view på filmen
+        // Legger til en bruker
+        app.post("/api/user/add", jsonParser, async (req, res) => {
+            const userName = req.body.userName;
+            const password = req.body.password;
+            const movies = req.body.movies;
+            const user = new User({'userName': userName, 'password': password, 'movies': movies} );
+            console.log(user);
+            try {
+                await user.save();
+                res.status(200).send({message: "User added"})
+            } catch {
+                res.status(404).send({error: "Could not add user"})
+            }
+        });
+
+        // Legger til en film i brukerens watchlist
         app.post("/api/user/addMovie", jsonParser, async (req, res) => {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
             const userName = req.body.userName;
             const movieId = req.body.movieId;
             try {
@@ -68,29 +80,14 @@ mongoose
                 user.movies.push(movieId);
                 await user.save();
                 await movie.save();
-                res.send("1 view to "+movie.title+" and added "+movie.title+" to "+userName+"'s movielist");
-            } catch(e) {
-                res.status(404);
-                res.send({ error: "Couldn't add movie" });
-                console.log(e);
+                res.status(200).send({message: "Movie added to watchlist"});
+            } catch{
+                res.status(404).send({ error: "Could not add to watchlist" });
+            }
+        });
 
-            }
-        });
-        app.post("/api/user/add", jsonParser, async (req, res) => {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-            const userName = req.body.userName;
-            const password = req.body.password;
-            const movies = req.body.movies;
-            const user = new User({'userName': userName, 'password': password, 'movies': movies} );
-            console.log(user);
-            try {
-                await user.save().then(user => res.status(200).send(user));
-            } catch(e) {
-                res.status(404).send()
-            }
-        });
+        // Fjerner en film fra brukerens watchlist
         app.post("/api/user/removeMovie", jsonParser, async (req, res) => {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
             const movieId = req.body.movieId;
             const userName = req.body.userName;
             try {
@@ -101,13 +98,12 @@ mongoose
                     user.movies = user.movies.filter(movie => movie !== movieId);
                     await movie.save();
                     await user.save();
-                    res.status(200).send("Movie removed");
+                    res.status(200).send("Movie removed from watchlist");
                 } else {
-                    res.status(404).send("Movie not in list");
+                    res.status(404).send({ error: "Movie not in watchlist" });
                 }
-            } catch (e) {
-                res.status(404).send();
-                console.log(e);
+            } catch {
+                res.status(404).send({ error: "Could not remove from watchlist" });
             }
 
         })
