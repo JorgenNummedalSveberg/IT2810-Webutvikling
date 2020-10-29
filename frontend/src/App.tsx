@@ -73,43 +73,45 @@ function App() {
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
     fetch('http://localhost:5000/api/movies?genre=' + filter.genre + '&title=' + filter.search)
-        .then(response => response.json())
-        .then((data: any[]) => {
-            if (data.length > 0) {
-                // Sorterer filmene basert på hvilken kategori vi sorterer etter
-                switch (filter.sort) {
-                    case "Name":
-                        data.sort((b: Movie, a: Movie) => {
-                            if (a.title < b.title) {
-                                return -1;
-                            }
-                            if (a.title > b.title) {
-                                return 1;
-                            }
-                            return 0;
-                        });
-                        break;
-                    case "Rating":
-                        data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
-                        break
-                    case "Duration":
-                        data.sort((a: Movie, b: Movie) => {
-                            return a.duration - b.duration;
-                        });
-                        break;
-                    case "Year":
-                        data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
-                }
+        .then(response => {
+            if (response.ok) {
+                response.json().then((data: any[]) => {
+                    if (data.length > 0) {
+                        // Sorterer filmene basert på hvilken kategori vi sorterer etter
+                        switch (filter.sort) {
+                            case "Name":
+                                data.sort((b: Movie, a: Movie) => {
+                                    if (a.title < b.title) {
+                                        return -1;
+                                    }
+                                    if (a.title > b.title) {
+                                        return 1;
+                                    }
+                                    return 0;
+                                });
+                                break;
+                            case "Rating":
+                                data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
+                                break
+                            case "Duration":
+                                data.sort((a: Movie, b: Movie) => {
+                                    return a.duration - b.duration;
+                                });
+                                break;
+                            case "Year":
+                                data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
+                        }
 
-                // Setter filmene i redux state, reverserer listen om vi sorterer descending
-                setMovies(filter.desc ? data.reverse() : data);
+                        // Setter filmene i redux state, reverserer listen om vi sorterer descending
+                        setMovies(filter.desc ? data.reverse() : data);
 
-                // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-                if (first) {
-                    genreUpdate(data.map((movie: any) => movie.genres), setGenres);
-                }
-            }
-        });
+                        // Bare oppdater sjanger listen hvis det er første gang vi laster inn
+                        if (first) {
+                            genreUpdate(data.map((movie: any) => movie.genres), setGenres);
+                        }
+                    }
+                })}})
+        .catch(error => console.log(error));
 }
 
 // Setter sjangrene i state

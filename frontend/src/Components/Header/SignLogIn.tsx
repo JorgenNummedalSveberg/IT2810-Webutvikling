@@ -27,33 +27,30 @@ function SignLogIn() {
     // Legger til en bruker på serveren
     function addUser(reqUser: User) {
         fetch('http://localhost:5000/api/user/add', req(reqUser))
-            .then(response => response.json())
-            .then((user: User) => {
-                if (!!user) {
+            .then(response => {
+                if (response.ok) {
                     dispatch(login(reqUser));
-                }
-            })
-            .catch(() => {
-                console.log("User already exists")
+                }})
+            .catch(error => {
+                console.log(error)
             });
     }
 
     // Logger inn hvis brukeren finnes
     function onLogin(user: User) {
         let returnUser = user;
-        try {
-            fetch('http://localhost:5000/api/user?userName=' + user.userName)
-                .then(response => response.json())
-                .then(movies => {
-                    if (movies.message) {
-                        console.log("User does not exist");
-                    } else {
-                        returnUser.movies = movies;
-                        dispatch(login(returnUser))
-                    }
-                })
-        } catch (e) {
-        }
+        fetch('http://localhost:5000/api/user?userName=' + user.userName)
+            .then(response => {
+                if (response.ok) {
+                    response.json()
+                        .then(movies => {
+                            returnUser.movies = movies;
+                            dispatch(login(returnUser))
+                        })
+                } else {
+                    console.log("User does not exist");
+                }
+            })
     }
 
     // @ts-ignore
