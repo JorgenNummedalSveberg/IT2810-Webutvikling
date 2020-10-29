@@ -22,20 +22,4 @@
         display: initial;
         z-index: 902;
     }
-    .ActionMenu{
-        position: fixed;
-        top: 0;
-        z-index: 900;
-        background-color: rgba(29, 29, 29, 0.974);
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-    .loginButtons{
-        height: fit-content;
-        bottom: 0;
-    }
 }

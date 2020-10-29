@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import './CSS/Header.css';
 import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
+import BurgerMenu from  "./BurgerMenu";
 import {Button, Form, Input} from "semantic-ui-react";
 import {login, logout, setSearch} from "../actions";
 import {useDispatch, useSelector} from "react-redux";
@@ -46,22 +47,21 @@ function Header(props: {refresh: ()=>void}) {
     return (
       <div className="Header">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
+          <div className="loginButtons">
+            {!!user ? (
+                <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
+            ) : (
+              <SignLogIn/>
+            )
+            }
+          </div>
+          <BurgerMenu refresh={props.refresh} show={showMenu}/>
+          <SortingPanel refresh={props.refresh}/>
           <svg className={"BurgerButton"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line y1="5" x2="150" y2={showMenu ? "122":"5"} stroke="white" stroke-width="10"/>
             <line y1="65" x2="150" y2="65" stroke="white" stroke-width="10" visibility={showMenu ? "hidden":"visible"}/>
             <line y1="122" x2="150" y2={showMenu ? "5":"122"} stroke="white" stroke-width="10"/>
           </svg>
-          <div className="ActionMenu" style={{visibility: showMenu ? "visible":"hidden"}}>
-            <div className="loginButtons">
-              {!!user ? (
-                  <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
-              ) : (
-                <SignLogIn/>
-              )
-              }
-              </div>
-            <SortingPanel refresh={props.refresh}/>
-          </div>
       </div>
     );
   }
