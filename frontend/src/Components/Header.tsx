@@ -4,6 +4,7 @@ import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
 import {Button, Input} from "semantic-ui-react";
 import {logout, setSearch} from "../actions";
+import BurgerMenu from  "./BurgerMenu";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {state} from "../types/state";
@@ -32,24 +33,32 @@ function Header(props: {refresh: ()=>void}) {
     }
 
     const user = useSelector((state: state) => state.user);
+
+    //Brukes for å skru av og på burgermenyen
+    let [showMenu, toggleShowMenu] = useState(false);
+
     function toggleMenu(){
-        console.log("Switch of hamburger menu");
+      toggleShowMenu(!showMenu);
     }
+
     return (
       <div className="Header" id="HeaderID">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
-          <button className="HamburgerButton" onClick={toggleMenu}> Hamburger</button>
-          <div className="ActionMenu">
-              <div className="loginButtons">
-                  {!!user ? (
-                      <Button id={"loginButton"} onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
-                  ) : (
-                      <SignLogIn/>
-                  )
-                  }
-              </div>
-              <SortingPanel refresh={props.refresh}/>
+          <div className="loginButtons">
+            {!!user ? (
+                <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
+            ) : (
+              <SignLogIn/>
+            )
+            }
           </div>
+          <BurgerMenu refresh={props.refresh} show={showMenu}/>
+          <SortingPanel refresh={props.refresh}/>
+          <svg className={"BurgerButton"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="5" x2="150" y2={showMenu ? "122":"5"} stroke="white" stroke-width="10"/>
+            <line y1="65" x2="150" y2="65" stroke="white" stroke-width="10" visibility={showMenu ? "hidden":"visible"}/>
+            <line y1="122" x2="150" y2={showMenu ? "5":"122"} stroke="white" stroke-width="10"/>
+          </svg>
       </div>
     );
   }

@@ -19,16 +19,6 @@
 
 @media only screen and (max-width: 900px) {
     .SortingPanelWrapper{
-        position: relative;
-        z-index: 901;
-        height: 80%;
-        min-width: 100vw;
-    }
-    .SortingPanel{
-        height: 100%;
-        min-width: 100%;
-        z-index: 901;
-        flex-direction: column;
-        align-items: center;
+        display: none;
     }
 }
