@@ -11,7 +11,7 @@ Object {
       >
         <div
           aria-label="Pagination Navigation"
-          class="ui pagination menu"
+          class="ui pagination pointing secondary menu"
           role="navigation"
           style="margin: 20px;"
         >
@@ -61,8 +61,8 @@ Object {
           </a>
         </div>
         <div
-          class="ui centered cards"
-          style="margin-bottom: 20px;"
+          class="ui centered grid"
+          style="margin: 20px; width: 100%;"
         >
           <div
             class="ui card movieCard"
@@ -587,7 +587,7 @@ Object {
         </div>
         <div
           aria-label="Pagination Navigation"
-          class="ui pagination menu"
+          class="ui pagination pointing secondary menu"
           role="navigation"
           style="margin: 20px;"
         >
@@ -646,7 +646,7 @@ Object {
     >
       <div
         aria-label="Pagination Navigation"
-        class="ui pagination menu"
+        class="ui pagination pointing secondary menu"
         role="navigation"
         style="margin: 20px;"
       >
@@ -696,8 +696,8 @@ Object {
         </a>
       </div>
       <div
-        class="ui centered cards"
-        style="margin-bottom: 20px;"
+        class="ui centered grid"
+        style="margin: 20px; width: 100%;"
       >
         <div
           class="ui card movieCard"
@@ -1222,7 +1222,7 @@ Object {
       </div>
       <div
         aria-label="Pagination Navigation"
-        class="ui pagination menu"
+        class="ui pagination pointing secondary menu"
         role="navigation"
         style="margin: 20px;"
       >

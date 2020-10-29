@@ -9,7 +9,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
     it('test, pwd works as a test user, l an confirms you are logged in', () => {
         cy.visit('http://localhost:3000/')
             .wait(1000);
-        cy.get('#HeaderID > div.ActionMenu > div.loginButtons > button').as("LoginButton")
+        cy.get('#HeaderID > div.loginButtons > button').as("LoginButton")
             .should('have.text', "Log in/Sign up")
             .click();
         cy.get('#UsernameID')
