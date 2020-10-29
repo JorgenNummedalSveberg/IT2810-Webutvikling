@@ -8,6 +8,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
   >
     <div
       class="Header"
+      id="HeaderID"
     >
       <div
         class="ui input SearchField"
@@ -18,6 +19,122 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           role="searcher"
           type="text"
         />
+      </div>
+      <div
+        class="loginButtons"
+      >
+        <button
+          class="ui button"
+          style="z-index: 1000000;"
+        >
+          Log in/Sign up
+        </button>
+      </div>
+      <div
+        class="BurgerWrapper"
+        style="visibility: hidden;"
+      >
+        <div
+          class="BurgerMenu"
+          id="panelID"
+        >
+          <div
+            class="SortButton"
+            data-testid="sortbutton0burger"
+            id="sortbutton0burger"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(-90deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#DEDA77"
+              />
+            </svg>
+            <h3
+              style="color: rgb(222, 218, 119);"
+            >
+              Name
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton1burger"
+            id="sortbutton1burger"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Rating
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton2burger"
+            id="sortbutton2burger"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Duration
+            </h3>
+          </div>
+          <div
+            class="SortButton"
+            data-testid="sortbutton3burger"
+            id="sortbutton3burger"
+          >
+            <svg
+              fill="none"
+              height="452"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 258 452"
+              width="258"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
+                fill="#D1D1D1"
+              />
+            </svg>
+            <h3
+              style="color: rgb(209, 209, 209);"
+            >
+              Year
+            </h3>
+          </div>
+        </div>
       </div>
       <div
         class="SortingPanelWrapper"
@@ -124,6 +241,36 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           </div>
         </div>
       </div>
+      <svg
+        class="BurgerButton"
+        fill="none"
+        viewBox="0 0 150 125"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          stroke="white"
+          stroke-width="10"
+          x2="150"
+          y1="5"
+          y2="5"
+        />
+        <line
+          stroke="white"
+          stroke-width="10"
+          visibility="visible"
+          x2="150"
+          y1="65"
+          y2="65"
+        />
+        <line
+          stroke="white"
+          stroke-width="10"
+          x2="150"
+          y1="122"
+          y2="122"
+        />
+      </svg>
     </div>
     <div
       class="MainContent"
@@ -155,7 +302,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           />
         </div>
         <div
-          class="RangeSlider"
+          class="ControlElement RangeSlider"
         >
           <h2>
             Rating range
@@ -332,7 +479,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           </span>
         </div>
         <div
-          class="RangeSlider"
+          class="ControlElement RangeSlider"
         >
           <h2>
             Year range
@@ -528,13 +675,14 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             </span>
           </span>
         </div>
+        <div />
       </div>
       <div
         class="GridView"
       >
         <div
           aria-label="Pagination Navigation"
-          class="ui pagination menu"
+          class="ui pagination pointing secondary menu"
           role="navigation"
           style="margin: 20px;"
         >
@@ -584,8 +732,8 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           </a>
         </div>
         <div
-          class="ui centered cards"
-          style="margin-bottom: 20px;"
+          class="ui centered grid"
+          style="margin: 20px; width: 100%;"
         >
           <div
             class="ui card movieCard"
@@ -1110,7 +1258,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
         </div>
         <div
           aria-label="Pagination Navigation"
-          class="ui pagination menu"
+          class="ui pagination pointing secondary menu"
           role="navigation"
           style="margin: 20px;"
         >

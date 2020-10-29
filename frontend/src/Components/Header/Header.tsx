@@ -51,7 +51,7 @@ function Header(props: { refresh: () => void }) {
             </div>
             <BurgerMenu refresh={props.refresh} show={showMenu}/>
             <SortingPanel refresh={props.refresh}/>
-            <svg className={"BurgerButton"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
+            <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <line y1="5" x2="150" y2={showMenu ? "122" : "5"} stroke="white" strokeWidth="10"/>
                 <line y1="65" x2="150" y2="65" stroke="white" strokeWidth="10"
