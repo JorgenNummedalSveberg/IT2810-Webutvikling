@@ -11,14 +11,13 @@
 }
 @media only screen and (max-width: 900px) {
     .SearchField{
-        width: 70%;
-        min-width: 10px;
+        width: calc(100% - 250px);
+        min-width: 120px;
         transition: all 0.5s ease, ease-out 0.2s;
     }
     .SearchField:hover{
-        width: 100%;
-        min-width: none;
+        min-width: calc(100% - 20px);
         position: absolute;
-        z-index: 800;
+        z-index: 1000;
     }
 }
