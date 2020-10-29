@@ -36,23 +36,22 @@ function Header(props: {refresh: ()=>void}) {
 
     const user = useSelector((state: state) => state.user);
     function toggleMenu(){
-      console.log("Switch of hamburger menu");
+        console.log("Switch of hamburger menu");
     }
-
     return (
-      <div className="Header">
+      <div className="Header" id="HeaderID">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <button className="HamburgerButton" onClick={toggleMenu}> Hamburger</button>
           <div className="ActionMenu">
-            <div className="loginButtons">
-              {!!user ? (
-                  <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
-              ) : (
-                <SignLogIn/>
-              )
-              }
+              <div className="loginButtons">
+                  {!!user ? (
+                      <Button id={"loginButton"} onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
+                  ) : (
+                      <SignLogIn/>
+                  )
+                  }
               </div>
-            <SortingPanel refresh={props.refresh}/>
+              <SortingPanel refresh={props.refresh}/>
           </div>
       </div>
     );
