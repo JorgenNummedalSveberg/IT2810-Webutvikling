@@ -50,6 +50,9 @@ function MovieSection() {
                     parseInt(movie.year) >= state.filter.year[0] &&
                     parseInt(movie.year) <= state.filter.year[1] && (!state.user || !!state.user && (!state.filter.myMovies || state.user.movies.includes(movie._id))));
 
+            if (state.movies.length > 0 && movies.length === 0) {
+                return (errorPage);
+            }
 
             const movieList: any[] = [];
             movies.forEach((movie, index) => {
@@ -98,11 +101,11 @@ function MovieSection() {
                         <Popup/> : null
                     }
                     {pagination}
-                    <section>
-                        <Grid style={{margin: "20px", width: '100%'}} centered>
+                    <div style={{width:'100%'}}>
+                        <Grid style={{margin: "20px"}} centered>
                             {movieCards}
                         </Grid>
-                    </section>
+                    </div>
 
                     {pagination}
                 </div>
