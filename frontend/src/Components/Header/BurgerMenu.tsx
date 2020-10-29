@@ -11,7 +11,7 @@ function BurgerMenu(props: { refresh: any, show: boolean }) {
         <div className="BurgerWrapper" style={{visibility: props.show ? "visible" : "hidden"}}>
             <div className="BurgerMenu" id={"panelID"}>
                 {sortBy.map((sort, index) => (
-                    <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
+                    <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()+"burger"}/>
                 ))}
             </div>
         </div>
