@@ -17,7 +17,7 @@ describe("Simulating a user who wants search and read details about the oldest h
             .click()
     })
     it('Check the amount of movies corresponds to filtering', ()=> {
-        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.cards').children()
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid').children()
             .should('have.length', 4)
         cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(2) > span > span:nth-child(7)')
             .click()
@@ -25,21 +25,21 @@ describe("Simulating a user who wants search and read details about the oldest h
             .click()
         cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(2) > span > span:nth-child(18)')
             .click()
-        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.cards').children()
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid').children()
             .should('have.length', 3)
     })
     it('Check if the movies are sorted from oldest to latest', ()=>{
-        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.cards > a:first > ' +
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid > div:nth-child(1) > a >' +
             'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-            const year = parseInt($span.text().slice(7,11))
-            cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.cards > a:nth-child(2) > ' +
-                'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-                expect(parseInt($span.text().slice(7,11))).greaterThan(year)
-            })
-            cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.cards > a:nth-child(3) > ' +
-                'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-                expect(parseInt($span.text().slice(7,11))).greaterThan(year)
-            })
+        const year = parseInt($span.text().slice(7,11))
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid > div:nth-child(2) > a >' +
+            'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
+            expect(parseInt($span.text().slice(7,11))).greaterThan(year)
+        })
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid > div:nth-child(3) > a >' +
+            'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
+            expect(parseInt($span.text().slice(7,11))).greaterThan(year)
+        })
         })
     })
     it('Check the last movie for correct information, and popup', ()=> {

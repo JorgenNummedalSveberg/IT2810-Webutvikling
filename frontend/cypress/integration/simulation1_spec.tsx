@@ -8,7 +8,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
     it('test, pwd works as a test user, l an confirms you are logged in', () => {
         cy.visit('http://localhost:3000/')
             .wait(1000);
-        cy.get('#HeaderID > button').as("LoginButton")
+        cy.get('#HeaderID > div.ActionMenu > div.loginButtons > button').as("LoginButton")
             .should('have.text', "Log in/Sign up")
             .click();
         cy.get('#UsernameID')
@@ -26,7 +26,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('#searchbar')
             .should('have.value', "")
             .type('Black panther')
-            .wait(1500);
+            .wait(1000);
         cy.get('#id_BlackPanther')
             .should('have.text', 'Black Panther')
             .click();
@@ -34,7 +34,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
             .then(($span) => {
                 const number = parseInt($span.text())
                 cy.get('@watchedNr')
-                    .click()
+                    .click({force: true})
                     .should('have.text', (number + 1).toString());
             })
     })
@@ -47,18 +47,18 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('#searchbar').clear()
             .should('have.value', "")
             .type('the prestige')
-            .wait(1500);
+            .wait(1000);
         cy.get('#id_ThePrestige')
             .click();
         cy.get('#watchButton > div')
-            .click();
+            .click({force: true})
         cy.get('#backButtonID')
             .click()
         cy.get('#searchbar').clear();
     })
     it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', ()=> {
         cy.get('#root > div > div.MainContent > div.ControlPanel > div.ControlElement.Checkbox > div > label').click();
-        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.stackable.cards').children().as('movieNr')
+        cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid').children().as('movieNr')
             .should('have.length', 7)
         cy.get('#id_ThePrestige')
             .should('exist')
