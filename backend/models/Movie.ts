@@ -2,22 +2,22 @@ import {Document, Schema} from 'mongoose';
 import mongoose from "mongoose";
 
 const Movie = new Schema({
-    id: {type: String, required: true, unique: true},
+    id: {type: String, required: false, unique: true},
     title: {type: String, required: true, unique: false},
-    year: {type: String, required: true, unique: false},
-    genres: {type: [String], required: true, unique: false},
-    ratings: {type: [Number], required: true, unique: false},
-    poster: {type: String, required: true, unique: false},
-    contentRating: {type: String, required: true, unique: false},
-    duration: {type: Number, required: true, unique: false},
-    releaseDate: {type: String, required: true, unique: false},
-    averageRating: {type: Number, required: true, unique: false},
-    originalTitle: {type: String, required: true, unique: false},
-    storyline: {type: String, required: true, unique: false},
-    actors: {type: [String], required: true, unique: false},
-    imdbRating: {type: Number, required: true, unique: false},
-    posterurl: {type: String, required: true, unique: false},
-    watches: {type: Number, required: true, unique: false},
+    year: {type: String, required: false, unique: false},
+    genres: {type: [String], required: false, unique: false},
+    ratings: {type: [Number], required: false, unique: false},
+    poster: {type: String, required: false, unique: false},
+    contentRating: {type: String, required: false, unique: false},
+    duration: {type: Number, required: false, unique: false},
+    releaseDate: {type: String, required: false, unique: false},
+    averageRating: {type: Number, required: false, unique: false},
+    originalTitle: {type: String, required: false, unique: false},
+    storyline: {type: String, required: false, unique: false},
+    actors: {type: [String], required: false, unique: false},
+    imdbRating: {type: Number, required: false, unique: false},
+    posterurl: {type: String, required: false, unique: false},
+    watches: {type: Number, required: false, unique: false},
 });
 
 

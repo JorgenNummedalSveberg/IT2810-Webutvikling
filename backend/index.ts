@@ -69,9 +69,11 @@ mongoose
                 await user.save();
                 await movie.save();
                 res.send("1 view to "+movie.title+" and added "+movie.title+" to "+userName+"'s movielist");
-            } catch {
+            } catch(e) {
                 res.status(404);
                 res.send({ error: "Couldn't add movie" });
+                console.log(e);
+
             }
         });
         app.post("/api/user/add", jsonParser, async (req, res) => {
@@ -87,6 +89,29 @@ mongoose
                 res.status(404).send()
             }
         });
+        app.post("/api/user/removeMovie", jsonParser, async (req, res) => {
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+            const movieId = req.body.movieId;
+            const userName = req.body.userName;
+            try {
+                const user = await User.findOne({ 'userName': userName }).exec();
+                const movie = await Movie.findOne({ '_id': movieId }).exec();
+                movie.watches--;
+                if (user.movies.includes(movieId)) {
+                    console.log("yes, it includes")
+                    user.movies = user.movies.filter(movie => movie !== movieId);
+                    await movie.save();
+                    await user.save();
+                    res.status(200).send("Movie removed");
+                } else {
+                    res.status(404).send("Movie not in list");
+                }
+            } catch (e) {
+                res.status(404).send();
+                console.log(e);
+            }
+
+        })
         app.use(express.json());
         app.listen(5000, () => {
             console.log("Server has started!");
