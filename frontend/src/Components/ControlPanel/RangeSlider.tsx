@@ -5,18 +5,36 @@ import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
 import {createMuiTheme} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
+import ImdbIcon from '../GridView/ImdbIcon';
 
+//For å style slideren som er hentet fra Material UI.
 const muiTheme = createMuiTheme({
     overrides: {
         MuiSlider: {
+            root: {
+                background: 'none',
+            },
             thumb: {
+                height: '18px',
+                width: '18px',
                 color: "#C0BE7B",
+                boxShadow: "#rgba(0,0,0,0.5) 0 2px 2px",
+                "&:focus, &:hover, &$active": {
+                    boxShadow: 'rgba(0,0,0,0.5) 0px 0px 10px 2px',
+                }
             },
             track: {
-                color: '#ACA501'
+                color: '#ACA501',
+                height: '8px'
             },
             rail: {
+                height: '8px',
                 color: '#484848'
+            },
+            mark: {
+                height: '8px',
+                width: '1px',
+                color: 'rgba(255, 255, 255, 0)',
             }
         }
     }
@@ -50,8 +68,7 @@ export default function RangeSlider(props: { score: number[], type: string }) {
     }
 
     return (
-        <div className={"ControlElement RangeSlider"}>
-            <h2>{props.type === 'year' ? "Year range" : "Rating range"}</h2>
+        <div className={"ControlElement"}>
             <ThemeProvider theme={muiTheme}>
                 <Slider className="Slider"
                         value={value}
@@ -63,6 +80,11 @@ export default function RangeSlider(props: { score: number[], type: string }) {
                         max={props.type === 'year' ? 2020 : 10}
                 />
             </ThemeProvider>
+            <div className="SliderInfo">
+               {props.type === 'year' ? <h3>{value[0]}</h3>:<ImdbIcon rating={value[0]} height={25}/>}
+               <h2>{props.type === 'year' ? "Year" : "Rating"}</h2>
+               {props.type === 'year' ? <h3>{value[1]}</h3>:<ImdbIcon rating={value[1]} height={25}/>}
+            </div>
         </div>
     )
 }

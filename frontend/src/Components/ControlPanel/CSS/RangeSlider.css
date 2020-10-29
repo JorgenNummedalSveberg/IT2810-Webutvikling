@@ -1,22 +1,26 @@
-.RangeSlider {
-    width: 100%;
-}
-
-.RangeSlider h2 {
-    width: 100%;
-}
-
 .ControlElement {
-    background-color: rgb(250, 250, 250);
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-    -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 70px;
 }
-
-.ControlElement h2 {
-    font-size: 1.2em;
+.ControlElement .SliderInfo{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.ControlElement .SliderInfo h2 {
+    font-size: 1.5em;
+    color: white;
+    flex: 5;
+    text-align: center;
+    margin: auto;
+}
+.ControlElement .SliderInfo h3 {
+    font-size: 1.3em;
+    color: white;
+    min-width: 10px;
+    margin: auto;
+    text-align: center;
+    flex: 2;
 }
 
 .Checkbox {
