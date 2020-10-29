@@ -1,15 +1,15 @@
 import React from 'react';
-import './CSS/GridView.css';
+import './CSS/MovieSection.css';
 import {Grid, Pagination} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
-import {state} from "../types/state";
-import {setPage} from "../actions";
+import {state} from "../../types/state";
+import {setPage} from "../../actions";
 import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
-function GridView() {
+function MovieSection() {
     // Nødvendig for redux
     const dispatch = useDispatch();
 
@@ -30,10 +30,10 @@ function GridView() {
 
     const movieList: any[] = [];
     movies.forEach((movie, index) => {
-        if (!movieList[Math.floor(index/20)]) {
-            movieList[Math.floor(index/20)] = [];
+        if (!movieList[Math.floor(index / 20)]) {
+            movieList[Math.floor(index / 20)] = [];
         }
-        movieList[Math.floor(index/20)].push(movie);
+        movieList[Math.floor(index / 20)].push(movie);
     })
 
     const dimList = () => {
@@ -61,10 +61,10 @@ function GridView() {
             secondary
             style={{margin: "20px"}}
             onPageChange={(e, {activePage}) => {
-                dispatch(setPage((activePage as number)-1));
+                dispatch(setPage((activePage as number) - 1));
             }}
-            activePage={page+1}
-            totalPages={movieList.length} />
+            activePage={page + 1}
+            totalPages={movieList.length}/>
     )
 
     return (
@@ -82,4 +82,4 @@ function GridView() {
 }
 
 
-export default GridView;
+export default MovieSection;

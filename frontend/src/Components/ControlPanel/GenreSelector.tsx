@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
-import {setGenre} from "../actions";
+import {setGenre} from "../../actions";
 import {Dropdown} from "semantic-ui-react";
 import React from "react";
-import {state} from "../types/state";
+import {state} from "../../types/state";
 
 // Endrer sjanger vi søker etter
-function GenreSelector(props: {refresh: ()=>void}) {
+function GenreSelector(props: { refresh: () => void }) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -27,6 +27,7 @@ function GenreSelector(props: {refresh: ()=>void}) {
         dispatch(setGenre(data.value));
         props.refresh();
     }
+
     return (
         <Dropdown
             placeholder={"Select genre..."}
@@ -39,4 +40,5 @@ function GenreSelector(props: {refresh: ()=>void}) {
         />
     )
 }
+
 export default GenreSelector

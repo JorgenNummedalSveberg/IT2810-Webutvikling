@@ -1,12 +1,12 @@
-import {Movie} from "../types/Movie";
+import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
-import {setPopup, showPopup} from "../actions";
+import {setPopup, showPopup} from "../../actions";
 import {Card, Dimmer, Grid, Icon, Image, Loader} from "semantic-ui-react";
 import ImdbIcon from "./ImdbIcon";
 import React from "react";
 
 // Komponent for å vise frem en film i et kort
-function MovieCard(props: {movie: Movie}) {
+function MovieCard(props: { movie: Movie }) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -17,15 +17,16 @@ function MovieCard(props: {movie: Movie}) {
         dispatch(showPopup(true));
     }
 
-    return(
+    return (
         <Grid.Column stretched tablet={5} mobile={8} computer={3}>
             <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={handleClick}>
                 <Image src={props.movie.posterurl} wrapped ui={false}/>
                 <Card.Content>
-                    <Card.Header id={"id_"+(props.movie.title).replace(/\s/g, "")} style={{color: 'white'}}>{props.movie.title}</Card.Header>
+                    <Card.Header id={"id_" + (props.movie.title).replace(/\s/g, "")}
+                                 style={{color: 'white'}}>{props.movie.title}</Card.Header>
                     <Card.Description style={{color: '#e5dfca'}}>
                         <div role={"showGenre"}> Genres: {props.movie.genres.join(", ")} </div>
-                        <div id={"year_"+(props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
+                        <div id={"year_" + (props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
@@ -46,7 +47,7 @@ function MovieCard(props: {movie: Movie}) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex:"8"}}>
+        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex: "8"}}>
             <Dimmer active>
                 <Loader size='massive'>Loading</Loader>
             </Dimmer>
@@ -59,11 +60,11 @@ export function DimCard() {
 function parseTime(time: number): string {
     let minutes = time;
     let hours = 0;
-    while (minutes-60 > 0) {
+    while (minutes - 60 > 0) {
         minutes -= 60;
         hours++;
     }
-    return hours+'h'+minutes+'m';
+    return hours + 'h' + minutes + 'm';
 }
 
 export default MovieCard

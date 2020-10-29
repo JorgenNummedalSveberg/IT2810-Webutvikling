@@ -1,4 +1,5 @@
-import cypress from "cypress";
+// For at Typescript annser det som en modul
+export {}
 
 describe('Simulating a user who wants to log movies he watched', () => {
     Cypress.config({
@@ -56,7 +57,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
             .click()
         cy.get('#searchbar').clear();
     })
-    it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', ()=> {
+    it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', () => {
         cy.get('#root > div > div.MainContent > div.ControlPanel > div.ControlElement.Checkbox > div > label').click();
         cy.get('#root > div > div.MainContent > div.GridView > div.ui.centered.grid').children().as('movieNr')
             .should('have.length', 7)
