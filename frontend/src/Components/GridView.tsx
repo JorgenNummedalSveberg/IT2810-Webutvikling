@@ -57,7 +57,7 @@ function GridView() {
 
     const pagination = (
         <Pagination
-            siblingRange={0}
+            boundaryRange={0}
             pointing
             secondary
             style={{margin: "20px"}}
