@@ -38,14 +38,13 @@ function SignLogIn() {
 
     // Logger inn hvis brukeren finnes
     function onLogin(user: User) {
-        let returnUser = user;
         fetch('http://localhost:5000/api/user?userName=' + user.userName)
             .then(response => {
                 if (response.ok) {
                     response.json()
                         .then(movies => {
-                            returnUser.movies = movies;
-                            dispatch(login(returnUser))
+                            user.movies = movies;
+                            dispatch(login(user))
                         })
                 } else {
                     console.log("User does not exist");
