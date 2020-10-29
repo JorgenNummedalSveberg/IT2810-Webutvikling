@@ -57,7 +57,7 @@ function GridView() {
 
     const pagination = (
         <Pagination
-            siblingRange={0}
+            boundaryRange={0}
             pointing
             secondary
             style={{margin: "20px"}}
@@ -74,7 +74,7 @@ function GridView() {
                 <Popup/> : null
             }
             {pagination}
-            <Grid style={{margin: "20px"}} centered>
+            <Grid style={{margin: "20px", width: '100%'}} centered>
                 {movieCards}
             </Grid>
             {pagination}
