@@ -129,8 +129,9 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                             genreUpdate(data.map((movie: any) => movie.genres), setGenres);
                         }
                     }
-                })}})
-        .catch(error => console.log(error));
+                })} else {
+                setMovies({error: "no movies"});
+            }})
 }
 
 // Setter sjangrene i state
