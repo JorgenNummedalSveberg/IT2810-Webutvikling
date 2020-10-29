@@ -47,7 +47,8 @@ mongoose
         app.get("/api/user", async (req, res,e) => {
             try{
                 const userName = req.query.userName as string;
-                const user = await User.findOne({ 'userName': userName }).exec();
+                const password = req.query.password as string;
+                const user = await User.findOne({ 'userName': userName, 'password': password}).exec();
                 res.status(200).send(user.movies);
             } catch{
                 res.status(404).json({error: "Couldn't fetch movies"})

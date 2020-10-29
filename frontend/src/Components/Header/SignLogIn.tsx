@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Input, Modal} from "semantic-ui-react";
+import {Button, Input, Modal, Form, Popup, Message} from "semantic-ui-react";
 import {useDispatch} from "react-redux";
 import {User} from "../../types/user";
 import {login} from "../../actions";
@@ -12,6 +12,9 @@ function SignLogIn() {
     // Holder styr på inputs
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    // Holder styr på error
+    const [error, setError] = useState<false | {message: string, log: boolean }>(false);
 
     // Lager request for fetch
     const req = (reqUser: User) => {
@@ -30,15 +33,16 @@ function SignLogIn() {
             .then(response => {
                 if (response.ok) {
                     dispatch(login(reqUser));
+                } else {
+                    console.log("Error set")
+                    setError({message: "Username is taken", log: false});
+
                 }})
-            .catch(error => {
-                console.log(error)
-            });
     }
 
     // Logger inn hvis brukeren finnes
     function onLogin(user: User) {
-        fetch('http://localhost:5000/api/user?userName=' + user.userName)
+        fetch('http://localhost:5000/api/user?userName=' + user.userName + '&password='+user.password)
             .then(response => {
                 if (response.ok) {
                     response.json()
@@ -47,32 +51,39 @@ function SignLogIn() {
                             dispatch(login(user))
                         })
                 } else {
-                    console.log("User does not exist");
-                }
-            })
+                    console.log("Error set")
+                    setError({message: "Username or password is wrong", log: true});
+                }})
     }
 
     // @ts-ignore
     function handleNameChange(value: string) {
+        setError(false);
         setUsername(value);
     }
 
     // @ts-ignore
     function handlePasswordChange(value: string) {
+        setError(false);
         setPassword(value)
     }
 
     return (
-        <Modal size={"mini"}
+        <Modal centered size={"mini"}
                trigger={<Button style={{zIndex: '1000000'}}>Log in/Sign up</Button>}
                closeIcon>
             <Modal.Header>Log in / Sign in</Modal.Header>
+            {error ? (
+                <Modal.Content>
+                   <Message compact error content={error.message}/>
+                </Modal.Content>
+            ) : null}
             <Modal.Content>
-                <Input id={"UsernameID"} autoFocus label={"Username"} onChange={(e, {value}) => handleNameChange(value)}
+                <Input error={!!error} id={"UsernameID"} autoFocus label={"Username"} onChange={(e, {value}) => handleNameChange(value)}
                        name={"userName"} placeholder='Username'/>
             </Modal.Content>
             <Modal.Content>
-                <Input id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)}
+                <Input error={!!error && error.log} id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)}
                        name={"password"} placeholder='Password'/>
             </Modal.Content>
             <Modal.Actions>
