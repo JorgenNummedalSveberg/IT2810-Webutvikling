@@ -22,6 +22,7 @@ mongoose
             try{
                 const genre = req.query.genre as string;
                 const title = req.query.title as string;
+                console.log("ASD")
                 const movies = async ()=> {
                     if (genre !== "" && title !== "") {
                         // Hvis sjanger og tittel er søkt på
@@ -31,6 +32,7 @@ mongoose
                         return Movie.find({'genres': genre})
                     } else if (title !== "") {
                         // Hvis bare tittel er søkt på
+                        console.log("ASD")
                         return Movie.find({ 'title': { $regex: title, $options: "i" }})
                     } else {
                         // Hvis ingen kriterer er søkt på
@@ -69,6 +71,7 @@ mongoose
             }
         });
 
+        //http://localhost:5000/api/user/addMovie/?userName=testUser&movieId=5f90456a9d7b1248082beebe
         // Legger til en film i brukerens watchlist
         app.post("/api/user/addMovie", jsonParser, async (req, res) => {
             const userName = req.body.userName;
@@ -85,7 +88,7 @@ mongoose
                 res.status(404).send({ error: "Could not add to watchlist" });
             }
         });
-
+        //             http://localhost:5000/api/user/removeMovie
         // Fjerner en film fra brukerens watchlist
         app.post("/api/user/removeMovie", jsonParser, async (req, res) => {
             const movieId = req.body.movieId;
