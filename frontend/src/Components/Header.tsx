@@ -35,7 +35,7 @@ function Header(props: {refresh: ()=>void}) {
     const user = useSelector((state: state) => state.user);
 
     //Brukes for å skru av og på burgermenyen
-    let [showMenu, toggleShowMenu] = useState(true);
+    let [showMenu, toggleShowMenu] = useState(false);
 
     function toggleMenu(){
       toggleShowMenu(!showMenu);
