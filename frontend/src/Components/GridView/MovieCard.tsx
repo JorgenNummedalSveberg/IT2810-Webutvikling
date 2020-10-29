@@ -47,12 +47,14 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex: "8"}}>
-            <Dimmer active>
-                <Loader size='massive'>Loading</Loader>
-            </Dimmer>
-            <Image src={'../../dimPoster.png'} wrapped ui={false}/>
-        </Card>
+        <Grid.Column stretched tablet={5} mobile={8} computer={3}>
+            <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex: "8"}}>
+                <Dimmer active>
+                    <Loader size='massive'>Loading</Loader>
+                </Dimmer>
+                <Image src={'../../dimPoster.png'} wrapped ui={false}/>
+            </Card>
+        </Grid.Column>
     )
 }
 
