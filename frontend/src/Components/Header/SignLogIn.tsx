@@ -34,9 +34,7 @@ function SignLogIn() {
                 if (response.ok) {
                     dispatch(login(reqUser));
                 } else {
-                    console.log("Error set")
                     setError({message: "Username is taken", log: false});
-
                 }})
     }
 
@@ -51,7 +49,6 @@ function SignLogIn() {
                             dispatch(login(user))
                         })
                 } else {
-                    console.log("Error set")
                     setError({message: "Username or password is wrong", log: true});
                 }})
     }
