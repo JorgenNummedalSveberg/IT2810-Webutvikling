@@ -73,9 +73,11 @@ function MovieSection() {
                 <Popup/> : null
             }
             {pagination}
-            <Grid style={{margin: "20px", width: '100%'}} centered>
-                {movieCards}
-            </Grid>
+            <section>
+                <Grid style={{margin: "20px", width: '100%'}} centered>
+                    {movieCards}
+                </Grid>
+            </section>
             {pagination}
         </div>
     )

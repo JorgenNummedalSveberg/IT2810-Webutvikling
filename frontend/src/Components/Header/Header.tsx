@@ -44,7 +44,7 @@ function Header(props: { refresh: () => void }) {
     return (
         <div className="Header" id="HeaderID">
             <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"}
-                   placeholder='Search...' role="searcher"/>
+                   placeholder='Search...' role="searcher" size="huge" icon='search' iconPosition='left'/>
             <div className="loginButtons">
                 {!!user ? (<Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}}>Log out</Button>) :
                     (<SignLogIn/>)}

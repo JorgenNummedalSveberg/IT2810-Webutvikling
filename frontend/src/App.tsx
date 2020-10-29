@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
@@ -9,6 +9,7 @@ import {state} from "./types/state";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/GridView/MovieSection";
+import ControlPanelMobile from './Components/ControlPanel/ControlPanelMobile';
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
@@ -58,12 +59,30 @@ function App() {
         fetchMovies(setMovies, setGenres, filter, false)
     }
 
+    //Brukes for å skru av og på burgermenyen
+    let [showMenu, toggleShowMenu] = useState(false);
+
+    function toggleMenu() {
+        toggleShowMenu(!showMenu);
+    }
     // Returnerer Main appen
     return (
         <div className="App">
             <Header refresh={refresh}/>
+            <button className="FilterButton" onClick={toggleMenu}>
+                <svg className="FilterIcon" width="91" height="90" viewBox="0 0 91 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="80.4546" x2="90.9091" y2="80.4546" stroke="#292929" stroke-width="10"/>
+                    <line y1="43.1816" x2="90.9091" y2="43.1816" stroke="#292929" stroke-width="10"/>
+                    <line y1="7.84839" x2="90.9091" y2="7.84839" stroke="#292929" stroke-width="10"/>
+                    <circle cx="21.5" cy="8.5" r="6.5" fill="#E3E3E3" stroke="black" stroke-width="4"/>
+                    <circle cx="75" cy="44" r="7" fill="#E3E3E3" stroke="black" stroke-width="4"/>
+                    <circle cx="40.5" cy="81.5" r="6.5" fill="#E3E3E3" stroke="black" stroke-width="4"/>
+                </svg>
+                Filter
+            </button>
             <div className="MainContent">
                 <ControlPanel refresh={refresh}/>
+                <ControlPanelMobile refresh={refresh} show={showMenu}/>
                 <MovieSection/>
             </div>
         </div>

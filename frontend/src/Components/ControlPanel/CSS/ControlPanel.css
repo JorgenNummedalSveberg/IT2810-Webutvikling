@@ -4,7 +4,7 @@
     min-width: 350px;
     height: 100%;
     padding: 15px;
-    background-color: #6d6d6d;
+    background-color: rgba(255, 255, 255, 0);
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
@@ -19,7 +19,7 @@
     background-color: white;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 900px) {
     .ControlPanel {
         display: none;
     }

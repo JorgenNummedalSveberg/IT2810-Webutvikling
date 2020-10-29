@@ -10,9 +10,9 @@
     position: fixed;
     padding: 40px;
     max-width: calc(100vw - 350px);
+    height: calc(100vh - 70px);
     width: 80vw;
     right: 0;
-    height: 100vh;
     overflow-y: scroll;
 }
 
@@ -74,10 +74,11 @@
 }
 
 /*For mobil */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 900px) {
     .Popup {
         max-width: none;
         width: 100vw;
+        height: calc(100vh - 140px);
     }
 
     @media only screen and (max-width: 700px) {
