@@ -1,11 +1,11 @@
 import React from 'react';
 import './CSS/GridView.css';
-import {Card, Icon, Grid, Image, Pagination, Dimmer, Loader} from 'semantic-ui-react';
+import {Grid, Pagination} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
 import {state} from "../types/state";
-import {setPage, setPopup, showPopup} from "../actions";
+import {setPage} from "../actions";
 import Popup from './Popup';
-import MovieCard from "./MovieCard";
+import MovieCard, {DimCard} from "./MovieCard";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
@@ -81,15 +81,5 @@ function GridView() {
     )
 }
 
-function DimCard() {
-    return (
-        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex:"8"}}>
-            <Dimmer active>
-                <Loader size='massive'>Loading</Loader>
-            </Dimmer>
-            <Image src={'../../dimPoster.png'} wrapped ui={false}/>
-        </Card>
-    )
-}
 
 export default GridView;

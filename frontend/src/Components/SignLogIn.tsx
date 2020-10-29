@@ -5,10 +5,15 @@ import {User} from "../types/user";
 import {login} from "../actions";
 
 function SignLogIn () {
+
+    // Nødvendig for redux
     const dispatch = useDispatch();
+
+    // Holder styr på inputs
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    // Lager request for fetch
     const req = (reqUser: User) => {
         return ({
             method: 'POST',
@@ -19,6 +24,7 @@ function SignLogIn () {
         })
     }
 
+    // Legger til en bruker på serveren
     function addUser(reqUser: User) {
         fetch('http://localhost:5000/api/user/add', req(reqUser))
             .then(response => response.json())
@@ -32,6 +38,7 @@ function SignLogIn () {
             });
     }
 
+    // Logger inn hvis brukeren finnes
     function onLogin(user: User) {
         let returnUser = user;
         try {
@@ -60,19 +67,15 @@ function SignLogIn () {
     }
 
     return (
-        <Modal
-            size={"mini"}
+        <Modal size={"mini"}
             trigger={<Button style={{zIndex: '1000000'}} >Log in/Sign up</Button>}
-            closeIcon
-        >
+            closeIcon>
             <Modal.Header>Log in / Sign in</Modal.Header>
             <Modal.Content>
                 <Input id={"UsernameID"} autoFocus label={"Username"} onChange={(e, {value}) => handleNameChange(value)} name={"userName"} placeholder='Username'/>
-
             </Modal.Content>
             <Modal.Content>
                 <Input id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)} name={"password"} placeholder='Password'/>
-
             </Modal.Content>
             <Modal.Actions>
                 <Button id={"loginButtonID"} onClick={() => onLogin({

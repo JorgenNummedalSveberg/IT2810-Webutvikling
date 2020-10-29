@@ -1,11 +1,11 @@
-// Komponent for å vise frem en film
 import {Movie} from "../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../actions";
-import {Card, Grid, Icon, Image} from "semantic-ui-react";
+import {Card, Dimmer, Grid, Icon, Image, Loader} from "semantic-ui-react";
 import ImdbIcon from "./ImdbIcon";
 import React from "react";
 
+// Komponent for å vise frem en film i et kort
 function MovieCard(props: {movie: Movie}) {
 
     // Nødvendig for redux
@@ -40,6 +40,18 @@ function MovieCard(props: {movie: Movie}) {
             </Card>
         </Grid.Column>
 
+    )
+}
+
+// Blanke kort for når nettsiden laster inn filmene
+export function DimCard() {
+    return (
+        <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex:"8"}}>
+            <Dimmer active>
+                <Loader size='massive'>Loading</Loader>
+            </Dimmer>
+            <Image src={'../../dimPoster.png'} wrapped ui={false}/>
+        </Card>
     )
 }
 

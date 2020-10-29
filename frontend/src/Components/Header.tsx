@@ -2,9 +2,9 @@ import React, {useState, useRef} from 'react';
 import './CSS/Header.css';
 import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
+import BurgerMenu from  "./BurgerMenu";
 import {Button, Input} from "semantic-ui-react";
 import {logout, setSearch} from "../actions";
-import BurgerMenu from  "./BurgerMenu";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {state} from "../types/state";
@@ -45,12 +45,8 @@ function Header(props: {refresh: ()=>void}) {
       <div className="Header" id="HeaderID">
           <Input id="searchbar" onChange={onChange} loading={loading} className={"SearchField"} placeholder='Search...' role="searcher" />
           <div className="loginButtons">
-            {!!user ? (
-                <Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>
-            ) : (
-              <SignLogIn/>
-            )
-            }
+              {!!user ?(<Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}} >Log out</Button>) :
+                  (<SignLogIn/>)}
           </div>
           <BurgerMenu refresh={props.refresh} show={showMenu}/>
           <SortingPanel refresh={props.refresh}/>
