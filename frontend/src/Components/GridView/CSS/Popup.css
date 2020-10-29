@@ -1,8 +1,9 @@
-.Popup *{
+.Popup * {
     margin: 0;
     padding: 0;
 }
-.Popup{
+
+.Popup {
     background-color: #6A6A6A;
     background-image: linear-gradient(#E5DFCA, #6A6A6A);
     z-index: 9;
@@ -14,89 +15,105 @@
     height: 100vh;
     overflow-y: scroll;
 }
-.Popup .BackButton{
+
+.Popup .BackButton {
     margin-bottom: 20px;
-    -webkit-box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.3); 
-    box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.3);
 }
-.Popup .movieContent{
+
+.Popup .movieContent {
     display: flex;
     flex-direction: row;
 }
-.Popup .movieContent img{
-    margin: 20px 20px 20px 0px;
+
+.Popup .movieContent img {
+    margin: 20px 20px 20px 0;
     align-self: center;
     position: relative;
     width: 40%;
     max-width: 500px;
-    -webkit-box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.35); 
-    box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.35);
 }
-.Popup .movieContent .info .lables{
+
+.Popup .movieContent .info .lables {
     display: flex;
-    display: row;
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
-.Popup .movieContent .info .lables Button{
-    box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.35);
+
+.Popup .movieContent .info .lables Button {
+    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.35);
 }
-.Popup .movieContent .info{
+
+.Popup .movieContent .info {
     width: 60%;
     max-width: 1000px;
     margin: 20px;
 }
-.Popup .movieContent .info h1{
+
+.Popup .movieContent .info h1 {
     font-size: 2vw;
     color: #383838;
 }
-.Popup .movieContent .info h2{
+
+.Popup .movieContent .info h2 {
     font-size: 1.8em;
     color: #5A5A5A;
     margin-bottom: 30px;
 }
-.Popup .movieContent .info h3{
+
+.Popup .movieContent .info h3 {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
-.Popup .movieContent .info P{
+
+.Popup .movieContent .info P {
     font-size: 1.2em;
 }
 
 /*For mobil */
 @media only screen and (max-width: 1200px) {
-    .Popup{
+    .Popup {
         max-width: none;
         width: 100vw;
     }
+
     @media only screen and (max-width: 700px) {
-        .Popup{
+        .Popup {
             padding: 10px;
         }
-        .Popup .movieContent{
+
+        .Popup .movieContent {
             flex-direction: column;
             margin-bottom: 20px;
         }
-        .Popup .movieContent img{
-            margin: 0px 0px 20px 0px;
+
+        .Popup .movieContent img {
+            margin: 0 0 20px 0;
             position: relative;
             width: 90%;
         }
-        .Popup .movieContent .info{
-            margin: 0px;
+
+        .Popup .movieContent .info {
+            margin: 0;
             align-self: center;
             position: relative;
             width: 90%;
         }
-        .Popup .movieContent .info .lables{
+
+        .Popup .movieContent .info .lables {
             justify-content: space-evenly;
             margin-bottom: 20px;
         }
-        .Popup .movieContent .info .lables .ImdbIcon{
+
+        .Popup .movieContent .info .lables .ImdbIcon {
             margin: 20px;
         }
-        .Popup .movieContent .info h1{
+
+        .Popup .movieContent .info h1 {
             font-size: 2em;
         }
     }
-  }
+}

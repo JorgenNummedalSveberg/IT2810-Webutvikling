@@ -1,5 +1,14 @@
 // Samlet reducer for alle filterene
-const filterReducer = (filters = {desc:true, genre: "", search: "", sort: "", score: [0,10], year: [1900,2020], duration:[0,320], myMovies: false}, action: { type: string; payload: string | boolean | number[]; }) => {
+const filterReducer = (filters = {
+    desc: true,
+    genre: "",
+    search: "",
+    sort: "",
+    score: [0, 10],
+    year: [1900, 2020],
+    duration: [0, 320],
+    myMovies: false
+}, action: { type: string; payload: string | boolean | number[]; }) => {
     let result = filters;
     switch (action.type) {
         // Endrer retning vi sorterer i

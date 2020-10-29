@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.SortButton{
+.SortButton {
     display: flex;
     justify-content: center;
     border: 0;
@@ -8,23 +8,22 @@
     max-width: 200px;
     width: 25%;
     height: auto;
-    min-width: none;
     cursor: pointer;
 }
 
-.SortButton svg{
+.SortButton svg {
     height: auto;
     width: 7%;
     min-width: 10px;
     max-width: 7%;
-    -webkit-filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
-    filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
     margin-left: 10px;
     transition: all 0.5s ease, ease-out 0.5s;
 }
 
-.SortButton h3{
-    font-family: "Roboto";
+.SortButton h3 {
+    font-family: "Roboto", serif;
     user-select: none;
     margin: auto;
     margin-left: 10px;
@@ -34,16 +33,16 @@
     transition: all 0.5s ease, ease-out 0.5s;
 }
 
-.SortButton:hover h3, svg{
+.SortButton:hover h3, svg {
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
-.SortButton:hover svg{
-    filter: drop-shadow( 3px 3px 1px rgba(0, 0, 0, 0.4));
+.SortButton:hover svg {
+    filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.4));
 }
 
 @media only screen and (max-width: 900px) {
-    .SortButton{
+    .SortButton {
         max-height: 40px;
     }
 }

@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import './CSS/App.css';
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
-import {useSelector, useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
 import {filter} from "./types/filter";
 import {state} from "./types/state";
 import {Movie} from "./types/Movie";
-import ControlPanel from "./Components/ControlPanel";
-import GridView from "./Components/GridView";
+import ControlPanel from "./Components/ControlPanel/ControlPanel";
+import MovieSection from "./Components/GridView/MovieSection";
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
@@ -36,12 +36,19 @@ function App() {
 
     // Henter filter fra Redux
     const filter = useSelector((state: state) => state.filter);
-    // Henter filmer fra Redux
-    const movies = useSelector((state: state) => state.movies);
 
     // Setter et default filter og henter filmer en gang på starten
-    useEffect( () => {
-        setFilter({desc: true, sort: "Name", search: "", genre: "", score: [0,10], year:[1900,2020], duration: [0,320], myMovies: false});
+    useEffect(() => {
+        setFilter({
+            desc: true,
+            sort: "Name",
+            search: "",
+            genre: "",
+            score: [0, 10],
+            year: [1900, 2020],
+            duration: [0, 320],
+            myMovies: false
+        });
         fetchMovies(setMovies, setGenres, filter, true)
     }, [])
 
@@ -50,24 +57,22 @@ function App() {
         setMovies([]);
         fetchMovies(setMovies, setGenres, filter, false)
     }
-    // Henter inn sjangre fra redux state
-    const score = useSelector((state: state) => state.filter.score);
 
     // Returnerer Main appen
     return (
-    <div className="App">
-      <Header refresh={refresh}/>
-      <div className="MainContent">
-          <ControlPanel refresh={refresh}/>
-          <GridView/>
-      </div>
-    </div>
-  );
+        <div className="App">
+            <Header refresh={refresh}/>
+            <div className="MainContent">
+                <ControlPanel refresh={refresh}/>
+                <MovieSection/>
+            </div>
+        </div>
+    );
 }
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
-    fetch('http://localhost:5000/api/movies?genre='+filter.genre+'&title='+filter.search)
+    fetch('http://localhost:5000/api/movies?genre=' + filter.genre + '&title=' + filter.search)
         .then(response => response.json())
         .then((data: any[]) => {
             if (data.length > 0) {
@@ -75,8 +80,12 @@ function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: bool
                 switch (filter.sort) {
                     case "Name":
                         data.sort((b: Movie, a: Movie) => {
-                            if(a.title < b.title) { return -1; }
-                            if(a.title > b.title) { return 1; }
+                            if (a.title < b.title) {
+                                return -1;
+                            }
+                            if (a.title > b.title) {
+                                return 1;
+                            }
                             return 0;
                         });
                         break;

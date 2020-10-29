@@ -1,4 +1,4 @@
-.Header{
+.Header {
     position: relative;
     z-index: 15;
     width: 100vw;
@@ -7,18 +7,20 @@
     display: flex;
     align-items: center;
     background-color: #B1B1B1;
-    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
 }
-.BurgerButton{
+
+.BurgerButton {
     display: none;
-    position: absolute ;
+    position: absolute;
     right: 20px;
     cursor: pointer;
 }
+
 @media only screen and (max-width: 900px) {
-    .BurgerButton{
+    .BurgerButton {
         display: initial;
         z-index: 902;
     }

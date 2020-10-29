@@ -27,6 +27,7 @@ export function login(user: User) {
         payload: user
     }
 }
+
 export function setViewed(movies: []) {
     return {
         type: 'login',
@@ -113,6 +114,7 @@ export function setYears(year: number[]) {
         payload: year
     }
 }
+
 // Endrer varighet på filmen
 export function setDuration(duration: number[]) {
     return {
