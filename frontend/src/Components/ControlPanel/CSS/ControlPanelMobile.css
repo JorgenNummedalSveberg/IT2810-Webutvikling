@@ -25,6 +25,19 @@
     max-width: 100%;
     margin-bottom: 20px;
 }
+.MobilePanel .Checkbox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.MobilePanel .Checkbox h2{
+    color: ivory;
+}
+.MobilePanel .Dropdown{
+    margin-bottom: 60px;
+}
+
 .Slider {
     background-color: white;
 }

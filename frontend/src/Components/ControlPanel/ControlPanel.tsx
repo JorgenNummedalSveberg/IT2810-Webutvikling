@@ -28,13 +28,15 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
 
     return (
         <div className={mobile ? "MobilePanel":"ControlPanel"} style={{display:(props.show || !mobile) ? "initial":"none"}}>
+            {!!user ?
+                <div className={"Checkbox"}>
+                    <h2>My movies</h2>
+                    <Checkbox id={"checkboxMovie"} style={{margin: '10px'}} onChange={handleTick} toggle/>
+                </div> : 
+                <div/>}
             <GenreSelector refresh={props.refresh}/>
             <RangeSlider score={score} type="score"/>
             <RangeSlider score={year} type="year"/>
-            {!!user ? <div className={"ControlElement Checkbox"}>
-                <h2>My movies</h2>
-                <Checkbox id={"checkboxMovie"} style={{margin: '10px'}} onChange={handleTick} toggle/>
-            </div> : <div/>}
         </div>
     );
 }
