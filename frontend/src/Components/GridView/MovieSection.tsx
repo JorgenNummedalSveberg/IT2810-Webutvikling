@@ -84,9 +84,10 @@ function MovieSection() {
             // Definerer sidevalg menyen
             const pagination = (
                 <Pagination
-                    boundaryRange={0}
                     pointing
                     secondary
+                    firstItem={null}
+                    lastItem={null}
                     style={{margin: "20px"}}
                     onPageChange={(e, {activePage}) => {
                         dispatch(setPage((activePage as number) - 1));
