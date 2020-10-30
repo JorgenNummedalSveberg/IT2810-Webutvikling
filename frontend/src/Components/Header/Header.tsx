@@ -2,7 +2,6 @@ import React, {useRef, useState} from 'react';
 import './CSS/Header.css';
 import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
-import BurgerMenu from "./BurgerMenu";
 import {Button, Input} from "semantic-ui-react";
 import {logout, setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
@@ -49,8 +48,7 @@ function Header(props: { refresh: () => void }) {
                 {!!user ? (<Button onClick={() => dispatch(logout())} style={{zIndex: '1000000'}}>Log out</Button>) :
                     (<SignLogIn/>)}
             </div>
-            <BurgerMenu refresh={props.refresh} show={showMenu}/>
-            <SortingPanel refresh={props.refresh}/>
+            <SortingPanel refresh={props.refresh} show={showMenu}/>
             <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <line y1="5" x2="150" y2={showMenu ? "122" : "5"} stroke="white" strokeWidth="10"/>
