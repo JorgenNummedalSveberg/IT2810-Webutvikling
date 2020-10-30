@@ -54,23 +54,25 @@ function Popup() {
                 <div className="info">
                     <h1>{state.details.movie.title}</h1>
                     <h2>{state.details.movie.year}</h2>
+                    <ImdbIcon rating={state.details.movie.imdbRating} height={50}/>
                     <div className="lables">
-                        {!!state.user ? <Button id={"watchButton"} className="button"
-                                                disabled={state.user.movies.includes(state.details.movie._id)}
-                                                onClick={() => changeView(false)}
-                                                color='blue' content='Watched' icon='eye'
-                                                label={{
-                                                    basic: true,
-                                                    color: 'blue',
-                                                    pointing: 'left',
-                                                    content: state.details.movie.watches
-                                                }}/> : null}
+                        {!!state.user ? 
+                            <Button id={"watchButton"} className="button"
+                                disabled={state.user.movies.includes(state.details.movie._id)}
+                                onClick={() => changeView(false)}
+                                color='blue' content='Watched' icon='eye'
+                                label={{
+                                    basic: true,
+                                    color: 'blue',
+                                    pointing: 'left',
+                                    content: state.details.movie.watches
+                                }}/> : null}
                         {!!state.user && state.user.movies.includes(state.details.movie._id) ?
                             <Button id={"removeButton"} className="button" onClick={() => changeView(true)}
-                                    color='red' content='Remove from my list' icon='trash'/> : null}
-                        <ImdbIcon rating={state.details.movie.imdbRating} height={50}/>
+                                color='red' content='Remove from my list' icon='trash'/> :
+                                null}
                     </div>
-                    <h3>{state.details.movie.genres}</h3>
+                    <h3>{state.details.movie.genres.join(", ")}</h3>
                     <p>{state.details.movie.storyline}</p>
                 </div>
             </div>

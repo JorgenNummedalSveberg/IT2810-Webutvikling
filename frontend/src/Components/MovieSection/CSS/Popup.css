@@ -16,6 +16,14 @@
     overflow-y: scroll;
 }
 
+.Popup .ImdbIcon {
+    margin-bottom: 20px;
+}
+
+.Popup .lables .button{
+    margin-bottom: 20px;
+}
+
 .Popup .BackButton {
     margin-bottom: 20px;
     -webkit-box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.3);
@@ -43,10 +51,6 @@
     margin-bottom: 40px;
 }
 
-.Popup .movieContent .info .lables Button {
-    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.35);
-}
-
 .Popup .movieContent .info {
     width: 60%;
     max-width: 1000px;
@@ -69,21 +73,24 @@
     margin-bottom: 20px;
 }
 
-.Popup .movieContent .info P {
+.Popup .movieContent .info p {
     font-size: 1.2em;
 }
 
-/*For mobil */
+/*For mindre skjermer */
 @media only screen and (max-width: 1200px) {
     .Popup {
         max-width: none;
         width: 100vw;
         height: calc(100vh - 140px);
     }
-
+    /* For mobil */
     @media only screen and (max-width: 700px) {
         .Popup {
             padding: 10px;
+        }
+        .Popup .BackButton {
+            margin: 20px;
         }
 
         .Popup .movieContent {
@@ -105,14 +112,9 @@
         }
 
         .Popup .movieContent .info .lables {
-            justify-content: space-evenly;
+            justify-content: flex-start;
             margin-bottom: 20px;
         }
-
-        .Popup .movieContent .info .lables .ImdbIcon {
-            margin: 20px;
-        }
-
         .Popup .movieContent .info h1 {
             font-size: 2em;
         }
