@@ -20,11 +20,11 @@ describe("Simulating a user who wants search and read details about the oldest h
     it('Check the amount of movies corresponds to filtering', () => {
         cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children()
             .should('have.length', 4);
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(2) > span > span:nth-child(7)')
+        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(7)')
             .click();
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(2) > span > span:nth-child(13)')
+        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(13)')
             .click();
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(2) > span > span:nth-child(18)')
+        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(18)')
             .click();
         cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children()
             .should('have.length', 3);
