@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/ImdbIcon.css';
+import '../MovieSection/CSS/ImdbIcon.css';
 
 // Ikon for å vise imdb rating
 function ImdbIcon(props: { rating: number, height: number }) {

@@ -14,14 +14,14 @@ describe('Simulating a user who wants to log movies he watched', () => {
             .click();
         cy.get('#UsernameID')
             .should('have.text', "")
-            .type('test')
+            .type('test');
         cy.get('#PasswordID')
             .should('have.text', "")
-            .type('pwd')
+            .type('pwd');
         cy.get('#loginButtonID')
-            .click()
+            .click();
         cy.get('@LoginButton')
-            .should('have.text', "Log out")
+            .should('have.text', "Log out");
     })
     it('Searches the movie to add to watched list. Confirms the amount of watched is +1', () => {
         cy.get('#searchbar')
@@ -44,7 +44,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
             .should("be.disabled")
             .wait(1000);
         cy.get('#backButtonID')
-            .click()
+            .click();
         cy.get('#searchbar').clear()
             .should('have.value', "")
             .type('the prestige')
@@ -54,13 +54,13 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('#watchButton > div')
             .click({force: true})
         cy.get('#backButtonID')
-            .click()
+            .click();
         cy.get('#searchbar').clear();
     })
     it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', () => {
         cy.get('#root > div > div.MainContent > div.ControlPanel > div.ControlElement.Checkbox > div > label').click();
         cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children().as('movieNr')
-            .should('have.length', 7)
+            .should('have.length', 7);
         cy.get('#id_ThePrestige')
             .should('exist')
             .click();
@@ -72,6 +72,6 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('#removeButton').click();
         cy.get('#backButtonID').click()
         cy.get('@movieNr')
-            .should('have.length', 5)
+            .should('have.length', 5);
     })
 })

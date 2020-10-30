@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {state} from "../../types/state";
 import {Button} from "semantic-ui-react";
 import {login, setPopup, showPopup} from "../../actions";
-import ImdbIcon from "./ImdbIcon";
+import ImdbIcon from "../Shared/ImdbIcon";
 
 
 function Popup() {

@@ -22,7 +22,6 @@ mongoose
             try{
                 const genre = req.query.genre as string;
                 const title = req.query.title as string;
-                console.log("ASD")
                 const movies = async ()=> {
                     if (genre !== "" && title !== "") {
                         // Hvis sjanger og tittel er søkt på

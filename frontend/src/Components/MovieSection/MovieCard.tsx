@@ -2,7 +2,7 @@ import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
 import {Card, Dimmer, Grid, Icon, Image, Loader} from "semantic-ui-react";
-import ImdbIcon from "./ImdbIcon";
+import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
 
 // Komponent for å vise frem en film i et kort
