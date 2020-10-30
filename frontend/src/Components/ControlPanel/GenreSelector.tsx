@@ -1,4 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
+import './CSS/ControlPanel.css';
+import './CSS/ControlPanelMobile.css';
 import {setGenre} from "../../actions";
 import {Dropdown} from "semantic-ui-react";
 import React from "react";
