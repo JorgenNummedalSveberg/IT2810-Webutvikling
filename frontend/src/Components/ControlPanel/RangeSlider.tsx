@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
 import {createMuiTheme} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
-import ImdbIcon from '../GridView/ImdbIcon';
+import ImdbIcon from '../MovieSection/ImdbIcon';
 
 //For å style slideren som er hentet fra Material UI.
 const muiTheme = createMuiTheme({

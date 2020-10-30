@@ -7,11 +7,11 @@
     background-color: #6A6A6A;
     background-image: linear-gradient(#E5DFCA, #6A6A6A);
     z-index: 9;
-    position: fixed;
+    position: absolute;
     padding: 40px;
     max-width: calc(100vw - 350px);
     height: calc(100vh - 70px);
-    width: 80vw;
+    width: calc(100vw - 350px);
     right: 0;
     overflow-y: scroll;
 }

@@ -9,7 +9,6 @@ import {state} from "./types/state";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
-import ControlPanelMobile from './Components/ControlPanel/ControlPanelMobile';
 import { Icon } from 'semantic-ui-react';
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem

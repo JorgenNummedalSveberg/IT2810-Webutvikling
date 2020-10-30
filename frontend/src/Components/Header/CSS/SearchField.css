@@ -2,6 +2,7 @@
     height: 50px;
     width: calc(20vw - 20px);
     min-width: 330px;
+    max-width: 330px;
     margin-left: 10px;
     margin-right: 10px;
     -webkit-appearance: none;
