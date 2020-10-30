@@ -9,7 +9,7 @@ describe("Simulating API calls, and checks if the status response is correct. An
     it('Post/get calls to add/remove movies', () => {
         cy.request({
             method: 'GET',
-            url: 'http://localhost:5000/api/user?userName=test',
+            url: 'http://localhost:5000/api/user?userName=test&password=pwd',
         }).then(function (res) {
             expect(res.body).to.have.length(10)
         })
@@ -38,7 +38,6 @@ describe("Simulating API calls, and checks if the status response is correct. An
             method: 'GET',
             url: 'http://localhost:5000/api/movies?genre=Thriller&title=',
         }).then(function (res) {
-            console.log(res)
             expect(res.body.length).to.deep.equal(37)
         })
     })
