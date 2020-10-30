@@ -20,7 +20,7 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
     const user = useSelector((state: state) => state.user);
 
     //Brukes for å bestemme hvilken meny som skal rendres.
-    const mobile = useMediaQuery('(max-width: 900px)').valueOf();
+    const mobile = useMediaQuery('(max-width: 1200px)').valueOf();
 
     function handleTick() {
         dispatch(myMovies())

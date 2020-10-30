@@ -80,7 +80,7 @@ function SignLogIn() {
                        name={"userName"} placeholder='Username'/>
             </Modal.Content>
             <Modal.Content>
-                <Input error={!!error && error.log} id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)}
+                <Input type={"password"} error={!!error && error.log} id={"PasswordID"} label={"Password"} onChange={(e, {value}) => handlePasswordChange(value)}
                        name={"password"} placeholder='Password'/>
             </Modal.Content>
             <Modal.Actions>

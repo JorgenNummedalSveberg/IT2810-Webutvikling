@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import MovieSection from '../Components/GridView/MovieSection'
+import MovieSection from '../Components/MovieSection/MovieSection'
 import {Provider} from 'react-redux'
 import {store} from '../reducers/store'
 

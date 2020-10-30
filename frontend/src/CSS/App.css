@@ -4,6 +4,7 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .CardGroup {
@@ -22,7 +23,7 @@
 .FilterButton{
     display: none;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
     .FilterButton {
         display: initial;
         width: 100%;
