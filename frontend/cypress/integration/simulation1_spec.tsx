@@ -58,7 +58,7 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('#searchbar').clear();
     })
     it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', () => {
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div.ControlElement.Checkbox > div > label').click();
+        cy.get('#root > div > div.MainContent > div.ControlPanel > div.Checkbox > div > label').click();
         cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children().as('movieNr')
             .should('have.length', 7);
         cy.get('#id_ThePrestige')

@@ -1,4 +1,4 @@
-.SortingPanelWrapper {
+.SortingPanel {
     max-width: calc(100% - 500px);
     width: 70%;
     height: 50%;
@@ -7,7 +7,7 @@
     bottom: 0;
 }
 
-.SortingPanel {
+.SortingPanel .SortingPanel {
     position: absolute;
     right: 0;
     height: 100%;
@@ -15,10 +15,4 @@
     max-width: 600px;
     display: flex;
     justify-content: space-evenly;
-}
-
-@media only screen and (max-width: 900px) {
-    .SortingPanelWrapper {
-        display: none;
-    }
 }
