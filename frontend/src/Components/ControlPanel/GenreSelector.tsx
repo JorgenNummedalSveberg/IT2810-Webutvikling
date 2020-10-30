@@ -13,6 +13,9 @@ function GenreSelector(props: { refresh: () => void }) {
     // Henter inn sjangre fra redux state
     const genres = useSelector((state: state) => state.genres);
 
+    // Henter inn sjangre fra redux state
+    const genre = useSelector((state: state) => state.filter.genre);
+
     // Definerer options for dropdown meny
     const genreOptions = genres.map((genre, index) => {
         if (index === 0) {
@@ -34,6 +37,7 @@ function GenreSelector(props: { refresh: () => void }) {
             className={"Dropdown"}
             fluid
             selection
+            value={genre}
             onChange={onSearchChange}
             options={genreOptions}
             id={"dropdownmenu"}

@@ -1,40 +1,30 @@
 .MobilePanelWrapper{
-    display: none;
+    display: initial;
+}
+.MobilePanelWrapper button{
+    display: initial;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 899;
 }
 .MobilePanel {
-    display: none;
+    display: initial;
+    position: absolute;
+    z-index: 11;
+    width: 50vw;
+    min-width: 350px;
+    height: 100%;
+    padding: 15px;
+    background-color: #6d6d6df1;
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
 }
-
-@media only screen and (max-width: 900px) {
-    .MobilePanelWrapper{
-        display: initial;
-    }
-    .MobilePanelWrapper button{
-        display: initial;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 899;
-    }
-    .MobilePanel {
-        display: initial;
-        position: absolute;
-        z-index: 11;
-        width: 50vw;
-        min-width: 350px;
-        height: 100%;
-        padding: 15px;
-        background-color: #6d6d6df1;
-        -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
-        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
-    }
-    .Dropdown {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    .Slider {
-        background-color: white;
-    }
-    
+.Dropdown {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.Slider {
+    background-color: white;
 }

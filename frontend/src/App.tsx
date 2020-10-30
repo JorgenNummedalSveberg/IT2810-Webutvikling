@@ -71,18 +71,17 @@ function App() {
             <Header refresh={refresh}/>
             <button className="FilterButton" onClick={toggleMenu}>
                 <svg className="FilterIcon" width="91" height="90" viewBox="0 0 91 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line y1="80.4546" x2="90.9091" y2="80.4546" stroke="#292929" stroke-width="10"/>
-                    <line y1="43.1816" x2="90.9091" y2="43.1816" stroke="#292929" stroke-width="10"/>
-                    <line y1="7.84839" x2="90.9091" y2="7.84839" stroke="#292929" stroke-width="10"/>
-                    <circle cx="21.5" cy="8.5" r="6.5" fill="#E3E3E3" stroke="black" stroke-width="4"/>
-                    <circle cx="75" cy="44" r="7" fill="#E3E3E3" stroke="black" stroke-width="4"/>
-                    <circle cx="40.5" cy="81.5" r="6.5" fill="#E3E3E3" stroke="black" stroke-width="4"/>
+                    <line y1="80.4546" x2="90.9091" y2="80.4546" stroke="#292929" strokeWidth="10"/>
+                    <line y1="43.1816" x2="90.9091" y2="43.1816" stroke="#292929" strokeWidth="10"/>
+                    <line y1="7.84839" x2="90.9091" y2="7.84839" stroke="#292929" strokeWidth="10"/>
+                    <circle cx="21.5" cy="8.5" r="6.5" fill="#E3E3E3" stroke="black" strokeWidth="4"/>
+                    <circle cx="75" cy="44" r="7" fill="#E3E3E3" stroke="black" strokeWidth="4"/>
+                    <circle cx="40.5" cy="81.5" r="6.5" fill="#E3E3E3" stroke="black" strokeWidth="4"/>
                 </svg>
                 Filter
             </button>
             <div className="MainContent">
-                <ControlPanel refresh={refresh}/>
-                <ControlPanelMobile refresh={refresh} show={showMenu}/>
+                <ControlPanel refresh={refresh} show={showMenu}/>
                 <MovieSection/>
             </div>
         </div>
