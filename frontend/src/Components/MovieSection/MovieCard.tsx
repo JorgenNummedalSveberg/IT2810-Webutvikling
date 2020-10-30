@@ -19,7 +19,7 @@ function MovieCard(props: { movie: Movie }) {
 
     return (
         <Grid.Column stretched tablet={5} mobile={8} computer={3}>
-            <Card className={"movieCard"} style={{backgroundColor: '#464646'}} onClick={handleClick}>
+            <Card style={{backgroundColor: '#464646'}} onClick={handleClick}>
                 <Image src={props.movie.posterurl} wrapped ui={false}/>
                 <Card.Content>
                     <Card.Header id={"id_" + (props.movie.title).replace(/\s/g, "")}
