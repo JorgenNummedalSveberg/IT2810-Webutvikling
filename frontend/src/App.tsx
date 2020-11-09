@@ -31,11 +31,6 @@ function setFilter(filter: Filter) {
     dispatch(setGenre(filter.genre));
     dispatch(setSort(filter.sort));
 }
-// Funksjon som refresher filmene
-function refresh() {
-    setMovies([]);
-    fetchMovies(setMovies, setGenres, filter, false)
-}
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
@@ -57,6 +52,12 @@ function App() {
         });
         fetchMovies(setMovies, setGenres, filter, true)
     }, [filter, setFilter, setGenres, setMovies])
+
+    // Funksjon som refresher filmene
+    function refresh() {
+        setMovies([]);
+        fetchMovies(setMovies, setGenres, filter, false)
+    }
 
     //Brukes for å skru av og på burgermenyen
     let [showMenu, toggleShowMenu] = useState(false);
