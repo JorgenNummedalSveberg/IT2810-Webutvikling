@@ -1,4 +1,4 @@
-export interface filter {
+export interface Filter {
     desc: boolean,
     search: string,
     genre: string,

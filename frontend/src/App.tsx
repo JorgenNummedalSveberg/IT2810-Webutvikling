@@ -4,8 +4,8 @@ import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
-import {filter} from "./types/filter";
-import {state} from "./types/state";
+import {Filter} from "./types/Filter";
+import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
@@ -28,7 +28,7 @@ function App() {
     }
 
     // Overordnet funksjon som setter alle filtere
-    function setFilter(filter: filter) {
+    function setFilter(filter: Filter) {
         dispatch(setDesc(filter.desc));
         dispatch(setSearch(filter.search));
         dispatch(setGenre(filter.genre));
@@ -36,7 +36,7 @@ function App() {
     }
 
     // Henter filter fra Redux
-    const filter = useSelector((state: state) => state.filter);
+    const filter = useSelector((state: State) => state.filter);
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect(() => {
@@ -82,7 +82,7 @@ function App() {
 }
 
 // Henter inn filmer, og sorterer basert på et filter
-function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
+function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: boolean) {
     fetch('http://localhost:5000/api/movies?genre=' + filter.genre + '&title=' + filter.search)
         .then(response => {
             if (response.ok) {

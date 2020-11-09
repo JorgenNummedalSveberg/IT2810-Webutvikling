@@ -1,6 +1,6 @@
 // Bytter ut filmene
 import {Movie} from "../types/Movie";
-import {User} from "../types/user";
+import {User} from "../types/User";
 
 export function setMovieState(movies: any[]) {
     return {

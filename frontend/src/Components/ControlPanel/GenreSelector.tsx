@@ -4,7 +4,7 @@ import './CSS/ControlPanelMobile.css';
 import {setGenre} from "../../actions";
 import {Dropdown} from "semantic-ui-react";
 import React from "react";
-import {state} from "../../types/state";
+import {State} from "../../types/State";
 
 // Endrer sjanger vi søker etter
 function GenreSelector(props: { refresh: () => void }) {
@@ -13,10 +13,10 @@ function GenreSelector(props: { refresh: () => void }) {
     const dispatch = useDispatch();
 
     // Henter inn sjangre fra redux state
-    const genres = useSelector((state: state) => state.genres);
+    const genres = useSelector((state: State) => state.genres);
 
     // Henter inn sjangre fra redux state
-    const genre = useSelector((state: state) => state.filter.genre);
+    const genre = useSelector((state: State) => state.filter.genre);
 
     // Definerer options for dropdown meny
     const genreOptions = genres.map((genre, index) => {

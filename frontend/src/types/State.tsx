@@ -1,11 +1,11 @@
-import {filter} from "./filter";
+import {Filter} from "./Filter";
 import {Movie} from "./Movie";
-import {User} from "./user";
+import {User} from "./User";
 
-export interface state {
+export interface State {
     movies: any[],
     genres: string[],
-    filter: filter,
+    filter: Filter,
     details: { show: boolean, movie: Movie },
     page: number,
     user: User

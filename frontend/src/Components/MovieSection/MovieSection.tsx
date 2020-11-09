@@ -2,7 +2,7 @@ import React from 'react';
 import './CSS/MovieSection.css';
 import {Grid, Message, Pagination} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
-import {state} from "../../types/state";
+import {State} from "../../types/State";
 import {setPage} from "../../actions";
 import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
@@ -14,7 +14,7 @@ function MovieSection() {
     const dispatch = useDispatch();
 
     // Redux tate for å holde styr på hvilen side vi er på
-    const page = useSelector((state: state) => state.page);
+    const page = useSelector((state: State) => state.page);
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
@@ -38,7 +38,7 @@ function MovieSection() {
     )
 
     // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
-    return useSelector((state: state) => {
+    return useSelector((state: State) => {
         if (state.movies.hasOwnProperty('error')) {
             return (errorPage);
         } else {
