@@ -11,10 +11,10 @@ install:
   - npm install
  artifacts:
   paths:
-   - frontend/build/
-   - node_modules/
-   - fontend/node_modules/
-   - backend/node_modules/
+   - frontend/build
+   - node_modules
+   - fontend/node_modules
+   - backend/node_modules
  only:
   changes:
    - package.json
