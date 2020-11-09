@@ -1,5 +1,0 @@
-tasks:
-  - init: npm run firstStart
-    command: npm start
-image:
-  file: .gitpod.Dockerfile
