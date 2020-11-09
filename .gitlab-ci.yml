@@ -1,0 +1,21 @@
+stages:
+ - build
+ - test
+
+build:
+ stage: build
+ image: node
+ script:
+  - echo "Building.."
+  - npm run setup
+  - npm build
+  - echo "Build successful"
+
+test:
+ stage: test
+ image: node
+ script:
+  - echo "Testing.."
+  - npm run setup
+  - CI=true npm test
+  - echo "Test successful"
