@@ -3,18 +3,19 @@ stages:
  - build
  - test
 
+cache:
+ key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+ paths:
+  - node_modules
+  - fontend/node_modules
+  - backend/node_modules
+
 install:
  stage: install
  image: node
  script:
   - npm prune
   - npm install
- artifacts:
-  paths:
-   - frontend/build
-   - node_modules
-   - fontend/node_modules
-   - backend/node_modules
  only:
   changes:
    - package.json
@@ -26,6 +27,9 @@ build:
   - echo "Building.."
   - npm run build
   - echo "Build successful"
+ artifacts:
+  paths:
+   - build
 
 test:
  stage: test
