@@ -16,9 +16,6 @@ install:
  script:
   - npm prune
   - npm install
- only:
-  changes:
-   - package.json
 
 build:
  stage: build
