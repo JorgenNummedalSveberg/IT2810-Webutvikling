@@ -3,7 +3,7 @@ import './CSS/ControlPanel.css';
 import './CSS/ControlPanelMobile.css';
 import {Checkbox} from 'semantic-ui-react';
 import {useDispatch, useSelector} from "react-redux";
-import {state} from "../../types/state";
+import {State} from "../../types/State";
 import {myMovies} from "../../actions";
 import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
@@ -14,10 +14,10 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
 
     const dispatch = useDispatch();
     // Henter inn score fra redux state
-    const score = useSelector((state: state) => state.filter.score);
+    const score = useSelector((state: State) => state.filter.score);
     // Henter årstall fra redux state
-    const year = useSelector((state: state) => state.filter.year);
-    const user = useSelector((state: state) => state.user);
+    const year = useSelector((state: State) => state.filter.year);
+    const user = useSelector((state: State) => state.user);
 
     //Brukes for å bestemme hvilken meny som skal rendres.
     const mobile = useMediaQuery('(max-width: 1200px)').valueOf();

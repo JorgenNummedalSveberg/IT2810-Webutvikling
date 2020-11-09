@@ -2,7 +2,7 @@ import React from 'react';
 import './CSS/SortButton.css';
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setSort} from "../../actions";
-import {state} from "../../types/state";
+import {State} from "../../types/State";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: { sort: string, refresh: () => void, nummer: string }) {
@@ -11,9 +11,9 @@ function SortButton(props: { sort: string, refresh: () => void, nummer: string }
     const dispatch = useDispatch();
 
     // Definerer om knappen er trykket basert på om filteret i redux state er likt som navnet til denne knappen
-    const active = useSelector((state: state) => state.filter.sort) === props.sort;
+    const active = useSelector((state: State) => state.filter.sort) === props.sort;
     // Bestemmer rentning basert på filter i state
-    const desc = useSelector((state: state) => state.filter.desc);
+    const desc = useSelector((state: State) => state.filter.desc);
 
     // Håndterer trykk på knapp, endrer filter i state basert på tittel og retning
     function toggleSort() {

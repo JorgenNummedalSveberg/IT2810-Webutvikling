@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {Button, Input, Modal, Form, Popup, Message} from "semantic-ui-react";
+import {Button, Input, Modal, Message} from "semantic-ui-react";
 import {useDispatch} from "react-redux";
-import {User} from "../../types/user";
+import {User} from "../../types/User";
 import {login} from "../../actions";
 
 function SignLogIn() {

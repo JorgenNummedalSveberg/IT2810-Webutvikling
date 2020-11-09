@@ -4,39 +4,39 @@ import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
-import {filter} from "./types/filter";
-import {state} from "./types/state";
+import {Filter} from "./types/Filter";
+import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import { Icon } from 'semantic-ui-react';
 
+// Nødvendig definisjon for redux
+const dispatch = useDispatch();
+
+// Setter filmer
+function setMovies(movies: any[]) {
+    dispatch(setMovieState(movies));
+}
+
+// Setter sjangre
+function setGenres(genres: string[]) {
+    dispatch(setGenresState(genres))
+}
+
+// Overordnet funksjon som setter alle filtere
+function setFilter(filter: Filter) {
+    dispatch(setDesc(filter.desc));
+    dispatch(setSearch(filter.search));
+    dispatch(setGenre(filter.genre));
+    dispatch(setSort(filter.sort));
+}
+
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
 
-    // Nødvendig definisjon for redux
-    const dispatch = useDispatch();
-
-    // Setter filmer
-    function setMovies(movies: any[]) {
-        dispatch(setMovieState(movies));
-    }
-
-    // Setter sjangre
-    function setGenres(genres: string[]) {
-        dispatch(setGenresState(genres))
-    }
-
-    // Overordnet funksjon som setter alle filtere
-    function setFilter(filter: filter) {
-        dispatch(setDesc(filter.desc));
-        dispatch(setSearch(filter.search));
-        dispatch(setGenre(filter.genre));
-        dispatch(setSort(filter.sort));
-    }
-
     // Henter filter fra Redux
-    const filter = useSelector((state: state) => state.filter);
+    const filter = useSelector((state: State) => state.filter);
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
             myMovies: false
         });
         fetchMovies(setMovies, setGenres, filter, true)
-    }, [])
+    }, [filter, setFilter, setGenres, setMovies])
 
     // Funksjon som refresher filmene
     function refresh() {
@@ -82,7 +82,7 @@ function App() {
 }
 
 // Henter inn filmer, og sorterer basert på et filter
-function fetchMovies(setMovies: any, setGenres: any, filter: filter, first: boolean) {
+function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: boolean) {
     fetch('http://localhost:5000/api/movies?genre=' + filter.genre + '&title=' + filter.search)
         .then(response => {
             if (response.ok) {

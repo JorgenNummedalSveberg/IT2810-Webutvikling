@@ -1,0 +1,36 @@
+stages:
+ - install
+ - build
+ - test
+
+install:
+ stage: install
+ image: node
+ script:
+  - npm prune
+  - npm install
+ artifacts:
+  paths:
+   - frontend/build/
+   - node_modules/
+   - fontend/node_modules/
+   - backend/node_modules/
+ only:
+  changes:
+   - package.json
+
+build:
+ stage: build
+ image: node
+ script:
+  - echo "Building.."
+  - npm run build
+  - echo "Build successful"
+
+test:
+ stage: test
+ image: node
+ script:
+  - echo "Testing.."
+  - CI=true npm test
+  - echo "Test successful"

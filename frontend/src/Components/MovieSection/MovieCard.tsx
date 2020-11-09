@@ -25,7 +25,7 @@ function MovieCard(props: { movie: Movie }) {
                     <Card.Header id={"id_" + (props.movie.title).replace(/\s/g, "")}
                                  style={{color: 'white'}}>{props.movie.title}</Card.Header>
                     <Card.Description style={{color: '#e5dfca'}}>
-                        <div role={"showGenre"}> Genres: {props.movie.genres.join(", ")} </div>
+                        <div> Genres: {props.movie.genres.join(", ")} </div>
                         <div id={"year_" + (props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
                     </Card.Description>
                 </Card.Content>

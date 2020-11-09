@@ -6,7 +6,7 @@ import {Button, Input} from "semantic-ui-react";
 import {logout, setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
-import {state} from "../../types/state";
+import {State} from "../../types/State";
 
 
 function Header(props: { refresh: () => void }) {
@@ -31,7 +31,7 @@ function Header(props: { refresh: () => void }) {
         }, 300);
     }
 
-    const user = useSelector((state: state) => state.user);
+    const user = useSelector((state: State) => state.user);
 
     //Brukes for å skru av og på burgermenyen
     let [showMenu, toggleShowMenu] = useState(false);
