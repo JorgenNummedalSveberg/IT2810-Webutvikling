@@ -11,29 +11,34 @@ import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import { Icon } from 'semantic-ui-react';
 
+// Nødvendig definisjon for redux
+const dispatch = useDispatch();
+
+// Setter filmer
+function setMovies(movies: any[]) {
+    dispatch(setMovieState(movies));
+}
+
+// Setter sjangre
+function setGenres(genres: string[]) {
+    dispatch(setGenresState(genres))
+}
+
+// Overordnet funksjon som setter alle filtere
+function setFilter(filter: Filter) {
+    dispatch(setDesc(filter.desc));
+    dispatch(setSearch(filter.search));
+    dispatch(setGenre(filter.genre));
+    dispatch(setSort(filter.sort));
+}
+// Funksjon som refresher filmene
+function refresh() {
+    setMovies([]);
+    fetchMovies(setMovies, setGenres, filter, false)
+}
+
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
-
-    // Nødvendig definisjon for redux
-    const dispatch = useDispatch();
-
-    // Setter filmer
-    function setMovies(movies: any[]) {
-        dispatch(setMovieState(movies));
-    }
-
-    // Setter sjangre
-    function setGenres(genres: string[]) {
-        dispatch(setGenresState(genres))
-    }
-
-    // Overordnet funksjon som setter alle filtere
-    function setFilter(filter: Filter) {
-        dispatch(setDesc(filter.desc));
-        dispatch(setSearch(filter.search));
-        dispatch(setGenre(filter.genre));
-        dispatch(setSort(filter.sort));
-    }
 
     // Henter filter fra Redux
     const filter = useSelector((state: State) => state.filter);
@@ -52,12 +57,6 @@ function App() {
         });
         fetchMovies(setMovies, setGenres, filter, true)
     }, [filter, setFilter, setGenres, setMovies])
-
-    // Funksjon som refresher filmene
-    function refresh() {
-        setMovies([]);
-        fetchMovies(setMovies, setGenres, filter, false)
-    }
 
     //Brukes for å skru av og på burgermenyen
     let [showMenu, toggleShowMenu] = useState(false);
