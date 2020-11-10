@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
@@ -11,29 +11,31 @@ import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import { Icon } from 'semantic-ui-react';
 
-// Nødvendig definisjon for redux
-const dispatch = useDispatch();
 
-// Setter filmer
-function setMovies(movies: any[]) {
-    dispatch(setMovieState(movies));
-}
-
-// Setter sjangre
-function setGenres(genres: string[]) {
-    dispatch(setGenresState(genres))
-}
-
-// Overordnet funksjon som setter alle filtere
-function setFilter(filter: Filter) {
-    dispatch(setDesc(filter.desc));
-    dispatch(setSearch(filter.search));
-    dispatch(setGenre(filter.genre));
-    dispatch(setSort(filter.sort));
-}
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
+
+    // Nødvendig definisjon for redux
+    const dispatch = useDispatch();
+
+    // Setter filmer
+    const setMovies = useCallback((movies: any[]) => {
+        dispatch(setMovieState(movies));
+    }, [dispatch])
+
+    // Setter sjangre
+    const setGenres = useCallback((genres: string[]) => {
+        dispatch(setGenresState(genres))
+    }, [dispatch])
+
+    // Overordnet funksjon som setter alle filtere
+    const setFilter = useCallback((filter: Filter)  => {
+        dispatch(setDesc(filter.desc));
+        dispatch(setSearch(filter.search));
+        dispatch(setGenre(filter.genre));
+        dispatch(setSort(filter.sort));
+    }, [dispatch])
 
     // Henter filter fra Redux
     const filter = useSelector((state: State) => state.filter);
