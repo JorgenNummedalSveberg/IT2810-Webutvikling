@@ -1,7 +1,8 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {Card, CardContent, CardHeader, CardMedia, CircularProgress, Grid} from "@material-ui/core";
+import {Card, CardContent, CardHeader, CardMedia, Grid} from "@material-ui/core";
+import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
@@ -52,7 +53,9 @@ export function DimCard() {
     return (
         <Grid item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
-                <img src={'../../dimPoster.png'} />
+                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300} />
+                <Skeleton animation="wave" width={170} height={30} style={{ margin: 10 }} />
+                <Skeleton animation="wave" width={170} height={30} style={{ margin: 10 }} />
             </Card>
         </Grid>
     )
