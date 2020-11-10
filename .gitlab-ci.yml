@@ -16,11 +16,7 @@ install:
  script:
   - npm prune
   - npm run setup
- only:
-  changes:
-   - package.json
-   - frontend/package.json
-   - backend/package.json
+
 
 build:
  stage: build
