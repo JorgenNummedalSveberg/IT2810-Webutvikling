@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header/Header";
 import 'semantic-ui-css/semantic.min.css'
@@ -20,22 +20,22 @@ function App() {
     const dispatch = useDispatch();
 
     // Setter filmer
-    function setMovies(movies: any[]) {
+    const setMovies = useCallback((movies: any[]) => {
         dispatch(setMovieState(movies));
-    }
+    }, [])
 
     // Setter sjangre
-    function setGenres(genres: string[]) {
+    const setGenres = useCallback((genres: string[]) => {
         dispatch(setGenresState(genres))
-    }
+    }, [])
 
     // Overordnet funksjon som setter alle filtere
-    function setFilter(filter: Filter) {
+    const setFilter = useCallback((filter: Filter)  => {
         dispatch(setDesc(filter.desc));
         dispatch(setSearch(filter.search));
         dispatch(setGenre(filter.genre));
         dispatch(setSort(filter.sort));
-    }
+    }, [])
 
     // Henter filter fra Redux
     const filter = useSelector((state: State) => state.filter);
