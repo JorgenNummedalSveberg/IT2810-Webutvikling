@@ -20,7 +20,7 @@ function MovieCard(props: { movie: Movie }) {
     }
 
     return (
-        <Grid xs item>
+        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}} onClick={handleClick}>
                 <CardMedia>
                     <img width={"100%"} src={props.movie.posterurl}/>
@@ -51,11 +51,11 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Grid item>
+        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
-                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300} />
-                <Skeleton animation="wave" width={170} height={30} style={{ margin: 10 }} />
-                <Skeleton animation="wave" width={170} height={30} style={{ margin: 10 }} />
+                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={600} />
+                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
+                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
             </Card>
         </Grid>
     )

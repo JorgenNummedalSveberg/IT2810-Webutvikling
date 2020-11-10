@@ -1,7 +1,8 @@
 import React from 'react';
 import './CSS/MovieSection.css';
-import {Message, Pagination} from 'semantic-ui-react';
+import {Message} from 'semantic-ui-react';
 import {Grid} from '@material-ui/core'
+import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {setPage} from "../../actions";
@@ -58,16 +59,16 @@ function MovieSection() {
 
             const movieList: any[] = [];
             movies.forEach((movie, index) => {
-                if (!movieList[Math.floor(index / 20)]) {
-                    movieList[Math.floor(index / 20)] = [];
+                if (!movieList[Math.floor(index / 24)]) {
+                    movieList[Math.floor(index / 24)] = [];
                 }
-                movieList[Math.floor(index / 20)].push(movie);
+                movieList[Math.floor(index / 24)].push(movie);
             })
 
             // Lager en liste med sorte kort som placeholder mens filmene laster
             const dimList = () => {
                 const list = [];
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 24; i++) {
                     list.push(<DimCard key={i}/>);
                 }
                 return list;
@@ -85,17 +86,15 @@ function MovieSection() {
 
             // Definerer sidevalg menyen
             const pagination = (
-                <Pagination
-                    pointing
-                    secondary
-                    firstItem={null}
-                    lastItem={null}
-                    style={{margin: "20px"}}
-                    onPageChange={(e, {activePage}) => {
-                        dispatch(setPage((activePage as number) - 1));
-                    }}
-                    activePage={page + 1}
-                    totalPages={movieList.length}/>
+                <div style={{margin: '20px'}}>
+                    <Pagination
+                        size="large"
+                        onChange={(e: object, page: number) => {
+                            dispatch(setPage(page - 1));
+                        }}
+                        page={page + 1}
+                        count={movieList.length}/>
+                </div>
             )
 
             return (
@@ -106,7 +105,7 @@ function MovieSection() {
                     {pagination}
                     <div style={{width:'100%'}}>
                         <Grid
-                            style={{padding: '10px'}}
+                            style={{padding: '2%'}}
                             container
                             direction="row"
                             justify="center"
@@ -116,7 +115,6 @@ function MovieSection() {
                             {movieCards}
                         </Grid>
                     </div>
-
                     {pagination}
                 </div>
             )
