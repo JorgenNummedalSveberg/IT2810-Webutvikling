@@ -28,7 +28,8 @@ build:
  image: node
  script:
   - echo "Building.."
-  - npm run build
+  - cd frontend
+  - npm run-script build
   - echo "Build successful"
  artifacts:
   paths:
