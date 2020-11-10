@@ -1,8 +1,8 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {Dimmer, Icon, Loader} from "semantic-ui-react";
-import {Card, CardContent, CardHeader, CardMedia, Grid, Typography} from "@material-ui/core";
+import {Card, CardContent, CardHeader, CardMedia, CircularProgress, Grid} from "@material-ui/core";
+import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
 
@@ -35,8 +35,8 @@ function MovieCard(props: { movie: Movie }) {
                 <CardContent>
                     <div style={{margin: '5px', display: 'flex', flexDirection: 'row'}}>
                         <div style={{color: '#e5dfca', margin: 'auto'}}>
-                            <Icon size='large' name='hourglass'/>
-                            {parseTime(props.movie.duration)}
+                            <HourglassFullIcon fontSize={"large"}/>
+                            <p>{parseTime(props.movie.duration)}</p>
                         </div>
                         <ImdbIcon rating={props.movie.imdbRating} height={35}/>
                     </div>
@@ -51,8 +51,7 @@ function MovieCard(props: { movie: Movie }) {
 export function DimCard() {
     return (
         <Grid item>
-            <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden'}}>
-                    <Loader size='massive'>Loading</Loader>
+            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
                 <img src={'../../dimPoster.png'} />
             </Card>
         </Grid>
