@@ -3,13 +3,6 @@ stages:
  - build
  - test
 
-cache:
- key: ${CI_COMMIT_REF_SLUG}
- paths:
-  - node_modules
-  - frontend/node_modules
-  - backend/node_modules
-
 install:
  stage: install
  image: node
@@ -21,7 +14,12 @@ install:
   - cd ..
   - cd backend
   - npm prune
-
+ cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+   - node_modules
+   - frontend/node_modules
+   - backend/node_modules
 
 build:
  stage: build
