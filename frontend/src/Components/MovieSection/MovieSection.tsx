@@ -1,6 +1,7 @@
 import React from 'react';
 import './CSS/MovieSection.css';
-import {Grid, Message, Pagination} from 'semantic-ui-react';
+import {Message, Pagination} from 'semantic-ui-react';
+import {Grid} from '@material-ui/core'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {setPage} from "../../actions";
@@ -19,7 +20,7 @@ function MovieSection() {
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
         <div className={"GridView"}>
-            <Grid style={{margin: "20px", width: '100%'}} centered>
+            <Grid style={{margin: "20px", width: '100%'}}>
                 <Message error>
                     <Message.Header>
                         No movies
@@ -104,7 +105,14 @@ function MovieSection() {
                     }
                     {pagination}
                     <div style={{width:'100%'}}>
-                        <Grid style={{margin: "20px"}} centered>
+                        <Grid
+                            style={{padding: '10px'}}
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="stretch"
+                            spacing={4}
+                            >
                             {movieCards}
                         </Grid>
                     </div>

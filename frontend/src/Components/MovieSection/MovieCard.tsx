@@ -1,7 +1,8 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {Card, Dimmer, Grid, Icon, Image, Loader} from "semantic-ui-react";
+import {Dimmer, Icon, Loader} from "semantic-ui-react";
+import {Card, CardContent, CardHeader, CardMedia, Grid, Typography} from "@material-ui/core";
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
 
@@ -18,28 +19,30 @@ function MovieCard(props: { movie: Movie }) {
     }
 
     return (
-        <Grid.Column stretched tablet={5} mobile={8} computer={3}>
-            <Card style={{backgroundColor: '#464646'}} onClick={handleClick}>
-                <Image src={props.movie.posterurl} wrapped ui={false}/>
-                <Card.Content>
-                    <Card.Header id={"id_" + (props.movie.title).replace(/\s/g, "")}
-                                 style={{color: 'white'}}>{props.movie.title}</Card.Header>
-                    <Card.Description style={{color: '#e5dfca'}}>
+        <Grid xs item>
+            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}} onClick={handleClick}>
+                <CardMedia>
+                    <img width={"100%"} src={props.movie.posterurl}/>
+                </CardMedia>
+                <CardHeader id={"id_" + (props.movie.title).replace(/\s/g, "")}
+                             style={{color: 'white'}}>{props.movie.title}</CardHeader>
+                <CardContent>
+                    <div style={{color: '#e5dfca'}}>
                         <div> Genres: {props.movie.genres.join(", ")} </div>
                         <div id={"year_" + (props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
-                    </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                    <Grid centered style={{margin: '5px'}}>
+                    </div>
+                </CardContent>
+                <CardContent>
+                    <div style={{margin: '5px', display: 'flex', flexDirection: 'row'}}>
                         <div style={{color: '#e5dfca', margin: 'auto'}}>
                             <Icon size='large' name='hourglass'/>
                             {parseTime(props.movie.duration)}
                         </div>
                         <ImdbIcon rating={props.movie.imdbRating} height={35}/>
-                    </Grid>
-                </Card.Content>
+                    </div>
+                </CardContent>
             </Card>
-        </Grid.Column>
+        </Grid>
 
     )
 }
@@ -47,14 +50,12 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Grid.Column stretched tablet={5} mobile={8} computer={3}>
-            <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex: "8"}}>
-                <Dimmer active>
+        <Grid item>
+            <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden'}}>
                     <Loader size='massive'>Loading</Loader>
-                </Dimmer>
-                <Image src={'../../dimPoster.png'} wrapped ui={false}/>
+                <img src={'../../dimPoster.png'} />
             </Card>
-        </Grid.Column>
+        </Grid>
     )
 }
 
