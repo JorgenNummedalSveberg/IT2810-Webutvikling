@@ -22,12 +22,12 @@ function App() {
     // Setter filmer
     const setMovies = useCallback((movies: any[]) => {
         dispatch(setMovieState(movies));
-    }, [])
+    }, [dispatch])
 
     // Setter sjangre
     const setGenres = useCallback((genres: string[]) => {
         dispatch(setGenresState(genres))
-    }, [])
+    }, [dispatch])
 
     // Overordnet funksjon som setter alle filtere
     const setFilter = useCallback((filter: Filter)  => {
@@ -35,7 +35,7 @@ function App() {
         dispatch(setSearch(filter.search));
         dispatch(setGenre(filter.genre));
         dispatch(setSort(filter.sort));
-    }, [])
+    }, [dispatch])
 
     // Henter filter fra Redux
     const filter = useSelector((state: State) => state.filter);
