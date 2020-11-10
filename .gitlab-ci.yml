@@ -29,6 +29,8 @@ build:
   - cd frontend
   - npm run-script build
   - echo "Build successful"
+ cache:
+  key: ${CI_COMMIT_REF_SLUG}
  artifacts:
   paths:
    - build
@@ -40,3 +42,5 @@ test:
   - echo "Testing.."
   - CI=true npm test
   - echo "Test successful"
+ cache:
+  key: ${CI_COMMIT_REF_SLUG}
