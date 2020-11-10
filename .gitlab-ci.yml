@@ -14,8 +14,13 @@ install:
  stage: install
  image: node
  script:
-  - npm prune
   - npm run setup
+  - npm prune
+  - cd frontend
+  - npm prune
+  - cd ..
+  - cd backend
+  - npm prune
 
 
 build:
