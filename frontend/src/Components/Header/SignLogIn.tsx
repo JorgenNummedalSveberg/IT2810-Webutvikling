@@ -71,7 +71,7 @@ function SignLogIn(props: {isLogged: boolean}) {
     return (
         props.isLogged ?
             (<div>
-                <Button onClick={()=> setOpen(true)} style={{zIndex: '1000000'}}>Log in/Sign up</Button>
+                <Button onClick={()=> setOpen(true)} style={{zIndex: 1000000}}>Log in/Sign up</Button>
                 <Dialog open={open} onClose={()=> setOpen(false)} title='Log in/Sign up'>
                     <DialogTitle>Log in/Sign up</DialogTitle>
                     <DialogContent>
