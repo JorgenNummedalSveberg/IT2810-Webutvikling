@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import './CSS/ControlPanel.css';
 import './CSS/ControlPanelMobile.css';
 import {setGenre} from "../../actions";
-import {Dropdown} from "semantic-ui-react";
+import {MenuItem, Select} from "@material-ui/core";
 import React from "react";
 import {State} from "../../types/State";
 
@@ -16,34 +16,30 @@ function GenreSelector(props: { refresh: () => void }) {
     const genres = useSelector((state: State) => state.genres);
 
     // Henter inn sjangre fra redux state
-    const genre = useSelector((state: State) => state.filter.genre);
+    const genreText = useSelector((state: State) => state.filter.genre);
+    const genre = {text: genreText, value: genreText};
 
     // Definerer options for dropdown meny
     const genreOptions = genres.map((genre, index) => {
-        if (index === 0) {
-            return {key: "", text: "Select genre...", value: ""}
-        } else {
-            return {key: genre, text: genre, value: genre, id: genre};
-        }
+        return {key: genre, text: genre, value: genre, id: genre};
     });
 
     // Opdaterer state når du endrer sjanger
     function onSearchChange(e: any, data: any) {
-        dispatch(setGenre(data.value));
+        dispatch(setGenre(data.props.value));
         props.refresh();
     }
 
     return (
-        <Dropdown
-            placeholder={"Select genre..."}
-            className={"Dropdown"}
-            fluid
-            selection
-            value={genre}
+        <Select
+            style={{backgroundColor: 'lightBlue'}}
+            variant='outlined'
+            color='primary'
+            value={genre.value}
             onChange={onSearchChange}
-            options={genreOptions}
-            id={"dropdownmenu"}
-        />
+        >
+            {genreOptions.map((genreOption, index) => <MenuItem key={index} value={genreOption.value}>{genreOption.text}</MenuItem>)}
+        </Select>
     )
 }
 

@@ -1,7 +1,9 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {Card, Dimmer, Grid, Icon, Image, Loader} from "semantic-ui-react";
+import {Card, CardContent, CardHeader, CardMedia, Grid} from "@material-ui/core";
+import {Skeleton} from "@material-ui/lab";
+import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
 
@@ -18,28 +20,30 @@ function MovieCard(props: { movie: Movie }) {
     }
 
     return (
-        <Grid.Column stretched tablet={5} mobile={8} computer={3}>
-            <Card style={{backgroundColor: '#464646'}} onClick={handleClick}>
-                <Image src={props.movie.posterurl} wrapped ui={false}/>
-                <Card.Content>
-                    <Card.Header id={"id_" + (props.movie.title).replace(/\s/g, "")}
-                                 style={{color: 'white'}}>{props.movie.title}</Card.Header>
-                    <Card.Description style={{color: '#e5dfca'}}>
+        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
+            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}} onClick={handleClick}>
+                <CardMedia>
+                    <img alt='Could not display movieposter' width={"100%"} src={props.movie.posterurl}/>
+                </CardMedia>
+                <CardHeader id={"id_" + (props.movie.title).replace(/\s/g, "")}
+                             style={{color: 'white'}}>{props.movie.title}</CardHeader>
+                <CardContent>
+                    <div style={{color: '#e5dfca'}}>
                         <div> Genres: {props.movie.genres.join(", ")} </div>
                         <div id={"year_" + (props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
-                    </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                    <Grid centered style={{margin: '5px'}}>
+                    </div>
+                </CardContent>
+                <CardContent>
+                    <div style={{margin: '5px', display: 'flex', flexDirection: 'row'}}>
                         <div style={{color: '#e5dfca', margin: 'auto'}}>
-                            <Icon size='large' name='hourglass'/>
-                            {parseTime(props.movie.duration)}
+                            <HourglassFullIcon fontSize={"large"}/>
+                            <p>{parseTime(props.movie.duration)}</p>
                         </div>
                         <ImdbIcon rating={props.movie.imdbRating} height={35}/>
-                    </Grid>
-                </Card.Content>
+                    </div>
+                </CardContent>
             </Card>
-        </Grid.Column>
+        </Grid>
 
     )
 }
@@ -47,14 +51,13 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Grid.Column stretched tablet={5} mobile={8} computer={3}>
-            <Card className={"movieCard"} style={{backgroundColor: '#464646', overflow: 'hidden', zIndex: "8"}}>
-                <Dimmer active>
-                    <Loader size='massive'>Loading</Loader>
-                </Dimmer>
-                <Image src={'../../dimPoster.png'} wrapped ui={false}/>
+        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
+            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
+                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={600} />
+                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
+                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
             </Card>
-        </Grid.Column>
+        </Grid>
     )
 }
 

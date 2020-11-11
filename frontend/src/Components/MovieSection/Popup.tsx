@@ -2,7 +2,10 @@ import React from 'react';
 import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {Button} from "semantic-ui-react";
+import {Button} from "@material-ui/core";
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {login, setPopup, showPopup} from "../../actions";
 import ImdbIcon from "../Shared/ImdbIcon";
 
@@ -47,8 +50,9 @@ function Popup() {
     return (
         // marginRight her er 20px større fordi den blir offset av GridView
         <div className="Popup">
-            <Button id={"backButtonID"} className="BackButton" onClick={() => dispatch(showPopup(false))} content='Back'
-                    icon='left arrow' labelPosition='left'/>
+            <Button startIcon={<ArrowLeftIcon/>} aria-label='back' id={"backButtonID"} className="BackButton" onClick={() => dispatch(showPopup(false))}>
+                Back
+            </Button>
             <div className="movieContent">
                 <img alt="movie poster could not load" src={reduxState.details.movie.posterurl}/>
                 <div className="info">
@@ -57,19 +61,22 @@ function Popup() {
                     <ImdbIcon rating={reduxState.details.movie.imdbRating} height={50}/>
                     <div className="lables">
                         {!!reduxState.user ?
-                            <Button id={"watchButton"} className="button"
-                                disabled={reduxState.user.movies.includes(reduxState.details.movie._id)}
-                                onClick={() => changeView(false)}
-                                color='blue' content='Watched' icon='eye'
-                                label={{
-                                    basic: true,
-                                    color: 'blue',
-                                    pointing: 'left',
-                                    content: reduxState.details.movie.watches
-                                }}/> : null}
+                            <Button id='watchButton'
+                                    variant='contained'
+                                    disabled={reduxState.user.movies.includes(reduxState.details.movie._id)}
+                                    onClick={() => changeView(false)}
+                                    color='primary'
+                                    endIcon={<VisibilityIcon/>}
+                                    >Watched</Button>
+                            : null}
                         {!!reduxState.user && reduxState.user.movies.includes(reduxState.details.movie._id) ?
-                            <Button id={"removeButton"} className="button" onClick={() => changeView(true)}
-                                color='red' content='Remove from my list' icon='trash'/> :
+                            <Button id='removeButton'
+                                    variant='contained'
+                                    color='secondary'
+                                    onClick={() => changeView(true)}
+                                    endIcon={<DeleteIcon/>}
+                            >Remove from my list</Button>
+                            :
                                 null}
                     </div>
                     <h3>{reduxState.details.movie.genres.join(", ")}</h3>

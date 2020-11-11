@@ -24,5 +24,15 @@
 }
 
 .Checkbox {
-    width: 50%;
+    padding: 10px;
+    background-color: brown;
+    border-radius: 16px;
+    height: 6em;
+    margin-bottom: 40px;
+    display: inline-flex;
+    flex-direction: row;
+}
+.Checkbox > H2 {
+    padding: 15px;
+    margin: 0;
 }

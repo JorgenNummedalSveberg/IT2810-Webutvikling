@@ -1,13 +1,12 @@
 import React from 'react';
 import './CSS/ControlPanel.css';
 import './CSS/ControlPanelMobile.css';
-import {Checkbox} from 'semantic-ui-react';
+import {Checkbox, useMediaQuery} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
 import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
-import {useMediaQuery} from "@material-ui/core";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: { refresh: () => void, show:boolean }) {
@@ -31,9 +30,10 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
             {!!user ?
                 <div className={"Checkbox"}>
                     <h2>My movies</h2>
-                    <Checkbox id={"checkboxMovie"} style={{margin: '10px'}} onChange={handleTick} toggle/>
+                    <Checkbox  color='secondary' id='checkboxMovie' style={{margin: '10px'}} onChange={handleTick}/>
                 </div> : 
                 <div/>}
+                <br/>
             <GenreSelector refresh={props.refresh}/>
             <RangeSlider score={score} type="score"/>
             <RangeSlider score={year} type="year"/>

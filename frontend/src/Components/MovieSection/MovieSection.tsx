@@ -1,6 +1,7 @@
 import React from 'react';
 import './CSS/MovieSection.css';
-import {Grid, Message, Pagination} from 'semantic-ui-react';
+import {Grid, Card, CardContent, Typography} from '@material-ui/core'
+import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {setPage} from "../../actions";
@@ -19,20 +20,24 @@ function MovieSection() {
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
         <div className={"GridView"}>
-            <Grid style={{margin: "20px", width: '100%'}} centered>
-                <Message error>
-                    <Message.Header>
-                        No movies
-                    </Message.Header>
-                    <Message.Content>
+            <Grid style={{margin: "20px", width: '50%'}}>
+                <Card style={{backgroundColor: 'pink'}}>
+                    <CardContent>
+                        <Typography color='secondary' variant="h5" component="h2">
+                            No movies
+                        </Typography>
+                    </CardContent>
+                    <CardContent>
                         This might be because:
-                    </Message.Content>
-                    <Message.List
-                        items={['You may not be on the NTNU network or your VPN is off', "We do not have the movie you're looking for"]}/>
-                    <Message.Content>
+                    </CardContent>
+                    <ul style={{listStyleType: 'circle'}}>
+                        <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
+                        <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
+                    </ul>
+                    <CardContent>
                         <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-                    </Message.Content>
-                </Message>
+                    </CardContent>
+                </Card>
             </Grid>
         </div>
     )
@@ -57,16 +62,16 @@ function MovieSection() {
 
             const movieList: any[] = [];
             movies.forEach((movie, index) => {
-                if (!movieList[Math.floor(index / 20)]) {
-                    movieList[Math.floor(index / 20)] = [];
+                if (!movieList[Math.floor(index / 24)]) {
+                    movieList[Math.floor(index / 24)] = [];
                 }
-                movieList[Math.floor(index / 20)].push(movie);
+                movieList[Math.floor(index / 24)].push(movie);
             })
 
             // Lager en liste med sorte kort som placeholder mens filmene laster
             const dimList = () => {
                 const list = [];
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 24; i++) {
                     list.push(<DimCard key={i}/>);
                 }
                 return list;
@@ -84,17 +89,15 @@ function MovieSection() {
 
             // Definerer sidevalg menyen
             const pagination = (
-                <Pagination
-                    pointing
-                    secondary
-                    firstItem={null}
-                    lastItem={null}
-                    style={{margin: "20px"}}
-                    onPageChange={(e, {activePage}) => {
-                        dispatch(setPage((activePage as number) - 1));
-                    }}
-                    activePage={page + 1}
-                    totalPages={movieList.length}/>
+                <div style={{margin: '20px'}}>
+                    <Pagination
+                        size="large"
+                        onChange={(e: object, page: number) => {
+                            dispatch(setPage(page - 1));
+                        }}
+                        page={page + 1}
+                        count={movieList.length}/>
+                </div>
             )
 
             return (
@@ -104,11 +107,17 @@ function MovieSection() {
                     }
                     {pagination}
                     <div style={{width:'100%'}}>
-                        <Grid style={{margin: "20px"}} centered>
+                        <Grid
+                            style={{padding: '2%'}}
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="stretch"
+                            spacing={4}
+                            >
                             {movieCards}
                         </Grid>
                     </div>
-
                     {pagination}
                 </div>
             )

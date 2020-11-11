@@ -8,15 +8,11 @@
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
 }
-.ControlPanel .Checkbox{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 40px;
-}
+
 .ControlPanel .Checkbox h2{
     color: white;
 }
+
 .ControlPanel .Dropdown{
     margin-bottom: 60px;
 }

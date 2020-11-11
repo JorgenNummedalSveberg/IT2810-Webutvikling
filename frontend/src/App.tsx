@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header/Header";
-import 'semantic-ui-css/semantic.min.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
 import {Filter} from "./types/Filter";
@@ -9,8 +8,7 @@ import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
-import { Icon } from 'semantic-ui-react';
-
+import TuneIcon from '@material-ui/icons/Tune';
 
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
@@ -42,16 +40,6 @@ function App() {
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect(() => {
-        setFilter({
-            desc: true,
-            sort: "Name",
-            search: "",
-            genre: "",
-            score: [0, 10],
-            year: [1900, 2020],
-            duration: [0, 320],
-            myMovies: false
-        });
         fetchMovies(setMovies, setGenres, filter, true)
     }, [filter, setFilter, setGenres, setMovies])
 
@@ -72,7 +60,7 @@ function App() {
         <div className="App">
             <Header refresh={refresh}/>
             <button className="FilterButton" onClick={toggleMenu}>
-                <Icon name="sliders"/>
+                <TuneIcon/>
                 {showMenu ? "Close filter":"Filter"}
             </button>
             <div className="MainContent">
@@ -85,7 +73,9 @@ function App() {
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: boolean) {
-    fetch('http://localhost:5000/api/movies?genre=' + filter.genre + '&title=' + filter.search)
+    fetch('http://localhost:5000/api/movies?genre='
+        + (filter.genre==="Select genre..."?"":filter.genre)
+        + '&title='+ filter.search)
         .then(response => {
             if (response.ok) {
                 response.json().then((data: any[]) => {
