@@ -1,7 +1,7 @@
 import React from 'react';
 import './CSS/ControlPanel.css';
 import './CSS/ControlPanelMobile.css';
-import {Checkbox} from 'semantic-ui-react';
+import {Checkbox} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
@@ -31,7 +31,7 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
             {!!user ?
                 <div className={"Checkbox"}>
                     <h2>My movies</h2>
-                    <Checkbox id={"checkboxMovie"} style={{margin: '10px'}} onChange={handleTick} toggle/>
+                    <Checkbox  color='secondary' id='checkboxMovie' style={{margin: '10px'}} onChange={handleTick}/>
                 </div> : 
                 <div/>}
             <GenreSelector refresh={props.refresh}/>
