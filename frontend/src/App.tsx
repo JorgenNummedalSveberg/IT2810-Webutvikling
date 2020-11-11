@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import './CSS/App.css';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
@@ -9,6 +8,7 @@ import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import TuneIcon from '@material-ui/icons/Tune';
+import {Grid} from "@material-ui/core";
 
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
@@ -27,21 +27,13 @@ function App() {
         dispatch(setGenresState(genres))
     }, [dispatch])
 
-    // Overordnet funksjon som setter alle filtere
-    const setFilter = useCallback((filter: Filter)  => {
-        dispatch(setDesc(filter.desc));
-        dispatch(setSearch(filter.search));
-        dispatch(setGenre(filter.genre));
-        dispatch(setSort(filter.sort));
-    }, [dispatch])
-
     // Henter filter fra Redux
     const filter = useSelector((state: State) => state.filter);
 
     // Setter et default filter og henter filmer en gang på starten
     useEffect(() => {
         fetchMovies(setMovies, setGenres, filter, true)
-    }, [filter, setFilter, setGenres, setMovies])
+    }, [filter, setGenres, setMovies])
 
     // Funksjon som refresher filmene
     function refresh() {
@@ -50,24 +42,21 @@ function App() {
     }
 
     //Brukes for å skru av og på burgermenyen
-    let [showMenu, toggleShowMenu] = useState(false);
+    let [showMenu, setShowMenu] = useState(false);
 
-    function toggleMenu() {
-        toggleShowMenu(!showMenu);
-    }
     // Returnerer Main appen
     return (
-        <div className="App">
-            <Header refresh={refresh}/>
-            <button className="FilterButton" onClick={toggleMenu}>
-                <TuneIcon/>
-                {showMenu ? "Close filter":"Filter"}
-            </button>
-            <div className="MainContent">
+        <Grid container>
+            <Grid item xs={12}>
+                <Header refresh={refresh}/>
+            </Grid>
+            <Grid item xs={2}>
                 <ControlPanel refresh={refresh} show={showMenu}/>
+            </Grid>
+            <Grid item xs={10}>
                 <MovieSection/>
-            </div>
-        </div>
+            </Grid>
+        </Grid>
     );
 }
 

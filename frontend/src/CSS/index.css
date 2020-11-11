@@ -11,6 +11,10 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    background-color: #40798C;
+}
+
 * {
     box-sizing: border-box;
 }

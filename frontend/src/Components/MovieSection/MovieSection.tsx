@@ -1,5 +1,4 @@
 import React from 'react';
-import './CSS/MovieSection.css';
 import {Grid, Card, CardContent, Typography} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
@@ -7,6 +6,7 @@ import {State} from "../../types/State";
 import {setPage} from "../../actions";
 import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
+import {makeStyles} from "@material-ui/styles";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
@@ -19,28 +19,38 @@ function MovieSection() {
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
-        <div className={"GridView"}>
-            <Grid style={{margin: "20px", width: '50%'}}>
-                <Card style={{backgroundColor: 'pink'}}>
-                    <CardContent>
-                        <Typography color='secondary' variant="h5" component="h2">
-                            No movies
-                        </Typography>
-                    </CardContent>
-                    <CardContent>
-                        This might be because:
-                    </CardContent>
-                    <ul style={{listStyleType: 'circle'}}>
-                        <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
-                        <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
-                    </ul>
-                    <CardContent>
-                        <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-                    </CardContent>
-                </Card>
-            </Grid>
-        </div>
+        <Grid>
+            <Card>
+                <CardContent>
+                    <Typography color='secondary' variant="h5" component="h2">
+                        No movies
+                    </Typography>
+                </CardContent>
+                <CardContent>
+                    This might be because:
+                </CardContent>
+                <ul>
+                    <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
+                    <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
+                </ul>
+                <CardContent>
+                    <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
+                </CardContent>
+            </Card>
+        </Grid>
     )
+
+    const useStyles = makeStyles({
+        root: {
+            flexGrow: 1,
+            margin: '20px'
+        },
+        movieGrid: {
+            width: '100%'
+        }
+    })
+
+    const classes = useStyles();
 
     // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
     return useSelector((state: State) => {
@@ -89,7 +99,7 @@ function MovieSection() {
 
             // Definerer sidevalg menyen
             const pagination = (
-                <div style={{margin: '20px'}}>
+                <div>
                     <Pagination
                         size="large"
                         onChange={(e: object, page: number) => {
@@ -100,24 +110,22 @@ function MovieSection() {
                 </div>
             )
 
+
             return (
-                <div className={"GridView"}>
+                <div className={classes.root}>
                     {state.details.show ?
                         <Popup/> : null
                     }
                     {pagination}
-                    <div style={{width:'100%'}}>
-                        <Grid
-                            style={{padding: '2%'}}
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="stretch"
-                            spacing={4}
-                            >
-                            {movieCards}
-                        </Grid>
-                    </div>
+                    <Grid
+                        className={classes.movieGrid}
+                        container
+                        justify="center"
+                        alignItems="stretch"
+                        spacing={4}
+                        >
+                        {movieCards}
+                    </Grid>
                     {pagination}
                 </div>
             )

@@ -1,6 +1,4 @@
 import {useDispatch, useSelector} from "react-redux";
-import './CSS/ControlPanel.css';
-import './CSS/ControlPanelMobile.css';
 import {setGenre} from "../../actions";
 import {MenuItem, Select} from "@material-ui/core";
 import React from "react";

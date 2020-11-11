@@ -1,5 +1,4 @@
 import React from 'react';
-import './CSS/Popup.css';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {Button} from "@material-ui/core";

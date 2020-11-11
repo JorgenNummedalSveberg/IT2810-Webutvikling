@@ -1,12 +1,11 @@
 import React, {useRef, useState} from 'react';
-import './CSS/Header.css';
-import './CSS/SearchField.css';
 import SortingPanel from "./SortingPanel";
 import {TextField} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
+import {makeStyles} from "@material-ui/styles";
 
 
 function Header(props: { refresh: () => void }) {
@@ -39,14 +38,28 @@ function Header(props: { refresh: () => void }) {
     function toggleMenu() {
         toggleShowMenu(!showMenu);
     }
+    const useStyles = makeStyles({
+        div: {
+            backgroundColor: '#003049',
+            display: 'flex',
+        },
+        textfield: {
+            minWidth: '500px',
+        }
+    })
 
+    const classes = useStyles();
     return (
-        <div className="Header" id="HeaderID">
-            <TextField variant={'filled'} inputProps={{'data-testid': 'searcher'}} value={searchString} onChange={onChange} style={{margin: '10px'}}
-                   placeholder='Search...'/>
-            <div className="loginButtons">
-                <SignLogIn isLogged={!user}/>
-            </div>
+        <div className={classes.div}>
+            <TextField
+                className={classes.textfield}
+                variant={'outlined'}
+                inputProps={{'data-testid': 'searcher'}}
+                value={searchString}
+                onChange={onChange}
+                placeholder='Search...'
+            />
+            <SignLogIn isLogged={!user}/>
             <SortingPanel refresh={props.refresh} show={showMenu}/>
             <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
