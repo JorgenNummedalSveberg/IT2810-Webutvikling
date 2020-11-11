@@ -23,7 +23,7 @@ function MovieCard(props: { movie: Movie }) {
         <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}} onClick={handleClick}>
                 <CardMedia>
-                    <img width={"100%"} src={props.movie.posterurl}/>
+                    <img alt='Could not display movieposter' width={"100%"} src={props.movie.posterurl}/>
                 </CardMedia>
                 <CardHeader id={"id_" + (props.movie.title).replace(/\s/g, "")}
                              style={{color: 'white'}}>{props.movie.title}</CardHeader>

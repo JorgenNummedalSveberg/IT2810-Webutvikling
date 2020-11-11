@@ -1,6 +1,6 @@
 import React from 'react';
 import './CSS/MovieSection.css';
-import {Grid, Card, CardHeader, CardContent, List, ListItem, Typography} from '@material-ui/core'
+import {Grid, Card, CardContent, Typography} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
