@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './CSS/App.css';
 import Header from "./Components/Header/Header";
-import 'semantic-ui-css/semantic.min.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
 import {Filter} from "./types/Filter";
