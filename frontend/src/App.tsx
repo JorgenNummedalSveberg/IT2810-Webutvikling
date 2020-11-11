@@ -9,8 +9,7 @@ import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
-import { Icon } from 'semantic-ui-react';
-
+import TuneIcon from '@material-ui/icons/Tune';
 
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
@@ -62,7 +61,7 @@ function App() {
         <div className="App">
             <Header refresh={refresh}/>
             <button className="FilterButton" onClick={toggleMenu}>
-                <Icon name="sliders"/>
+                <TuneIcon/>
                 {showMenu ? "Close filter":"Filter"}
             </button>
             <div className="MainContent">
