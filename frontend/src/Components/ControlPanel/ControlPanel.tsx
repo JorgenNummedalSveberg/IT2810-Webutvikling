@@ -1,13 +1,12 @@
 import React from 'react';
 import './CSS/ControlPanel.css';
 import './CSS/ControlPanelMobile.css';
-import {Checkbox} from '@material-ui/core';
+import {Checkbox, useMediaQuery} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
 import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
-import {useMediaQuery} from "@material-ui/core";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: { refresh: () => void, show:boolean }) {

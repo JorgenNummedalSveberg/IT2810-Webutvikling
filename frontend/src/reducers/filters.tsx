@@ -1,9 +1,9 @@
 // Samlet reducer for alle filterene
 const filterReducer = (filters = {
     desc: true,
-    genre: "",
+    sort: "Name",
     search: "",
-    sort: "",
+    genre: "Select genre...",
     score: [0, 10],
     year: [1900, 2020],
     duration: [0, 320],
