@@ -47,8 +47,7 @@ function Header(props: { refresh: () => void }) {
             <TextField variant={'filled'} id="searchbar" value={searchString} onChange={onChange} style={{margin: '10px'}}
                    placeholder='Search...' role="searcher" />
             <div className="loginButtons">
-                {!!user ? (<Button onClick={() => dispatch(logout())} style={{zIndex: 1000000}}>Log out</Button>) :
-                    (<SignLogIn/>)}
+                <SignLogIn isLogged={!user}/>
             </div>
             <SortingPanel refresh={props.refresh} show={showMenu}/>
             <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
