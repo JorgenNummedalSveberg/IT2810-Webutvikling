@@ -24,10 +24,8 @@ function Header(props: { refresh: () => void }) {
     function onChange(e: any) {
         const value = e.target.value;
         setSearchString(value);
-        console.log(e.target.value);
         clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
-            console.log(value);
             dispatch(setSearch(value));
             props.refresh();
         }, 300);
@@ -44,8 +42,8 @@ function Header(props: { refresh: () => void }) {
 
     return (
         <div className="Header" id="HeaderID">
-            <TextField variant={'filled'} id="searchbar" value={searchString} onChange={onChange} style={{margin: '10px'}}
-                   placeholder='Search...' role="searcher" />
+            <TextField variant={'filled'} inputProps={{'data-testid': 'searcher'}} value={searchString} onChange={onChange} style={{margin: '10px'}}
+                   placeholder='Search...'/>
             <div className="loginButtons">
                 <SignLogIn isLogged={!user}/>
             </div>
