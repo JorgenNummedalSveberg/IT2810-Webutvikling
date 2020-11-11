@@ -1,7 +1,6 @@
 import React from 'react';
 import './CSS/MovieSection.css';
-import {Message} from 'semantic-ui-react';
-import {Grid} from '@material-ui/core'
+import {Grid, Card, CardHeader, CardContent, List, ListItem, Typography} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -21,20 +20,24 @@ function MovieSection() {
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
         <div className={"GridView"}>
-            <Grid style={{margin: "20px", width: '100%'}}>
-                <Message error>
-                    <Message.Header>
-                        No movies
-                    </Message.Header>
-                    <Message.Content>
+            <Grid style={{margin: "20px", width: '50%'}}>
+                <Card style={{backgroundColor: 'pink'}}>
+                    <CardContent>
+                        <Typography color='secondary' variant="h5" component="h2">
+                            No movies
+                        </Typography>
+                    </CardContent>
+                    <CardContent>
                         This might be because:
-                    </Message.Content>
-                    <Message.List
-                        items={['You may not be on the NTNU network or your VPN is off', "We do not have the movie you're looking for"]}/>
-                    <Message.Content>
+                    </CardContent>
+                    <ul style={{listStyleType: 'circle'}}>
+                        <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
+                        <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
+                    </ul>
+                    <CardContent>
                         <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-                    </Message.Content>
-                </Message>
+                    </CardContent>
+                </Card>
             </Grid>
         </div>
     )

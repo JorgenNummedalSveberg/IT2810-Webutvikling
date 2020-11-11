@@ -33,6 +33,7 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
                     <Checkbox  color='secondary' id='checkboxMovie' style={{margin: '10px'}} onChange={handleTick}/>
                 </div> : 
                 <div/>}
+                <br/>
             <GenreSelector refresh={props.refresh}/>
             <RangeSlider score={score} type="score"/>
             <RangeSlider score={year} type="year"/>

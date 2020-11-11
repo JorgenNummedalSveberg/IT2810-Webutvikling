@@ -32,9 +32,9 @@ function GenreSelector(props: { refresh: () => void }) {
 
     return (
         <Select
-            style={{backgroundColor: 'pink'}}
+            style={{backgroundColor: 'lightBlue'}}
             variant='outlined'
-            color='secondary'
+            color='primary'
             value={genre.value}
             onChange={onSearchChange}
         >
