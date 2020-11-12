@@ -47,13 +47,13 @@ function SortButton(props: {mobile: boolean, sort: string, refresh: () => void, 
             height: '100%'
         },
         sortTitle: {
-            color: active?'#DEDA77':'#D1D1D1',
+            color: active?'#E98074':'#D1D1D1',
             width: '100%',
             margin: 0,
             paddingTop: props.mobile?'40px':'7px'
         },
         arrow: {
-            color:(active ? "#DEDA77" : "#D1D1D1")
+            color:(active ? "#E98074" : "#D1D1D1")
         }
     })
 
