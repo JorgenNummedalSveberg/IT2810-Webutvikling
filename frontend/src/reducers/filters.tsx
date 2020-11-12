@@ -35,7 +35,7 @@ const filterReducer = (filters = {
         case 'setYears':
             result.year = action.payload as number[];
             break;
-        case 'setDuration':
+        case 'setLength':
             result.duration = action.payload as number[];
             break;
         case 'myMovies':

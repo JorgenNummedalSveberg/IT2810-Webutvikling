@@ -1,11 +1,13 @@
 import React, {useRef, useState} from 'react';
-import {TextField, useMediaQuery} from "@material-ui/core";
+import {Button, Drawer, TextField, useMediaQuery} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
 import SortButton from "./SortButton";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import {sortBy} from "../../App";
 
 
 function Header(props: { refresh: () => void }) {
@@ -13,9 +15,6 @@ function Header(props: { refresh: () => void }) {
     const dispatch = useDispatch();
     // State som holder styr på loading icon på input
     const [searchString, setSearchString] = useState("");
-
-    // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
-    const sortBy = ["Name", "Rating", "Duration", "Year"];
 
     // Tom timeout ref som defineres først;
     let timeoutRef = useRef(setTimeout(() => {
@@ -33,9 +32,6 @@ function Header(props: { refresh: () => void }) {
     }
 
     const user = useSelector((state: State) => state.user);
-
-    //Brukes for å skru av og på burgermenyen
-    let [showMenu, toggleShowMenu] = useState(false);
 
     const classes = makeStyles({
         root: {
@@ -66,19 +62,20 @@ function Header(props: { refresh: () => void }) {
             }
         },
         buttons: {
-            width: '20%'
+            width: useMediaQuery('(max-width: 1400px)').valueOf()?'':'20%',
         },
         sorting: {
             width: '60%',
-            display: 'flex',
+            display: useMediaQuery('(max-width: 1400px)').valueOf()?'none':'flex',
             justifyContent: 'flex-end',
+            height: '100%',
             '& *': {
                 width: (1/sortBy.length)*100+'%',
-                fontSize: '1.5em'
+                fontSize: '1.5em',
+                height: '60px'
             }
-        }
+        },
     })
-
 
     return (
         <div className={classes().root}>
@@ -97,7 +94,7 @@ function Header(props: { refresh: () => void }) {
             </div>
             <div className={classes().sorting}>
                 {sortBy.map((sort, index) => (
-                    <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
+                    <SortButton mobile={false} key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
                 ))}
             </div>
         </div>

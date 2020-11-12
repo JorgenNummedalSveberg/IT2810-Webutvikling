@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {setDesc, setGenre, setGenresState, setMovieState, setSearch, setSort} from "./actions";
+import {setGenresState, setMovieState} from "./actions";
 import {Filter} from "./types/Filter";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
@@ -10,7 +10,12 @@ import MovieSection from "./Components/MovieSection/MovieSection";
 import TuneIcon from '@material-ui/icons/Tune';
 import {Button, Drawer, Grid, useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
-import {collectVariableUsage} from "tsutils";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import SortButton from "./Components/Header/SortButton";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+
+// Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
+export const sortBy = ["Name", "Rating", "Length", "Year"];
 
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
@@ -43,20 +48,22 @@ function App() {
         fetchMovies(setMovies, setGenres, filter, false)
     }
 
-    //Brukes for å skru av og på burgermenyen
-    let [showMenu, setShowMenu] = useState(false);
-
     const classes = makeStyles({
         root: {
             height: '100%',
             overflow: 'hidden',
         },
         header: {
-            height: useMediaQuery('(max-width: 1400px)').valueOf()?'20%': '10%'
+            height: useMediaQuery('(max-width: 1400px)').valueOf()?'200px': '10%',
+            position: 'fixed',
+            width: '100%',
+            zIndex: 100
         },
         mainBox: {
+            position: 'absolute',
             display: 'flex',
-            height: useMediaQuery('(max-width: 1400px)').valueOf()?'80%': '90%'
+            height: useMediaQuery('(max-width: 1400px)').valueOf()?'80%': '90%',
+            top: useMediaQuery('(max-width: 1400px)').valueOf()?'20%': '10%',
         },
         row: {
             flexDirection: 'row'
@@ -66,42 +73,81 @@ function App() {
             alignItems: 'center',
         },
         movieSection: {
-            height: useMediaQuery('(max-width: 1400px)').valueOf()?'90%': '100%'
+            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf()?'': '500px'
         },
         filterButton: {
             fontSize: '2em',
             backgroundColor: 'rgb(200, 200, 200, 0.5)',
             padding: '0 20px 0 20px',
-            margin: '20px 0 20px 0'
-        }
+            margin: '20px 10px 20px 10px'
+        },
+        sorting: {
+            backgroundColor: '#40798C',
+            display: 'flex',
+            justifyContent: 'center',
+            height: '200px',
+            padding: '40px',
+            '& *': {
+                margin: '10px',
+                fontSize: '1.3em'
+            }
+        },
+        wide: {
+            display: useMediaQuery('(min-width: 1401px)').valueOf()?'initial': 'none'
+        },
+        thin: {
+            display: useMediaQuery('(max-width: 1400px)').valueOf()?'initial': 'none',
+            textAlign: 'center'
+        },
     })
 
-    const [openDrawer, setOpenDrawer] = useState(false)
+    const [openSorting, setSortingOpen] = useState(false)
+    const [openFilter, setFilterOpen] = useState(false)
 
     const filterButton = (
         <Button
             className={classes().filterButton}
             startIcon={<TuneIcon/>}
-            onClick={()=> setOpenDrawer(true)}
+            onClick={()=> setFilterOpen(true)}
         >Filters
         </Button>
     )
+
+    const sortButton = (
+        <Button
+            className={classes().filterButton}
+            startIcon={<ExpandMoreIcon/>}
+            onClick={()=> setSortingOpen(true)}
+        >Sort by
+        </Button>
+    )
+
     // Returnerer Main appen
     return (
         <div className={classes().root}>
             <div className={classes().header} >
                 <Header refresh={refresh}/>
             </div>
-            <div className={`${classes().mainBox} ${useMediaQuery('(min-width: 1400px)').valueOf() ? classes().row : classes().column}`}>
-                {useMediaQuery('(min-width: 1400px)').valueOf()?
-                    <div><ControlPanel refresh={refresh} show={showMenu}/></div>
-                    :
-                    <div>
-                        {filterButton}
-                        <Drawer anchor={'left'} open={openDrawer} onClose={()=> setOpenDrawer(false)}>
-                            <ControlPanel refresh={refresh} show={showMenu}/>
+            <div className={`${classes().mainBox} ${useMediaQuery('(min-width: 1401px)').valueOf() ? classes().row : classes().column}`}>
+                    <div className={classes().wide}>
+                        <ControlPanel mobile={false} refresh={refresh}/>
+                    </div>
+                    <div className={classes().thin}>
+                        {sortButton}
+                        <Drawer anchor={'top'} open={openSorting} onClose={()=> setSortingOpen(false)}>
+                            <Button startIcon={<ArrowBackIcon/>} onClick={()=> setSortingOpen(false)}>Close</Button>
+                            <div className={classes().sorting}>
+                                {sortBy.map((sort, index) => (
+                                    <SortButton mobile={true} key={index} sort={sort} refresh={refresh} nummer={index.toString()}/>
+                                ))}
+                            </div>
                         </Drawer>
-                    </div>}
+                        {filterButton}
+                        <Drawer anchor={'left'} open={openFilter} onClose={()=> setFilterOpen(false)}>
+                            <Button startIcon={<ArrowBackIcon/>} onClick={()=> setFilterOpen(false)}>Close</Button>
+                            <ControlPanel mobile={true} refresh={refresh}/>
+                        </Drawer>
+                    </div>
                 <div className={classes().movieSection}>
                     <MovieSection/>
                 </div>
@@ -135,7 +181,7 @@ function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: bool
                             case "Rating":
                                 data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
                                 break
-                            case "Duration":
+                            case "Length":
                                 data.sort((a: Movie, b: Movie) => {
                                     return a.duration - b.duration;
                                 });

@@ -116,9 +116,9 @@ export function setYears(year: number[]) {
 }
 
 // Endrer varighet på filmen
-export function setDuration(duration: number[]) {
+export function setLength(duration: number[]) {
     return {
-        type: 'setDuration',
+        type: 'setLength',
         payload: duration
     }
 }

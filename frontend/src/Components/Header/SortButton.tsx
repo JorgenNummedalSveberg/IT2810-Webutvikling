@@ -3,9 +3,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setSort} from "../../actions";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
+import {sortBy} from "../../App";
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
-function SortButton(props: { sort: string, refresh: () => void, nummer: string }) {
+function SortButton(props: {mobile: boolean, sort: string, refresh: () => void, nummer: string }) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -31,20 +35,36 @@ function SortButton(props: { sort: string, refresh: () => void, nummer: string }
     const classes = makeStyles({
         div: {
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: props.mobile?'column':'row',
+            alignItems: 'center',
+            textAlign: 'center',
+            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            width: (1/sortBy.length)*100-5+'%',
+            margin: '10px',
+            height: '100%'
         },
+        sortTitle: {
+            color: active?'#DEDA77':'#D1D1D1',
+            width: '100%',
+            margin: 0,
+            paddingTop: props.mobile?'40px':'7px'
+        },
+        arrow: {
+            color:(active ? "#DEDA77" : "#D1D1D1")
+        }
     })
 
     return (
         <div className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
              onClick={toggleSort}>
-            <svg style={{"transform": "rotate(" + (active ? (desc ? -90 : (90)) : 0) + "deg)"}} width="258" height="452"
-                 viewBox="0 0 258 452" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
-                    fill={(active ? "#DEDA77" : "#D1D1D1")}/>
-            </svg>
-            <h3 style={{"color": (active ? "#DEDA77" : "#D1D1D1")}}>{props.sort}</h3>
+            {props.mobile?<h3 className={classes().sortTitle}>{props.sort}</h3>:null}
+            {active?(desc?
+                <KeyboardArrowDownIcon className={classes().arrow}/>:
+                <KeyboardArrowUpIcon className={classes().arrow}/>):
+                <KeyboardArrowLeftIcon className={classes().arrow}/>}
+            {!props.mobile?<h3 className={classes().sortTitle}>{props.sort}</h3>:null}
         </div>
     );
 }

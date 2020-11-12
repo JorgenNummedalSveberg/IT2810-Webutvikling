@@ -71,11 +71,11 @@ function SignLogIn(props: {isLogged: boolean}) {
 
     const classes = makeStyles({
         loginRoot: {
-            minHeight: '2em',
-            border: 'white solid 1px',
-            backgroundColor: '#70A9A1',
+            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            borderRadius: '5px',
+            margin: '10px',
             '& span': {
-                fontSize: '2em',
+                fontSize: '1.8em',
                 color: 'white',
             }
         }
