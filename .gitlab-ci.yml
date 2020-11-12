@@ -21,12 +21,6 @@ install:
   - cd ..
   - cd backend
   - npm prune
- only:
-  changes:
-   - package.json
-   - frontend/package.json
-   - backend/package.json
-
 
 build:
  stage: build
