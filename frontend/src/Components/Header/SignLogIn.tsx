@@ -70,20 +70,26 @@ function SignLogIn(props: {isLogged: boolean}) {
     }
 
     const classes = makeStyles({
-        loginRoot: {
-            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+        loginButton: {
+            backgroundColor: '#E98074',
             borderRadius: '5px',
             margin: '10px',
             '& span': {
                 fontSize: '1.8em',
                 color: 'white',
             }
+        },
+        none: {
+            display: 'none'
+        },
+        initial: {
+            display: 'initial'
         }
     })
     return (
-        props.isLogged ?
-            (<div>
-                <Button className={classes().loginRoot} onClick={()=> setOpen(true)} >Log in/Sign up</Button>
+        <div>
+            <div className={`${props.isLogged?classes().initial:classes().none}`}>
+                <Button className={classes().loginButton} onClick={()=> setOpen(true)} >Log in/Sign up</Button>
                 <Dialog open={open} onClose={()=> setOpen(false)} title='Log in/Sign up'>
                     <DialogTitle>Log in/Sign up</DialogTitle>
                     <DialogContent>
@@ -105,9 +111,11 @@ function SignLogIn(props: {isLogged: boolean}) {
                             up</Button>
                     </DialogActions>
                 </Dialog>
-            </div>):
-            (<Button onClick={() => dispatch(logout())} style={{zIndex: 1000000}}>Log out</Button>)
-
+            </div>
+            <div className={`${props.isLogged?classes().none:classes().initial}`}>
+                <Button onClick={() => dispatch(logout())} className={classes().loginButton}>Log out</Button>
+            </div>
+        </div>
     )
 }
 

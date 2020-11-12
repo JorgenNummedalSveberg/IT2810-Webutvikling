@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox} from '@material-ui/core';
+import {Paper, Checkbox, Divider} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
@@ -23,23 +23,40 @@ function ControlPanel(props: {mobile: boolean, refresh: () => void}) {
     const classes = makeStyles({
         root: {
             position: (props.mobile?'initial':'fixed'),
-            width: '500px',
-            backgroundColor: '#70A9A1',
+            minWidth: '500px',
+            backgroundColor: '#D8C3A5',
             height: '100%',
             padding: '20px'
+        },
+        divider: {
+            margin: '20px 10px 20px 10px'
+        },
+        myMovies: {
+            display: 'inline-block'
+        },
+        checkbox: {
+            backgroundColor: '#E98074',
+            padding: '10px',
+            flexDirection: 'row',
+        },
+        none: {
+            display: !!user?'flex':'none',
         }
     });
+
     return (
         <div className={classes().root} >
-            {!!user ?
-                <div className={"Checkbox"}>
+            <div className={classes().myMovies}>
+                <Paper className={`${classes().checkbox} ${classes().none}`}>
                     <h2>My movies</h2>
-                    <Checkbox  color='secondary' id='checkboxMovie' style={{margin: '10px'}} onChange={handleTick}/>
-                </div> : 
-                <div/>}
-                <br/>
+                    <Checkbox  color='secondary' onChange={handleTick}/>
+                </Paper>
+            </div>
+            <Divider className={`${classes().divider} ${classes().none}`}/>
             <GenreSelector refresh={props.refresh}/>
+            <Divider className={classes().divider}/>
             <RangeSlider score={score} type="score"/>
+            <Divider className={classes().divider}/>
             <RangeSlider score={year} type="year"/>
         </div>
     );

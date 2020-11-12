@@ -1,12 +1,11 @@
 import React, {useRef, useState} from 'react';
-import {Button, Drawer, TextField, useMediaQuery} from "@material-ui/core";
+import {TextField, useMediaQuery} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
 import SortButton from "./SortButton";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {sortBy} from "../../App";
 
 
@@ -36,7 +35,7 @@ function Header(props: { refresh: () => void }) {
     const classes = makeStyles({
         root: {
             height: '100%',
-            backgroundColor: '#003049',
+            backgroundColor: '#8E8D8A',
             display: 'flex',
             flexDirection: useMediaQuery('(max-width: 1400px)').valueOf()?'column':'row',
             alignItems: useMediaQuery('(max-width: 1400px)').valueOf()?'center':'flex-end',

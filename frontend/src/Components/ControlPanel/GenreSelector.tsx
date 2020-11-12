@@ -1,8 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
 import {setGenre} from "../../actions";
-import {MenuItem, Select} from "@material-ui/core";
+import {MenuItem, Paper, Select} from "@material-ui/core";
 import React from "react";
 import {State} from "../../types/State";
+import {makeStyles} from "@material-ui/styles";
 
 // Endrer sjanger vi søker etter
 function GenreSelector(props: { refresh: () => void }) {
@@ -28,16 +29,27 @@ function GenreSelector(props: { refresh: () => void }) {
         props.refresh();
     }
 
+    const classes = makeStyles({
+        paper: {
+            backgroundColor: '#E98074',
+            display: 'block'
+        },
+        selector: {
+            display: 'block',
+        }
+    })
+
     return (
-        <Select
-            style={{backgroundColor: 'lightBlue'}}
-            variant='outlined'
-            color='primary'
-            value={genre.value}
-            onChange={onSearchChange}
-        >
-            {genreOptions.map((genreOption, index) => <MenuItem key={index} value={genreOption.value}>{genreOption.text}</MenuItem>)}
-        </Select>
+        <Paper className={classes().paper}>
+            <Select
+                className={classes().selector}
+                variant={'outlined'}
+                value={genre.value}
+                onChange={onSearchChange}
+            >
+                {genreOptions.map((genreOption, index) => <MenuItem key={index} value={genreOption.value}>{genreOption.text}</MenuItem>)}
+            </Select>
+        </Paper>
     )
 }
 

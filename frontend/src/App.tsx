@@ -61,7 +61,7 @@ function App() {
         },
         mainBox: {
             position: 'absolute',
-            display: 'flex',
+            width: '100%',
             height: useMediaQuery('(max-width: 1400px)').valueOf()?'80%': '90%',
             top: useMediaQuery('(max-width: 1400px)').valueOf()?'20%': '10%',
         },
@@ -73,7 +73,7 @@ function App() {
             alignItems: 'center',
         },
         movieSection: {
-            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf()?'': '500px'
+            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf()?'': '500px',
         },
         filterButton: {
             fontSize: '2em',
@@ -96,7 +96,8 @@ function App() {
             display: useMediaQuery('(min-width: 1401px)').valueOf()?'initial': 'none'
         },
         thin: {
-            display: useMediaQuery('(max-width: 1400px)').valueOf()?'initial': 'none',
+            display: useMediaQuery('(max-width: 1400px)').valueOf()?'flex': 'none',
+            justifyContent: 'center',
             textAlign: 'center'
         },
     })

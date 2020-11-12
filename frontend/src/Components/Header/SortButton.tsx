@@ -7,6 +7,7 @@ import {sortBy} from "../../App";
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+import {Paper} from "@material-ui/core";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: {mobile: boolean, sort: string, refresh: () => void, nummer: string }) {
@@ -57,7 +58,7 @@ function SortButton(props: {mobile: boolean, sort: string, refresh: () => void, 
     })
 
     return (
-        <div className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
+        <Paper className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
              onClick={toggleSort}>
             {props.mobile?<h3 className={classes().sortTitle}>{props.sort}</h3>:null}
             {active?(desc?
@@ -65,7 +66,7 @@ function SortButton(props: {mobile: boolean, sort: string, refresh: () => void, 
                 <KeyboardArrowUpIcon className={classes().arrow}/>):
                 <KeyboardArrowLeftIcon className={classes().arrow}/>}
             {!props.mobile?<h3 className={classes().sortTitle}>{props.sort}</h3>:null}
-        </div>
+        </Paper>
     );
 }
 

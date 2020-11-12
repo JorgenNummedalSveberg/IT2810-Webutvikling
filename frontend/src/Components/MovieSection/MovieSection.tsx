@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Card, CardContent, Typography} from '@material-ui/core'
+import {Grid, Card, CardContent, Typography, useMediaQuery} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -42,17 +42,15 @@ function MovieSection() {
 
     const classes = makeStyles({
         root: {
-            flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             padding: '20px',
-            height: '100%',
-            overflowY: 'auto'
+            overflowY: 'auto',
         },
         movieGrid: {
             width: '100%',
-            margin: '20px'
+            margin: '20px',
         }
     })
 
