@@ -2,10 +2,9 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {Button} from "@material-ui/core";
-import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete';
-import {login, setPopup, showPopup} from "../../actions";
+import {login, setPopup} from "../../actions";
 import ImdbIcon from "../Shared/ImdbIcon";
 import {makeStyles} from "@material-ui/styles";
 
@@ -43,14 +42,15 @@ function Popup() {
                     }
                     dispatch(setPopup(reduxState.details.movie));
                     dispatch(login(reduxState.user));
-                }})
+                }
+            })
             .catch(error => console.log(error));
     }
 
     const classes = makeStyles({
         root: {
             margin: '0 20px 0 20px',
-            display: reduxState.details.show?'flex':'none',
+            display: reduxState.details.show ? 'flex' : 'none',
             flexDirection: 'column',
             alignItems: 'center'
         },
@@ -74,7 +74,7 @@ function Popup() {
                             onClick={() => changeView(false)}
                             color='primary'
                             endIcon={<VisibilityIcon/>}
-                            >Watched</Button>
+                    >Watched</Button>
                     : null}
                 {!!reduxState.user && reduxState.user.movies.includes(reduxState.details.movie._id) ?
                     <Button id='removeButton'
@@ -84,7 +84,7 @@ function Popup() {
                             endIcon={<DeleteIcon/>}
                     >Remove from my list</Button>
                     :
-                        null}
+                    null}
             </div>
             <h3>{reduxState.details.movie.genres.join(", ")}</h3>
             <p>{reduxState.details.movie.storyline}</p>

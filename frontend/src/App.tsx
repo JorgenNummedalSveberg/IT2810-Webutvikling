@@ -8,7 +8,7 @@ import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import TuneIcon from '@material-ui/icons/Tune';
-import {Button, Drawer, Grid, useMediaQuery} from "@material-ui/core";
+import {Button, Drawer, useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SortButton from "./Components/Header/SortButton";
@@ -54,7 +54,7 @@ function App() {
             overflow: 'hidden',
         },
         header: {
-            height: useMediaQuery('(max-width: 1400px)').valueOf()?'200px': '10%',
+            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '200px' : '10%',
             position: 'fixed',
             width: '100%',
             zIndex: 100
@@ -62,8 +62,8 @@ function App() {
         mainBox: {
             position: 'absolute',
             width: '100%',
-            height: useMediaQuery('(max-width: 1400px)').valueOf()?'80%': '90%',
-            top: useMediaQuery('(max-width: 1400px)').valueOf()?'20%': '10%',
+            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '80%' : '90%',
+            top: useMediaQuery('(max-width: 1400px)').valueOf() ? '20%' : '10%',
         },
         row: {
             flexDirection: 'row'
@@ -73,7 +73,7 @@ function App() {
             alignItems: 'center',
         },
         movieSection: {
-            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf()?'': '500px',
+            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '500px',
         },
         filterButton: {
             fontSize: '2em',
@@ -93,10 +93,10 @@ function App() {
             }
         },
         wide: {
-            display: useMediaQuery('(min-width: 1401px)').valueOf()?'initial': 'none'
+            display: useMediaQuery('(min-width: 1401px)').valueOf() ? 'initial' : 'none'
         },
         thin: {
-            display: useMediaQuery('(max-width: 1400px)').valueOf()?'flex': 'none',
+            display: useMediaQuery('(max-width: 1400px)').valueOf() ? 'flex' : 'none',
             justifyContent: 'center',
             textAlign: 'center'
         },
@@ -109,7 +109,7 @@ function App() {
         <Button
             className={classes().filterButton}
             startIcon={<TuneIcon/>}
-            onClick={()=> setFilterOpen(true)}
+            onClick={() => setFilterOpen(true)}
         >Filters
         </Button>
     )
@@ -118,7 +118,7 @@ function App() {
         <Button
             className={classes().filterButton}
             startIcon={<ExpandMoreIcon/>}
-            onClick={()=> setSortingOpen(true)}
+            onClick={() => setSortingOpen(true)}
         >Sort by
         </Button>
     )
@@ -126,29 +126,31 @@ function App() {
     // Returnerer Main appen
     return (
         <div className={classes().root}>
-            <div className={classes().header} >
+            <div className={classes().header}>
                 <Header refresh={refresh}/>
             </div>
-            <div className={`${classes().mainBox} ${useMediaQuery('(min-width: 1401px)').valueOf() ? classes().row : classes().column}`}>
-                    <div className={classes().wide}>
-                        <ControlPanel mobile={false} refresh={refresh}/>
-                    </div>
-                    <div className={classes().thin}>
-                        {sortButton}
-                        <Drawer anchor={'top'} open={openSorting} onClose={()=> setSortingOpen(false)}>
-                            <Button startIcon={<ArrowBackIcon/>} onClick={()=> setSortingOpen(false)}>Close</Button>
-                            <div className={classes().sorting}>
-                                {sortBy.map((sort, index) => (
-                                    <SortButton mobile={true} key={index} sort={sort} refresh={refresh} nummer={index.toString()}/>
-                                ))}
-                            </div>
-                        </Drawer>
-                        {filterButton}
-                        <Drawer anchor={'left'} open={openFilter} onClose={()=> setFilterOpen(false)}>
-                            <Button startIcon={<ArrowBackIcon/>} onClick={()=> setFilterOpen(false)}>Close</Button>
-                            <ControlPanel mobile={true} refresh={refresh}/>
-                        </Drawer>
-                    </div>
+            <div
+                className={`${classes().mainBox} ${useMediaQuery('(min-width: 1401px)').valueOf() ? classes().row : classes().column}`}>
+                <div className={classes().wide}>
+                    <ControlPanel mobile={false} refresh={refresh}/>
+                </div>
+                <div className={classes().thin}>
+                    {sortButton}
+                    <Drawer anchor={'top'} open={openSorting} onClose={() => setSortingOpen(false)}>
+                        <Button startIcon={<ArrowBackIcon/>} onClick={() => setSortingOpen(false)}>Close</Button>
+                        <div className={classes().sorting}>
+                            {sortBy.map((sort, index) => (
+                                <SortButton mobile={true} key={index} sort={sort} refresh={refresh}
+                                            nummer={index.toString()}/>
+                            ))}
+                        </div>
+                    </Drawer>
+                    {filterButton}
+                    <Drawer anchor={'left'} open={openFilter} onClose={() => setFilterOpen(false)}>
+                        <Button startIcon={<ArrowBackIcon/>} onClick={() => setFilterOpen(false)}>Close</Button>
+                        <ControlPanel mobile={true} refresh={refresh}/>
+                    </Drawer>
+                </div>
                 <div className={classes().movieSection}>
                     <MovieSection/>
                 </div>
@@ -160,8 +162,8 @@ function App() {
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: boolean) {
     fetch('http://localhost:5000/api/movies?genre='
-        + (filter.genre==="Select genre..."?"":filter.genre)
-        + '&title='+ filter.search)
+        + (filter.genre === "Select genre..." ? "" : filter.genre)
+        + '&title=' + filter.search)
         .then(response => {
             if (response.ok) {
                 response.json().then((data: any[]) => {
@@ -199,9 +201,11 @@ function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: bool
                             genreUpdate(data.map((movie: any) => movie.genres), setGenres);
                         }
                     }
-                })} else {
+                })
+            } else {
                 setMovies({error: "no movies"});
-            }})
+            }
+        })
 }
 
 // Setter sjangrene i state

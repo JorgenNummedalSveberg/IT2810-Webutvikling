@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Card, CardContent, Typography, useMediaQuery, Button, Drawer} from '@material-ui/core'
+import {Button, Card, CardContent, Drawer, Grid, Typography} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -8,9 +8,6 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import SortButton from "../Header/SortButton";
-import {sortBy} from "../../App";
-
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection() {
@@ -36,7 +33,8 @@ function MovieSection() {
                     This might be because:
                 </CardContent>
                 <ul>
-                    <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
+                    <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography>
+                    </li>
                     <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
                 </ul>
                 <CardContent>
@@ -129,8 +127,8 @@ function MovieSection() {
 
             return (
                 <div>
-                    <Drawer anchor={'right'} open={show} onClose={()=> dispatch(showPopup(false))}>
-                        <Button startIcon={<ArrowBackIcon/>} onClick={()=> dispatch(showPopup(false))}>Close</Button>
+                    <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
+                        <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
                         <div className={classes().popup}>
                             <Popup/>
                         </div>

@@ -1,17 +1,7 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {
-    ButtonBase,
-    Card,
-    CardContent,
-    CardHeader,
-    CardMedia,
-    Divider,
-    Grid,
-    Paper,
-    useMediaQuery
-} from "@material-ui/core";
+import {ButtonBase, Card, Divider, Grid, Paper} from "@material-ui/core";
 import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
@@ -32,7 +22,7 @@ function MovieCard(props: { movie: Movie }) {
 
     const classes = makeStyles({
         card: {height: "100%", width: '100%', backgroundColor: '#464646'},
-        gridItem: {flexGrow:1, flexBasis: 1, maxWidth: '600px', width: '600px'},
+        gridItem: {flexGrow: 1, flexBasis: 1, maxWidth: '600px', width: '600px'},
         paperButton: {height: "100%", width: '100%'},
         paper: {backgroundColor: '#E85A4F', height: "100%", width: '100%', display: 'flex', flexDirection: 'row'},
         poster: {maxWidth: '500px', minWidth: '250px'},
@@ -58,7 +48,8 @@ function MovieCard(props: { movie: Movie }) {
         <Grid className={classes().gridItem} item>
             <ButtonBase className={classes().paperButton} onClick={handleClick}>
                 <Paper className={classes().paper} elevation={5}>
-                    <img className={classes().poster} alt='Could not display movie poster' width='100%' src={props.movie.posterurl}/>
+                    <img className={classes().poster} alt='Could not display movie poster' width='100%'
+                         src={props.movie.posterurl}/>
                     <div className={classes().details}>
                         <div className={classes().title}>
                             <h1>{props.movie.title}</h1>
@@ -89,9 +80,9 @@ export function DimCard() {
     return (
         <Grid item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
-                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300} />
-                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
-                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
+                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300}/>
+                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
+                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
             </Card>
         </Grid>
     )

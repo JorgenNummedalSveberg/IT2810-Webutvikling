@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Slider, Paper} from '@material-ui/core';
+import {Paper, Slider} from '@material-ui/core';
 import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
 import {makeStyles} from '@material-ui/styles';
@@ -10,7 +10,7 @@ export default function RangeSlider(props: { score: number[], type: string }) {
 
     // Value som setter verdien på slidern
     const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
-    const [range, setRange] = React.useState<number[]>([props.score[0], props.score[1]]);
+    const [range] = React.useState<number[]>([props.score[0], props.score[1]]);
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -32,6 +32,7 @@ export default function RangeSlider(props: { score: number[], type: string }) {
             }
         }, 300);
     }
+
     const classes = makeStyles({
         slider: {
             backgroundColor: '#E98074',
@@ -58,12 +59,12 @@ export default function RangeSlider(props: { score: number[], type: string }) {
                     max={range[1]}
             />
             <div className={classes().sliderLabel}>
-               {props.type === 'year' ?
-                   <h3>{value[0]}</h3>:
-                   <div className={classes().imdbLogo}><ImdbIcon rating={value[0]} height={25}/></div>}
-               <h2>{props.type === 'year' ? "Year" : "Rating"}</h2>
                 {props.type === 'year' ?
-                    <h3>{value[1]}</h3>:
+                    <h3>{value[0]}</h3> :
+                    <div className={classes().imdbLogo}><ImdbIcon rating={value[0]} height={25}/></div>}
+                <h2>{props.type === 'year' ? "Year" : "Rating"}</h2>
+                {props.type === 'year' ?
+                    <h3>{value[1]}</h3> :
                     <div className={classes().imdbLogo}><ImdbIcon rating={value[1]} height={25}/></div>}
             </div>
         </Paper>

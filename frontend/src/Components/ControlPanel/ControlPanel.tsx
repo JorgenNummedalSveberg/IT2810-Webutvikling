@@ -1,5 +1,5 @@
 import React from 'react';
-import {Paper, Checkbox, Divider} from '@material-ui/core';
+import {Checkbox, Divider, Paper} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
@@ -8,7 +8,7 @@ import GenreSelector from "./GenreSelector";
 import {makeStyles} from "@material-ui/styles";
 
 // Holder styr på parametere å endre søket etter
-function ControlPanel(props: {mobile: boolean, refresh: () => void}) {
+function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
 
     const dispatch = useDispatch();
     // Henter inn score fra redux state
@@ -20,9 +20,10 @@ function ControlPanel(props: {mobile: boolean, refresh: () => void}) {
     function handleTick() {
         dispatch(myMovies())
     }
+
     const classes = makeStyles({
         root: {
-            position: (props.mobile?'initial':'fixed'),
+            position: (props.mobile ? 'initial' : 'fixed'),
             minWidth: '500px',
             backgroundColor: '#D8C3A5',
             height: '100%',
@@ -40,16 +41,16 @@ function ControlPanel(props: {mobile: boolean, refresh: () => void}) {
             flexDirection: 'row',
         },
         none: {
-            display: !!user?'flex':'none',
+            display: !!user ? 'flex' : 'none',
         }
     });
 
     return (
-        <div className={classes().root} >
+        <div className={classes().root}>
             <div className={classes().myMovies}>
                 <Paper className={`${classes().checkbox} ${classes().none}`}>
                     <h2>My movies</h2>
-                    <Checkbox  color='secondary' onChange={handleTick}/>
+                    <Checkbox color='secondary' onChange={handleTick}/>
                 </Paper>
             </div>
             <Divider className={`${classes().divider} ${classes().none}`}/>

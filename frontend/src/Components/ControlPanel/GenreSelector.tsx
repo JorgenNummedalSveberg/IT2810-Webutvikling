@@ -47,7 +47,8 @@ function GenreSelector(props: { refresh: () => void }) {
                 value={genre.value}
                 onChange={onSearchChange}
             >
-                {genreOptions.map((genreOption, index) => <MenuItem key={index} value={genreOption.value}>{genreOption.text}</MenuItem>)}
+                {genreOptions.map((genreOption, index) => <MenuItem key={index}
+                                                                    value={genreOption.value}>{genreOption.text}</MenuItem>)}
             </Select>
         </Paper>
     )

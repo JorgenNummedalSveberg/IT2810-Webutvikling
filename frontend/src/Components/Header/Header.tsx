@@ -37,8 +37,8 @@ function Header(props: { refresh: () => void }) {
             height: '100%',
             backgroundColor: '#8E8D8A',
             display: 'flex',
-            flexDirection: useMediaQuery('(max-width: 1400px)').valueOf()?'column':'row',
-            alignItems: useMediaQuery('(max-width: 1400px)').valueOf()?'center':'flex-end',
+            flexDirection: useMediaQuery('(max-width: 1400px)').valueOf() ? 'column' : 'row',
+            alignItems: useMediaQuery('(max-width: 1400px)').valueOf() ? 'center' : 'flex-end',
             padding: '20px',
         },
         label: {
@@ -50,7 +50,7 @@ function Header(props: { refresh: () => void }) {
             borderRadius: '10px',
         },
         searchBox: {
-            width: useMediaQuery('(max-width: 1400px)').valueOf()?'80%':'17%',
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '80%' : '17%',
             maxWidth: '500px',
             display: 'flex',
             flexDirection: 'column',
@@ -61,15 +61,15 @@ function Header(props: { refresh: () => void }) {
             }
         },
         buttons: {
-            width: useMediaQuery('(max-width: 1400px)').valueOf()?'':'20%',
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '20%',
         },
         sorting: {
             width: '60%',
-            display: useMediaQuery('(max-width: 1400px)').valueOf()?'none':'flex',
+            display: useMediaQuery('(max-width: 1400px)').valueOf() ? 'none' : 'flex',
             justifyContent: 'flex-end',
             height: '100%',
             '& *': {
-                width: (1/sortBy.length)*100+'%',
+                width: (1 / sortBy.length) * 100 + '%',
                 fontSize: '1.5em',
                 height: '60px'
             }
@@ -93,7 +93,8 @@ function Header(props: { refresh: () => void }) {
             </div>
             <div className={classes().sorting}>
                 {sortBy.map((sort, index) => (
-                    <SortButton mobile={false} key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
+                    <SortButton mobile={false} key={index} sort={sort} refresh={props.refresh}
+                                nummer={index.toString()}/>
                 ))}
             </div>
         </div>
