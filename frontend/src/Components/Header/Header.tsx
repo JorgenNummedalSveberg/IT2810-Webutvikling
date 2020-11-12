@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {TextField} from "@material-ui/core";
+import {TextField, useMediaQuery} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
@@ -42,11 +42,9 @@ function Header(props: { refresh: () => void }) {
             height: '100%',
             backgroundColor: '#003049',
             display: 'flex',
-            alignItems: 'flex-end',
+            flexDirection: useMediaQuery('(max-width: 1400px)').valueOf()?'column':'row',
+            alignItems: useMediaQuery('(max-width: 1400px)').valueOf()?'center':'flex-end',
             padding: '20px',
-            '& *': {
-                paddingRight: '20px'
-            }
         },
         label: {
             color: 'white',
@@ -57,10 +55,15 @@ function Header(props: { refresh: () => void }) {
             borderRadius: '10px',
         },
         searchBox: {
-            width: '17%',
+            width: useMediaQuery('(max-width: 1400px)').valueOf()?'80%':'17%',
+            maxWidth: '500px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            padding: '10px',
+            '& *': {
+                margin: 0,
+            }
         },
         buttons: {
             width: '20%'
