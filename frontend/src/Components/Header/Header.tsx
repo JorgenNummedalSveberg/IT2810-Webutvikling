@@ -1,11 +1,11 @@
 import React, {useRef, useState} from 'react';
-import SortingPanel from "./SortingPanel";
 import {TextField} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
+import SortButton from "./SortButton";
 
 
 function Header(props: { refresh: () => void }) {
@@ -14,6 +14,8 @@ function Header(props: { refresh: () => void }) {
     // State som holder styr på loading icon på input
     const [searchString, setSearchString] = useState("");
 
+    // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
+    const sortBy = ["Name", "Rating", "Duration", "Year"];
 
     // Tom timeout ref som defineres først;
     let timeoutRef = useRef(setTimeout(() => {
@@ -35,39 +37,66 @@ function Header(props: { refresh: () => void }) {
     //Brukes for å skru av og på burgermenyen
     let [showMenu, toggleShowMenu] = useState(false);
 
-    function toggleMenu() {
-        toggleShowMenu(!showMenu);
-    }
-    const useStyles = makeStyles({
-        div: {
+    const classes = makeStyles({
+        root: {
+            height: '100%',
             backgroundColor: '#003049',
             display: 'flex',
+            alignItems: 'flex-end',
+            padding: '20px',
+            '& *': {
+                paddingRight: '20px'
+            }
         },
-        textfield: {
-            minWidth: '500px',
+        label: {
+            color: 'white',
+        },
+        textInput: {
+            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            color: 'white',
+            borderRadius: '10px',
+        },
+        searchBox: {
+            width: '17%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+        },
+        buttons: {
+            width: '20%'
+        },
+        sorting: {
+            width: '60%',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            '& *': {
+                width: (1/sortBy.length)*100+'%',
+                fontSize: '1.5em'
+            }
         }
     })
 
-    const classes = useStyles();
+
     return (
-        <div className={classes.div}>
-            <TextField
-                className={classes.textfield}
-                variant={'outlined'}
-                inputProps={{'data-testid': 'searcher'}}
-                value={searchString}
-                onChange={onChange}
-                placeholder='Search...'
-            />
-            <SignLogIn isLogged={!user}/>
-            <SortingPanel refresh={props.refresh} show={showMenu}/>
-            <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <line y1="5" x2="150" y2={showMenu ? "122" : "5"} stroke="white" strokeWidth="10"/>
-                <line y1="65" x2="150" y2="65" stroke="white" strokeWidth="10"
-                      visibility={showMenu ? "hidden" : "visible"}/>
-                <line y1="122" x2="150" y2={showMenu ? "5" : "122"} stroke="white" strokeWidth="10"/>
-            </svg>
+        <div className={classes().root}>
+            <div className={classes().searchBox}>
+                <h2 className={classes().label}>Search by title</h2>
+                <TextField
+                    variant={'outlined'}
+                    inputProps={{'data-testid': 'searcher', className: classes().textInput}}
+                    value={searchString}
+                    onChange={onChange}
+                    placeholder='Search...'
+                />
+            </div>
+            <div className={classes().buttons}>
+                <SignLogIn isLogged={!user}/>
+            </div>
+            <div className={classes().sorting}>
+                {sortBy.map((sort, index) => (
+                    <SortButton key={index} sort={sort} refresh={props.refresh} nummer={index.toString()}/>
+                ))}
+            </div>
         </div>
     );
 }

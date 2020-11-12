@@ -17,22 +17,19 @@ function ControlPanel(props: { refresh: () => void, show:boolean }) {
     const year = useSelector((state: State) => state.filter.year);
     const user = useSelector((state: State) => state.user);
 
-    //Brukes for å bestemme hvilken meny som skal rendres.
-    const mobile = useMediaQuery('(max-width: 1200px)').valueOf();
-
     function handleTick() {
         dispatch(myMovies())
     }
-    const useStyles = makeStyles({
+    const classes = makeStyles({
         root: {
+            width: '500px',
             backgroundColor: '#70A9A1',
             height: '100%',
-            padding: '50px'
+            padding: '20px'
         }
     });
-    const classes = useStyles();
     return (
-        <div className={classes.root} >
+        <div className={classes().root} >
             {!!user ?
                 <div className={"Checkbox"}>
                     <h2>My movies</h2>

@@ -28,21 +28,15 @@ function SortButton(props: { sort: string, refresh: () => void, nummer: string }
         props.refresh();
     }
 
-    const useStyles = makeStyles({
+    const classes = makeStyles({
         div: {
-            height: '50px',
-            width: '50px',
-            '& svg': {
-                width: '100%',
-                height: '100%',
-            }
+            display: 'flex',
+            flexDirection: 'column'
         },
     })
 
-    const classes = useStyles();
-
     return (
-        <div className={classes.div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
+        <div className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
              onClick={toggleSort}>
             <svg style={{"transform": "rotate(" + (active ? (desc ? -90 : (90)) : 0) + "deg)"}} width="258" height="452"
                  viewBox="0 0 258 452" fill="none" xmlns="http://www.w3.org/2000/svg">

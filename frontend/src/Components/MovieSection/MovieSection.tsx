@@ -40,17 +40,21 @@ function MovieSection() {
         </Grid>
     )
 
-    const useStyles = makeStyles({
+    const classes = makeStyles({
         root: {
             flexGrow: 1,
-            margin: '20px'
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '20px',
+            height: '100%',
+            overflowY: 'auto'
         },
         movieGrid: {
-            width: '100%'
+            width: '100%',
+            margin: '20px'
         }
     })
-
-    const classes = useStyles();
 
     // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
     return useSelector((state: State) => {
@@ -112,13 +116,13 @@ function MovieSection() {
 
 
             return (
-                <div className={classes.root}>
+                <div className={classes().root}>
                     {state.details.show ?
                         <Popup/> : null
                     }
                     {pagination}
                     <Grid
-                        className={classes.movieGrid}
+                        className={classes().movieGrid}
                         container
                         justify="center"
                         alignItems="stretch"

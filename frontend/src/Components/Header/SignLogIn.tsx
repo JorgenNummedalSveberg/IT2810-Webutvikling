@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {User} from "../../types/User";
 import {login, logout} from "../../actions";
 import {Button, Dialog, Input, DialogContent, DialogTitle, DialogActions} from "@material-ui/core";
+import {makeStyles} from "@material-ui/styles";
 
 function SignLogIn(props: {isLogged: boolean}) {
 
@@ -68,10 +69,21 @@ function SignLogIn(props: {isLogged: boolean}) {
         setPassword(value)
     }
 
+    const classes = makeStyles({
+        loginRoot: {
+            minHeight: '2em',
+            border: 'white solid 1px',
+            backgroundColor: '#70A9A1',
+            '& span': {
+                fontSize: '2em',
+                color: 'white',
+            }
+        }
+    })
     return (
         props.isLogged ?
             (<div>
-                <Button onClick={()=> setOpen(true)} style={{zIndex: 1000000}}>Log in/Sign up</Button>
+                <Button className={classes().loginRoot} onClick={()=> setOpen(true)} >Log in/Sign up</Button>
                 <Dialog open={open} onClose={()=> setOpen(false)} title='Log in/Sign up'>
                     <DialogTitle>Log in/Sign up</DialogTitle>
                     <DialogContent>

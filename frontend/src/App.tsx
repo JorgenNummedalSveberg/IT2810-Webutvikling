@@ -8,7 +8,9 @@ import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSection from "./Components/MovieSection/MovieSection";
 import TuneIcon from '@material-ui/icons/Tune';
-import {Grid} from "@material-ui/core";
+import {Button, Drawer, Grid, useMediaQuery} from "@material-ui/core";
+import {makeStyles} from "@material-ui/styles";
+import {collectVariableUsage} from "tsutils";
 
 
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
@@ -44,19 +46,67 @@ function App() {
     //Brukes for å skru av og på burgermenyen
     let [showMenu, setShowMenu] = useState(false);
 
+    const classes = makeStyles({
+        root: {
+            height: '100%',
+            overflow: 'hidden',
+        },
+        header: {
+            height: useMediaQuery('(max-width: 1400px)').valueOf()?'20%': '10%'
+        },
+        mainBox: {
+            display: 'flex',
+            height: useMediaQuery('(max-width: 1400px)').valueOf()?'80%': '90%'
+        },
+        row: {
+            flexDirection: 'row'
+        },
+        column: {
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+        movieSection: {
+            height: useMediaQuery('(max-width: 1400px)').valueOf()?'90%': '100%'
+        },
+        filterButton: {
+            fontSize: '2em',
+            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            padding: '0 20px 0 20px',
+            margin: '20px 0 20px 0'
+        }
+    })
+
+    const [openDrawer, setOpenDrawer] = useState(false)
+
+    const filterButton = (
+        <Button
+            className={classes().filterButton}
+            startIcon={<TuneIcon/>}
+            onClick={()=> setOpenDrawer(true)}
+        >Filters
+        </Button>
+    )
     // Returnerer Main appen
     return (
-        <Grid container>
-            <Grid item xs={12}>
+        <div className={classes().root}>
+            <div className={classes().header} >
                 <Header refresh={refresh}/>
-            </Grid>
-            <Grid item xs={2}>
-                <ControlPanel refresh={refresh} show={showMenu}/>
-            </Grid>
-            <Grid item xs={10}>
-                <MovieSection/>
-            </Grid>
-        </Grid>
+            </div>
+            <div className={`${classes().mainBox} ${useMediaQuery('(min-width: 1400px)').valueOf() ? classes().row : classes().column}`}>
+                {useMediaQuery('(min-width: 1400px)').valueOf()?
+                    <div><ControlPanel refresh={refresh} show={showMenu}/></div>
+                    :
+                    <div>
+                        {filterButton}
+                        <Drawer anchor={'left'} open={openDrawer} onClose={()=> setOpenDrawer(false)}>
+                            <ControlPanel refresh={refresh} show={showMenu}/>
+                        </Drawer>
+                    </div>}
+                <div className={classes().movieSection}>
+                    <MovieSection/>
+                </div>
+            </div>
+        </div>
     );
 }
 
