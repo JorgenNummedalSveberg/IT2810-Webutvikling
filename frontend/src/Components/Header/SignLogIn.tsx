@@ -71,7 +71,7 @@ function SignLogIn(props: {isLogged: boolean}) {
 
     const classes = makeStyles({
         loginButton: {
-            backgroundColor: '#E98074',
+            backgroundColor: '#E85A4F',
             borderRadius: '5px',
             margin: '10px',
             '& span': {

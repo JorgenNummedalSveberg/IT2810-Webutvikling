@@ -57,6 +57,14 @@ function MovieSection() {
         movieGrid: {
             width: '100%',
             margin: '20px',
+        },
+        popup: {
+            backgroundColor: '#E85A4F',
+            textAlign: 'center',
+            width: '30vw',
+            height: '100%',
+            paddingTop: '5%',
+            paddingBottom: '5%'
         }
     })
 
@@ -121,9 +129,11 @@ function MovieSection() {
 
             return (
                 <div>
-                    <Drawer anchor={'bottom'} open={show} onClose={()=> dispatch(showPopup(false))}>
+                    <Drawer anchor={'right'} open={show} onClose={()=> dispatch(showPopup(false))}>
                         <Button startIcon={<ArrowBackIcon/>} onClick={()=> dispatch(showPopup(false))}>Close</Button>
-                        <Popup/>
+                        <div className={classes().popup}>
+                            <Popup/>
+                        </div>
                     </Drawer>
                     <div className={classes().root}>
                         {pagination}

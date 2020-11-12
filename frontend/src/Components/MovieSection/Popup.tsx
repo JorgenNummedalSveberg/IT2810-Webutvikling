@@ -49,48 +49,45 @@ function Popup() {
 
     const classes = makeStyles({
         root: {
-            marginLeft: '500px',
-            top: '20%',
-            display: reduxState.details.show?'initial':'none'
+            margin: '0 20px 0 20px',
+            display: reduxState.details.show?'flex':'none',
+            flexDirection: 'column',
+            alignItems: 'center'
         },
-        movieContent: {
-            display: 'flex'
+        buttons: {
+            display: 'flex',
+            flexDirection: 'column',
         }
     })
 
     return (
-        // marginRight her er 20px større fordi den blir offset av GridView
         <div className={classes().root}>
-            <div className="movieContent">
-                <img alt="movie poster could not load" src={reduxState.details.movie.posterurl}/>
-                <div className="info">
-                    <h1>{reduxState.details.movie.title}</h1>
-                    <h2>{reduxState.details.movie.year}</h2>
-                    <ImdbIcon rating={reduxState.details.movie.imdbRating} height={50}/>
-                    <div className="lables">
-                        {!!reduxState.user ?
-                            <Button id='watchButton'
-                                    variant='contained'
-                                    disabled={reduxState.user.movies.includes(reduxState.details.movie._id)}
-                                    onClick={() => changeView(false)}
-                                    color='primary'
-                                    endIcon={<VisibilityIcon/>}
-                                    >Watched</Button>
-                            : null}
-                        {!!reduxState.user && reduxState.user.movies.includes(reduxState.details.movie._id) ?
-                            <Button id='removeButton'
-                                    variant='contained'
-                                    color='secondary'
-                                    onClick={() => changeView(true)}
-                                    endIcon={<DeleteIcon/>}
-                            >Remove from my list</Button>
-                            :
-                                null}
-                    </div>
-                    <h3>{reduxState.details.movie.genres.join(", ")}</h3>
-                    <p>{reduxState.details.movie.storyline}</p>
-                </div>
+            <h1>{reduxState.details.movie.title}</h1>
+            <img width='400px' alt="movie poster could not load" src={reduxState.details.movie.posterurl}/>
+            <h2>{reduxState.details.movie.year}</h2>
+            <ImdbIcon rating={reduxState.details.movie.imdbRating} height={50}/>
+            <div className={classes().buttons}>
+                {!!reduxState.user ?
+                    <Button id='watchButton'
+                            variant='contained'
+                            disabled={reduxState.user.movies.includes(reduxState.details.movie._id)}
+                            onClick={() => changeView(false)}
+                            color='primary'
+                            endIcon={<VisibilityIcon/>}
+                            >Watched</Button>
+                    : null}
+                {!!reduxState.user && reduxState.user.movies.includes(reduxState.details.movie._id) ?
+                    <Button id='removeButton'
+                            variant='contained'
+                            color='secondary'
+                            onClick={() => changeView(true)}
+                            endIcon={<DeleteIcon/>}
+                    >Remove from my list</Button>
+                    :
+                        null}
             </div>
+            <h3>{reduxState.details.movie.genres.join(", ")}</h3>
+            <p>{reduxState.details.movie.storyline}</p>
         </div>
     )
 }
