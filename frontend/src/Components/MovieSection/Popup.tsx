@@ -7,6 +7,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {login, setPopup, showPopup} from "../../actions";
 import ImdbIcon from "../Shared/ImdbIcon";
+import {makeStyles} from "@material-ui/styles";
 
 
 function Popup() {
@@ -46,12 +47,20 @@ function Popup() {
             .catch(error => console.log(error));
     }
 
+    const classes = makeStyles({
+        root: {
+            marginLeft: '500px',
+            top: '20%',
+            display: reduxState.details.show?'initial':'none'
+        },
+        movieContent: {
+            display: 'flex'
+        }
+    })
+
     return (
         // marginRight her er 20px større fordi den blir offset av GridView
-        <div className="Popup">
-            <Button startIcon={<ArrowLeftIcon/>} aria-label='back' id={"backButtonID"} className="BackButton" onClick={() => dispatch(showPopup(false))}>
-                Back
-            </Button>
+        <div className={classes().root}>
             <div className="movieContent">
                 <img alt="movie poster could not load" src={reduxState.details.movie.posterurl}/>
                 <div className="info">

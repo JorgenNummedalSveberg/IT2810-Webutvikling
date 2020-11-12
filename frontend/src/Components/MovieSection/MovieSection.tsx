@@ -1,12 +1,15 @@
 import React from 'react';
-import {Grid, Card, CardContent, Typography, useMediaQuery} from '@material-ui/core'
+import {Grid, Card, CardContent, Typography, useMediaQuery, Button, Drawer} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {setPage} from "../../actions";
+import {setPage, showPopup} from "../../actions";
 import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import SortButton from "../Header/SortButton";
+import {sortBy} from "../../App";
 
 
 // Komponent som viser frem alle filmene i en responsiv grid
@@ -16,6 +19,9 @@ function MovieSection() {
 
     // Redux tate for å holde styr på hvilen side vi er på
     const page = useSelector((state: State) => state.page);
+
+    // Redux tate for å holde styr på om popup er åpen
+    const show = useSelector((state: State) => state.details.show);
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
@@ -114,21 +120,24 @@ function MovieSection() {
 
 
             return (
-                <div className={classes().root}>
-                    {state.details.show ?
-                        <Popup/> : null
-                    }
-                    {pagination}
-                    <Grid
-                        className={classes().movieGrid}
-                        container
-                        justify="center"
-                        alignItems="stretch"
-                        spacing={4}
+                <div>
+                    <Drawer anchor={'bottom'} open={show} onClose={()=> dispatch(showPopup(false))}>
+                        <Button startIcon={<ArrowBackIcon/>} onClick={()=> dispatch(showPopup(false))}>Close</Button>
+                        <Popup/>
+                    </Drawer>
+                    <div className={classes().root}>
+                        {pagination}
+                        <Grid
+                            className={classes().movieGrid}
+                            container
+                            justify="center"
+                            alignItems="stretch"
+                            spacing={4}
                         >
-                        {movieCards}
-                    </Grid>
-                    {pagination}
+                            {movieCards}
+                        </Grid>
+                        {pagination}
+                    </div>
                 </div>
             )
         }
