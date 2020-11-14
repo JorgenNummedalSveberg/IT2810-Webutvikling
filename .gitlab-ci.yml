@@ -21,7 +21,7 @@ build:
  script:
   - echo "Building.."
   - cd frontend
-  - sudo npm run-script build
+  - npm run-script build
   - echo "Build successful"
  artifacts:
   expire_in: 15 minutes
@@ -33,5 +33,5 @@ test:
  image: node
  script:
   - echo "Testing.."
-  - CI=true sudo npm test
+  - CI=true npm test
   - echo "Test successful"
