@@ -37,17 +37,16 @@ function SortButton(props: { mobile: boolean, sort: string, refresh: () => void,
         div: {
             display: 'flex',
             flexDirection: props.mobile ? 'column' : 'row',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             textAlign: 'center',
             backgroundColor: 'rgb(200, 200, 200, 0.5)',
             borderRadius: '5px',
             cursor: 'pointer',
-            width: (1 / sortBy.length) * 100 - 5 + '%',
             margin: '10px',
-            height: '100%'
+            height: 'calc(100%-20px)'
         },
         sortTitle: {
-            color: active ? '#E98074' : '#D1D1D1',
+            color: active ? '#FFFFFF' : '#D1D1D1',
             width: '100%',
             margin: 0,
             paddingTop: props.mobile ? '40px' : '7px'

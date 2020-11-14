@@ -39,7 +39,7 @@ function Header(props: { refresh: () => void }) {
             display: 'flex',
             flexDirection: useMediaQuery('(max-width: 1400px)').valueOf() ? 'column' : 'row',
             alignItems: useMediaQuery('(max-width: 1400px)').valueOf() ? 'center' : 'flex-end',
-            padding: '20px',
+            padding: '10px',
         },
         label: {
             color: 'white',
@@ -48,6 +48,7 @@ function Header(props: { refresh: () => void }) {
             backgroundColor: 'rgb(200, 200, 200, 0.5)',
             color: 'white',
             borderRadius: '10px',
+            height: '5px'
         },
         searchBox: {
             width: useMediaQuery('(max-width: 1400px)').valueOf() ? '80%' : '17%',
@@ -67,6 +68,7 @@ function Header(props: { refresh: () => void }) {
             width: '60%',
             display: useMediaQuery('(max-width: 1400px)').valueOf() ? 'none' : 'flex',
             justifyContent: 'flex-end',
+            alignItems: 'flex-end',
             height: '100%',
             '& *': {
                 width: (1 / sortBy.length) * 100 + '%',

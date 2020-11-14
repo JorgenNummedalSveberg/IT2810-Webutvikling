@@ -54,7 +54,7 @@ function App() {
             overflow: 'hidden',
         },
         header: {
-            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '200px' : '10%',
+            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '220px' : '120px',
             position: 'fixed',
             width: '100%',
             zIndex: 100
@@ -62,8 +62,7 @@ function App() {
         mainBox: {
             position: 'absolute',
             width: '100%',
-            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '80%' : '90%',
-            top: useMediaQuery('(max-width: 1400px)').valueOf() ? '20%' : '10%',
+            top: useMediaQuery('(max-width: 1400px)').valueOf() ? '220px' : '120px',
         },
         row: {
             flexDirection: 'row'
