@@ -1,7 +1,7 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {ButtonBase, Card, Divider, Grid, Paper} from "@material-ui/core";
+import {ButtonBase, Divider, Grid, Paper} from "@material-ui/core";
 import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
@@ -44,7 +44,6 @@ function MovieCard(props: { movie: Movie }) {
         dispatch(setPopup(props.movie));
         dispatch(showPopup(true));
     }
-
 
 
     return (

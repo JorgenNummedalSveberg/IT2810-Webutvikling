@@ -7,7 +7,6 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import {Paper} from "@material-ui/core";
-import sortBy from "../../App";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: { mobile: boolean, sort: string, refresh: () => void, nummer: string }) {

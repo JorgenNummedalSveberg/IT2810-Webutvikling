@@ -50,13 +50,13 @@ export default function RangeSlider(props: { score: number[], type: string }) {
     return (
         <Paper className={classes().slider}>
             <Slider
-                    value={value}
-                    onChange={handleChange}
-                    valueLabelDisplay="auto"
-                    step={props.type === 'year' ? 5 : 0.5}
-                    marks
-                    min={range[0]}
-                    max={range[1]}
+                value={value}
+                onChange={handleChange}
+                valueLabelDisplay="auto"
+                step={props.type === 'year' ? 5 : 0.5}
+                marks
+                min={range[0]}
+                max={range[1]}
             />
             <div className={classes().sliderLabel}>
                 {props.type === 'year' ?
