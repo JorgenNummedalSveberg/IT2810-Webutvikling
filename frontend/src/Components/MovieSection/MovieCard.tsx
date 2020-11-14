@@ -8,6 +8,31 @@ import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
 import {makeStyles} from "@material-ui/styles";
 
+
+const classes = makeStyles({
+    card: {height: "100%", width: '100%', backgroundColor: '#464646'},
+    gridItem: {flexGrow: 1, flexBasis: 1, maxWidth: '600px', width: '600px'},
+    paperButton: {height: "100%", width: '100%'},
+    paper: {backgroundColor: '#E85A4F', height: "100%", width: '100%', display: 'flex', flexDirection: 'row'},
+    poster: {maxWidth: '500px', minWidth: '250px'},
+    details: {padding: '10px', display: 'flex', flexDirection: 'column'},
+    title: {flexGrow: 1},
+    description: {flexGrow: 4, color: 'white', textAlign: 'left'},
+    bottomInfo: {
+        margin: '10px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexGrow: 1,
+        '& *': {margin: '5px'}
+    },
+    duration: {color: '#e5dfca', display: 'flex', alignItems: 'center'},
+    noMargin: {
+        margin: 0
+    }
+})
+
 // Komponent for å vise frem en film i et kort
 function MovieCard(props: { movie: Movie }) {
 
@@ -20,29 +45,7 @@ function MovieCard(props: { movie: Movie }) {
         dispatch(showPopup(true));
     }
 
-    const classes = makeStyles({
-        card: {height: "100%", width: '100%', backgroundColor: '#464646'},
-        gridItem: {flexGrow: 1, flexBasis: 1, maxWidth: '600px', width: '600px'},
-        paperButton: {height: "100%", width: '100%'},
-        paper: {backgroundColor: '#E85A4F', height: "100%", width: '100%', display: 'flex', flexDirection: 'row'},
-        poster: {maxWidth: '500px', minWidth: '250px'},
-        details: {padding: '10px', display: 'flex', flexDirection: 'column'},
-        title: {flexGrow: 1},
-        description: {flexGrow: 4, color: 'white', textAlign: 'left'},
-        bottomInfo: {
-            margin: '10px',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexGrow: 1,
-            '& *': {margin: '5px'}
-        },
-        duration: {color: '#e5dfca', display: 'flex', alignItems: 'center'},
-        noMargin: {
-            margin: 0
-        }
-    })
+
 
     return (
         <Grid className={classes().gridItem} item>
@@ -78,12 +81,16 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Grid item>
-            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
-                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300}/>
-                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
-                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
-            </Card>
+        <Grid className={classes().gridItem} item>
+            <Paper className={classes().paper}>
+                <Skeleton animation="pulse" variant="rect" width={300} height={450}/>
+                <div className={classes().details}>
+                    <Skeleton animation="wave" width={180} height={40} style={{margin: 10}}/>
+                    <Skeleton animation="wave" width={200} height={2} style={{margin: 10}}/>
+                    <Skeleton animation="wave" width={170} height={40} style={{margin: 10}}/>
+                    <Skeleton animation="wave" width={130} height={40} style={{margin: 10}}/>
+                </div>
+            </Paper>
         </Grid>
     )
 }
