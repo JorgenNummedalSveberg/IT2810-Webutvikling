@@ -1,8 +1,8 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import {Provider} from 'react-redux';
-import {store} from '../reducers/store';
-import SortButton from "../Components/Header/SortButton";
+import {store} from '../../reducers/store';
+import SortButton from "../../Components/Header/SortButton";
 
 let counter = 0;
 

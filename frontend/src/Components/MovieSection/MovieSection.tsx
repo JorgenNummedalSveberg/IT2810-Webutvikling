@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, CardContent, Drawer, Grid, Typography} from '@material-ui/core'
+import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -59,7 +59,7 @@ function MovieSection() {
         popup: {
             backgroundColor: '#E85A4F',
             textAlign: 'center',
-            width: '30vw',
+            width: useMediaQuery('(max-width: 1400px)').valueOf()?'100%':'30vw',
             height: '100%',
             paddingTop: '5%',
             paddingBottom: '5%'

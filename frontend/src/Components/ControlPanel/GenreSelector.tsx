@@ -40,8 +40,10 @@ function GenreSelector(props: { refresh: () => void }) {
             className={classes().selector}
             variant={'outlined'}
             value={genre.value}
+            defaultValue={genres.length > 0 ? genre : ''}
             onChange={onSearchChange}
             autoWidth={true}
+            data-testid='genreSelector'
         >
             {genreOptions.map((genreOption, index) => <MenuItem key={index}
                                                                 value={genreOption.value}>{genreOption.text}</MenuItem>)}

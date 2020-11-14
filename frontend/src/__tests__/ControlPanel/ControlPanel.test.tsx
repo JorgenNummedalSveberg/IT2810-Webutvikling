@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {Provider} from 'react-redux'
-import {store} from '../reducers/store'
-import ControlPanel from "../Components/ControlPanel/ControlPanel";
+import {store} from '../../reducers/store'
+import ControlPanel from "../../Components/ControlPanel/ControlPanel";
 
 function mock() {
     return null;

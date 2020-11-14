@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
+  >
+    <div
+      class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <span
+        class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+        style="width: 300px; height: 450px;"
+      />
+      <div
+        class="makeStyles-details-6"
+      >
+        <span
+          class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+          style="width: 180px; height: 40px; margin: 10px;"
+        />
+        <span
+          class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+          style="width: 200px; height: 2px; margin: 10px;"
+        />
+        <span
+          class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+          style="width: 170px; height: 40px; margin: 10px;"
+        />
+        <span
+          class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+          style="width: 130px; height: 40px; margin: 10px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
