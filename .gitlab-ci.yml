@@ -21,6 +21,7 @@ build:
  script:
   - echo "Building.."
   - cd frontend
+  - chmod +x node_modules/.bin/react-scripts
   - npm run-script build
   - echo "Build successful"
  artifacts:
