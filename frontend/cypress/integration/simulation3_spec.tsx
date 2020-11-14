@@ -22,6 +22,6 @@ describe("Simulating a user on mobile who wants to search up the shortest movie 
         cy.get('#sortbutton2').click().click();
         cy.get('#burgerID').click();
         cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(1) > a > div.extra.content > div > div:nth-child(1)')
-            .should('have.text',"1h21m");
+            .should('have.text', "1h21m");
     })
 })

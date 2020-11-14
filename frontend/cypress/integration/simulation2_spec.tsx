@@ -34,7 +34,7 @@ describe("Simulating a user who wants search and read details about the oldest h
             'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
             const year = parseInt($span.text().slice(7, 11));
             cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(2) > a >' +
-            'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
+                'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
                 expect(parseInt($span.text().slice(7, 11))).greaterThan(year);
             })
             cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(3) > a >' +

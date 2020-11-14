@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
-import './CSS/Header.css';
-import './CSS/SearchField.css';
-import SortingPanel from "./SortingPanel";
-import {TextField} from "@material-ui/core";
+import {TextField, useMediaQuery} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
+import {makeStyles} from "@material-ui/styles";
+import SortButton from "./SortButton";
+import {sortBy} from "../../App";
 
 
 function Header(props: { refresh: () => void }) {
@@ -14,7 +14,6 @@ function Header(props: { refresh: () => void }) {
     const dispatch = useDispatch();
     // State som holder styr på loading icon på input
     const [searchString, setSearchString] = useState("");
-
 
     // Tom timeout ref som defineres først;
     let timeoutRef = useRef(setTimeout(() => {
@@ -33,28 +32,71 @@ function Header(props: { refresh: () => void }) {
 
     const user = useSelector((state: State) => state.user);
 
-    //Brukes for å skru av og på burgermenyen
-    let [showMenu, toggleShowMenu] = useState(false);
-
-    function toggleMenu() {
-        toggleShowMenu(!showMenu);
-    }
+    const classes = makeStyles({
+        root: {
+            height: '100%',
+            backgroundColor: '#8E8D8A',
+            display: 'flex',
+            flexDirection: useMediaQuery('(max-width: 1400px)').valueOf() ? 'column' : 'row',
+            alignItems: useMediaQuery('(max-width: 1400px)').valueOf() ? 'center' : 'flex-end',
+            padding: '20px',
+        },
+        label: {
+            color: 'white',
+        },
+        textInput: {
+            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            color: 'white',
+            borderRadius: '10px',
+        },
+        searchBox: {
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '80%' : '17%',
+            maxWidth: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '10px',
+            '& *': {
+                margin: 0,
+            }
+        },
+        buttons: {
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '20%',
+        },
+        sorting: {
+            width: '60%',
+            display: useMediaQuery('(max-width: 1400px)').valueOf() ? 'none' : 'flex',
+            justifyContent: 'flex-end',
+            height: '100%',
+            '& *': {
+                width: (1 / sortBy.length) * 100 + '%',
+                fontSize: '1.5em',
+                height: '60px'
+            }
+        },
+    })
 
     return (
-        <div className="Header" id="HeaderID">
-            <TextField variant={'filled'} inputProps={{'data-testid': 'searcher'}} value={searchString} onChange={onChange} style={{margin: '10px'}}
-                   placeholder='Search...'/>
-            <div className="loginButtons">
+        <div className={classes().root}>
+            <div className={classes().searchBox}>
+                <h2 className={classes().label}>Search by title</h2>
+                <TextField
+                    variant={'outlined'}
+                    inputProps={{'data-testid': 'searcher', className: classes().textInput}}
+                    value={searchString}
+                    onChange={onChange}
+                    placeholder='Search...'
+                />
+            </div>
+            <div className={classes().buttons}>
                 <SignLogIn isLogged={!user}/>
             </div>
-            <SortingPanel refresh={props.refresh} show={showMenu}/>
-            <svg className={"BurgerButton"} id={"burgerID"} onClick={toggleMenu} width="50" viewBox="0 0 150 125" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <line y1="5" x2="150" y2={showMenu ? "122" : "5"} stroke="white" strokeWidth="10"/>
-                <line y1="65" x2="150" y2="65" stroke="white" strokeWidth="10"
-                      visibility={showMenu ? "hidden" : "visible"}/>
-                <line y1="122" x2="150" y2={showMenu ? "5" : "122"} stroke="white" strokeWidth="10"/>
-            </svg>
+            <div className={classes().sorting}>
+                {sortBy.map((sort, index) => (
+                    <SortButton mobile={false} key={index} sort={sort} refresh={props.refresh}
+                                nummer={index.toString()}/>
+                ))}
+            </div>
         </div>
     );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
-import './CSS/MovieSection.css';
-import {Grid, Card, CardContent, Typography} from '@material-ui/core'
+import {Button, Card, CardContent, Drawer, Grid, Typography} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {setPage} from "../../actions";
+import {setPage, showPopup} from "../../actions";
 import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
-
+import {makeStyles} from "@material-ui/styles";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection() {
@@ -17,30 +17,54 @@ function MovieSection() {
     // Redux tate for å holde styr på hvilen side vi er på
     const page = useSelector((state: State) => state.page);
 
+    // Redux tate for å holde styr på om popup er åpen
+    const show = useSelector((state: State) => state.details.show);
+
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
-        <div className={"GridView"}>
-            <Grid style={{margin: "20px", width: '50%'}}>
-                <Card style={{backgroundColor: 'pink'}}>
-                    <CardContent>
-                        <Typography color='secondary' variant="h5" component="h2">
-                            No movies
-                        </Typography>
-                    </CardContent>
-                    <CardContent>
-                        This might be because:
-                    </CardContent>
-                    <ul style={{listStyleType: 'circle'}}>
-                        <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography></li>
-                        <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
-                    </ul>
-                    <CardContent>
-                        <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-                    </CardContent>
-                </Card>
-            </Grid>
-        </div>
+        <Grid>
+            <Card>
+                <CardContent>
+                    <Typography color='secondary' variant="h5" component="h2">
+                        No movies
+                    </Typography>
+                </CardContent>
+                <CardContent>
+                    This might be because:
+                </CardContent>
+                <ul>
+                    <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography>
+                    </li>
+                    <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
+                </ul>
+                <CardContent>
+                    <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
+                </CardContent>
+            </Card>
+        </Grid>
     )
+
+    const classes = makeStyles({
+        root: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '20px',
+            overflowY: 'auto',
+        },
+        movieGrid: {
+            width: '100%',
+            margin: '20px',
+        },
+        popup: {
+            backgroundColor: '#E85A4F',
+            textAlign: 'center',
+            width: '30vw',
+            height: '100%',
+            paddingTop: '5%',
+            paddingBottom: '5%'
+        }
+    })
 
     // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
     return useSelector((state: State) => {
@@ -89,7 +113,7 @@ function MovieSection() {
 
             // Definerer sidevalg menyen
             const pagination = (
-                <div style={{margin: '20px'}}>
+                <div>
                     <Pagination
                         size="large"
                         onChange={(e: object, page: number) => {
@@ -100,25 +124,28 @@ function MovieSection() {
                 </div>
             )
 
+
             return (
-                <div className={"GridView"}>
-                    {state.details.show ?
-                        <Popup/> : null
-                    }
-                    {pagination}
-                    <div style={{width:'100%'}}>
+                <div>
+                    <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
+                        <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
+                        <div className={classes().popup}>
+                            <Popup/>
+                        </div>
+                    </Drawer>
+                    <div className={classes().root}>
+                        {pagination}
                         <Grid
-                            style={{padding: '2%'}}
+                            className={classes().movieGrid}
                             container
-                            direction="row"
                             justify="center"
                             alignItems="stretch"
                             spacing={4}
-                            >
+                        >
                             {movieCards}
                         </Grid>
+                        {pagination}
                     </div>
-                    {pagination}
                 </div>
             )
         }

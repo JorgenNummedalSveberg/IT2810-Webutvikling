@@ -1,11 +1,12 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {Card, CardContent, CardHeader, CardMedia, Grid} from "@material-ui/core";
+import {ButtonBase, Card, Divider, Grid, Paper} from "@material-ui/core";
 import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
+import {makeStyles} from "@material-ui/styles";
 
 // Komponent for å vise frem en film i et kort
 function MovieCard(props: { movie: Movie }) {
@@ -19,30 +20,56 @@ function MovieCard(props: { movie: Movie }) {
         dispatch(showPopup(true));
     }
 
+    const classes = makeStyles({
+        card: {height: "100%", width: '100%', backgroundColor: '#464646'},
+        gridItem: {flexGrow: 1, flexBasis: 1, maxWidth: '600px', width: '600px'},
+        paperButton: {height: "100%", width: '100%'},
+        paper: {backgroundColor: '#E85A4F', height: "100%", width: '100%', display: 'flex', flexDirection: 'row'},
+        poster: {maxWidth: '500px', minWidth: '250px'},
+        details: {padding: '10px', display: 'flex', flexDirection: 'column'},
+        title: {flexGrow: 1},
+        description: {flexGrow: 4, color: 'white', textAlign: 'left'},
+        bottomInfo: {
+            margin: '10px',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexGrow: 1,
+            '& *': {margin: '5px'}
+        },
+        duration: {color: '#e5dfca', display: 'flex', alignItems: 'center'},
+        noMargin: {
+            margin: 0
+        }
+    })
+
     return (
-        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
-            <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}} onClick={handleClick}>
-                <CardMedia>
-                    <img alt='Could not display movieposter' width={"100%"} src={props.movie.posterurl}/>
-                </CardMedia>
-                <CardHeader id={"id_" + (props.movie.title).replace(/\s/g, "")}
-                             style={{color: 'white'}}>{props.movie.title}</CardHeader>
-                <CardContent>
-                    <div style={{color: '#e5dfca'}}>
-                        <div> Genres: {props.movie.genres.join(", ")} </div>
-                        <div id={"year_" + (props.movie.title).replace(/\s/g, "")}> Year: {props.movie.year} </div>
-                    </div>
-                </CardContent>
-                <CardContent>
-                    <div style={{margin: '5px', display: 'flex', flexDirection: 'row'}}>
-                        <div style={{color: '#e5dfca', margin: 'auto'}}>
-                            <HourglassFullIcon fontSize={"large"}/>
-                            <p>{parseTime(props.movie.duration)}</p>
+        <Grid className={classes().gridItem} item>
+            <ButtonBase className={classes().paperButton} onClick={handleClick}>
+                <Paper className={classes().paper} elevation={5}>
+                    <img className={classes().poster} alt='Could not display movie poster' width='100%'
+                         src={props.movie.posterurl}/>
+                    <div className={classes().details}>
+                        <div className={classes().title}>
+                            <h1>{props.movie.title}</h1>
+                            <Divider/>
                         </div>
-                        <ImdbIcon rating={props.movie.imdbRating} height={35}/>
+                        <div className={classes().description}>
+                            <h3>Year: {props.movie.year}</h3>
+                            <h3>Genres: {props.movie.genres.join(', ')}</h3>
+                        </div>
+                        <div className={classes().bottomInfo}>
+                            <div className={classes().duration}>
+                                <HourglassFullIcon className={classes().noMargin} fontSize={"large"}/>
+                                <p className={classes().noMargin}>{parseTime(props.movie.duration)}</p>
+                            </div>
+                            <Divider orientation='vertical'/>
+                            <ImdbIcon rating={props.movie.imdbRating} height={35}/>
+                        </div>
                     </div>
-                </CardContent>
-            </Card>
+                </Paper>
+            </ButtonBase>
         </Grid>
 
     )
@@ -51,11 +78,11 @@ function MovieCard(props: { movie: Movie }) {
 // Blanke kort for når nettsiden laster inn filmene
 export function DimCard() {
     return (
-        <Grid xl={2} lg={3} md={4} sm={6} xs={12} item>
+        <Grid item>
             <Card style={{height: "100%", width: '100%', backgroundColor: '#464646'}}>
-                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={600} />
-                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
-                <Skeleton animation="wave" width={340} height={40} style={{ margin: 10 }} />
+                <Skeleton style={{backgroundColor: '#222222'}} variant="rect" width={"100%"} height={300}/>
+                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
+                <Skeleton animation="wave" width={340} height={40} style={{margin: 10}}/>
             </Card>
         </Grid>
     )
