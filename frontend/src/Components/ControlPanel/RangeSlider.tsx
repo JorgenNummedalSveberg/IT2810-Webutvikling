@@ -49,7 +49,7 @@ export default function RangeSlider(props: { score: number[], type: string }) {
     })
     return (
         <Paper className={classes().slider}>
-            <Slider className="Slider"
+            <Slider
                     value={value}
                     onChange={handleChange}
                     valueLabelDisplay="auto"
