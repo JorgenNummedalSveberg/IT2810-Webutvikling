@@ -1,8 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-#node_modules/ - kommentert ut foreløbig da det er for lav grense på gitlab CI artifacts
-/node_modules/.cache/eslint-loader
+node_modules/
 /.pnp
 .pnp.js
 
