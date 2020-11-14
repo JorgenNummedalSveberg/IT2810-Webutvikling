@@ -34,6 +34,6 @@ test:
  image: node
  script:
   - echo "Testing.."
-  - chmod +x node_modules/.bin/react-scripts
+  - chmod +x frontend/node_modules/.bin/react-scripts
   - CI=true npm test
   - echo "Test successful"
