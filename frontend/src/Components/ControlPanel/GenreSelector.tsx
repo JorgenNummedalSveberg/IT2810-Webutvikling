@@ -30,27 +30,22 @@ function GenreSelector(props: { refresh: () => void }) {
     }
 
     const classes = makeStyles({
-        paper: {
-            backgroundColor: '#E98074',
-            display: 'block'
-        },
         selector: {
-            display: 'block',
+            backgroundColor: '#E98074',
         }
     })
 
     return (
-        <Paper className={classes().paper}>
             <Select
                 className={classes().selector}
                 variant={'outlined'}
                 value={genre.value}
                 onChange={onSearchChange}
+                autoWidth={true}
             >
                 {genreOptions.map((genreOption, index) => <MenuItem key={index}
                                                                     value={genreOption.value}>{genreOption.text}</MenuItem>)}
             </Select>
-        </Paper>
     )
 }
 
