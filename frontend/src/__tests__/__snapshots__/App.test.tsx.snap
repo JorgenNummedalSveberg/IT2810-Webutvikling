@@ -4,1356 +4,1450 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
 <div>
   (
   <div
-    class="App"
+    class="makeStyles-root-1"
   >
     <div
-      class="Header"
-      id="HeaderID"
+      class="makeStyles-header-2"
     >
       <div
-        class="ui huge left icon input SearchField"
-      >
-        <input
-          id="searchbar"
-          placeholder="Search..."
-          role="searcher"
-          type="text"
-        />
-        <i
-          aria-hidden="true"
-          class="search icon"
-        />
-      </div>
-      <div
-        class="loginButtons"
-      >
-        <button
-          class="ui button"
-          style="z-index: 1000000;"
-        >
-          Log in/Sign up
-        </button>
-      </div>
-      <div
-        class="SortingPanel"
-        style="display: initial;"
+        class="makeStyles-root-11"
       >
         <div
-          class="SortingPanel"
-          id="panelID"
+          class="makeStyles-searchBox-14"
+        >
+          <h2
+            class="makeStyles-label-12"
+          >
+            Search by title
+          </h2>
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input makeStyles-textInput-13"
+                data-testid="searcher"
+                placeholder="Search..."
+                type="text"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-17 MuiOutlinedInput-notchedOutline"
+                style="padding-left: 8px;"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legend-18"
+                  style="width: 0.01px;"
+                >
+                  <span>
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          class="makeStyles-buttons-15"
+        >
+          <div>
+            <div
+              class="makeStyles-initial-23"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-loginButton-21"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Log in/Sign up
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <div
+              class="makeStyles-none-22"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-loginButton-21"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Log out
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="makeStyles-sorting-16"
         >
           <div
-            class="SortButton"
+            class="MuiPaper-root makeStyles-div-24 MuiPaper-elevation1 MuiPaper-rounded"
             data-testid="sortbutton0"
             id="sortbutton0"
           >
             <svg
-              fill="none"
-              height="452"
-              style="transform: rotate(-90deg);"
-              viewBox="0 0 258 452"
-              width="258"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-arrow-26"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
               <path
-                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
-                fill="#DEDA77"
+                d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
               />
             </svg>
             <h3
-              style="color: rgb(222, 218, 119);"
+              class="makeStyles-sortTitle-25"
             >
               Name
             </h3>
           </div>
           <div
-            class="SortButton"
+            class="MuiPaper-root makeStyles-div-27 MuiPaper-elevation1 MuiPaper-rounded"
             data-testid="sortbutton1"
             id="sortbutton1"
           >
             <svg
-              fill="none"
-              height="452"
-              style="transform: rotate(0deg);"
-              viewBox="0 0 258 452"
-              width="258"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-arrow-29"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
               <path
-                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
-                fill="#D1D1D1"
+                d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
               />
             </svg>
             <h3
-              style="color: rgb(209, 209, 209);"
+              class="makeStyles-sortTitle-28"
             >
               Rating
             </h3>
           </div>
           <div
-            class="SortButton"
+            class="MuiPaper-root makeStyles-div-30 MuiPaper-elevation1 MuiPaper-rounded"
             data-testid="sortbutton2"
             id="sortbutton2"
           >
             <svg
-              fill="none"
-              height="452"
-              style="transform: rotate(0deg);"
-              viewBox="0 0 258 452"
-              width="258"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-arrow-32"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
               <path
-                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
-                fill="#D1D1D1"
+                d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
               />
             </svg>
             <h3
-              style="color: rgb(209, 209, 209);"
+              class="makeStyles-sortTitle-31"
             >
-              Duration
+              Length
             </h3>
           </div>
           <div
-            class="SortButton"
+            class="MuiPaper-root makeStyles-div-33 MuiPaper-elevation1 MuiPaper-rounded"
             data-testid="sortbutton3"
             id="sortbutton3"
           >
             <svg
-              fill="none"
-              height="452"
-              style="transform: rotate(0deg);"
-              viewBox="0 0 258 452"
-              width="258"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-arrow-35"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
               <path
-                d="M9.40504 203.555L203.692 9.27392C216.051 -3.09108 236.089 -3.09108 248.442 9.27392C260.796 21.6279 260.796 41.6649 248.442 54.0179L76.5281 225.927L248.437 397.83C260.791 410.189 260.791 430.224 248.437 442.578C236.083 454.937 216.046 454.937 203.687 442.578L9.40003 248.294C3.22303 242.114 0.13802 234.023 0.13802 225.928C0.138021 217.829 3.22904 209.732 9.40504 203.555Z"
-                fill="#D1D1D1"
+                d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
               />
             </svg>
             <h3
-              style="color: rgb(209, 209, 209);"
+              class="makeStyles-sortTitle-34"
             >
               Year
             </h3>
           </div>
         </div>
       </div>
-      <svg
-        class="BurgerButton"
-        fill="none"
-        id="burgerID"
-        viewBox="0 0 150 125"
-        width="50"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line
-          stroke="white"
-          stroke-width="10"
-          x2="150"
-          y1="5"
-          y2="5"
-        />
-        <line
-          stroke="white"
-          stroke-width="10"
-          visibility="visible"
-          x2="150"
-          y1="65"
-          y2="65"
-        />
-        <line
-          stroke="white"
-          stroke-width="10"
-          x2="150"
-          y1="122"
-          y2="122"
-        />
-      </svg>
     </div>
-    <button
-      class="FilterButton"
-    >
-      <i
-        aria-hidden="true"
-        class="sliders icon"
-      />
-      Filter
-    </button>
     <div
-      class="MainContent"
+      class="makeStyles-mainBox-3 makeStyles-column-5"
     >
       <div
-        class="ControlPanel"
-        style="display: initial;"
+        class="makeStyles-wide-9"
       >
-        <div />
         <div
-          aria-expanded="false"
-          class="ui fluid selection dropdown Dropdown"
-          id="dropdownmenu"
-          role="listbox"
-          tabindex="0"
+          class="makeStyles-root-36"
         >
           <div
-            aria-atomic="true"
-            aria-live="polite"
-            class="divider default text"
-            role="alert"
-          >
-            Select genre...
-          </div>
-          <i
-            aria-hidden="true"
-            class="dropdown icon"
-          />
-          <div
-            class="menu transition"
-          />
-        </div>
-        <div
-          class="ControlElement"
-        >
-          <span
-            class="MuiSlider-root MuiSlider-colorPrimary Slider"
-          >
-            <span
-              class="MuiSlider-rail"
-            />
-            <span
-              class="MuiSlider-track"
-              style="left: 0%; width: 100%;"
-            />
-            <input
-              type="hidden"
-              value="0,10"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="0"
-              style="left: 0%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="1"
-              style="left: 5%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="2"
-              style="left: 10%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="3"
-              style="left: 15%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="4"
-              style="left: 20%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="5"
-              style="left: 25%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="6"
-              style="left: 30%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="7"
-              style="left: 35%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="8"
-              style="left: 40%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="9"
-              style="left: 45%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="10"
-              style="left: 50%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="11"
-              style="left: 55%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="12"
-              style="left: 60%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="13"
-              style="left: 65%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="14"
-              style="left: 70%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="15"
-              style="left: 75%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="16"
-              style="left: 80%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="17"
-              style="left: 85%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="18"
-              style="left: 90%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="19"
-              style="left: 95%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="20"
-              style="left: 100%;"
-            />
-            <span
-              aria-orientation="horizontal"
-              aria-valuemax="10"
-              aria-valuemin="0"
-              aria-valuenow="0"
-              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
-              data-index="0"
-              role="slider"
-              style="left: 0%;"
-              tabindex="0"
-            >
-              <span
-                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
-              >
-                <span
-                  class="PrivateValueLabel-circle-4"
-                >
-                  <span
-                    class="PrivateValueLabel-label-5"
-                  >
-                    0
-                  </span>
-                </span>
-              </span>
-            </span>
-            <span
-              aria-orientation="horizontal"
-              aria-valuemax="10"
-              aria-valuemin="0"
-              aria-valuenow="10"
-              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
-              data-index="1"
-              role="slider"
-              style="left: 100%;"
-              tabindex="0"
-            >
-              <span
-                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
-              >
-                <span
-                  class="PrivateValueLabel-circle-4"
-                >
-                  <span
-                    class="PrivateValueLabel-label-5"
-                  >
-                    10
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
-          <div
-            class="SliderInfo"
+            class="makeStyles-myMovies-38"
           >
             <div
-              class="ImdbIcon"
+              class="MuiPaper-root makeStyles-checkbox-39 makeStyles-none-40 MuiPaper-elevation1 MuiPaper-rounded"
             >
-              <svg
-                fill="none"
-                height="25"
-                viewBox="0 0 225 75"
-                width="75"
-                xmlns="http://www.w3.org/2000/svg"
+              <h2>
+                My movies
+              </h2>
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-41 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
-                <rect
-                  fill="#F6C700"
-                  height="75"
-                  rx="8"
-                  width="225"
-                />
-                <path
-                  d="M15 14.7285H26.0788V62.4747H15V14.7285Z"
-                  fill="black"
-                />
-                <path
-                  d="M47.0126 36.722C46.0608 29.4453 45.5315 25.4005 45.4271 24.5932C44.9634 20.6979 44.5215 17.3082 44.099 14.416C43.14 14.416 38.3545 14.416 29.7352 14.416V62.1622H39.4398L39.4738 30.6358L43.5576 62.1622H50.47L54.3426 29.9345L54.379 62.1622H64.052V14.416H49.5789L47.0126 36.722Z"
-                  fill="black"
-                />
-                <path
-                  d="M82.3417 24.3485C82.4631 24.9574 82.5263 26.3383 82.5263 28.4966C82.5263 30.3477 82.5263 45.1568 82.5263 47.0079C82.5263 50.1855 82.3418 52.1318 81.9751 52.8494C81.6061 53.5671 80.6252 53.9231 79.0349 53.9231C79.0349 50.789 79.0349 25.7158 79.0349 22.5817C80.2416 22.5817 81.0646 22.7257 81.5017 23.0084C81.9387 23.2938 82.2203 23.7396 82.3417 24.3485ZM87.3458 61.6756C88.6641 61.3521 89.7713 60.7813 90.6696 59.9685C91.5656 59.1531 92.1944 58.025 92.5537 56.5816C92.9155 55.1409 93.1292 52.2786 93.1292 47.9974C93.1292 46.3229 93.1292 32.9083 93.1292 31.2311C93.1292 26.7134 92.9713 23.6853 92.7261 22.1467C92.4785 20.6055 91.8642 19.2056 90.8809 17.9497C89.8951 16.6939 88.4578 15.7915 86.5688 15.2424C84.6774 14.6933 81.5939 14.416 76.2306 14.416C75.6794 14.416 72.9261 14.416 67.9658 14.416V62.1622H81.3876C84.4808 62.0535 86.4668 61.8931 87.3458 61.6756Z"
-                  fill="black"
-                />
-                <path
-                  d="M111.004 54.5401C110.8 55.1462 109.906 55.4534 109.231 55.4534C108.571 55.4534 108.131 55.1598 107.908 54.57C107.685 53.9828 107.575 52.6427 107.575 50.5442C107.575 49.283 107.575 39.1874 107.575 37.9261C107.575 35.7515 107.673 34.3951 107.869 33.8541C108.063 33.3186 108.491 33.0468 109.151 33.0468C109.826 33.0468 110.732 33.354 110.965 33.971C111.196 34.5881 111.312 35.9064 111.312 37.9261C111.312 38.7416 111.312 42.8189 111.312 50.161C111.242 52.6753 111.14 54.135 111.004 54.5401ZM96.9022 61.7462H106.876C107.291 59.9222 107.52 58.9083 107.566 58.7044C108.469 59.9276 109.462 60.8464 110.552 61.4553C111.637 62.0669 113.262 62.3714 114.519 62.3714C116.27 62.3714 117.78 61.8576 119.055 60.8274C120.327 59.7999 121.138 58.5821 121.483 57.1822C121.828 55.7796 122 53.6485 122 50.7834C122 49.4433 122 38.728 122 37.3879C122 34.5065 121.942 32.6255 121.828 31.7421C121.713 30.8586 121.374 29.9589 120.808 29.0374C120.242 28.1159 119.419 27.401 118.341 26.89C117.263 26.3789 115.991 26.1234 114.524 26.1234C113.25 26.1234 111.618 26.4088 110.53 26.9715C109.445 27.5342 108.459 28.3877 107.575 29.5321C107.575 28.4965 107.575 23.3209 107.575 14H96.9022V61.7462Z"
-                  fill="black"
-                />
-                <text
-                  fill="black"
-                  font-size="40"
-                  x="145"
-                  y="53"
+                <span
+                  class="MuiIconButton-label"
                 >
-                  0.0
-                </text>
-              </svg>
-            </div>
-            <h2>
-              Rating
-            </h2>
-            <div
-              class="ImdbIcon"
-            >
-              <svg
-                fill="none"
-                height="25"
-                viewBox="0 0 225 75"
-                width="75"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#F6C700"
-                  height="75"
-                  rx="8"
-                  width="225"
+                  <input
+                    class="PrivateSwitchBase-input-44"
+                    data-indeterminate="false"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
                 />
-                <path
-                  d="M15 14.7285H26.0788V62.4747H15V14.7285Z"
-                  fill="black"
-                />
-                <path
-                  d="M47.0126 36.722C46.0608 29.4453 45.5315 25.4005 45.4271 24.5932C44.9634 20.6979 44.5215 17.3082 44.099 14.416C43.14 14.416 38.3545 14.416 29.7352 14.416V62.1622H39.4398L39.4738 30.6358L43.5576 62.1622H50.47L54.3426 29.9345L54.379 62.1622H64.052V14.416H49.5789L47.0126 36.722Z"
-                  fill="black"
-                />
-                <path
-                  d="M82.3417 24.3485C82.4631 24.9574 82.5263 26.3383 82.5263 28.4966C82.5263 30.3477 82.5263 45.1568 82.5263 47.0079C82.5263 50.1855 82.3418 52.1318 81.9751 52.8494C81.6061 53.5671 80.6252 53.9231 79.0349 53.9231C79.0349 50.789 79.0349 25.7158 79.0349 22.5817C80.2416 22.5817 81.0646 22.7257 81.5017 23.0084C81.9387 23.2938 82.2203 23.7396 82.3417 24.3485ZM87.3458 61.6756C88.6641 61.3521 89.7713 60.7813 90.6696 59.9685C91.5656 59.1531 92.1944 58.025 92.5537 56.5816C92.9155 55.1409 93.1292 52.2786 93.1292 47.9974C93.1292 46.3229 93.1292 32.9083 93.1292 31.2311C93.1292 26.7134 92.9713 23.6853 92.7261 22.1467C92.4785 20.6055 91.8642 19.2056 90.8809 17.9497C89.8951 16.6939 88.4578 15.7915 86.5688 15.2424C84.6774 14.6933 81.5939 14.416 76.2306 14.416C75.6794 14.416 72.9261 14.416 67.9658 14.416V62.1622H81.3876C84.4808 62.0535 86.4668 61.8931 87.3458 61.6756Z"
-                  fill="black"
-                />
-                <path
-                  d="M111.004 54.5401C110.8 55.1462 109.906 55.4534 109.231 55.4534C108.571 55.4534 108.131 55.1598 107.908 54.57C107.685 53.9828 107.575 52.6427 107.575 50.5442C107.575 49.283 107.575 39.1874 107.575 37.9261C107.575 35.7515 107.673 34.3951 107.869 33.8541C108.063 33.3186 108.491 33.0468 109.151 33.0468C109.826 33.0468 110.732 33.354 110.965 33.971C111.196 34.5881 111.312 35.9064 111.312 37.9261C111.312 38.7416 111.312 42.8189 111.312 50.161C111.242 52.6753 111.14 54.135 111.004 54.5401ZM96.9022 61.7462H106.876C107.291 59.9222 107.52 58.9083 107.566 58.7044C108.469 59.9276 109.462 60.8464 110.552 61.4553C111.637 62.0669 113.262 62.3714 114.519 62.3714C116.27 62.3714 117.78 61.8576 119.055 60.8274C120.327 59.7999 121.138 58.5821 121.483 57.1822C121.828 55.7796 122 53.6485 122 50.7834C122 49.4433 122 38.728 122 37.3879C122 34.5065 121.942 32.6255 121.828 31.7421C121.713 30.8586 121.374 29.9589 120.808 29.0374C120.242 28.1159 119.419 27.401 118.341 26.89C117.263 26.3789 115.991 26.1234 114.524 26.1234C113.25 26.1234 111.618 26.4088 110.53 26.9715C109.445 27.5342 108.459 28.3877 107.575 29.5321C107.575 28.4965 107.575 23.3209 107.575 14H96.9022V61.7462Z"
-                  fill="black"
-                />
-                <text
-                  fill="black"
-                  font-size="40"
-                  x="145"
-                  y="53"
-                >
-                  10
-                </text>
-              </svg>
+              </span>
             </div>
           </div>
-        </div>
-        <div
-          class="ControlElement"
-        >
-          <span
-            class="MuiSlider-root MuiSlider-colorPrimary Slider"
-          >
-            <span
-              class="MuiSlider-rail"
-            />
-            <span
-              class="MuiSlider-track"
-              style="left: 0%; width: 100%;"
-            />
-            <input
-              type="hidden"
-              value="1900,2020"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="0"
-              style="left: 0%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="1"
-              style="left: 4.166666666666667%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="2"
-              style="left: 8.333333333333334%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="3"
-              style="left: 12.5%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="4"
-              style="left: 16.666666666666668%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="5"
-              style="left: 20.833333333333332%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="6"
-              style="left: 25%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="7"
-              style="left: 29.166666666666668%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="8"
-              style="left: 33.333333333333336%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="9"
-              style="left: 37.5%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="10"
-              style="left: 41.666666666666664%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="11"
-              style="left: 45.833333333333336%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="12"
-              style="left: 50%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="13"
-              style="left: 54.166666666666664%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="14"
-              style="left: 58.333333333333336%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="15"
-              style="left: 62.5%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="16"
-              style="left: 66.66666666666667%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="17"
-              style="left: 70.83333333333333%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="18"
-              style="left: 75%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="19"
-              style="left: 79.16666666666667%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="20"
-              style="left: 83.33333333333333%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="21"
-              style="left: 87.5%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="22"
-              style="left: 91.66666666666667%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="23"
-              style="left: 95.83333333333333%;"
-            />
-            <span
-              class="MuiSlider-mark MuiSlider-markActive"
-              data-index="24"
-              style="left: 100%;"
-            />
-            <span
-              aria-orientation="horizontal"
-              aria-valuemax="2020"
-              aria-valuemin="1900"
-              aria-valuenow="1900"
-              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
-              data-index="0"
-              role="slider"
-              style="left: 0%;"
-              tabindex="0"
-            >
-              <span
-                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
-              >
-                <span
-                  class="PrivateValueLabel-circle-4"
-                >
-                  <span
-                    class="PrivateValueLabel-label-5"
-                  >
-                    1900
-                  </span>
-                </span>
-              </span>
-            </span>
-            <span
-              aria-orientation="horizontal"
-              aria-valuemax="2020"
-              aria-valuemin="1900"
-              aria-valuenow="2020"
-              class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-1"
-              data-index="1"
-              role="slider"
-              style="left: 100%;"
-              tabindex="0"
-            >
-              <span
-                class="PrivateValueLabel-offset-3 MuiSlider-valueLabel"
-              >
-                <span
-                  class="PrivateValueLabel-circle-4"
-                >
-                  <span
-                    class="PrivateValueLabel-label-5"
-                  >
-                    2020
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
+          <hr
+            class="MuiDivider-root makeStyles-divider-37 makeStyles-none-40"
+          />
           <div
-            class="SliderInfo"
+            class="MuiPaper-root makeStyles-paper-45 MuiPaper-elevation1 MuiPaper-rounded"
           >
-            <h3>
-              1900
-            </h3>
-            <h2>
-              Year
-            </h2>
-            <h3>
-              2020
-            </h3>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root makeStyles-selector-46"
+            >
+              <div
+                aria-haspopup="listbox"
+                class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  ​
+                </span>
+              </div>
+              <input
+                aria-hidden="true"
+                class="MuiSelect-nativeInput"
+                tabindex="-1"
+                value="Select genre..."
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconOutlined"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-17 MuiOutlinedInput-notchedOutline"
+                style="padding-left: 8px;"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legend-18"
+                  style="width: 0.01px;"
+                >
+                  <span>
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root makeStyles-divider-37"
+          />
+          <div
+            class="MuiPaper-root makeStyles-slider-47 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <span
+              class="MuiSlider-root MuiSlider-colorPrimary Slider"
+            >
+              <span
+                class="MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <input
+                type="hidden"
+                value="0,10"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="0"
+                style="left: 0%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="1"
+                style="left: 5%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="2"
+                style="left: 10%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="3"
+                style="left: 15%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="4"
+                style="left: 20%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="5"
+                style="left: 25%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="6"
+                style="left: 30%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="7"
+                style="left: 35%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="8"
+                style="left: 40%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="9"
+                style="left: 45%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="10"
+                style="left: 50%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="11"
+                style="left: 55%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="12"
+                style="left: 60%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="13"
+                style="left: 65%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="14"
+                style="left: 70%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="15"
+                style="left: 75%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="16"
+                style="left: 80%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="17"
+                style="left: 85%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="18"
+                style="left: 90%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="19"
+                style="left: 95%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="20"
+                style="left: 100%;"
+              />
+              <span
+                aria-orientation="horizontal"
+                aria-valuemax="10"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-50"
+                data-index="0"
+                role="slider"
+                style="left: 0%;"
+                tabindex="0"
+              >
+                <span
+                  class="PrivateValueLabel-offset-52 MuiSlider-valueLabel"
+                >
+                  <span
+                    class="PrivateValueLabel-circle-53"
+                  >
+                    <span
+                      class="PrivateValueLabel-label-54"
+                    >
+                      0
+                    </span>
+                  </span>
+                </span>
+              </span>
+              <span
+                aria-orientation="horizontal"
+                aria-valuemax="10"
+                aria-valuemin="0"
+                aria-valuenow="10"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-50"
+                data-index="1"
+                role="slider"
+                style="left: 100%;"
+                tabindex="0"
+              >
+                <span
+                  class="PrivateValueLabel-offset-52 MuiSlider-valueLabel"
+                >
+                  <span
+                    class="PrivateValueLabel-circle-53"
+                  >
+                    <span
+                      class="PrivateValueLabel-label-54"
+                    >
+                      10
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+            <div
+              class="makeStyles-sliderLabel-48"
+            >
+              <div
+                class="makeStyles-imdbLogo-49"
+              >
+                <div
+                  class="ImdbIcon"
+                >
+                  <svg
+                    fill="none"
+                    height="25"
+                    viewBox="0 0 225 75"
+                    width="75"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      fill="#F6C700"
+                      height="75"
+                      rx="8"
+                      width="225"
+                    />
+                    <path
+                      d="M15 14.7285H26.0788V62.4747H15V14.7285Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M47.0126 36.722C46.0608 29.4453 45.5315 25.4005 45.4271 24.5932C44.9634 20.6979 44.5215 17.3082 44.099 14.416C43.14 14.416 38.3545 14.416 29.7352 14.416V62.1622H39.4398L39.4738 30.6358L43.5576 62.1622H50.47L54.3426 29.9345L54.379 62.1622H64.052V14.416H49.5789L47.0126 36.722Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M82.3417 24.3485C82.4631 24.9574 82.5263 26.3383 82.5263 28.4966C82.5263 30.3477 82.5263 45.1568 82.5263 47.0079C82.5263 50.1855 82.3418 52.1318 81.9751 52.8494C81.6061 53.5671 80.6252 53.9231 79.0349 53.9231C79.0349 50.789 79.0349 25.7158 79.0349 22.5817C80.2416 22.5817 81.0646 22.7257 81.5017 23.0084C81.9387 23.2938 82.2203 23.7396 82.3417 24.3485ZM87.3458 61.6756C88.6641 61.3521 89.7713 60.7813 90.6696 59.9685C91.5656 59.1531 92.1944 58.025 92.5537 56.5816C92.9155 55.1409 93.1292 52.2786 93.1292 47.9974C93.1292 46.3229 93.1292 32.9083 93.1292 31.2311C93.1292 26.7134 92.9713 23.6853 92.7261 22.1467C92.4785 20.6055 91.8642 19.2056 90.8809 17.9497C89.8951 16.6939 88.4578 15.7915 86.5688 15.2424C84.6774 14.6933 81.5939 14.416 76.2306 14.416C75.6794 14.416 72.9261 14.416 67.9658 14.416V62.1622H81.3876C84.4808 62.0535 86.4668 61.8931 87.3458 61.6756Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M111.004 54.5401C110.8 55.1462 109.906 55.4534 109.231 55.4534C108.571 55.4534 108.131 55.1598 107.908 54.57C107.685 53.9828 107.575 52.6427 107.575 50.5442C107.575 49.283 107.575 39.1874 107.575 37.9261C107.575 35.7515 107.673 34.3951 107.869 33.8541C108.063 33.3186 108.491 33.0468 109.151 33.0468C109.826 33.0468 110.732 33.354 110.965 33.971C111.196 34.5881 111.312 35.9064 111.312 37.9261C111.312 38.7416 111.312 42.8189 111.312 50.161C111.242 52.6753 111.14 54.135 111.004 54.5401ZM96.9022 61.7462H106.876C107.291 59.9222 107.52 58.9083 107.566 58.7044C108.469 59.9276 109.462 60.8464 110.552 61.4553C111.637 62.0669 113.262 62.3714 114.519 62.3714C116.27 62.3714 117.78 61.8576 119.055 60.8274C120.327 59.7999 121.138 58.5821 121.483 57.1822C121.828 55.7796 122 53.6485 122 50.7834C122 49.4433 122 38.728 122 37.3879C122 34.5065 121.942 32.6255 121.828 31.7421C121.713 30.8586 121.374 29.9589 120.808 29.0374C120.242 28.1159 119.419 27.401 118.341 26.89C117.263 26.3789 115.991 26.1234 114.524 26.1234C113.25 26.1234 111.618 26.4088 110.53 26.9715C109.445 27.5342 108.459 28.3877 107.575 29.5321C107.575 28.4965 107.575 23.3209 107.575 14H96.9022V61.7462Z"
+                      fill="black"
+                    />
+                    <text
+                      fill="black"
+                      font-size="40"
+                      x="145"
+                      y="53"
+                    >
+                      0.0
+                    </text>
+                  </svg>
+                </div>
+              </div>
+              <h2>
+                Rating
+              </h2>
+              <div
+                class="makeStyles-imdbLogo-49"
+              >
+                <div
+                  class="ImdbIcon"
+                >
+                  <svg
+                    fill="none"
+                    height="25"
+                    viewBox="0 0 225 75"
+                    width="75"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      fill="#F6C700"
+                      height="75"
+                      rx="8"
+                      width="225"
+                    />
+                    <path
+                      d="M15 14.7285H26.0788V62.4747H15V14.7285Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M47.0126 36.722C46.0608 29.4453 45.5315 25.4005 45.4271 24.5932C44.9634 20.6979 44.5215 17.3082 44.099 14.416C43.14 14.416 38.3545 14.416 29.7352 14.416V62.1622H39.4398L39.4738 30.6358L43.5576 62.1622H50.47L54.3426 29.9345L54.379 62.1622H64.052V14.416H49.5789L47.0126 36.722Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M82.3417 24.3485C82.4631 24.9574 82.5263 26.3383 82.5263 28.4966C82.5263 30.3477 82.5263 45.1568 82.5263 47.0079C82.5263 50.1855 82.3418 52.1318 81.9751 52.8494C81.6061 53.5671 80.6252 53.9231 79.0349 53.9231C79.0349 50.789 79.0349 25.7158 79.0349 22.5817C80.2416 22.5817 81.0646 22.7257 81.5017 23.0084C81.9387 23.2938 82.2203 23.7396 82.3417 24.3485ZM87.3458 61.6756C88.6641 61.3521 89.7713 60.7813 90.6696 59.9685C91.5656 59.1531 92.1944 58.025 92.5537 56.5816C92.9155 55.1409 93.1292 52.2786 93.1292 47.9974C93.1292 46.3229 93.1292 32.9083 93.1292 31.2311C93.1292 26.7134 92.9713 23.6853 92.7261 22.1467C92.4785 20.6055 91.8642 19.2056 90.8809 17.9497C89.8951 16.6939 88.4578 15.7915 86.5688 15.2424C84.6774 14.6933 81.5939 14.416 76.2306 14.416C75.6794 14.416 72.9261 14.416 67.9658 14.416V62.1622H81.3876C84.4808 62.0535 86.4668 61.8931 87.3458 61.6756Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M111.004 54.5401C110.8 55.1462 109.906 55.4534 109.231 55.4534C108.571 55.4534 108.131 55.1598 107.908 54.57C107.685 53.9828 107.575 52.6427 107.575 50.5442C107.575 49.283 107.575 39.1874 107.575 37.9261C107.575 35.7515 107.673 34.3951 107.869 33.8541C108.063 33.3186 108.491 33.0468 109.151 33.0468C109.826 33.0468 110.732 33.354 110.965 33.971C111.196 34.5881 111.312 35.9064 111.312 37.9261C111.312 38.7416 111.312 42.8189 111.312 50.161C111.242 52.6753 111.14 54.135 111.004 54.5401ZM96.9022 61.7462H106.876C107.291 59.9222 107.52 58.9083 107.566 58.7044C108.469 59.9276 109.462 60.8464 110.552 61.4553C111.637 62.0669 113.262 62.3714 114.519 62.3714C116.27 62.3714 117.78 61.8576 119.055 60.8274C120.327 59.7999 121.138 58.5821 121.483 57.1822C121.828 55.7796 122 53.6485 122 50.7834C122 49.4433 122 38.728 122 37.3879C122 34.5065 121.942 32.6255 121.828 31.7421C121.713 30.8586 121.374 29.9589 120.808 29.0374C120.242 28.1159 119.419 27.401 118.341 26.89C117.263 26.3789 115.991 26.1234 114.524 26.1234C113.25 26.1234 111.618 26.4088 110.53 26.9715C109.445 27.5342 108.459 28.3877 107.575 29.5321C107.575 28.4965 107.575 23.3209 107.575 14H96.9022V61.7462Z"
+                      fill="black"
+                    />
+                    <text
+                      fill="black"
+                      font-size="40"
+                      x="145"
+                      y="53"
+                    >
+                      10
+                    </text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root makeStyles-divider-37"
+          />
+          <div
+            class="MuiPaper-root makeStyles-slider-55 MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <span
+              class="MuiSlider-root MuiSlider-colorPrimary Slider"
+            >
+              <span
+                class="MuiSlider-rail"
+              />
+              <span
+                class="MuiSlider-track"
+                style="left: 0%; width: 100%;"
+              />
+              <input
+                type="hidden"
+                value="1900,2020"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="0"
+                style="left: 0%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="1"
+                style="left: 4.166666666666667%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="2"
+                style="left: 8.333333333333334%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="3"
+                style="left: 12.5%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="4"
+                style="left: 16.666666666666668%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="5"
+                style="left: 20.833333333333332%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="6"
+                style="left: 25%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="7"
+                style="left: 29.166666666666668%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="8"
+                style="left: 33.333333333333336%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="9"
+                style="left: 37.5%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="10"
+                style="left: 41.666666666666664%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="11"
+                style="left: 45.833333333333336%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="12"
+                style="left: 50%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="13"
+                style="left: 54.166666666666664%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="14"
+                style="left: 58.333333333333336%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="15"
+                style="left: 62.5%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="16"
+                style="left: 66.66666666666667%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="17"
+                style="left: 70.83333333333333%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="18"
+                style="left: 75%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="19"
+                style="left: 79.16666666666667%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="20"
+                style="left: 83.33333333333333%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="21"
+                style="left: 87.5%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="22"
+                style="left: 91.66666666666667%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="23"
+                style="left: 95.83333333333333%;"
+              />
+              <span
+                class="MuiSlider-mark MuiSlider-markActive"
+                data-index="24"
+                style="left: 100%;"
+              />
+              <span
+                aria-orientation="horizontal"
+                aria-valuemax="2020"
+                aria-valuemin="1900"
+                aria-valuenow="1900"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-50"
+                data-index="0"
+                role="slider"
+                style="left: 0%;"
+                tabindex="0"
+              >
+                <span
+                  class="PrivateValueLabel-offset-52 MuiSlider-valueLabel"
+                >
+                  <span
+                    class="PrivateValueLabel-circle-53"
+                  >
+                    <span
+                      class="PrivateValueLabel-label-54"
+                    >
+                      1900
+                    </span>
+                  </span>
+                </span>
+              </span>
+              <span
+                aria-orientation="horizontal"
+                aria-valuemax="2020"
+                aria-valuemin="1900"
+                aria-valuenow="2020"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-50"
+                data-index="1"
+                role="slider"
+                style="left: 100%;"
+                tabindex="0"
+              >
+                <span
+                  class="PrivateValueLabel-offset-52 MuiSlider-valueLabel"
+                >
+                  <span
+                    class="PrivateValueLabel-circle-53"
+                  >
+                    <span
+                      class="PrivateValueLabel-label-54"
+                    >
+                      2020
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+            <div
+              class="makeStyles-sliderLabel-56"
+            >
+              <h3>
+                1900
+              </h3>
+              <h2>
+                Year
+              </h2>
+              <h3>
+                2020
+              </h3>
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="GridView"
+        class="makeStyles-thin-10"
       >
-        <div
-          aria-label="Pagination Navigation"
-          class="ui pagination pointing secondary menu"
-          role="navigation"
-          style="margin: 20px;"
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-filterButton-7"
+          tabindex="0"
+          type="button"
         >
-          <a
-            aria-current="false"
-            aria-disabled="false"
-            aria-label="Previous item"
-            class="item"
-            tabindex="0"
-            type="prevItem"
-            value="1"
+          <span
+            class="MuiButton-label"
           >
-            ⟨
-          </a>
-          <a
-            aria-current="false"
-            aria-disabled="false"
-            aria-label="Next item"
-            class="item"
-            tabindex="0"
-            type="nextItem"
-            value="0"
-          >
-            ⟩
-          </a>
-        </div>
-        <div
-          style="width: 100%;"
+            <span
+              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                />
+              </svg>
+            </span>
+            Sort by
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-filterButton-7"
+          tabindex="0"
+          type="button"
         >
+          <span
+            class="MuiButton-label"
+          >
+            <span
+              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+                />
+              </svg>
+            </span>
+            Filters
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="makeStyles-movieSection-6"
+      >
+        <div>
           <div
-            class="ui centered grid"
-            style="margin: 20px;"
+            class="makeStyles-root-61"
           >
+            <div>
+              <nav
+                aria-label="pagination navigation"
+                class="MuiPagination-root"
+              >
+                <ul
+                  class="MuiPagination-ul"
+                >
+                  <li>
+                    <button
+                      aria-label="Go to previous page"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiPaginationItem-icon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Go to next page"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiPaginationItem-icon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
             <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
+              class="MuiGrid-root makeStyles-movieGrid-62 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
             >
               <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+                class="MuiGrid-root MuiGrid-item"
               >
                 <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
                 >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
                 </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
                 <div
-                  class="image"
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
                 >
-                  <img
-                    src="../../dimPoster.png"
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                  style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 340px; height: 40px; margin: 10px;"
                   />
                 </div>
               </div>
             </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
+            <div>
+              <nav
+                aria-label="pagination navigation"
+                class="MuiPagination-root"
               >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
+                <ul
+                  class="MuiPagination-ul"
                 >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
+                  <li>
+                    <button
+                      aria-label="Go to previous page"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
                     >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiPaginationItem-icon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Go to next page"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
                     >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="stretched three wide computer eight wide mobile five wide tablet column"
-            >
-              <div
-                class="ui card movieCard"
-                style="background-color: rgb(70, 70, 70); overflow: hidden; z-index: 8;"
-              >
-                <div
-                  class="ui active transition visible dimmer"
-                  style="display: flex;"
-                >
-                  <div
-                    class="content"
-                  >
-                    <div
-                      class="ui massive text loader"
-                    >
-                      Loading
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="image"
-                >
-                  <img
-                    src="../../dimPoster.png"
-                  />
-                </div>
-              </div>
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiPaginationItem-icon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </div>
-        <div
-          aria-label="Pagination Navigation"
-          class="ui pagination pointing secondary menu"
-          role="navigation"
-          style="margin: 20px;"
-        >
-          <a
-            aria-current="false"
-            aria-disabled="false"
-            aria-label="Previous item"
-            class="item"
-            tabindex="0"
-            type="prevItem"
-            value="1"
-          >
-            ⟨
-          </a>
-          <a
-            aria-current="false"
-            aria-disabled="false"
-            aria-label="Next item"
-            class="item"
-            tabindex="0"
-            type="nextItem"
-            value="0"
-          >
-            ⟩
-          </a>
         </div>
       </div>
     </div>
