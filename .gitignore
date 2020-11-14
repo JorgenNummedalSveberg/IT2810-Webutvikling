@@ -2,6 +2,7 @@
 
 # dependencies
 #node_modules/ - kommentert ut foreløbig da det er for lav grense på gitlab CI artifacts
+/node_modules/.cache/eslint-loader
 /.pnp
 .pnp.js
 
