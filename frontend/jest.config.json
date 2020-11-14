@@ -2,5 +2,8 @@
   "testRegex": "((\\.|/*.)(spec))\\.js?$",
   "setupFilesAfterEnv": [
     "<rootDir>/frontend/jest.setup.js"
+  ],
+  "modulePaths": [
+    "<rootDir>"
   ]
 }

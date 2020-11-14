@@ -3,11 +3,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setSort} from "../../actions";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
-import {sortBy} from "../../App";
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import {Paper} from "@material-ui/core";
+import sortBy from "../../App";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: { mobile: boolean, sort: string, refresh: () => void, nummer: string }) {
