@@ -8,7 +8,7 @@ Object {
       (
       <div>
         <div
-          class="makeStyles-root-4"
+          class="makeStyles-root-15"
         >
           <div>
             <nav
@@ -62,510 +62,774 @@ Object {
             </nav>
           </div>
           <div
-            class="MuiGrid-root makeStyles-movieGrid-5 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+            class="MuiGrid-root makeStyles-movieGrid-16 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
           >
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-                style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+                class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                  style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                  style="width: 300px; height: 450px;"
                 />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
-                <span
-                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                  style="width: 340px; height: 40px; margin: 10px;"
-                />
+                <div
+                  class="makeStyles-details-9"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 180px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 200px; height: 2px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 170px; height: 40px; margin: 10px;"
+                  />
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                    style="width: 130px; height: 40px; margin: 10px;"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -628,7 +892,7 @@ Object {
     (
     <div>
       <div
-        class="makeStyles-root-4"
+        class="makeStyles-root-15"
       >
         <div>
           <nav
@@ -682,510 +946,774 @@ Object {
           </nav>
         </div>
         <div
-          class="MuiGrid-root makeStyles-movieGrid-5 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+          class="MuiGrid-root makeStyles-movieGrid-16 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
         >
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root makeStyles-gridItem-5 MuiGrid-item"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-              style="height: 100%; width: 100%; background-color: rgb(70, 70, 70);"
+              class="MuiPaper-root makeStyles-paper-7 MuiPaper-elevation1 MuiPaper-rounded"
             >
               <span
                 class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                style="width: 100%; height: 300px; background-color: rgb(34, 34, 34);"
+                style="width: 300px; height: 450px;"
               />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
-              <span
-                class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                style="width: 340px; height: 40px; margin: 10px;"
-              />
+              <div
+                class="makeStyles-details-9"
+              >
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 180px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 200px; height: 2px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 170px; height: 40px; margin: 10px;"
+                />
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+                  style="width: 130px; height: 40px; margin: 10px;"
+                />
+              </div>
             </div>
           </div>
         </div>

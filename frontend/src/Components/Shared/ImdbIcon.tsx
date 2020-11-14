@@ -6,7 +6,7 @@ function ImdbIcon(props: { rating: number, height: number }) {
     const heightWidthRatio = 225 / 75;
 
     return (
-        <div className={"ImdbIcon"}>
+        <div>
             <svg width={props.height * heightWidthRatio} height={props.height} viewBox="0 0 225 75" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <rect width="225" height="75" fill="#F6C700" rx="8"/>

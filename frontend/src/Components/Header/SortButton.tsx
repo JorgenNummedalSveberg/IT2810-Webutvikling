@@ -7,7 +7,6 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import {Paper} from "@material-ui/core";
-import sortBy from "../../App";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: { mobile: boolean, sort: string, refresh: () => void, nummer: string }) {
@@ -37,17 +36,16 @@ function SortButton(props: { mobile: boolean, sort: string, refresh: () => void,
         div: {
             display: 'flex',
             flexDirection: props.mobile ? 'column' : 'row',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             textAlign: 'center',
             backgroundColor: 'rgb(200, 200, 200, 0.5)',
             borderRadius: '5px',
             cursor: 'pointer',
-            width: (1 / sortBy.length) * 100 - 5 + '%',
             margin: '10px',
-            height: '100%'
+            height: 'calc(100%-20px)'
         },
         sortTitle: {
-            color: active ? '#E98074' : '#D1D1D1',
+            color: active ? '#FFFFFF' : '#D1D1D1',
             width: '100%',
             margin: 0,
             paddingTop: props.mobile ? '40px' : '7px'
