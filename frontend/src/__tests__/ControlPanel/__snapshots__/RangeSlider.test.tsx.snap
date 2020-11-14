@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test to see if the sort button renders with our mock function, and passes props correctly Rendering of button 1`] = `
+<div>
+  <div
+    class="MuiPaper-root makeStyles-slider-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <span
+      class="MuiSlider-root MuiSlider-colorPrimary"
+    >
+      <span
+        class="MuiSlider-rail"
+      />
+      <span
+        class="MuiSlider-track"
+        style="left: 0%; width: 100%;"
+      />
+      <input
+        type="hidden"
+        value="10,100"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="0"
+        style="left: 0%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="1"
+        style="left: 5.555555555555555%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="2"
+        style="left: 11.11111111111111%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="3"
+        style="left: 16.666666666666668%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="4"
+        style="left: 22.22222222222222%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="5"
+        style="left: 27.77777777777778%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="6"
+        style="left: 33.333333333333336%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="7"
+        style="left: 38.888888888888886%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="8"
+        style="left: 44.44444444444444%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="9"
+        style="left: 50%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="10"
+        style="left: 55.55555555555556%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="11"
+        style="left: 61.111111111111114%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="12"
+        style="left: 66.66666666666667%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="13"
+        style="left: 72.22222222222223%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="14"
+        style="left: 77.77777777777777%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="15"
+        style="left: 83.33333333333333%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="16"
+        style="left: 88.88888888888889%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="17"
+        style="left: 94.44444444444444%;"
+      />
+      <span
+        class="MuiSlider-mark MuiSlider-markActive"
+        data-index="18"
+        style="left: 100%;"
+      />
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="10"
+        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-4"
+        data-index="0"
+        role="slider"
+        style="left: 0%;"
+        tabindex="0"
+      >
+        <span
+          class="PrivateValueLabel-offset-6 MuiSlider-valueLabel"
+        >
+          <span
+            class="PrivateValueLabel-circle-7"
+          >
+            <span
+              class="PrivateValueLabel-label-8"
+            >
+              10
+            </span>
+          </span>
+        </span>
+      </span>
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="100"
+        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-4"
+        data-index="1"
+        role="slider"
+        style="left: 100%;"
+        tabindex="0"
+      >
+        <span
+          class="PrivateValueLabel-offset-6 MuiSlider-valueLabel"
+        >
+          <span
+            class="PrivateValueLabel-circle-7"
+          >
+            <span
+              class="PrivateValueLabel-label-8"
+            >
+              100
+            </span>
+          </span>
+        </span>
+      </span>
+    </span>
+    <div
+      class="makeStyles-sliderLabel-2"
+    >
+      <h3>
+        10
+      </h3>
+      <h2>
+        Year
+      </h2>
+      <h3>
+        100
+      </h3>
+    </div>
+  </div>
+</div>
+`;

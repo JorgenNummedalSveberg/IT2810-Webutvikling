@@ -236,6 +236,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           />
           <div
             class="MuiInputBase-root MuiOutlinedInput-root makeStyles-selector-45"
+            data-testid="genreSelector"
           >
             <div
               aria-haspopup="listbox"

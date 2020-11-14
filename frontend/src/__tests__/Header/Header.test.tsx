@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {Provider} from 'react-redux'
-import {store} from '../reducers/store'
-import Header from "../Components/Header/Header";
+import {store} from '../../reducers/store'
+import Header from "../../Components/Header/Header";
 import userEvent from '@testing-library/user-event'
 
 function mock() {
