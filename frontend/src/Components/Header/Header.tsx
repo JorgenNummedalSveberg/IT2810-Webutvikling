@@ -48,7 +48,7 @@ function Header(props: { refresh: () => void }) {
         },
         textInput: {
             backgroundColor: theme.palette.primary.light,
-            color: theme.palette.info.contrastText,
+            color: theme.palette.getContrastText(theme.palette.primary.main),
             borderRadius: '10px',
             height: '5px'
         },

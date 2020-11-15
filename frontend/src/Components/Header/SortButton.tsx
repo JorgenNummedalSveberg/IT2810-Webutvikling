@@ -6,7 +6,7 @@ import {makeStyles} from "@material-ui/styles";
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
-import {Paper} from "@material-ui/core";
+import {Paper, useTheme} from "@material-ui/core";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i
 function SortButton(props: { mobile: boolean, sort: string, refresh: () => void, nummer: string }) {
@@ -31,32 +31,35 @@ function SortButton(props: { mobile: boolean, sort: string, refresh: () => void,
         }
         props.refresh();
     }
-
+    const theme = useTheme();
     const classes = makeStyles({
         div: {
             display: 'flex',
             flexDirection: props.mobile ? 'column' : 'row',
             alignItems: 'flex-start',
             textAlign: 'center',
-            backgroundColor: 'rgb(200, 200, 200, 0.5)',
+            backgroundColor: theme.palette.primary.main,
+            '&:hover': {
+                backgroundColor: theme.palette.primary.dark
+            },
             borderRadius: '5px',
             cursor: 'pointer',
             margin: '10px',
             height: 'calc(100%-20px)'
         },
         sortTitle: {
-            color: active ? '#FFFFFF' : '#D1D1D1',
+            color: active ? theme.palette.getContrastText(theme.palette.primary.light) : theme.palette.text.disabled,
             width: '100%',
             margin: 0,
             paddingTop: props.mobile ? '40px' : '7px'
         },
         arrow: {
-            color: (active ? "#E98074" : "#D1D1D1")
+            color: active ? theme.palette.getContrastText(theme.palette.primary.light) : theme.palette.text.disabled
         }
     })
 
     return (
-        <Paper className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
+        <Paper elevation={5} className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
                onClick={toggleSort}>
             {props.mobile ? <h3 className={classes().sortTitle}>{props.sort}</h3> : null}
             {active ? (desc ?
