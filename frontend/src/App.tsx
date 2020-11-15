@@ -187,19 +187,40 @@ function fetchMovies(
             'Content-Type': 'application/json'
         }
     })
+    const IDreq = (idList: string[]) => {
+        return ({
+            method: 'POST',
+            body: JSON.stringify({ids: idList}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
     fetch('http://localhost:5000/api/movies/nice', req)
         .then(response => {
             if (response.ok) {
                 response.json().then((response: any) => {
                     const data = response.movies;
-                    if (response.pages > 0) {
+                    const pages = response.pages;
+                    if (pages > 0) {
                         setError(false);
-                        setMovies(data, response.pages);
-
-                        // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-                        if (first) {
-                            genreUpdate(data.map((movie: any) => movie.genres), setGenres);
-                        }
+                        fetch('http://localhost:5000/api/movies', IDreq(data))
+                            .then(response => {
+                                if (response.ok) {
+                                    response.json().then((response: Movie[]) => {
+                                        const movies = response;
+                                        console.log(movies);
+                                        setMovies(movies, pages)
+                                        // Bare oppdater sjanger listen hvis det er første gang vi laster inn
+                                        if (first) {
+                                            genreUpdate(movies.map((movie: any) => movie.genres), setGenres);
+                                        }
+                                    })
+                                } else {
+                                    setError(true);
+                                }
+                            })
                     } else {
                         setError(true);
                     }
