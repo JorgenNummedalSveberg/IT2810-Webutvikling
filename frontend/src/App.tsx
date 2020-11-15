@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {addMovies, setGenresState, setIndexList, setMovieState} from "./actions";
+import {addMovies, setGenresState, setIndexList, setMovieState, setPages} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
@@ -46,17 +46,22 @@ function App() {
         dispatch(addMovies(movies))
     }, [dispatch])
 
+    // Oppdaterer FilmeCache
+    const updatePages = useCallback((pages: number) => {
+        dispatch(setPages(pages))
+    }, [dispatch])
+
     // Henter filter fra Redux
     const state = useSelector((state: State) => state);
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
-        setMovies([], state.movies.pages);
-        fetchMovies(setIndex, pushMovies, setMovies, setGenres, state, false, setError, page)
+        setMovies([], state.pages);
+        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, false, setError, page)
     }
 
     if (first) {
-        fetchMovies(setIndex, pushMovies, setMovies, setGenres, state, true, setError, state.page);
+        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, true, setError, state.page);
         setFirst(false);
     }
 
@@ -174,7 +179,7 @@ function App() {
 function fetchMovies(
     setIndex: (list: string[]) => void,
     pushMovies: (list: Movie[]) => void,
-    setMovies: (movies: Movie[], pages: number) => void,
+    updatePages: (pages: number) => void,
     setGenres: (genres: string[]) => void,
     state: State,
     first: boolean,
@@ -224,8 +229,8 @@ function fetchMovies(
                                     response.json().then((response: Movie[]) => {
                                         const movies = response;
                                         console.log(movies);
-                                        setMovies(movies, pages)
                                         pushMovies(movies)
+                                        updatePages(pages)
                                         // Bare oppdater sjanger listen hvis det er første gang vi laster inn
                                         if (first) {
                                             genreUpdate(movies.map((movie: any) => movie.genres), setGenres);

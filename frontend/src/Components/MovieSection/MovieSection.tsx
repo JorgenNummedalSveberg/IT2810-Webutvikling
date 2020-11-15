@@ -101,7 +101,8 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
         </Paper>
     )
 
-    let movies = useSelector((state: State) => state.movies);
+    let movies = useSelector((state: State) => state.movieCache);
+    let pages = useSelector((state: State) => state.pages);
 
     const classes = makeStyles({
         root: {
@@ -147,8 +148,8 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     // Lager en liste av alle MovieCards som skal med i Griden
     let movieCards: any[] = dimList();
-    if (movies.movies.length > 0) {
-        movieCards = movies.movies.map((movie: any, index: number) => {
+    if (movies.length > 0) {
+        movieCards = movies.map((movie: any, index: number) => {
             return (
                 <MovieCard classes={cardClasses} movie={movie} key={index}/>
             )
@@ -166,7 +167,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                     props.refresh(page - 1);
                 }}
                 page={page + 1}
-                count={movies.pages}/>
+                count={pages}/>
         </div>
     )
 
