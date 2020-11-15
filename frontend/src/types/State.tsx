@@ -11,5 +11,7 @@ export interface State {
     filter: Filter,
     details: { show: boolean, movie: Movie },
     page: number,
-    user: User
+    user: User,
+    indexList: string[],
+    movieCache: Movie[]
 }

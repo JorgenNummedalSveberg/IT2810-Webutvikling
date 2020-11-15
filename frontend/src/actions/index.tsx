@@ -9,6 +9,20 @@ export function setMovieState(payload: { movies: Movie[], pages: number }) {
     }
 }
 
+export function setIndexList(payload: string[]) {
+    return {
+        type: 'indexList',
+        payload: payload
+    }
+}
+
+export function addMovies(payload: Movie[]) {
+    return {
+        type: 'pushMovies',
+        payload: payload
+    }
+}
+
 export function myMovies() {
     return {
         type: 'myMovies'
