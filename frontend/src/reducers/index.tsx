@@ -7,6 +7,7 @@ import pageReducer from "./page";
 import userReducer from "./user";
 import indexListReducer from "./indexList";
 import movieCacheReducer from "./movieCache";
+import pagesReducer from "./pages";
 
 
 // Lager en samlet reducer slik at alt kan lagres i en enkelt store
@@ -18,7 +19,8 @@ const reducers = combineReducers({
     page: pageReducer,
     user: userReducer,
     indexList: indexListReducer,
-    movieCache: movieCacheReducer
+    movieCache: movieCacheReducer,
+    pages: pagesReducer
 })
 
 export default reducers;

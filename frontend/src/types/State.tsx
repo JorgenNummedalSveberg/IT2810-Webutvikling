@@ -13,5 +13,6 @@ export interface State {
     page: number,
     user: User,
     indexList: string[],
-    movieCache: Movie[]
+    movieCache: Movie[],
+    pages: number
 }

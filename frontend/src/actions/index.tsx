@@ -9,6 +9,13 @@ export function setMovieState(payload: { movies: Movie[], pages: number }) {
     }
 }
 
+export function setPages(payload: number) {
+    return {
+        type: 'setPages',
+        payload: payload
+    }
+}
+
 export function setIndexList(payload: string[]) {
     return {
         type: 'indexList',
