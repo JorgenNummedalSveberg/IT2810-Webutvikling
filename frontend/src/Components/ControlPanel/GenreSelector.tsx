@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {setGenre} from "../../actions";
-import {MenuItem, Select} from "@material-ui/core";
+import {MenuItem, Select, useTheme} from "@material-ui/core";
 import React from "react";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
@@ -28,10 +28,11 @@ function GenreSelector(props: { refresh: () => void }) {
         dispatch(setGenre(data.props.value));
         props.refresh();
     }
-
+    const theme = useTheme();
     const classes = makeStyles({
         selector: {
-            backgroundColor: '#E98074',
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.getContrastText(theme.palette.primary.main)
         }
     })
 
