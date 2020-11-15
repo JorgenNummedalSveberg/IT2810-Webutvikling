@@ -3,7 +3,7 @@ import {Movie} from "./Movie";
 import {User} from "./User";
 
 export interface State {
-    movies:{
+    movies: {
         movies: Movie[],
         pages: number
     },

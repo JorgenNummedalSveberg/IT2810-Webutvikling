@@ -170,13 +170,13 @@ function fetchMovies(
     page: number) {
 
     const body = {
-        genre: state.filter.genre === "Select genre..."?"":state.filter.genre,
+        genre: state.filter.genre === "Select genre..." ? "" : state.filter.genre,
         title: state.filter.search,
         sort: state.filter.sort,
         desc: state.filter.desc,
         yearRange: state.filter.year,
         scoreRange: state.filter.score,
-        user: !!state.user && state.filter.myMovies ? state.user.userName:"",
+        user: !!state.user && state.filter.myMovies ? state.user.userName : "",
         page: page
     }
 

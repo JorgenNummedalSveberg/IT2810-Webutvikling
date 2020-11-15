@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
@@ -8,10 +8,9 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import {Console} from "inspector";
 
 // Komponent som viser frem alle filmene i en responsiv grid
-function MovieSection(props: {refresh: (number: number) => void, error: boolean}) {
+function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -69,10 +68,10 @@ function MovieSection(props: {refresh: (number: number) => void, error: boolean}
             paddingBottom: '5%'
         },
         errorPage: {
-            display: props.error ?'initial':'none'
+            display: props.error ? 'initial' : 'none'
         },
         moviePage: {
-            display: props.error ?'none':'initial'
+            display: props.error ? 'none' : 'initial'
         }
     })
 
@@ -102,7 +101,7 @@ function MovieSection(props: {refresh: (number: number) => void, error: boolean}
                 size="large"
                 onChange={(e: object, page: number) => {
                     dispatch(setPage(page - 1));
-                    props.refresh( page - 1);
+                    props.refresh(page - 1);
                 }}
                 page={page + 1}
                 count={movies.pages}/>

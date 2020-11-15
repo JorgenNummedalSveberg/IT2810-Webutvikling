@@ -1,4 +1,4 @@
-import React, {useCallback, useRef} from 'react';
+import React, {useRef} from 'react';
 import {Paper, Slider} from '@material-ui/core';
 import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
@@ -6,11 +6,11 @@ import {makeStyles} from '@material-ui/styles';
 import ImdbIcon from "../Shared/ImdbIcon";
 
 
-export default function RangeSlider(props: { score: number[], type: string, refresh: () => void}) {
+export default function RangeSlider(props: { score: number[], type: string, refresh: () => void }) {
 
     // Value som setter verdien på slidern
     const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
-    const [range] = React.useState<number[]>(props.type === "year"?[1900, 2020]:[0, 10]);
+    const [range] = React.useState<number[]>(props.type === "year" ? [1900, 2020] : [0, 10]);
 
 
     // Nødvendig for redux

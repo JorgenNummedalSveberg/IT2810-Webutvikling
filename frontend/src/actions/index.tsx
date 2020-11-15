@@ -2,7 +2,7 @@
 import {Movie} from "../types/Movie";
 import {User} from "../types/User";
 
-export function setMovieState(payload: {movies: Movie[], pages: number}) {
+export function setMovieState(payload: { movies: Movie[], pages: number }) {
     return {
         type: 'setMovies',
         payload: payload
