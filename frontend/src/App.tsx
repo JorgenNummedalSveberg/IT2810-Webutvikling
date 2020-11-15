@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {setGenresState, setMovieState} from "./actions";
+import {addMovies, setGenresState, setIndexList, setMovieState} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
@@ -36,17 +36,27 @@ function App() {
         dispatch(setGenresState(genres))
     }, [dispatch])
 
+    // Setter IndexList
+    const setIndex = useCallback((IDs: string[]) => {
+        dispatch(setIndexList(IDs))
+    }, [dispatch])
+
+    // Oppdaterer FilmeCache
+    const pushMovies = useCallback((movies: Movie[]) => {
+        dispatch(addMovies(movies))
+    }, [dispatch])
+
     // Henter filter fra Redux
     const state = useSelector((state: State) => state);
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
         setMovies([], state.movies.pages);
-        fetchMovies(setMovies, setGenres, state, false, setError, page)
+        fetchMovies(setIndex, pushMovies, setMovies, setGenres, state, false, setError, page)
     }
 
     if (first) {
-        fetchMovies(setMovies, setGenres, state, true, setError, state.page);
+        fetchMovies(setIndex, pushMovies, setMovies, setGenres, state, true, setError, state.page);
         setFirst(false);
     }
 
@@ -162,6 +172,8 @@ function App() {
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(
+    setIndex: (list: string[]) => void,
+    pushMovies: (list: Movie[]) => void,
     setMovies: (movies: Movie[], pages: number) => void,
     setGenres: (genres: string[]) => void,
     state: State,
@@ -202,6 +214,7 @@ function fetchMovies(
             if (response.ok) {
                 response.json().then((response: any) => {
                     const data = response.movies;
+                    setIndex(data);
                     const pages = response.pages;
                     if (pages > 0) {
                         setError(false);
@@ -212,6 +225,7 @@ function fetchMovies(
                                         const movies = response;
                                         console.log(movies);
                                         setMovies(movies, pages)
+                                        pushMovies(movies)
                                         // Bare oppdater sjanger listen hvis det er første gang vi laster inn
                                         if (first) {
                                             genreUpdate(movies.map((movie: any) => movie.genres), setGenres);

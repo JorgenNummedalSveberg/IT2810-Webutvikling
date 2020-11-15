@@ -8,8 +8,11 @@ import reducers from "./reducers";
 
 // Lager samlet redux store
 const store = createStore(
-    reducers
+    reducers,
+    // @ts-ignore
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
+
 
 ReactDOM.render(
     <Provider store={store}>
