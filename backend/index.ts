@@ -17,39 +17,19 @@ mongoose
             })
         );
 
-        // Henter filmer, filtrert basert på queries
-        app.get("/api/movies", async (req, res,e) => {
+        // Henter filmer etter gidde IDer
+        app.post("/api/movies", jsonParser, async (req, res,e) => {
             try{
-                const genre = req.query.genre as string;
-                const title = req.query.title as string;
-                const movies = async ()=> {
-                    if (genre !== "" && title !== "") {
-                        // Hvis sjanger og tittel er søkt på
-                        return Movie.find({'genres': genre}).find({'title': {$regex: title, $options: "i"}});
-                    } else if (genre !== "") {
-                        // Hvis bare sjanger er søkt på
-                        return Movie.find({'genres': genre})
-                    } else if (title !== "") {
-                        // Hvis bare tittel er søkt på
-                        return Movie.find({ 'title': { $regex: title, $options: "i" }})
-                    } else {
-                        // Hvis ingen kriterer er søkt på
-                        return Movie.find()
-                    }
-                }
-                movies().then(movieList => {
-                    if (movieList.length === 0) {
-                        res.status(404).send({error:'No movies'})
-                    } else {
-                        res.status(200).send(movieList)
-                    }
-                });
+                const stringIDs = req.body.ids as string[];
+                const IDs = stringIDs.map(id => mongoose.Types.ObjectId(id));
+                const movieList = await Movie.find({'_id': {$in: IDs}})
+                res.status(200).send(movieList);
             } catch{
                 res.status(404).send({error: "Couldn't fetch movies"})
             }
         });
 
-        // Henter filmer, filtrert basert på queries
+        // Henter filmer, filtrert basert på queries, og gir tilbake en sortert index
         app.post("/api/movies/nice", jsonParser, async (req, res) => {
             const sortAtt = ['title', 'year', 'imdbRating', 'duration'];
             const sortBy = ["Name", "Year", "Rating", "Length"];
@@ -79,12 +59,16 @@ mongoose
                     const user = await User.findOne({'userName': userName})
                     movies = movies.filter(movie => user.movies.includes(movie._id))
                 }
-                const movieList: any[] = [];
+                let movieList: [IMovie[]];
                 movies.forEach((movie, index) => {
+                    if (index === 0) {
+                        movieList = [[]];
+                    }
                     if (index%24 === 0) movieList[Math.floor(index/24)] = [];
                     movieList[Math.floor(index/24)].push(movie);
                 })
-                res.status(200).send({movies: movieList[page], pages: movieList.length})
+                const movieIndex = movieList[page].map(movie => movie._id);
+                res.status(200).send({movies: movieIndex, pages: movieList.length})
             } catch{
                 res.status(404).send({error: "Couldn't fetch movies"})
             }
