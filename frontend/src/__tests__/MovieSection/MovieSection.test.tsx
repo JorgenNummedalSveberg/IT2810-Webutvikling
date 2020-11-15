@@ -10,7 +10,7 @@ import {makeStyles} from "@material-ui/styles";
 export function mock() {
     const classes = makeStyles(
         {
-            card:{}, gridItem: {}, paperButton: {}, paper: {}, poster: {},details: {},
+            card: {}, gridItem: {}, paperButton: {}, paper: {}, poster: {}, details: {},
             title: {}, description: {}, bottomInfo: {}, duration: {}, noMargin: {}
         }
     )

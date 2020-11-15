@@ -4,12 +4,12 @@ import {State} from "../../types/State";
 import {Button} from "@material-ui/core";
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete';
-import {login, setPopup} from "../../actions";
+import {login} from "../../actions";
 import ImdbIcon from "../Shared/ImdbIcon";
 import {makeStyles} from "@material-ui/styles";
 
 
-function Popup(props: {refresh: (page: number) => void}) {
+function Popup(props: { refresh: (page: number) => void }) {
 
     // Henter state fra redux
     const reduxState = useSelector((state: State) => state);

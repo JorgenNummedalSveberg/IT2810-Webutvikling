@@ -1,5 +1,4 @@
-import {Document, Schema} from 'mongoose';
-import mongoose from "mongoose";
+import mongoose, {Document, Schema} from 'mongoose';
 
 const Movie = new Schema({
     id: {type: String, required: false, unique: true},

@@ -1,5 +1,4 @@
 // Reducer for lagring av filmindex
-import {Movie} from "../types/Movie";
 
 const indexListReducer = (indexList: string[] = [], action: { type: string; payload: string[]; }) => {
     switch (action.type) {

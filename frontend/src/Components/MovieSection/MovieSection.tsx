@@ -198,7 +198,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                         alignItems="stretch"
                         spacing={4}
                     >
-                        {movieCards.length === indexList.length  && movieCards.length > 0? movieCards:dimList()}
+                        {movieCards.length === indexList.length && movieCards.length > 0 ? movieCards : dimList()}
                     </Grid>
                     {pagination}
                 </div>
