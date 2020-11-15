@@ -21,6 +21,7 @@ export const sortBy = ["Name", "Rating", "Length", "Year"];
 function App() {
 
     const [error, setError] = useState(false);
+    const [first, setFirst] = useState(true);
 
     // Nødvendig definisjon for redux
     const dispatch = useDispatch();
@@ -37,17 +38,16 @@ function App() {
 
     // Henter filter fra Redux
     const state = useSelector((state: State) => state);
-    const pageState = useSelector((state: State) => state.page);
-
-    // Setter et default filter og henter filmer en gang på starten
-    useEffect(() => {
-        fetchMovies(setMovies, setGenres, state, true, setError, pageState)
-    }, [state.filter, setGenres, setMovies, setError])
 
     // Funksjon som refresher filmene
-    function refresh(page: number = pageState) {
+    function refresh(page: number = state.page) {
         setMovies([], 0);
         fetchMovies(setMovies, setGenres, state, false, setError, page)
+    }
+
+    if(first) {
+        fetchMovies(setMovies, setGenres, state, true, setError, state.page);
+        setFirst(false);
     }
 
     const classes = makeStyles({
