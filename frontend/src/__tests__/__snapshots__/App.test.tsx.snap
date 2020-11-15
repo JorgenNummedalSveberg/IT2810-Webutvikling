@@ -97,7 +97,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
           class="makeStyles-sorting-26"
         >
           <div
-            class="MuiPaper-root makeStyles-div-34 MuiPaper-elevation1 MuiPaper-rounded"
+            class="MuiPaper-root makeStyles-div-34 MuiPaper-elevation5 MuiPaper-rounded"
             data-testid="sortbutton0"
             id="sortbutton0"
           >
@@ -118,7 +118,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             </h3>
           </div>
           <div
-            class="MuiPaper-root makeStyles-div-37 MuiPaper-elevation1 MuiPaper-rounded"
+            class="MuiPaper-root makeStyles-div-37 MuiPaper-elevation5 MuiPaper-rounded"
             data-testid="sortbutton1"
             id="sortbutton1"
           >
@@ -139,7 +139,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             </h3>
           </div>
           <div
-            class="MuiPaper-root makeStyles-div-40 MuiPaper-elevation1 MuiPaper-rounded"
+            class="MuiPaper-root makeStyles-div-40 MuiPaper-elevation5 MuiPaper-rounded"
             data-testid="sortbutton2"
             id="sortbutton2"
           >
@@ -160,7 +160,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             </h3>
           </div>
           <div
-            class="MuiPaper-root makeStyles-div-43 MuiPaper-elevation1 MuiPaper-rounded"
+            class="MuiPaper-root makeStyles-div-43 MuiPaper-elevation5 MuiPaper-rounded"
             data-testid="sortbutton3"
             id="sortbutton3"
           >
@@ -286,7 +286,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             class="MuiPaper-root makeStyles-slider-56 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <span
-              class="MuiSlider-root MuiSlider-colorPrimary"
+              class="MuiSlider-root MuiSlider-colorPrimary makeStyles-sliderRange-59"
             >
               <span
                 class="MuiSlider-rail"
@@ -409,20 +409,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                 aria-valuemax="10"
                 aria-valuemin="0"
                 aria-valuenow="0"
-                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-59"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-60"
                 data-index="0"
                 role="slider"
                 style="left: 0%;"
                 tabindex="0"
               >
                 <span
-                  class="PrivateValueLabel-offset-61 MuiSlider-valueLabel"
+                  class="PrivateValueLabel-offset-62 MuiSlider-valueLabel"
                 >
                   <span
-                    class="PrivateValueLabel-circle-62"
+                    class="PrivateValueLabel-circle-63"
                   >
                     <span
-                      class="PrivateValueLabel-label-63"
+                      class="PrivateValueLabel-label-64"
                     >
                       0
                     </span>
@@ -434,20 +434,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                 aria-valuemax="10"
                 aria-valuemin="0"
                 aria-valuenow="10"
-                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-59"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-60"
                 data-index="1"
                 role="slider"
                 style="left: 100%;"
                 tabindex="0"
               >
                 <span
-                  class="PrivateValueLabel-offset-61 MuiSlider-valueLabel"
+                  class="PrivateValueLabel-offset-62 MuiSlider-valueLabel"
                 >
                   <span
-                    class="PrivateValueLabel-circle-62"
+                    class="PrivateValueLabel-circle-63"
                   >
                     <span
-                      class="PrivateValueLabel-label-63"
+                      class="PrivateValueLabel-label-64"
                     >
                       10
                     </span>
@@ -555,10 +555,10 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
             class="MuiDivider-root makeStyles-divider-47"
           />
           <div
-            class="MuiPaper-root makeStyles-slider-64 MuiPaper-elevation1 MuiPaper-rounded"
+            class="MuiPaper-root makeStyles-slider-65 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <span
-              class="MuiSlider-root MuiSlider-colorPrimary"
+              class="MuiSlider-root MuiSlider-colorPrimary makeStyles-sliderRange-68"
             >
               <span
                 class="MuiSlider-rail"
@@ -701,20 +701,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                 aria-valuemax="2020"
                 aria-valuemin="1900"
                 aria-valuenow="1900"
-                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-59"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-60"
                 data-index="0"
                 role="slider"
                 style="left: 0%;"
                 tabindex="0"
               >
                 <span
-                  class="PrivateValueLabel-offset-61 MuiSlider-valueLabel"
+                  class="PrivateValueLabel-offset-62 MuiSlider-valueLabel"
                 >
                   <span
-                    class="PrivateValueLabel-circle-62"
+                    class="PrivateValueLabel-circle-63"
                   >
                     <span
-                      class="PrivateValueLabel-label-63"
+                      class="PrivateValueLabel-label-64"
                     >
                       1900
                     </span>
@@ -726,20 +726,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                 aria-valuemax="2020"
                 aria-valuemin="1900"
                 aria-valuenow="2020"
-                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-59"
+                class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-60"
                 data-index="1"
                 role="slider"
                 style="left: 100%;"
                 tabindex="0"
               >
                 <span
-                  class="PrivateValueLabel-offset-61 MuiSlider-valueLabel"
+                  class="PrivateValueLabel-offset-62 MuiSlider-valueLabel"
                 >
                   <span
-                    class="PrivateValueLabel-circle-62"
+                    class="PrivateValueLabel-circle-63"
                   >
                     <span
-                      class="PrivateValueLabel-label-63"
+                      class="PrivateValueLabel-label-64"
                     >
                       2020
                     </span>
@@ -748,7 +748,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
               </span>
             </span>
             <div
-              class="makeStyles-sliderLabel-65"
+              class="makeStyles-sliderLabel-66"
             >
               <h3>
                 1900
@@ -828,61 +828,60 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
       >
         <div>
           <div
-            class="makeStyles-errorPage-70"
+            class="makeStyles-errorPage-84"
           >
             <div
-              class="MuiGrid-root"
+              class="MuiPaper-root makeStyles-details-74 makeStyles-gridItem-70 MuiPaper-elevation5 MuiPaper-rounded"
             >
               <div
-                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                class="makeStyles-title-75"
               >
-                <div
-                  class="MuiCardContent-root"
+                <h2
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-colorError"
                 >
-                  <h2
-                    class="MuiTypography-root MuiTypography-h5 MuiTypography-colorSecondary"
-                  >
-                    No movies
-                  </h2>
-                </div>
-                <div
-                  class="MuiCardContent-root"
-                >
-                  This might be because:
-                </div>
+                  No movies
+                </h2>
+                <hr
+                  class="MuiDivider-root"
+                />
+              </div>
+              <div
+                class="makeStyles-description-76"
+              >
+                This might be because:
+              </div>
+              <div
+                class="makeStyles-bottomInfo-77"
+              >
                 <ul>
                   <li>
                     <p
-                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                     >
                       You may not be on the NTNU network or your VPN is off
                     </p>
                   </li>
                   <li>
                     <p
-                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                      class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                     >
                       We do not have the movie you're looking for
                     </p>
                   </li>
                 </ul>
-                <div
-                  class="MuiCardContent-root"
-                >
-                  <a
-                    href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-                  >
-                    Maybe this can help
-                  </a>
-                </div>
               </div>
+              <a
+                href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+              >
+                Maybe this can help
+              </a>
             </div>
           </div>
           <div
-            class="makeStyles-moviePage-71"
+            class="makeStyles-moviePage-85"
           >
             <div
-              class="makeStyles-root-67"
+              class="makeStyles-root-80"
             >
               <div>
                 <nav
@@ -895,7 +894,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     <li>
                       <button
                         aria-label="Go to previous page"
-                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                         disabled=""
                         tabindex="-1"
                         type="button"
@@ -915,7 +914,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     <li>
                       <button
                         aria-label="Go to next page"
-                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                         disabled=""
                         tabindex="-1"
                         type="button"
@@ -936,20 +935,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                 </nav>
               </div>
               <div
-                class="MuiGrid-root makeStyles-movieGrid-68 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+                class="MuiGrid-root makeStyles-movieGrid-82 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
               >
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -971,17 +970,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1003,17 +1002,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1035,17 +1034,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1067,17 +1066,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1099,17 +1098,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1131,17 +1130,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1163,17 +1162,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1195,17 +1194,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1227,17 +1226,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1259,17 +1258,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1291,17 +1290,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1323,17 +1322,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1355,17 +1354,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1387,17 +1386,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1419,17 +1418,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1451,17 +1450,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1483,17 +1482,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1515,17 +1514,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1547,17 +1546,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1579,17 +1578,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1611,17 +1610,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1643,17 +1642,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1675,17 +1674,17 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                   </div>
                 </div>
                 <div
-                  class="MuiGrid-root makeStyles-gridItem-73 MuiGrid-item"
+                  class="MuiGrid-root makeStyles-gridItem-70 MuiGrid-item"
                 >
                   <div
-                    class="MuiPaper-root makeStyles-paper-75 MuiPaper-elevation1 MuiPaper-rounded"
+                    class="MuiPaper-root makeStyles-paper-72 MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                       style="width: 300px; height: 450px;"
                     />
                     <div
-                      class="makeStyles-details-77"
+                      class="makeStyles-details-74"
                     >
                       <span
                         class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1718,7 +1717,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     <li>
                       <button
                         aria-label="Go to previous page"
-                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                         disabled=""
                         tabindex="-1"
                         type="button"
@@ -1738,7 +1737,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     <li>
                       <button
                         aria-label="Go to next page"
-                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                        class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                         disabled=""
                         tabindex="-1"
                         type="button"

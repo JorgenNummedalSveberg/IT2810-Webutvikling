@@ -8,61 +8,60 @@ Object {
       (
       <div>
         <div
-          class="makeStyles-errorPage-4"
+          class="makeStyles-errorPage-16"
         >
           <div
-            class="MuiGrid-root"
+            class="MuiPaper-root makeStyles-details-6 makeStyles-gridItem-2 MuiPaper-elevation5 MuiPaper-rounded"
           >
             <div
-              class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+              class="makeStyles-title-7"
             >
-              <div
-                class="MuiCardContent-root"
+              <h2
+                class="MuiTypography-root MuiTypography-h5 MuiTypography-colorError"
               >
-                <h2
-                  class="MuiTypography-root MuiTypography-h5 MuiTypography-colorSecondary"
-                >
-                  No movies
-                </h2>
-              </div>
-              <div
-                class="MuiCardContent-root"
-              >
-                This might be because:
-              </div>
+                No movies
+              </h2>
+              <hr
+                class="MuiDivider-root"
+              />
+            </div>
+            <div
+              class="makeStyles-description-8"
+            >
+              This might be because:
+            </div>
+            <div
+              class="makeStyles-bottomInfo-9"
+            >
               <ul>
                 <li>
                   <p
-                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                   >
                     You may not be on the NTNU network or your VPN is off
                   </p>
                 </li>
                 <li>
                   <p
-                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                    class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                   >
                     We do not have the movie you're looking for
                   </p>
                 </li>
               </ul>
-              <div
-                class="MuiCardContent-root"
-              >
-                <a
-                  href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-                >
-                  Maybe this can help
-                </a>
-              </div>
             </div>
+            <a
+              href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+            >
+              Maybe this can help
+            </a>
           </div>
         </div>
         <div
-          class="makeStyles-moviePage-5"
+          class="makeStyles-moviePage-17"
         >
           <div
-            class="makeStyles-root-1"
+            class="makeStyles-root-12"
           >
             <div>
               <nav
@@ -75,7 +74,7 @@ Object {
                   <li>
                     <button
                       aria-label="Go to previous page"
-                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -95,7 +94,7 @@ Object {
                   <li>
                     <button
                       aria-label="Go to next page"
-                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -116,20 +115,20 @@ Object {
               </nav>
             </div>
             <div
-              class="MuiGrid-root makeStyles-movieGrid-2 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+              class="MuiGrid-root makeStyles-movieGrid-14 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
             >
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -151,17 +150,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -183,17 +182,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -215,17 +214,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -247,17 +246,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -279,17 +278,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -311,17 +310,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -343,17 +342,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -375,17 +374,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -407,17 +406,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -439,17 +438,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -471,17 +470,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -503,17 +502,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -535,17 +534,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -567,17 +566,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -599,17 +598,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -631,17 +630,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -663,17 +662,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -695,17 +694,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -727,17 +726,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -759,17 +758,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -791,17 +790,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -823,17 +822,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -855,17 +854,17 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+                class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
               >
                 <div
-                  class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                  class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                     style="width: 300px; height: 450px;"
                   />
                   <div
-                    class="makeStyles-details-11"
+                    class="makeStyles-details-6"
                   >
                     <span
                       class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -898,7 +897,7 @@ Object {
                   <li>
                     <button
                       aria-label="Go to previous page"
-                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -918,7 +917,7 @@ Object {
                   <li>
                     <button
                       aria-label="Go to next page"
-                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                      class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -947,61 +946,60 @@ Object {
     (
     <div>
       <div
-        class="makeStyles-errorPage-4"
+        class="makeStyles-errorPage-16"
       >
         <div
-          class="MuiGrid-root"
+          class="MuiPaper-root makeStyles-details-6 makeStyles-gridItem-2 MuiPaper-elevation5 MuiPaper-rounded"
         >
           <div
-            class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+            class="makeStyles-title-7"
           >
-            <div
-              class="MuiCardContent-root"
+            <h2
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-colorError"
             >
-              <h2
-                class="MuiTypography-root MuiTypography-h5 MuiTypography-colorSecondary"
-              >
-                No movies
-              </h2>
-            </div>
-            <div
-              class="MuiCardContent-root"
-            >
-              This might be because:
-            </div>
+              No movies
+            </h2>
+            <hr
+              class="MuiDivider-root"
+            />
+          </div>
+          <div
+            class="makeStyles-description-8"
+          >
+            This might be because:
+          </div>
+          <div
+            class="makeStyles-bottomInfo-9"
+          >
             <ul>
               <li>
                 <p
-                  class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                  class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                 >
                   You may not be on the NTNU network or your VPN is off
                 </p>
               </li>
               <li>
                 <p
-                  class="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                  class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError"
                 >
                   We do not have the movie you're looking for
                 </p>
               </li>
             </ul>
-            <div
-              class="MuiCardContent-root"
-            >
-              <a
-                href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-              >
-                Maybe this can help
-              </a>
-            </div>
           </div>
+          <a
+            href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+          >
+            Maybe this can help
+          </a>
         </div>
       </div>
       <div
-        class="makeStyles-moviePage-5"
+        class="makeStyles-moviePage-17"
       >
         <div
-          class="makeStyles-root-1"
+          class="makeStyles-root-12"
         >
           <div>
             <nav
@@ -1014,7 +1012,7 @@ Object {
                 <li>
                   <button
                     aria-label="Go to previous page"
-                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                     disabled=""
                     tabindex="-1"
                     type="button"
@@ -1034,7 +1032,7 @@ Object {
                 <li>
                   <button
                     aria-label="Go to next page"
-                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                     disabled=""
                     tabindex="-1"
                     type="button"
@@ -1055,20 +1053,20 @@ Object {
             </nav>
           </div>
           <div
-            class="MuiGrid-root makeStyles-movieGrid-2 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+            class="MuiGrid-root makeStyles-movieGrid-14 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
           >
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1090,17 +1088,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1122,17 +1120,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1154,17 +1152,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1186,17 +1184,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1218,17 +1216,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1250,17 +1248,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1282,17 +1280,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1314,17 +1312,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1346,17 +1344,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1378,17 +1376,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1410,17 +1408,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1442,17 +1440,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1474,17 +1472,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1506,17 +1504,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1538,17 +1536,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1570,17 +1568,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1602,17 +1600,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1634,17 +1632,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1666,17 +1664,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1698,17 +1696,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1730,17 +1728,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1762,17 +1760,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1794,17 +1792,17 @@ Object {
               </div>
             </div>
             <div
-              class="MuiGrid-root makeStyles-gridItem-7 MuiGrid-item"
+              class="MuiGrid-root makeStyles-gridItem-2 MuiGrid-item"
             >
               <div
-                class="MuiPaper-root makeStyles-paper-9 MuiPaper-elevation1 MuiPaper-rounded"
+                class="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <span
                   class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
                   style="width: 300px; height: 450px;"
                 />
                 <div
-                  class="makeStyles-details-11"
+                  class="makeStyles-details-6"
                 >
                   <span
                     class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
@@ -1837,7 +1835,7 @@ Object {
                 <li>
                   <button
                     aria-label="Go to previous page"
-                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                     disabled=""
                     tabindex="-1"
                     type="button"
@@ -1857,7 +1855,7 @@ Object {
                 <li>
                   <button
                     aria-label="Go to next page"
-                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
+                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-page MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-sizeLarge Mui-disabled"
                     disabled=""
                     tabindex="-1"
                     type="button"
