@@ -1,39 +1,39 @@
 stages:
- - install
- - build
- - test
+  - install
+  - build
+  - test
 
 install:
- stage: install
- image: node
- script:
-  - npm run setup
-  - npm prune
-  - cd frontend
-  - npm prune
-  - cd ..
-  - cd backend
-  - npm prune
+  stage: install
+  image: node
+  script:
+    - npm run setup
+    - npm prune
+    - cd frontend
+    - npm prune
+    - cd ..
+    - cd backend
+    - npm prune
 
 build:
- stage: build
- image: node
- script:
-  - echo "Building.."
-  - cd frontend
-  - chmod +x node_modules/.bin/react-scripts
-  - npm run-script build
-  - echo "Build successful"
- artifacts:
-  expire_in: 15 minutes
-  paths:
-   - build
+  stage: build
+  image: node
+  script:
+    - echo "Building.."
+    - cd frontend
+    - chmod +x node_modules/.bin/react-scripts
+    - npm run-script build
+    - echo "Build successful"
+  artifacts:
+    expire_in: 15 minutes
+    paths:
+      - build
 
 test:
- stage: test
- image: node
- script:
-  - echo "Testing.."
-  - chmod +x frontend/node_modules/.bin/react-scripts
-  - CI=true npm test
-  - echo "Test successful"
+  stage: test
+  image: node
+  script:
+    - echo "Testing.."
+    - chmod +x frontend/node_modules/.bin/react-scripts
+    - CI=true npm test
+    - echo "Test successful"

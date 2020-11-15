@@ -2,9 +2,23 @@
 import {Movie} from "../types/Movie";
 import {User} from "../types/User";
 
-export function setMovieState(payload: { movies: Movie[], pages: number }) {
+export function setPages(payload: number) {
     return {
-        type: 'setMovies',
+        type: 'setPages',
+        payload: payload
+    }
+}
+
+export function setIndexList(payload: string[]) {
+    return {
+        type: 'indexList',
+        payload: payload
+    }
+}
+
+export function addMovies(payload: Movie[]) {
+    return {
+        type: 'pushMovies',
         payload: payload
     }
 }

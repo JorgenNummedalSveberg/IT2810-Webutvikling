@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {setGenresState, setMovieState} from "./actions";
+import {addMovies, setGenresState, setIndexList, setPages} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
@@ -26,14 +26,24 @@ function App() {
     // Nødvendig definisjon for redux
     const dispatch = useDispatch();
 
-    // Setter filmer
-    const setMovies = useCallback((movies: Movie[], pages: number) => {
-        dispatch(setMovieState({movies: movies, pages: pages}));
-    }, [dispatch])
-
     // Setter sjangre
     const setGenres = useCallback((genres: string[]) => {
         dispatch(setGenresState(genres))
+    }, [dispatch])
+
+    // Setter IndexList
+    const setIndex = useCallback((IDs: string[]) => {
+        dispatch(setIndexList(IDs))
+    }, [dispatch])
+
+    // Oppdaterer FilmeCache
+    const pushMovies = useCallback((movies: Movie[]) => {
+        dispatch(addMovies(movies))
+    }, [dispatch])
+
+    // Oppdaterer FilmeCache
+    const updatePages = useCallback((pages: number) => {
+        dispatch(setPages(pages))
     }, [dispatch])
 
     // Henter filter fra Redux
@@ -41,12 +51,12 @@ function App() {
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
-        setMovies([], state.movies.pages);
-        fetchMovies(setMovies, setGenres, state, false, setError, page)
+        setIndex([])
+        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, false, setError, page)
     }
 
     if (first) {
-        fetchMovies(setMovies, setGenres, state, true, setError, state.page);
+        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, true, setError, state.page);
         setFirst(false);
     }
 
@@ -162,7 +172,9 @@ function App() {
 
 // Henter inn filmer, og sorterer basert på et filter
 function fetchMovies(
-    setMovies: (movies: Movie[], pages: number) => void,
+    setIndex: (list: string[]) => void,
+    pushMovies: (list: Movie[]) => void,
+    updatePages: (pages: number) => void,
     setGenres: (genres: string[]) => void,
     state: State,
     first: boolean,
@@ -187,18 +199,43 @@ function fetchMovies(
             'Content-Type': 'application/json'
         }
     })
+    const IDreq = (idList: string[]) => {
+        return ({
+            method: 'POST',
+            body: JSON.stringify({ids: idList}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
     fetch('http://localhost:5000/api/movies/nice', req)
         .then(response => {
             if (response.ok) {
                 response.json().then((response: any) => {
-                    const data = response.movies;
-                    if (response.pages > 0) {
+                    let data = response.movies;
+                    setIndex(data);
+                    const pages = response.pages;
+                    data = data.filter((id: string) => !state.movieCache.map(movie => movie._id).includes(id))
+                    if (pages > 0) {
                         setError(false);
-                        setMovies(data, response.pages);
-
-                        // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-                        if (first) {
-                            genreUpdate(data.map((movie: any) => movie.genres), setGenres);
+                        if (data.length > 0) {
+                            fetch('http://localhost:5000/api/movies', IDreq(data))
+                                .then(response => {
+                                    if (response.ok) {
+                                        response.json().then((response: Movie[]) => {
+                                            const movies = response;
+                                            pushMovies(movies)
+                                            updatePages(pages)
+                                            // Bare oppdater sjanger listen hvis det er første gang vi laster inn
+                                            if (first) {
+                                                genreUpdate(movies.map((movie: any) => movie.genres), setGenres);
+                                            }
+                                        })
+                                    } else {
+                                        setError(true);
+                                    }
+                                })
                         }
                     } else {
                         setError(true);

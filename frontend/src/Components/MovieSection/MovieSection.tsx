@@ -8,6 +8,7 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import {Movie} from "../../types/Movie";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
@@ -101,7 +102,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
         </Paper>
     )
 
-    let movies = useSelector((state: State) => state.movies);
+    let movies = useSelector((state: State) => state.movieCache);
+    let indexList = useSelector((state: State) => state.indexList);
+    let pages = useSelector((state: State) => state.pages);
 
     const classes = makeStyles({
         root: {
@@ -146,9 +149,13 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     }
 
     // Lager en liste av alle MovieCards som skal med i Griden
-    let movieCards: any[] = dimList();
-    if (movies.movies.length > 0) {
-        movieCards = movies.movies.map((movie: any, index: number) => {
+    let movieCards: any[] = [];
+    const movieList = movies.filter(movie => indexList.includes(movie._id))
+        .sort((a, b) => indexList.indexOf(a._id) - indexList.indexOf(b._id))
+    console.log(indexList);
+    console.log(movieList);
+    if (indexList.length > 0) {
+        movieCards = movieList.map((movie: Movie, index: number) => {
             return (
                 <MovieCard classes={cardClasses} movie={movie} key={index}/>
             )
@@ -166,7 +173,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                     props.refresh(page - 1);
                 }}
                 page={page + 1}
-                count={movies.pages}/>
+                count={pages}/>
         </div>
     )
 
@@ -179,7 +186,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                 <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
                     <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
                     <div className={classes().popup}>
-                        <Popup/>
+                        <Popup refresh={props.refresh}/>
                     </div>
                 </Drawer>
                 <div className={classes().root}>
@@ -191,7 +198,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                         alignItems="stretch"
                         spacing={4}
                     >
-                        {movieCards}
+                        {movieCards.length === indexList.length && movieCards.length > 0 ? movieCards : dimList()}
                     </Grid>
                     {pagination}
                 </div>

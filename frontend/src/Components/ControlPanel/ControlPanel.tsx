@@ -19,6 +19,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
 
     function handleTick() {
         dispatch(myMovies())
+        props.refresh()
     }
 
     const theme = useTheme();
