@@ -149,7 +149,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     }
 
     // Lager en liste av alle MovieCards som skal med i Griden
-    let movieCards: any[] = dimList();
+    let movieCards: any[] = [];
     const movieList = movies.filter(movie => indexList.includes(movie._id));
     if (indexList.length > 0) {
         movieCards = movieList.map((movie: Movie, index: number) => {
@@ -195,7 +195,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                         alignItems="stretch"
                         spacing={4}
                     >
-                        {movieCards}
+                        {movieCards.length > 0 ? movieCards:dimList()}
                     </Grid>
                     {pagination}
                 </div>
