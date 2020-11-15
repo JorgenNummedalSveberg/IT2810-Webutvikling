@@ -1,8 +1,7 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
 import {setGenresState, setMovieState} from "./actions";
-import {Filter} from "./types/Filter";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
@@ -21,12 +20,15 @@ export const sortBy = ["Name", "Rating", "Length", "Year"];
 // App komponenten setter default state, og har ansvar for å hente inn filmer og behandle dem
 function App() {
 
+    const [error, setError] = useState(false);
+    const [first, setFirst] = useState(true);
+
     // Nødvendig definisjon for redux
     const dispatch = useDispatch();
 
     // Setter filmer
-    const setMovies = useCallback((movies: any[]) => {
-        dispatch(setMovieState(movies));
+    const setMovies = useCallback((movies: Movie[], pages: number) => {
+        dispatch(setMovieState({movies: movies, pages: pages}));
     }, [dispatch])
 
     // Setter sjangre
@@ -35,17 +37,17 @@ function App() {
     }, [dispatch])
 
     // Henter filter fra Redux
-    const filter = useSelector((state: State) => state.filter);
-
-    // Setter et default filter og henter filmer en gang på starten
-    useEffect(() => {
-        fetchMovies(setMovies, setGenres, filter, true)
-    }, [filter, setGenres, setMovies])
+    const state = useSelector((state: State) => state);
 
     // Funksjon som refresher filmene
-    function refresh() {
-        setMovies([]);
-        fetchMovies(setMovies, setGenres, filter, false)
+    function refresh(page: number = state.page) {
+        setMovies([], 0);
+        fetchMovies(setMovies, setGenres, state, false, setError, page)
+    }
+
+    if(first) {
+        fetchMovies(setMovies, setGenres, state, true, setError, state.page);
+        setFirst(false);
     }
 
     const classes = makeStyles({
@@ -151,7 +153,7 @@ function App() {
                     </Drawer>
                 </div>
                 <div className={classes().movieSection}>
-                    <MovieSection/>
+                    <MovieSection error={error} refresh={refresh}/>
                 </div>
             </div>
         </div>
@@ -159,50 +161,51 @@ function App() {
 }
 
 // Henter inn filmer, og sorterer basert på et filter
-function fetchMovies(setMovies: any, setGenres: any, filter: Filter, first: boolean) {
-    fetch('http://localhost:5000/api/movies?genre='
-        + (filter.genre === "Select genre..." ? "" : filter.genre)
-        + '&title=' + filter.search)
+function fetchMovies(
+    setMovies: (movies: Movie[], pages: number) => void,
+    setGenres: (genres: string[]) => void,
+    state: State,
+    first: boolean,
+    setError: (error: boolean) => void,
+    page: number) {
+
+    const body = {
+        genre: state.filter.genre === "Select genre..." ? "" : state.filter.genre,
+        title: state.filter.search,
+        sort: state.filter.sort,
+        desc: state.filter.desc,
+        yearRange: state.filter.year,
+        scoreRange: state.filter.score,
+        user: !!state.user && state.filter.myMovies ? state.user.userName : "",
+        page: page
+    }
+
+    const req = ({
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    fetch('http://localhost:5000/api/movies/nice', req)
         .then(response => {
             if (response.ok) {
-                response.json().then((data: any[]) => {
-                    if (data.length > 0) {
-                        // Sorterer filmene basert på hvilken kategori vi sorterer etter
-                        switch (filter.sort) {
-                            case "Name":
-                                data.sort((b: Movie, a: Movie) => {
-                                    if (a.title < b.title) {
-                                        return -1;
-                                    }
-                                    if (a.title > b.title) {
-                                        return 1;
-                                    }
-                                    return 0;
-                                });
-                                break;
-                            case "Rating":
-                                data.sort((a: Movie, b: Movie) => a.imdbRating - b.imdbRating);
-                                break
-                            case "Length":
-                                data.sort((a: Movie, b: Movie) => {
-                                    return a.duration - b.duration;
-                                });
-                                break;
-                            case "Year":
-                                data.sort((a: Movie, b: Movie) => parseInt(a.year) - parseInt(b.year))
-                        }
-
-                        // Setter filmene i redux state, reverserer listen om vi sorterer descending
-                        setMovies(filter.desc ? data.reverse() : data);
+                response.json().then((response: any) => {
+                    const data = response.movies;
+                    if (response.pages > 0) {
+                        setError(false);
+                        setMovies(data, response.pages);
 
                         // Bare oppdater sjanger listen hvis det er første gang vi laster inn
                         if (first) {
                             genreUpdate(data.map((movie: any) => movie.genres), setGenres);
                         }
+                    } else {
+                        setError(true);
                     }
                 })
             } else {
-                setMovies({error: "no movies"});
+                setError(true);
             }
         })
 }

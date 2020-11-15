@@ -2,10 +2,10 @@
 import {Movie} from "../types/Movie";
 import {User} from "../types/User";
 
-export function setMovieState(movies: any[]) {
+export function setMovieState(payload: { movies: Movie[], pages: number }) {
     return {
         type: 'setMovies',
-        payload: movies
+        payload: payload
     }
 }
 

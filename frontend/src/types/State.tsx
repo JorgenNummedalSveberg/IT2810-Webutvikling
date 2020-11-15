@@ -3,7 +3,10 @@ import {Movie} from "./Movie";
 import {User} from "./User";
 
 export interface State {
-    movies: any[],
+    movies: {
+        movies: Movie[],
+        pages: number
+    },
     genres: string[],
     filter: Filter,
     details: { show: boolean, movie: Movie },
