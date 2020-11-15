@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {TextField, useMediaQuery} from "@material-ui/core";
+import {TextField, useMediaQuery, useTheme} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
 import SignLogIn from "./SignLogIn";
@@ -32,21 +32,23 @@ function Header(props: { refresh: () => void }) {
 
     const user = useSelector((state: State) => state.user);
 
+    const theme = useTheme();
+
     const classes = makeStyles({
         root: {
             height: '100%',
-            backgroundColor: '#8E8D8A',
+            backgroundColor: theme.palette.primary.main,
             display: 'flex',
             flexDirection: useMediaQuery('(max-width: 1400px)').valueOf() ? 'column' : 'row',
             alignItems: useMediaQuery('(max-width: 1400px)').valueOf() ? 'center' : 'flex-end',
             padding: '10px',
         },
         label: {
-            color: 'white',
+            color: theme.palette.info.contrastText,
         },
         textInput: {
-            backgroundColor: 'rgb(200, 200, 200, 0.5)',
-            color: 'white',
+            backgroundColor: theme.palette.primary.light,
+            color: theme.palette.info.contrastText,
             borderRadius: '10px',
             height: '5px'
         },
