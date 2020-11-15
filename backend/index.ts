@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
-import Movie from "./models/Movie";
+import Movie, {IMovie} from "./models/Movie";
 import User from "./models/User";
 import bodyParser from "body-parser";
 
@@ -49,6 +49,48 @@ mongoose
             }
         });
 
+        // Henter filmer, filtrert basert på queries
+        app.post("/api/movies/nice", jsonParser, async (req, res) => {
+            const sortAtt = ['title', 'year', 'imdbRating', 'duration'];
+            const sortBy = ["Name", "Year", "Rating", "Length"];
+            try{
+                const genre = req.body.genre as string;
+                const title = req.body.title as string;
+                const sort = req.body.sort as string;
+                const desc = req.body.desc as boolean;
+                const yearRange = req.body.yearRange as number[];
+                const scoreRange = req.body.scoreRange as number[];
+                const userName = req.body.user as string;
+                const page = req.body.page as number;
+                console.log(page);
+                let movies = await Movie.find({'title': {$regex: title, $options: "i"}})
+                    .sort((desc?'-':'')+sortAtt[sortBy.indexOf(sort)])
+                if (sort === "Name") {
+                    movies.reverse();
+                }
+
+                movies = movies
+                    .filter(movie =>
+                        (movie.genres.includes(genre) || genre === "") &&
+                        movie.imdbRating >= scoreRange[0] &&
+                        movie.imdbRating <= scoreRange[1] &&
+                        parseInt(movie.year) >= yearRange[0] &&
+                        parseInt(movie.year) <= yearRange[1])
+                if (userName !== "") {
+                    const user = await User.findOne({'userName': userName})
+                    movies = movies.filter(movie => user.movies.includes(movie._id))
+                }
+                const movieList: [IMovie[]] = [[]];
+                movies.forEach((movie, index) => {
+                    if (index%24 === 0) movieList[Math.floor(index/24)] = [];
+                    movieList[Math.floor(index/24)].push(movie);
+                })
+                res.status(200).send({movies: movieList[page], pages: movieList.length})
+            } catch{
+                res.status(404).send({error: "Couldn't fetch movies"})
+            }
+        });
+
         // Henter filmene fra watchlist til en bruker
         app.get("/api/user", async (req, res,e) => {
             try{
@@ -67,7 +109,6 @@ mongoose
             const password = req.body.password;
             const movies = req.body.movies;
             const user = new User({'userName': userName, 'password': password, 'movies': movies} );
-            console.log(user);
             try {
                 await user.save();
                 res.status(200).send({message: "User added"})

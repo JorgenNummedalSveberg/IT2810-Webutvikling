@@ -20,7 +20,6 @@ const Movie = new Schema({
     watches: {type: Number, required: false, unique: false},
 });
 
-
 export interface IMovie extends Document {
     id: string,
     title: string,

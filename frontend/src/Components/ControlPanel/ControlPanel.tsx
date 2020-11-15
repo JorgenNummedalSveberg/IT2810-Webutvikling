@@ -56,9 +56,9 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
             <Divider className={`${classes().divider} ${classes().none}`}/>
             <GenreSelector refresh={props.refresh}/>
             <Divider className={classes().divider}/>
-            <RangeSlider score={score} type="score"/>
+            <RangeSlider refresh={props.refresh} score={score} type="score"/>
             <Divider className={classes().divider}/>
-            <RangeSlider score={year} type="year"/>
+            <RangeSlider refresh={props.refresh} score={year} type="year"/>
         </div>
     );
 }

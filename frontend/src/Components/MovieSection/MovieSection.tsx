@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
@@ -8,9 +8,10 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import {Console} from "inspector";
 
 // Komponent som viser frem alle filmene i en responsiv grid
-function MovieSection() {
+function MovieSection(props: {refresh: (number: number) => void, error: boolean}) {
     // Nødvendig for redux
     const dispatch = useDispatch();
 
@@ -19,6 +20,8 @@ function MovieSection() {
 
     // Redux tate for å holde styr på om popup er åpen
     const show = useSelector((state: State) => state.details.show);
+
+    const [error, setError] = useState(false);
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
@@ -44,6 +47,10 @@ function MovieSection() {
         </Grid>
     )
 
+    // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
+    const movieState = useSelector((state: State) => state.movies.movies);
+    let movies = useSelector((state: State) => state.movies);
+
     const classes = makeStyles({
         root: {
             display: 'flex',
@@ -59,97 +66,80 @@ function MovieSection() {
         popup: {
             backgroundColor: '#E85A4F',
             textAlign: 'center',
-            width: useMediaQuery('(max-width: 1400px)').valueOf()?'100%':'30vw',
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '30vw',
             height: '100%',
             paddingTop: '5%',
             paddingBottom: '5%'
+        },
+        errorPage: {
+            display: props.error ?'initial':'none'
+        },
+        moviePage: {
+            display: props.error ?'none':'initial'
         }
     })
 
-    // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
-    return useSelector((state: State) => {
-        if (state.movies.hasOwnProperty('error')) {
-            return (errorPage);
-        } else {
-            // Filtrerer utvalget basert på rating og årstall
-            const movies = state.movies
-                .filter(movie =>
-                    movie.imdbRating >= state.filter.score[0] &&
-                    movie.imdbRating <= state.filter.score[1] &&
-                    parseInt(movie.year) >= state.filter.year[0] &&
-                    parseInt(movie.year) <= state.filter.year[1] &&
-                    (!state.user || (!!state.user && (!state.filter.myMovies || state.user.movies.includes(movie._id)))));
+    // Lager en liste med sorte kort som placeholder mens filmene laster
+    const dimList = () => {
+        const list = [];
+        for (let i = 0; i < 24; i++) {
+            list.push(<DimCard key={i}/>);
+        }
+        return list;
+    }
 
-            if (state.movies.length > 0 && movies.length === 0) {
-                return (errorPage);
-            }
-
-            const movieList: any[] = [];
-            movies.forEach((movie, index) => {
-                if (!movieList[Math.floor(index / 24)]) {
-                    movieList[Math.floor(index / 24)] = [];
-                }
-                movieList[Math.floor(index / 24)].push(movie);
-            })
-
-            // Lager en liste med sorte kort som placeholder mens filmene laster
-            const dimList = () => {
-                const list = [];
-                for (let i = 0; i < 24; i++) {
-                    list.push(<DimCard key={i}/>);
-                }
-                return list;
-            }
-
-            // Lager en liste av alle MovieCards som skal med i Griden
-            let movieCards: any[] = dimList();
-            if (typeof movieList[page] !== "undefined") {
-                movieCards = movieList[page].map((movie: any, index: number) => {
-                    return (
-                        <MovieCard movie={movie} key={index}/>
-                    )
-                })
-            }
-
-            // Definerer sidevalg menyen
-            const pagination = (
-                <div>
-                    <Pagination
-                        size="large"
-                        onChange={(e: object, page: number) => {
-                            dispatch(setPage(page - 1));
-                        }}
-                        page={page + 1}
-                        count={movieList.length}/>
-                </div>
-            )
-
-
+    // Lager en liste av alle MovieCards som skal med i Griden
+    let movieCards: any[] = dimList();
+    if (movies.movies.length > 0) {
+        movieCards = movies.movies.map((movie: any, index: number) => {
             return (
-                <div>
-                    <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
-                        <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
-                        <div className={classes().popup}>
-                            <Popup/>
-                        </div>
-                    </Drawer>
-                    <div className={classes().root}>
-                        {pagination}
-                        <Grid
-                            className={classes().movieGrid}
-                            container
-                            justify="center"
-                            alignItems="stretch"
-                            spacing={4}
-                        >
-                            {movieCards}
-                        </Grid>
-                        {pagination}
-                    </div>
-                </div>
+                <MovieCard movie={movie} key={index}/>
             )
-        }
-    })
+        })
+    }
+
+    // Definerer sidevalg menyen
+    const pagination = (
+        <div>
+            <Pagination
+                size="large"
+                onChange={(e: object, page: number) => {
+                    dispatch(setPage(page - 1));
+                    props.refresh( page - 1);
+                }}
+                page={page + 1}
+                count={movies.pages}/>
+        </div>
+    )
+
+    return (
+        <div>
+            <div className={classes().errorPage}>
+                {errorPage}
+            </div>
+            <div className={classes().moviePage}>
+                <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
+                    <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
+                    <div className={classes().popup}>
+                        <Popup/>
+                    </div>
+                </Drawer>
+                <div className={classes().root}>
+                    {pagination}
+                    <Grid
+                        className={classes().movieGrid}
+                        container
+                        justify="center"
+                        alignItems="stretch"
+                        spacing={4}
+                    >
+                        {movieCards}
+                    </Grid>
+                    {pagination}
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default MovieSection;
