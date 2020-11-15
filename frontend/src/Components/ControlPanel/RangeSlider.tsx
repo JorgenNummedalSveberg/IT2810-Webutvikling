@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Paper, Slider} from '@material-ui/core';
+import {Paper, Slider, useTheme} from '@material-ui/core';
 import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
 import {makeStyles} from '@material-ui/styles';
@@ -35,9 +35,11 @@ export default function RangeSlider(props: { score: number[], type: string, refr
         }, 300);
     }
 
+    const theme = useTheme();
     const classes = makeStyles({
         slider: {
-            backgroundColor: '#E98074',
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.getContrastText(theme.palette.primary.main),
             padding: '20px',
             borderRadius: '10px'
         },
@@ -47,11 +49,15 @@ export default function RangeSlider(props: { score: number[], type: string, refr
         },
         imdbLogo: {
             marginTop: '20px'
+        },
+        sliderRange: {
+            color: theme.palette.info.light
         }
     })
     return (
         <Paper className={classes().slider}>
             <Slider
+                className={classes().sliderRange}
                 value={value}
                 onChange={handleChange}
                 valueLabelDisplay="auto"

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox, Divider, Paper} from '@material-ui/core';
+import {Checkbox, Divider, Paper, useTheme} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies} from "../../actions";
@@ -21,11 +21,12 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
         dispatch(myMovies())
     }
 
+    const theme = useTheme();
     const classes = makeStyles({
         root: {
             position: (props.mobile ? 'initial' : 'fixed'),
             minWidth: '500px',
-            backgroundColor: '#D8C3A5',
+            backgroundColor: theme.palette.primary.light,
             height: '100%',
             padding: '20px'
         },
@@ -36,7 +37,6 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
             display: 'inline-block'
         },
         checkbox: {
-            backgroundColor: '#E98074',
             padding: '10px',
             flexDirection: 'row',
         },
@@ -50,7 +50,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
             <div className={classes().myMovies}>
                 <Paper className={`${classes().checkbox} ${classes().none}`}>
                     <h2>My movies</h2>
-                    <Checkbox color='secondary' onChange={handleTick}/>
+                    <Checkbox onChange={handleTick}/>
                 </Paper>
             </div>
             <Divider className={`${classes().divider} ${classes().none}`}/>

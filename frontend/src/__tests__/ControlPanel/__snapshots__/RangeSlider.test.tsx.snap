@@ -6,7 +6,7 @@ exports[`Test to see if the sort button renders with our mock function, and pass
     class="MuiPaper-root makeStyles-slider-1 MuiPaper-elevation1 MuiPaper-rounded"
   >
     <span
-      class="MuiSlider-root MuiSlider-colorPrimary"
+      class="MuiSlider-root MuiSlider-colorPrimary makeStyles-sliderRange-4"
     >
       <span
         class="MuiSlider-rail"
@@ -149,20 +149,20 @@ exports[`Test to see if the sort button renders with our mock function, and pass
         aria-valuemax="2020"
         aria-valuemin="1900"
         aria-valuenow="1900"
-        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-4"
+        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-5"
         data-index="0"
         role="slider"
         style="left: 0%;"
         tabindex="0"
       >
         <span
-          class="PrivateValueLabel-offset-6 MuiSlider-valueLabel"
+          class="PrivateValueLabel-offset-7 MuiSlider-valueLabel"
         >
           <span
-            class="PrivateValueLabel-circle-7"
+            class="PrivateValueLabel-circle-8"
           >
             <span
-              class="PrivateValueLabel-label-8"
+              class="PrivateValueLabel-label-9"
             >
               1900
             </span>
@@ -174,20 +174,20 @@ exports[`Test to see if the sort button renders with our mock function, and pass
         aria-valuemax="2020"
         aria-valuemin="1900"
         aria-valuenow="1900"
-        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-4"
+        class="MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-5"
         data-index="1"
         role="slider"
         style="left: 0%;"
         tabindex="0"
       >
         <span
-          class="PrivateValueLabel-offset-6 MuiSlider-valueLabel"
+          class="PrivateValueLabel-offset-7 MuiSlider-valueLabel"
         >
           <span
-            class="PrivateValueLabel-circle-7"
+            class="PrivateValueLabel-circle-8"
           >
             <span
-              class="PrivateValueLabel-label-8"
+              class="PrivateValueLabel-label-9"
             >
               1900
             </span>

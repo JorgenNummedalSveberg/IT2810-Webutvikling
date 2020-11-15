@@ -4,6 +4,9 @@ import MovieCard from "../../Components/MovieSection/MovieCard";
 import {Provider} from "react-redux";
 import {store} from "../../reducers/store";
 import {Movie} from "../../types/Movie";
+import {useTheme} from "@material-ui/core";
+import {makeStyles} from "@material-ui/styles";
+import {mock} from "./MovieSection.test";
 
 export const testMovie = {
     "_id": "5f8d940bf270ea3f3486577a",
@@ -27,9 +30,11 @@ export const testMovie = {
 } as Movie
 
 
+
 describe("A snapshot test for the ImdbIcon", () => {
     test("renders, and matches with snapshot", () => {
-        const {container} = render(<Provider store={store}><MovieCard movie={testMovie}/></Provider>);
+
+        const {container} = render(<Provider store={store}><MovieCard classes={mock} movie={testMovie}/></Provider>);
         expect(container).toMatchSnapshot();
     })
 })

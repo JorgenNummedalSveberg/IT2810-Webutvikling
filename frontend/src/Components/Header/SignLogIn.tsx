@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {User} from "../../types/User";
 import {login, logout} from "../../actions";
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Input} from "@material-ui/core";
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Input, useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 
 function SignLogIn(props: { isLogged: boolean }) {
@@ -71,14 +71,19 @@ function SignLogIn(props: { isLogged: boolean }) {
         setPassword(value)
     }
 
+    const theme = useTheme();
+
     const classes = makeStyles({
         loginButton: {
-            backgroundColor: '#E85A4F',
+            backgroundColor: theme.palette.primary.main,
+            '&:hover': {
+                backgroundColor: theme.palette.primary.dark
+            },
             borderRadius: '5px',
             margin: '10px',
             '& span': {
                 fontSize: '1.8em',
-                color: 'white',
+                color: theme.palette.getContrastText(theme.palette.primary.main),
             }
         },
         none: {
