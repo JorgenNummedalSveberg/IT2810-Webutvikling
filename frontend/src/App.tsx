@@ -41,7 +41,7 @@ function App() {
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
-        setMovies([], 0);
+        setMovies([], state.movies.pages);
         fetchMovies(setMovies, setGenres, state, false, setError, page)
     }
 
