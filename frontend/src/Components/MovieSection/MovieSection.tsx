@@ -186,7 +186,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                 <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
                     <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
                     <div className={classes().popup}>
-                        <Popup/>
+                        <Popup refresh={props.refresh}/>
                     </div>
                 </Drawer>
                 <div className={classes().root}>

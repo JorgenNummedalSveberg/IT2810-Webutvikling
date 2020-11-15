@@ -9,7 +9,7 @@ import ImdbIcon from "../Shared/ImdbIcon";
 import {makeStyles} from "@material-ui/styles";
 
 
-function Popup() {
+function Popup(props: {refresh: (page: number) => void}) {
 
     // Henter state fra redux
     const reduxState = useSelector((state: State) => state);
@@ -34,14 +34,12 @@ function Popup() {
             .then(response => {
                 if (response.ok) {
                     if (remove) {
-                        reduxState.details.movie.watches--;
                         reduxState.user.movies = reduxState.user.movies.filter(movieId => movieId !== reduxState.details.movie._id);
                     } else {
-                        reduxState.details.movie.watches++;
                         reduxState.user.movies.push(reduxState.details.movie._id);
                     }
-                    dispatch(setPopup(reduxState.details.movie));
                     dispatch(login(reduxState.user));
+                    props.refresh(reduxState.page)
                 }
             })
             .catch(error => console.log(error));
