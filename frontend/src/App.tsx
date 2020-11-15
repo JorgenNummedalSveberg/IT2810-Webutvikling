@@ -214,32 +214,35 @@ function fetchMovies(
         })
     }
 
+    setIndex([])
     fetch('http://localhost:5000/api/movies/nice', req)
         .then(response => {
             if (response.ok) {
                 response.json().then((response: any) => {
-                    const data = response.movies;
+                    let data = response.movies;
                     setIndex(data);
                     const pages = response.pages;
+                    data = data.filter((id: string) => !state.movieCache.map(movie => movie._id).includes(id))
                     if (pages > 0) {
                         setError(false);
-                        fetch('http://localhost:5000/api/movies', IDreq(data))
-                            .then(response => {
-                                if (response.ok) {
-                                    response.json().then((response: Movie[]) => {
-                                        const movies = response;
-                                        console.log(movies);
-                                        pushMovies(movies)
-                                        updatePages(pages)
-                                        // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-                                        if (first) {
-                                            genreUpdate(movies.map((movie: any) => movie.genres), setGenres);
-                                        }
-                                    })
-                                } else {
-                                    setError(true);
-                                }
-                            })
+                        if (data.length > 0) {
+                            fetch('http://localhost:5000/api/movies', IDreq(data))
+                                .then(response => {
+                                    if (response.ok) {
+                                        response.json().then((response: Movie[]) => {
+                                            const movies = response;
+                                            pushMovies(movies)
+                                            updatePages(pages)
+                                            // Bare oppdater sjanger listen hvis det er første gang vi laster inn
+                                            if (first) {
+                                                genreUpdate(movies.map((movie: any) => movie.genres), setGenres);
+                                            }
+                                        })
+                                    } else {
+                                        setError(true);
+                                    }
+                                })
+                        }
                     } else {
                         setError(true);
                     }
