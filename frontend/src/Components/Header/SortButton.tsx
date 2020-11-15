@@ -31,6 +31,7 @@ function SortButton(props: { mobile: boolean, sort: string, refresh: () => void,
         }
         props.refresh();
     }
+
     const theme = useTheme();
     const classes = makeStyles({
         div: {
@@ -59,7 +60,8 @@ function SortButton(props: { mobile: boolean, sort: string, refresh: () => void,
     })
 
     return (
-        <Paper elevation={5} className={classes().div} data-testid={"sortbutton" + props.nummer} id={"sortbutton" + props.nummer}
+        <Paper elevation={5} className={classes().div} data-testid={"sortbutton" + props.nummer}
+               id={"sortbutton" + props.nummer}
                onClick={toggleSort}>
             {props.mobile ? <h3 className={classes().sortTitle}>{props.sort}</h3> : null}
             {active ? (desc ?

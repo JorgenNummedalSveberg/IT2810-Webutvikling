@@ -28,6 +28,7 @@ function GenreSelector(props: { refresh: () => void }) {
         dispatch(setGenre(data.props.value));
         props.refresh();
     }
+
     const theme = useTheme();
     const classes = makeStyles({
         selector: {

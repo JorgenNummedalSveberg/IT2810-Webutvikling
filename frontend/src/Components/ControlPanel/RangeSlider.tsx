@@ -34,6 +34,7 @@ export default function RangeSlider(props: { score: number[], type: string, refr
             props.refresh();
         }, 300);
     }
+
     const theme = useTheme();
     const classes = makeStyles({
         slider: {

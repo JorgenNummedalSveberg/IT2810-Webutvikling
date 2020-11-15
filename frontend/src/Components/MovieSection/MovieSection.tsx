@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-    Button,
-    Card,
-    CardContent,
-    Divider,
-    Drawer,
-    Grid,
-    Paper,
-    Typography,
-    useMediaQuery,
-    useTheme
-} from '@material-ui/core'
+import {Button, Divider, Drawer, Grid, Paper, Typography, useMediaQuery, useTheme} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -19,8 +8,6 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import HourglassFullIcon from "@material-ui/icons/HourglassFull";
-import ImdbIcon from "../Shared/ImdbIcon";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
@@ -29,32 +16,40 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     const cardClasses = makeStyles({
         card: {
             height: "100%",
-            width: '100%'},
-        gridItem: {flexGrow: 1,
+            width: '100%'
+        },
+        gridItem: {
+            flexGrow: 1,
             flexBasis: 1,
             maxWidth: '600px',
-            width: '600px'},
+            width: '600px'
+        },
         paperButton: {
             height: "100%",
-            width: '100%'},
+            width: '100%'
+        },
         paper: {
             backgroundColor: theme.palette.primary.light,
             height: "100%",
             width: '100%',
             display: 'flex',
-            flexDirection: 'row'},
+            flexDirection: 'row'
+        },
         poster: {
             maxWidth: '500px',
-            minWidth: '250px'},
+            minWidth: '250px'
+        },
         details: {
             padding: '10px',
             display: 'flex',
-            flexDirection: 'column'},
+            flexDirection: 'column'
+        },
         title: {flexGrow: 1},
         description: {
             flexGrow: 4,
             color: theme.palette.getContrastText(theme.palette.primary.light),
-            textAlign: 'left'},
+            textAlign: 'left'
+        },
         bottomInfo: {
             margin: '10px',
             display: 'flex',
@@ -64,7 +59,11 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
             flexGrow: 1,
             '& *': {margin: '5px'}
         },
-        duration: {color: theme.palette.getContrastText(theme.palette.primary.light), display: 'flex', alignItems: 'center'},
+        duration: {
+            color: theme.palette.getContrastText(theme.palette.primary.light),
+            display: 'flex',
+            alignItems: 'center'
+        },
         noMargin: {
             margin: 0
         }
@@ -81,25 +80,25 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
-            <Paper className={`${cardClasses().details} ${cardClasses().gridItem}`} elevation={5}>
-                <div className={cardClasses().title}>
-                    <Typography color='error' variant="h5" component="h2">
-                        No movies
-                    </Typography>
-                    <Divider/>
-                </div>
-                <div className={cardClasses().description}>
-                    This might be because:
-                </div>
-                <div className={cardClasses().bottomInfo}>
-                    <ul>
-                        <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
-                        </li>
-                        <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
-                    </ul>
-                </div>
-                <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-            </Paper>
+        <Paper className={`${cardClasses().details} ${cardClasses().gridItem}`} elevation={5}>
+            <div className={cardClasses().title}>
+                <Typography color='error' variant="h5" component="h2">
+                    No movies
+                </Typography>
+                <Divider/>
+            </div>
+            <div className={cardClasses().description}>
+                This might be because:
+            </div>
+            <div className={cardClasses().bottomInfo}>
+                <ul>
+                    <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
+                    </li>
+                    <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
+                </ul>
+            </div>
+            <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
+        </Paper>
     )
 
     let movies = useSelector((state: State) => state.movies);
@@ -158,7 +157,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     // Definerer sidevalg menyen
     const pagination = (
-        <div >
+        <div>
             <Pagination
                 color={'primary'}
                 size="large"

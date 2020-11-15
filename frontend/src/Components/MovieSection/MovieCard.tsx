@@ -1,13 +1,11 @@
 import {Movie} from "../../types/Movie";
 import {useDispatch} from "react-redux";
 import {setPopup, showPopup} from "../../actions";
-import {ButtonBase, Divider, Grid, Paper, useTheme} from "@material-ui/core";
+import {ButtonBase, Divider, Grid, Paper} from "@material-ui/core";
 import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
-import {makeStyles} from "@material-ui/styles";
-
 
 
 // Komponent for å vise frem en film i et kort
@@ -55,7 +53,7 @@ function MovieCard(props: { movie: Movie, classes: any }) {
 }
 
 // Blanke kort for når nettsiden laster inn filmene
-export function DimCard(props: {classes: any}) {
+export function DimCard(props: { classes: any }) {
     return (
         <Grid className={props.classes().gridItem} item>
             <Paper className={props.classes().paper}>

@@ -70,6 +70,7 @@ function SignLogIn(props: { isLogged: boolean }) {
         setError(false);
         setPassword(value)
     }
+
     const theme = useTheme();
 
     const classes = makeStyles({

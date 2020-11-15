@@ -20,6 +20,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
     function handleTick() {
         dispatch(myMovies())
     }
+
     const theme = useTheme();
     const classes = makeStyles({
         root: {

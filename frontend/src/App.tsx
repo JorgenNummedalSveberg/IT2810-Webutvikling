@@ -45,7 +45,7 @@ function App() {
         fetchMovies(setMovies, setGenres, state, false, setError, page)
     }
 
-    if(first) {
+    if (first) {
         fetchMovies(setMovies, setGenres, state, true, setError, state.page);
         setFirst(false);
     }
