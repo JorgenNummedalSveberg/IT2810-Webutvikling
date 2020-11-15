@@ -112,6 +112,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
             padding: '20px',
             overflowY: 'auto',
         },
+        pagination: {
+            color: theme.palette.getContrastText('#445585')
+        },
         movieGrid: {
             width: '100%',
             margin: '20px',
@@ -155,8 +158,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     // Definerer sidevalg menyen
     const pagination = (
-        <div>
+        <div >
             <Pagination
+                color={'primary'}
                 size="large"
                 onChange={(e: object, page: number) => {
                     dispatch(setPage(page - 1));
