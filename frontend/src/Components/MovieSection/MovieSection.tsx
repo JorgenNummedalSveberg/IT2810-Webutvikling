@@ -12,6 +12,7 @@ import {Console} from "inspector";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection(props: {refresh: (number: number) => void, error: boolean}) {
+
     // Nødvendig for redux
     const dispatch = useDispatch();
 
@@ -20,8 +21,6 @@ function MovieSection(props: {refresh: (number: number) => void, error: boolean}
 
     // Redux tate for å holde styr på om popup er åpen
     const show = useSelector((state: State) => state.details.show);
-
-    const [error, setError] = useState(false);
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
@@ -47,8 +46,6 @@ function MovieSection(props: {refresh: (number: number) => void, error: boolean}
         </Grid>
     )
 
-    // Sjekker først om det faktisk ble hentet filmer, og så filterer og displayer filmene
-    const movieState = useSelector((state: State) => state.movies.movies);
     let movies = useSelector((state: State) => state.movies);
 
     const classes = makeStyles({

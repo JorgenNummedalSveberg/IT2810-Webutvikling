@@ -62,7 +62,6 @@ mongoose
                 const scoreRange = req.body.scoreRange as number[];
                 const userName = req.body.user as string;
                 const page = req.body.page as number;
-                console.log(page);
                 let movies = await Movie.find({'title': {$regex: title, $options: "i"}})
                     .sort((desc?'-':'')+sortAtt[sortBy.indexOf(sort)])
                 if (sort === "Name") {
@@ -80,7 +79,7 @@ mongoose
                     const user = await User.findOne({'userName': userName})
                     movies = movies.filter(movie => user.movies.includes(movie._id))
                 }
-                const movieList: [IMovie[]] = [[]];
+                const movieList: any[] = [];
                 movies.forEach((movie, index) => {
                     if (index%24 === 0) movieList[Math.floor(index/24)] = [];
                     movieList[Math.floor(index/24)].push(movie);
