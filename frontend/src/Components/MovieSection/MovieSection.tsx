@@ -117,7 +117,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
             margin: '20px',
         },
         popup: {
-            backgroundColor: '#E85A4F',
+            backgroundColor: theme.palette.primary.light,
             textAlign: 'center',
             width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '30vw',
             height: '100%',
