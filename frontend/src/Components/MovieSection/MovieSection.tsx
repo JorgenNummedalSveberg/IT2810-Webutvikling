@@ -1,5 +1,16 @@
 import React from 'react';
-import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery, useTheme} from '@material-ui/core'
+import {
+    Button,
+    Card,
+    CardContent,
+    Divider,
+    Drawer,
+    Grid,
+    Paper,
+    Typography,
+    useMediaQuery,
+    useTheme
+} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -8,6 +19,8 @@ import Popup from './Popup';
 import MovieCard, {DimCard} from "./MovieCard";
 import {makeStyles} from "@material-ui/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import HourglassFullIcon from "@material-ui/icons/HourglassFull";
+import ImdbIcon from "../Shared/ImdbIcon";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
@@ -68,26 +81,25 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     // Definerer en side å vise i tilfellet ingen filmer blir hentet
     const errorPage = (
-        <Grid>
-            <Card>
-                <CardContent>
+            <Paper className={`${cardClasses().details} ${cardClasses().gridItem}`} elevation={5}>
+                <div className={cardClasses().title}>
                     <Typography color='error' variant="h5" component="h2">
                         No movies
                     </Typography>
-                </CardContent>
-                <CardContent>
+                    <Divider/>
+                </div>
+                <div className={cardClasses().description}>
                     This might be because:
-                </CardContent>
-                <ul>
-                    <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
-                    </li>
-                    <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
-                </ul>
-                <CardContent>
-                    <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-                </CardContent>
-            </Card>
-        </Grid>
+                </div>
+                <div className={cardClasses().bottomInfo}>
+                    <ul>
+                        <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
+                        </li>
+                        <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
+                    </ul>
+                </div>
+                <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
+            </Paper>
     )
 
     let movies = useSelector((state: State) => state.movies);
@@ -113,7 +125,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
             paddingBottom: '5%'
         },
         errorPage: {
-            display: props.error ? 'initial' : 'none'
+            display: props.error ? 'flex' : 'none',
+            justifyContent: 'center',
+            padding: '50px'
         },
         moviePage: {
             display: props.error ? 'none' : 'initial'
