@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import Header from "./Components/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {addMovies, setGenresState, setIndexList, setMovieState, setPages} from "./actions";
+import {addMovies, setGenresState, setIndexList, setPages} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
@@ -25,11 +25,6 @@ function App() {
 
     // Nødvendig definisjon for redux
     const dispatch = useDispatch();
-
-    // Setter filmer
-    const setMovies = useCallback((movies: Movie[], pages: number) => {
-        dispatch(setMovieState({movies: movies, pages: pages}));
-    }, [dispatch])
 
     // Setter sjangre
     const setGenres = useCallback((genres: string[]) => {
@@ -56,7 +51,7 @@ function App() {
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
-        setMovies([], state.pages);
+        setIndex([])
         fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, false, setError, page)
     }
 
@@ -214,7 +209,6 @@ function fetchMovies(
         })
     }
 
-    setIndex([])
     fetch('http://localhost:5000/api/movies/nice', req)
         .then(response => {
             if (response.ok) {

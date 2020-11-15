@@ -18,6 +18,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
     const user = useSelector((state: State) => state.user);
 
     function handleTick() {
+        props.refresh()
         dispatch(myMovies())
     }
 
