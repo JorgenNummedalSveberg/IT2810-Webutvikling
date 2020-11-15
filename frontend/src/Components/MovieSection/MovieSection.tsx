@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery} from '@material-ui/core'
+import {Button, Card, CardContent, Drawer, Grid, Typography, useMediaQuery, useTheme} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
@@ -11,6 +11,51 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
+
+    const theme = useTheme();
+    const cardClasses = makeStyles({
+        card: {
+            height: "100%",
+            width: '100%'},
+        gridItem: {flexGrow: 1,
+            flexBasis: 1,
+            maxWidth: '600px',
+            width: '600px'},
+        paperButton: {
+            height: "100%",
+            width: '100%'},
+        paper: {
+            backgroundColor: theme.palette.primary.light,
+            height: "100%",
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row'},
+        poster: {
+            maxWidth: '500px',
+            minWidth: '250px'},
+        details: {
+            padding: '10px',
+            display: 'flex',
+            flexDirection: 'column'},
+        title: {flexGrow: 1},
+        description: {
+            flexGrow: 4,
+            color: theme.palette.getContrastText(theme.palette.primary.light),
+            textAlign: 'left'},
+        bottomInfo: {
+            margin: '10px',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexGrow: 1,
+            '& *': {margin: '5px'}
+        },
+        duration: {color: theme.palette.getContrastText(theme.palette.primary.light), display: 'flex', alignItems: 'center'},
+        noMargin: {
+            margin: 0
+        }
+    })
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -26,7 +71,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
         <Grid>
             <Card>
                 <CardContent>
-                    <Typography color='secondary' variant="h5" component="h2">
+                    <Typography color='error' variant="h5" component="h2">
                         No movies
                     </Typography>
                 </CardContent>
@@ -34,9 +79,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                     This might be because:
                 </CardContent>
                 <ul>
-                    <li><Typography color='secondary'>You may not be on the NTNU network or your VPN is off</Typography>
+                    <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
                     </li>
-                    <li><Typography color='secondary'>We do not have the movie you're looking for</Typography></li>
+                    <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
                 </ul>
                 <CardContent>
                     <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
@@ -79,7 +124,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     const dimList = () => {
         const list = [];
         for (let i = 0; i < 24; i++) {
-            list.push(<DimCard key={i}/>);
+            list.push(<DimCard classes={cardClasses} key={i}/>);
         }
         return list;
     }
@@ -89,7 +134,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     if (movies.movies.length > 0) {
         movieCards = movies.movies.map((movie: any, index: number) => {
             return (
-                <MovieCard movie={movie} key={index}/>
+                <MovieCard classes={cardClasses} movie={movie} key={index}/>
             )
         })
     }
