@@ -7,6 +7,7 @@ import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
 import SortButton from "./SortButton";
 import {sortBy} from "../../App";
+import SortButtonContainer from "./SortButtonContainer";
 
 
 function Header(props: { refresh: () => void }) {
@@ -100,8 +101,8 @@ function Header(props: { refresh: () => void }) {
             </div>
             <div className={classes().sorting}>
                 {sortBy.map((sort, index) => (
-                    <SortButton mobile={false} key={index} sort={sort} refresh={props.refresh}
-                                nummer={index.toString()}/>
+                    <SortButtonContainer mobile={false} key={index} sort={sort} refresh={props.refresh}
+                                number={index.toString()}/>
                 ))}
             </div>
         </div>

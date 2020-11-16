@@ -7,6 +7,7 @@ import SortButton from "../Header/SortButton";
 import FilterSortButton from "./FilterSortButton";
 import TuneIcon from "@material-ui/icons/Tune";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import SortButtonContainer from "../Header/SortButtonContainer";
 
 export default function FilterSort(props: {
     classes: { thin: string; filterButton: string; sorting: string; },
@@ -23,8 +24,8 @@ export default function FilterSort(props: {
                 <Button startIcon={<ArrowBackIcon/>} onClick={() => props.setSortingOpen(false)}>Close</Button>
                 <div className={props.classes.sorting}>
                     {sortBy.map((sort, index) => (
-                        <SortButton mobile={true} key={index} sort={sort} refresh={props.refresh}
-                                    nummer={index.toString()}/>
+                        <SortButtonContainer mobile={true} key={index} sort={sort} refresh={props.refresh}
+                                    number={index.toString()}/>
                     ))}
                 </div>
             </Drawer>

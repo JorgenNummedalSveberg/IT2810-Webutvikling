@@ -68,7 +68,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     // Lager en liste med sorte kort som placeholder mens filmene laster
     const dimList = () => {
         const list = [];
-        for (let i = 0; i < indexList.length; i++) {
+        for (let i = 0; i < 24; i++) {
             list.push(<DimCard classes={classes} key={i}/>);
         }
         return list;
