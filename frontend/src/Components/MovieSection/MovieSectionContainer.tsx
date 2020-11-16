@@ -3,7 +3,7 @@ import {Button, Drawer, Grid, useMediaQuery, useTheme} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {setPage, showPopup} from "../../actions";
+import {setPage, setPopup, showPopup} from "../../actions";
 import Popup from './Popup';
 import MovieCard from "./MovieCard/MovieCard";
 import DimCard from "./MovieCard/DimCard";
@@ -68,10 +68,20 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     // Lager en liste med sorte kort som placeholder mens filmene laster
     const dimList = () => {
         const list = [];
-        for (let i = 0; i < 24; i++) {
+        for (let i = 0; i < indexList.length; i++) {
             list.push(<DimCard classes={classes} key={i}/>);
         }
         return list;
+    }
+
+
+    // Nødvendig for redux
+    const dispatch = useDispatch();
+
+    // Åpner opp Popup.
+    function handleClick(movie: Movie) {
+        dispatch(setPopup(movie));
+        dispatch(showPopup(true));
     }
 
     // Lager en liste av alle MovieCards som skal med i Griden
@@ -81,7 +91,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     if (indexList.length > 0) {
         movieCards = movieList.map((movie: Movie, index: number) => {
             return (
-                <MovieCard classes={classes} movie={movie} key={index} duration={parseTime(movie.duration)}/>
+                <MovieCard handleClick={handleClick} classes={classes} movie={movie} key={index} duration={parseTime(movie.duration)}/>
             )
         })
     }

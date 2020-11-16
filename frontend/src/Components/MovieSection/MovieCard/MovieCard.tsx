@@ -9,21 +9,14 @@ import React from "react";
 
 
 // Komponent for å vise frem en film i et kort
-export default function MovieCard(props: { movie: Movie, classes: any, duration: string }) {
-
-    // Nødvendig for redux
-    const dispatch = useDispatch();
-
-    // Åpner opp Popup.
-    function handleClick() {
-        dispatch(setPopup(props.movie));
-        dispatch(showPopup(true));
-    }
-
-
+export default function MovieCard(props: {
+    movie: Movie,
+    classes: any,
+    duration: string,
+    handleClick: (movie: Movie) => void}) {
     return (
         <Grid className={props.classes().gridItem} item>
-            <ButtonBase className={props.classes().paperButton} onClick={handleClick}>
+            <ButtonBase className={props.classes().paperButton} onClick={() => props.handleClick(props.movie)}>
                 <Paper className={props.classes().paper} elevation={5}>
                     <img className={props.classes().poster} alt='Could not display movie poster' width='100%'
                          src={props.movie.posterurl}/>
