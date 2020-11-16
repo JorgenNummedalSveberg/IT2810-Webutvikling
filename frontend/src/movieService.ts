@@ -92,3 +92,13 @@ function genreUpdate(movies: any[], setGenres: any) {
     })
     setGenres(genres);
 }
+
+export function parseTime(time: number): string {
+    let minutes = time;
+    let hours = 0;
+    while (minutes - 60 > 0) {
+        minutes -= 60;
+        hours++;
+    }
+    return hours + 'h' + minutes + 'm';
+}

@@ -1,10 +1,10 @@
-import {setPage} from "../../../actions";
+import {setPage} from "../../actions";
 import {Pagination} from "@material-ui/lab";
 import React from "react";
 
 export default function
 PagePicker(props: {
-    dispatch: (page: { payload: number; type: string }) => void
+    dispatch: (f: { payload: any; type: string }) => void,
     page: number,
     pages: number,
     refresh: (number: number) => void}) {

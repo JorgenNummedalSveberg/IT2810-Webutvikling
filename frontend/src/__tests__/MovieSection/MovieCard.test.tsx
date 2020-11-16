@@ -1,6 +1,6 @@
 import {render} from "@testing-library/react";
 import React from "react";
-import MovieCard from "../../Components/MovieSection/MovieCard";
+import MovieCard from "../../Components/MovieSection/MovieCard/MovieCard";
 import {Provider} from "react-redux";
 import {store} from "../../reducers/store";
 import {Movie} from "../../types/Movie";
