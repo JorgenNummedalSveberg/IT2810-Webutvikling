@@ -10,6 +10,7 @@ import {useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import {fetchMovies} from "./movieService";
 import FilterSortContainer from "./Components/FilterSort/FilterSortContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
 export const sortBy = ["Name", "Rating", "Length", "Year"];
@@ -70,7 +71,7 @@ function App() {
     // Returnerer Main appen
     return (
         <div className={classes().root}>
-            <Header refresh={refresh}/>
+            <HeaderContainer refresh={refresh}/>
             <div className={classes().mainBox}>
                 <div className={classes().wide}>
                     <ControlPanel mobile={false} refresh={refresh}/>
