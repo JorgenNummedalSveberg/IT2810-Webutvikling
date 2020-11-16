@@ -49,6 +49,7 @@ export function fetchMovies(
                     let data = response.movies;
                     fetchUpdate.setIndex(data);
                     const pages = response.pages;
+                    fetchUpdate.updatePages(pages)
                     data = data.filter((id: string) => !state.movieCache.map(movie => movie._id).includes(id))
                     if (pages > 0) {
                         fetchUpdate.setError(false);
@@ -59,7 +60,6 @@ export function fetchMovies(
                                         response.json().then((response: Movie[]) => {
                                             const movies = response;
                                             fetchUpdate.pushMovies(movies)
-                                            fetchUpdate.updatePages(pages)
                                             // Bare oppdater sjanger listen hvis det er første gang vi laster inn
                                             if (first) {
                                                 genreUpdate(movies.map((movie: any) => movie.genres), fetchUpdate.setGenres);
