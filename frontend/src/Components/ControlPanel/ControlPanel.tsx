@@ -6,6 +6,7 @@ import {myMovies, setPage} from "../../actions";
 import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
 import {makeStyles} from "@material-ui/styles";
+import RangeSliderContainer from "./RangeSliderContainer";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
@@ -59,9 +60,9 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
             <Divider className={`${classes().divider} ${classes().none}`}/>
             <GenreSelector refresh={props.refresh}/>
             <Divider className={classes().divider}/>
-            <RangeSlider refresh={props.refresh} score={score} type="score"/>
+            <RangeSliderContainer refresh={props.refresh} score={score} type="score"/>
             <Divider className={classes().divider}/>
-            <RangeSlider refresh={props.refresh} score={year} type="year"/>
+            <RangeSliderContainer refresh={props.refresh} score={year} type="year"/>
         </div>
     );
 }
