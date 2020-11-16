@@ -12,6 +12,7 @@ import {makeStyles} from "@material-ui/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SortButton from "./Components/Header/SortButton";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import {fetchMovies} from "./movieService";
 
 // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
 export const sortBy = ["Name", "Rating", "Length", "Year"];
@@ -46,17 +47,25 @@ function App() {
         dispatch(setPages(pages))
     }, [dispatch])
 
+    const fetchUpdate = {
+        setIndex: setIndex,
+        pushMovies: pushMovies,
+        updatePages: updatePages,
+        setGenres: setGenres,
+        setError: setError,
+    }
+
     // Henter filter fra Redux
     const state = useSelector((state: State) => state);
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
         setIndex([])
-        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, false, setError, page)
+        fetchMovies(fetchUpdate, state, false, page)
     }
 
     if (first) {
-        fetchMovies(setIndex, pushMovies, updatePages, setGenres, state, true, setError, state.page);
+        fetchMovies(fetchUpdate, state, true, state.page);
         setFirst(false);
     }
 
@@ -168,96 +177,6 @@ function App() {
             </div>
         </div>
     );
-}
-
-// Henter inn filmer, og sorterer basert på et filter
-function fetchMovies(
-    setIndex: (list: string[]) => void,
-    pushMovies: (list: Movie[]) => void,
-    updatePages: (pages: number) => void,
-    setGenres: (genres: string[]) => void,
-    state: State,
-    first: boolean,
-    setError: (error: boolean) => void,
-    page: number) {
-
-    const body = {
-        genre: state.filter.genre === "Select genre..." ? "" : state.filter.genre,
-        title: state.filter.search,
-        sort: state.filter.sort,
-        desc: state.filter.desc,
-        yearRange: state.filter.year,
-        scoreRange: state.filter.score,
-        user: !!state.user && state.filter.myMovies ? state.user.userName : "",
-        page: page
-    }
-
-    const req = ({
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    const IDreq = (idList: string[]) => {
-        return ({
-            method: 'POST',
-            body: JSON.stringify({ids: idList}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-    }
-
-    fetch('http://localhost:5000/api/movies/nice', req)
-        .then(response => {
-            if (response.ok) {
-                response.json().then((response: any) => {
-                    let data = response.movies;
-                    setIndex(data);
-                    const pages = response.pages;
-                    data = data.filter((id: string) => !state.movieCache.map(movie => movie._id).includes(id))
-                    if (pages > 0) {
-                        setError(false);
-                        if (data.length > 0) {
-                            fetch('http://localhost:5000/api/movies', IDreq(data))
-                                .then(response => {
-                                    if (response.ok) {
-                                        response.json().then((response: Movie[]) => {
-                                            const movies = response;
-                                            pushMovies(movies)
-                                            updatePages(pages)
-                                            // Bare oppdater sjanger listen hvis det er første gang vi laster inn
-                                            if (first) {
-                                                genreUpdate(movies.map((movie: any) => movie.genres), setGenres);
-                                            }
-                                        })
-                                    } else {
-                                        setError(true);
-                                    }
-                                })
-                        }
-                    } else {
-                        setError(true);
-                    }
-                })
-            } else {
-                setError(true);
-            }
-        })
-}
-
-// Setter sjangrene i state
-function genreUpdate(movies: any[], setGenres: any) {
-    let genres = ["Select genre..."];
-    movies.forEach((movieGenres: string[]) => {
-        movieGenres.forEach((genre: string) => {
-            if (!genres.includes(genre)) {
-                genres.push(genre);
-            }
-        })
-    })
-    setGenres(genres);
 }
 
 export default App;
