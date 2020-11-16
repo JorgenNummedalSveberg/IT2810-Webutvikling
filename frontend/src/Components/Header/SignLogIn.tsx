@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {User} from "../../types/User";
-import {login, logout} from "../../actions";
+import {login, logout, myMovies} from "../../actions";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Input, useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 
@@ -123,7 +123,10 @@ function SignLogIn(props: { isLogged: boolean }) {
                 </Dialog>
             </div>
             <div className={`${props.isLogged ? classes().none : classes().initial}`}>
-                <Button onClick={() => dispatch(logout())} className={classes().loginButton}>Log out</Button>
+                <Button onClick={() => {
+                    dispatch(logout())
+                    dispatch(myMovies())
+                }} className={classes().loginButton}>Log out</Button>
             </div>
         </div>
     )

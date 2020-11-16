@@ -21,8 +21,8 @@ export function fetchMovies(
         desc: state.filter.desc,
         yearRange: state.filter.year,
         scoreRange: state.filter.score,
-        user: !!state.user && state.filter.myMovies ? state.user.userName : "",
-        page: page
+        user: state.filter.myMovies ? state.user.userName : "",
+        page: state.filter.myMovies ? 0 : page
     }
 
     const req = ({

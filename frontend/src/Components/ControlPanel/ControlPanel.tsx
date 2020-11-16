@@ -2,7 +2,7 @@ import React from 'react';
 import {Checkbox, Divider, Paper, useTheme} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {myMovies} from "../../actions";
+import {myMovies, setPage} from "../../actions";
 import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
 import {makeStyles} from "@material-ui/styles";
@@ -18,6 +18,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
     const user = useSelector((state: State) => state.user);
 
     function handleTick() {
+        dispatch(setPage(0))
         dispatch(myMovies())
         props.refresh()
     }
