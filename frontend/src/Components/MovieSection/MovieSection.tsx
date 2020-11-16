@@ -108,6 +108,9 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
 
     const classes = makeStyles({
         root: {
+            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '500px',
+        },
+        main: {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -178,7 +181,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
     )
 
     return (
-        <div>
+        <div className={classes().root}>
             <div className={classes().errorPage}>
                 {errorPage}
             </div>
@@ -189,7 +192,7 @@ function MovieSection(props: { refresh: (number: number) => void, error: boolean
                         <Popup refresh={props.refresh}/>
                     </div>
                 </Drawer>
-                <div className={classes().root}>
+                <div className={classes().main}>
                     {pagination}
                     <Grid
                         className={classes().movieGrid}

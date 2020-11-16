@@ -36,7 +36,10 @@ function Header(props: { refresh: () => void }) {
 
     const classes = makeStyles({
         root: {
-            height: '100%',
+            height: useMediaQuery('(max-width: 1400px)').valueOf() ? '220px' : '120px',
+            position: 'fixed',
+            width: '100%',
+            zIndex: 100,
             backgroundColor: theme.palette.primary.main,
             display: 'flex',
             flexDirection: useMediaQuery('(max-width: 1400px)').valueOf() ? 'column' : 'row',
