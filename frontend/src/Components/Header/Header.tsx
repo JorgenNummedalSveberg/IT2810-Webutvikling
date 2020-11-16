@@ -96,7 +96,7 @@ function Header(props: { refresh: () => void }) {
                 />
             </div>
             <div className={classes().buttons}>
-                <SignLogIn isLogged={!user}/>
+                <SignLogIn refresh={props.refresh} isLogged={!user}/>
             </div>
             <div className={classes().sorting}>
                 {sortBy.map((sort, index) => (

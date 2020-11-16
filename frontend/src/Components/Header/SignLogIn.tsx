@@ -5,7 +5,7 @@ import {login, logout, myMovies} from "../../actions";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Input, useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 
-function SignLogIn(props: { isLogged: boolean }) {
+function SignLogIn(props: { isLogged: boolean, refresh: () => void}) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -124,8 +124,9 @@ function SignLogIn(props: { isLogged: boolean }) {
             </div>
             <div className={`${props.isLogged ? classes().none : classes().initial}`}>
                 <Button onClick={() => {
-                    dispatch(logout())
                     dispatch(myMovies())
+                    dispatch(logout())
+                    props.refresh()
                 }} className={classes().loginButton}>Log out</Button>
             </div>
         </div>

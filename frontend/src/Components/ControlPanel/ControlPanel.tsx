@@ -16,6 +16,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
     // Henter årstall fra redux state
     const year = useSelector((state: State) => state.filter.year);
     const user = useSelector((state: State) => state.user);
+    const myMoviesState = useSelector((state: State) => state.filter.myMovies);
 
     function handleTick() {
         dispatch(setPage(0))
@@ -52,7 +53,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
             <div className={classes().myMovies}>
                 <Paper className={`${classes().checkbox} ${classes().none}`}>
                     <h2>My movies</h2>
-                    <Checkbox onChange={handleTick}/>
+                    <Checkbox checked={myMoviesState} onChange={handleTick}/>
                 </Paper>
             </div>
             <Divider className={`${classes().divider} ${classes().none}`}/>
