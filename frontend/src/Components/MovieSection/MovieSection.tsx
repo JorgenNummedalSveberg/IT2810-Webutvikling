@@ -1,213 +1,59 @@
-import React from 'react';
-import {Button, Divider, Drawer, Grid, Paper, Typography, useMediaQuery, useTheme} from '@material-ui/core'
-import {Pagination} from '@material-ui/lab'
-import {useDispatch, useSelector} from "react-redux";
-import {State} from "../../types/State";
-import {setPage, showPopup} from "../../actions";
-import Popup from './Popup';
-import MovieCard, {DimCard} from "./MovieCard";
-import {makeStyles} from "@material-ui/styles";
+import {Button, Drawer, Grid} from "@material-ui/core";
+import {showPopup} from "../../actions";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import {Movie} from "../../types/Movie";
+import Popup from "./Popup";
+import React from "react";
+import ErrorPage from "./ErrorPage";
+import PagePickerContainer from "./PagePicker/PagePickerContainer";
 
-// Komponent som viser frem alle filmene i en responsiv grid
-function MovieSection(props: { refresh: (number: number) => void, error: boolean }) {
-
-    const theme = useTheme();
-    const cardClasses = makeStyles({
-        card: {
-            height: "100%",
-            width: '100%'
-        },
-        gridItem: {
-            flexGrow: 1,
-            flexBasis: 1,
-            maxWidth: '600px',
-            width: '600px'
-        },
-        paperButton: {
-            height: "100%",
-            width: '100%'
-        },
-        paper: {
-            backgroundColor: theme.palette.primary.light,
-            height: "100%",
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row'
-        },
-        poster: {
-            maxWidth: '500px',
-            minWidth: '250px'
-        },
-        details: {
-            padding: '10px',
-            display: 'flex',
-            flexDirection: 'column'
-        },
-        title: {flexGrow: 1},
-        description: {
-            flexGrow: 4,
-            color: theme.palette.getContrastText(theme.palette.primary.light),
-            textAlign: 'left'
-        },
-        bottomInfo: {
-            margin: '10px',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexGrow: 1,
-            '& *': {margin: '5px'}
-        },
-        duration: {
-            color: theme.palette.getContrastText(theme.palette.primary.light),
-            display: 'flex',
-            alignItems: 'center'
-        },
-        noMargin: {
-            margin: 0
-        }
-    })
-
-    // Nødvendig for redux
-    const dispatch = useDispatch();
-
-    // Redux tate for å holde styr på hvilen side vi er på
-    const page = useSelector((state: State) => state.page);
-
-    // Redux tate for å holde styr på om popup er åpen
-    const show = useSelector((state: State) => state.details.show);
-
-    // Definerer en side å vise i tilfellet ingen filmer blir hentet
-    const errorPage = (
-        <Paper className={`${cardClasses().details} ${cardClasses().gridItem}`} elevation={5}>
-            <div className={cardClasses().title}>
-                <Typography color='error' variant="h5" component="h2">
-                    No movies
-                </Typography>
-                <Divider/>
-            </div>
-            <div className={cardClasses().description}>
-                This might be because:
-            </div>
-            <div className={cardClasses().bottomInfo}>
-                <ul>
-                    <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
-                    </li>
-                    <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
-                </ul>
-            </div>
-            <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
-        </Paper>
-    )
-
-    let movies = useSelector((state: State) => state.movieCache);
-    let indexList = useSelector((state: State) => state.indexList);
-    let pages = useSelector((state: State) => state.pages);
-
-    const classes = makeStyles({
-        root: {
-            marginLeft: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '500px',
-        },
-        main: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: '20px',
-            overflowY: 'auto',
-        },
-        pagination: {
-            color: theme.palette.getContrastText('#445585')
-        },
-        movieGrid: {
-            width: '100%',
-            margin: '20px',
-        },
-        popup: {
-            backgroundColor: theme.palette.primary.light,
-            textAlign: 'center',
-            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '30vw',
-            height: '100%',
-            paddingTop: '5%',
-            paddingBottom: '5%'
-        },
-        errorPage: {
-            display: props.error ? 'flex' : 'none',
-            justifyContent: 'center',
-            padding: '50px'
-        },
-        moviePage: {
-            display: props.error ? 'none' : 'initial'
-        }
-    })
-
-    // Lager en liste med sorte kort som placeholder mens filmene laster
-    const dimList = () => {
-        const list = [];
-        for (let i = 0; i < 24; i++) {
-            list.push(<DimCard classes={cardClasses} key={i}/>);
-        }
-        return list;
-    }
-
-    // Lager en liste av alle MovieCards som skal med i Griden
-    let movieCards: any[] = [];
-    const movieList = movies.filter(movie => indexList.includes(movie._id))
-        .sort((a, b) => indexList.indexOf(a._id) - indexList.indexOf(b._id))
-    console.log(indexList);
-    console.log(movieList);
-    if (indexList.length > 0) {
-        movieCards = movieList.map((movie: Movie, index: number) => {
-            return (
-                <MovieCard classes={cardClasses} movie={movie} key={index}/>
-            )
-        })
-    }
-
-    // Definerer sidevalg menyen
-    const pagination = (
-        <div>
-            <Pagination
-                color={'primary'}
-                size="large"
-                onChange={(e: object, page: number) => {
-                    dispatch(setPage(page - 1));
-                    props.refresh(page - 1);
-                }}
-                page={page + 1}
-                count={pages}/>
-        </div>
-    )
-
+export default function MovieSection(props: {
+    classes: {
+        root: string,
+        moviePage: string,
+        popup: string,
+        main: string,
+        movieGrid: string,
+        errorPage: string,
+        details: string;
+        gridItem: string;
+        title: string;
+        description: string;
+        bottomInfo: string},
+    dispatch: (f: { payload: boolean; type: string }) => void,
+    pagination: JSX.Element,
+    popupShow: boolean,
+    refresh: (number: number) => void,
+    movieCards: JSX.Element[]}) {
     return (
-        <div className={classes().root}>
-            <div className={classes().errorPage}>
-                {errorPage}
-            </div>
-            <div className={classes().moviePage}>
-                <Drawer anchor={'right'} open={show} onClose={() => dispatch(showPopup(false))}>
-                    <Button startIcon={<ArrowBackIcon/>} onClick={() => dispatch(showPopup(false))}>Close</Button>
-                    <div className={classes().popup}>
+        <div className={props.classes.root}>
+            <ErrorPage classes={
+                {errorPage: props.classes.errorPage,
+                    details: props.classes.details,
+                    gridItem: props.classes.gridItem,
+                    title: props.classes.title,
+                    description: props.classes.description,
+                    bottomInfo: props.classes.bottomInfo}}/>
+            <div className={props.classes.moviePage}>
+                <Drawer anchor={'right'} open={props.popupShow} onClose={() => props.dispatch(showPopup(false))}>
+                    <Button startIcon={<ArrowBackIcon/>} onClick={() => props.dispatch(showPopup(false))}>Close</Button>
+                    <div className={props.classes.popup}>
                         <Popup refresh={props.refresh}/>
                     </div>
                 </Drawer>
-                <div className={classes().main}>
-                    {pagination}
+                <div className={props.classes.main}>
+                    <PagePickerContainer refresh={props.refresh}/>
                     <Grid
-                        className={classes().movieGrid}
+                        className={props.classes.movieGrid}
                         container
                         justify="center"
                         alignItems="stretch"
                         spacing={4}
                     >
-                        {movieCards.length === indexList.length && movieCards.length > 0 ? movieCards : dimList()}
+                        {props.movieCards}
                     </Grid>
-                    {pagination}
+                    <PagePickerContainer refresh={props.refresh}/>
                 </div>
             </div>
         </div>
     )
 }
-
-export default MovieSection;

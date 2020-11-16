@@ -5,11 +5,11 @@ import {addMovies, setGenresState, setIndexList, setPages} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
 import ControlPanel from "./Components/ControlPanel/ControlPanel";
-import MovieSection from "./Components/MovieSection/MovieSection";
+import MovieSectionContainer from "./Components/MovieSection/MovieSectionContainer";
 import {useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import {fetchMovies} from "./movieService";
-import FilterSortContainer from "./Components/Main/FilterSortContainer";
+import FilterSortContainer from "./Components/FilterSort/FilterSortContainer";
 
 // Ulike ting vi sorterer etter, komponenten returnerer en knapp for hvert element
 export const sortBy = ["Name", "Rating", "Length", "Year"];
@@ -76,7 +76,7 @@ function App() {
                     <ControlPanel mobile={false} refresh={refresh}/>
                 </div>
                 <FilterSortContainer refresh={refresh}/>
-                <MovieSection error={error} refresh={refresh}/>
+                <MovieSectionContainer error={error} refresh={refresh}/>
             </div>
         </div>
     );
