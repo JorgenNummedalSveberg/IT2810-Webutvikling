@@ -31,7 +31,10 @@ export const testMovie = {
 describe("A snapshot test for the ImdbIcon", () => {
     test("renders, and matches with snapshot", () => {
 
-        const {container} = render(<Provider store={store}><MovieCard classes={mock} movie={testMovie}/></Provider>);
+        const {container} = render(
+            <Provider store={store}>
+                <MovieCard handleClick={mock} duration={''} classes={mock} movie={testMovie}/>
+            </Provider>);
         expect(container).toMatchSnapshot();
     })
 })

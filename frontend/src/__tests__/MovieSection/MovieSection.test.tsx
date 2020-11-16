@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import MovieSection from '../../Components/MovieSection/MovieSection'
+import MovieSectionContainer from '../../Components/MovieSection/MovieSectionContainer'
 import {Provider} from 'react-redux'
 import {store} from '../../reducers/store'
 import {makeStyles} from "@material-ui/styles";
@@ -18,6 +18,7 @@ export function mock() {
 }
 
 test("Snapshot test", () => {
-    const movieSection = render(<Provider store={store}>(<MovieSection error={false} refresh={mock}/></Provider>);
+    const movieSection = render(<Provider store={store}>(<MovieSectionContainer error={false}
+                                                                                refresh={mock}/></Provider>);
     expect(movieSection).toMatchSnapshot();
 })
