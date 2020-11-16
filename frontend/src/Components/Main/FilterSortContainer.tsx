@@ -37,10 +37,15 @@ export default function FilterSortContainer(props: {refresh: () => void}) {
     const [openFilter, setFilterOpen] = useState(false)
 
     return (
-        <div className={classes().thin}>
-            <FilterSortButton action='Filter' class={classes().filterButton} setOpen={setFilterOpen} icon={<TuneIcon/>}/>
-            <FilterSortButton action='Sort' class={classes().filterButton} setOpen={setSortingOpen} icon={<ExpandMoreIcon/>}/>
-            <FilterSort refresh={props.refresh} openFilter={openFilter} openSorting={openSorting} setFilterOpen={setFilterOpen} setSortingOpen={setSortingOpen} sorting={classes().sorting}/>
-        </div>
+        <FilterSort
+            classes={{
+                filterButton: classes().filterButton,
+                thin: classes().thin,
+                sorting: classes().sorting}}
+            refresh={props.refresh}
+            openFilter={openFilter}
+            openSorting={openSorting}
+            setFilterOpen={setFilterOpen}
+            setSortingOpen={setSortingOpen} />
     )
 }
