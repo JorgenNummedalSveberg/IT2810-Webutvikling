@@ -8,6 +8,7 @@ import {makeStyles} from "@material-ui/styles";
 import SortButton from "./SortButton";
 import {sortBy} from "../../App";
 import SortButtonContainer from "./SortButtonContainer";
+import SignLogInContainer from "./SignLogInContainer";
 
 
 function Header(props: { refresh: () => void }) {
@@ -97,7 +98,7 @@ function Header(props: { refresh: () => void }) {
                 />
             </div>
             <div className={classes().buttons}>
-                <SignLogIn refresh={props.refresh} isLogged={!user}/>
+                <SignLogInContainer refresh={props.refresh} isLogged={!user}/>
             </div>
             <div className={classes().sorting}>
                 {sortBy.map((sort, index) => (
