@@ -3,7 +3,7 @@ import {Button, Drawer, Grid, useMediaQuery, useTheme} from '@material-ui/core'
 import {Pagination} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {setPage, setPopup, showPopup} from "../../actions";
+import {myMovies, setPage, setPopup, showPopup} from "../../actions";
 import Popup from './Popup';
 import MovieCard from "./MovieCard";
 import DimCard from "./DimCard";
@@ -20,6 +20,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     const show = useSelector((state: State) => state.details.show);
     const page = useSelector((state: State) => state.page);
     const pages = useSelector((state: State) => state.pages);
+    const myMovies = useSelector((state: State) => state.filter.myMovies);
     let movies = useSelector((state: State) => state.movieCache);
     let indexList = useSelector((state: State) => state.indexList);
 
@@ -98,6 +99,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
 
     return (
         <MovieSection
+            myMovies={myMovies}
             page={page}
             pages={pages}
             classes={classes}

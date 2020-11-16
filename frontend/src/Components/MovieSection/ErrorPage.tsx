@@ -1,8 +1,7 @@
 import {Divider, Paper, Typography} from "@material-ui/core";
 import React from "react";
 
-export default function errorPage(props: {
-    classes: {errorPage: string, details: string; gridItem: string; title: string; description: string; bottomInfo: string}}){
+export default function errorPage(props: {classes: any, myMovies: boolean}){
     return (
         <div className={props.classes.errorPage}>
             <Paper className={`${props.classes.details} ${props.classes.gridItem}`} elevation={5}>
@@ -17,9 +16,16 @@ export default function errorPage(props: {
                 </div>
                 <div className={props.classes.bottomInfo}>
                     <ul>
-                        <li><Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
+                        <li>
+                            <Typography color='error'>You may not be on the NTNU network or your VPN is off</Typography>
                         </li>
-                        <li><Typography color='error'>We do not have the movie you're looking for</Typography></li>
+                        <li>
+                            <Typography color='error'>
+                                {props.myMovies?
+                                    "You have no movies in your list":
+                                    "We do not have the movie you're looking for"}
+                            </Typography>
+                        </li>
                     </ul>
                 </div>
                 <a href={'https://www.youtube.com/watch?v=oHg5SJYRHA0'}>Maybe this can help</a>
