@@ -7,6 +7,7 @@ import RangeSlider from "./RangeSlider";
 import GenreSelector from "./GenreSelector";
 import {makeStyles} from "@material-ui/styles";
 import RangeSliderContainer from "./RangeSliderContainer";
+import GenreSelectorContainer from "./GenreSelectorContainer";
 
 // Holder styr på parametere å endre søket etter
 function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
@@ -58,7 +59,7 @@ function ControlPanel(props: { mobile: boolean, refresh: () => void }) {
                 </Paper>
             </div>
             <Divider className={`${classes().divider} ${classes().none}`}/>
-            <GenreSelector refresh={props.refresh}/>
+            <GenreSelectorContainer refresh={props.refresh}/>
             <Divider className={classes().divider}/>
             <RangeSliderContainer refresh={props.refresh} score={score} type="score"/>
             <Divider className={classes().divider}/>
