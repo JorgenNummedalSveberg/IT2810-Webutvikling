@@ -1,6 +1,6 @@
 import {render} from "@testing-library/react";
 import React from "react";
-import {DimCard} from "../../Components/MovieSection/MovieCard/MovieCard";
+import {DimCard} from "../../Components/MovieSection/MovieCard";
 import {mock} from "./MovieSection.test";
 
 
