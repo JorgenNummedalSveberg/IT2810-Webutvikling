@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {User} from "../../types/User";
-import {login, logout, myMovies} from "../../actions";
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Input, useTheme} from "@material-ui/core";
+import {login} from "../../actions";
+import {useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
 
-function SignLogInContainer(props: { isLogged: boolean, refresh: () => void}) {
+function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -40,7 +40,7 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void}) {
         } else if (!reqUser.userName) {
             setError({message: 'Username is required', name: true, password: false})
             return false
-        } else if (!reqUser.password){
+        } else if (!reqUser.password) {
             setError({message: 'Password is required', name: false, password: true})
             return false
         }
@@ -49,7 +49,7 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void}) {
 
     // Legger til en bruker på serveren
     function addUser(reqUser: User) {
-        if(checkInput(reqUser)) {
+        if (checkInput(reqUser)) {
             fetch('http://localhost:5000/api/user/add', req(reqUser))
                 .then(response => {
                     if (response.ok) {
@@ -64,7 +64,7 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void}) {
 
     // Logger inn hvis brukeren finnes
     function onLogin(reqUser: User) {
-        if(checkInput(reqUser)) {
+        if (checkInput(reqUser)) {
             fetch('http://localhost:5000/api/user?userName=' + reqUser.userName + '&password=' + reqUser.password)
                 .then(response => {
                     if (response.ok) {

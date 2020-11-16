@@ -1,7 +1,6 @@
 import {Button, Drawer, Grid} from "@material-ui/core";
 import {showPopup} from "../../actions";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import Popup from "./Popup";
 import React from "react";
 import ErrorPage from "./ErrorPage";
 import PagePicker from "./PagePicker";
@@ -15,7 +14,8 @@ export default function MovieSection(props: {
     popupShow: boolean,
     refresh: (number: number) => void,
     movieCards: JSX.Element[],
-    myMovies: boolean}) {
+    myMovies: boolean
+}) {
     return (
         <div className={props.classes().root}>
             <ErrorPage classes={props.classes()} myMovies={props.myMovies}/>
@@ -27,7 +27,8 @@ export default function MovieSection(props: {
                     </div>
                 </Drawer>
                 <div className={props.classes().main}>
-                    <PagePicker refresh={props.refresh} dispatch={props.dispatch} page={props.page} pages={props.pages}/>
+                    <PagePicker refresh={props.refresh} dispatch={props.dispatch} page={props.page}
+                                pages={props.pages}/>
                     <Grid
                         className={props.classes().movieGrid}
                         container
@@ -37,7 +38,8 @@ export default function MovieSection(props: {
                     >
                         {props.movieCards}
                     </Grid>
-                    <PagePicker refresh={props.refresh} dispatch={props.dispatch} page={props.page} pages={props.pages}/>
+                    <PagePicker refresh={props.refresh} dispatch={props.dispatch} page={props.page}
+                                pages={props.pages}/>
                 </div>
             </div>
         </div>

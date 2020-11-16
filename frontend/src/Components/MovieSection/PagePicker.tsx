@@ -3,11 +3,12 @@ import {Pagination} from "@material-ui/lab";
 import React from "react";
 
 export default function
-PagePicker(props: {
+    PagePicker(props: {
     dispatch: (f: { payload: any; type: string }) => void,
     page: number,
     pages: number,
-    refresh: (number: number) => void}) {
+    refresh: (number: number) => void
+}) {
     return (
         <Pagination
             color={'primary'}

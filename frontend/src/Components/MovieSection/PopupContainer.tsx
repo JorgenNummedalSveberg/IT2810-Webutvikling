@@ -1,11 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {Button} from "@material-ui/core";
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import DeleteIcon from '@material-ui/icons/Delete';
 import {login} from "../../actions";
-import ImdbIcon from "../Shared/ImdbIcon";
 import {makeStyles} from "@material-ui/styles";
 import Popup from "./Popup";
 

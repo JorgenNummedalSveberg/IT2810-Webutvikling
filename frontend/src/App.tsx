@@ -1,10 +1,8 @@
-import React, {useCallback, useState} from 'react';
-import Header from "./Components/Header/Header";
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {addMovies, setGenresState, setIndexList, setPages} from "./actions";
 import {State} from "./types/State";
 import {Movie} from "./types/Movie";
-import ControlPanel from "./Components/ControlPanel/ControlPanel";
 import MovieSectionContainer from "./Components/MovieSection/MovieSectionContainer";
 import {useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
@@ -26,10 +24,23 @@ function App() {
 
     // Samler en del dispatches i et objekt som sendes til fetchMovies
     const dispatch = useDispatch();
-    function setGenres(genres: string[]) {dispatch(setGenresState(genres))}
-    function setIndex(IDs: string[]) {dispatch(setIndexList(IDs))}
-    function pushMovies(movies: Movie[]) {dispatch(addMovies(movies))}
-    function updatePages(pages: number) {dispatch(setPages(pages))}
+
+    function setGenres(genres: string[]) {
+        dispatch(setGenresState(genres))
+    }
+
+    function setIndex(IDs: string[]) {
+        dispatch(setIndexList(IDs))
+    }
+
+    function pushMovies(movies: Movie[]) {
+        dispatch(addMovies(movies))
+    }
+
+    function updatePages(pages: number) {
+        dispatch(setPages(pages))
+    }
+
     const fetchUpdate = {
         setIndex: setIndex,
         pushMovies: pushMovies,
@@ -61,7 +72,7 @@ function App() {
             position: 'absolute',
             width: '100%',
             top: useMediaQuery('(max-width: 1400px)').valueOf() ? '220px' : '120px',
-            flexDirection: useMediaQuery('(min-width: 1401px)').valueOf() ?'row':'column',
+            flexDirection: useMediaQuery('(min-width: 1401px)').valueOf() ? 'row' : 'column',
             alignItems: 'center',
         },
         wide: {

@@ -1,15 +1,8 @@
-import React, {useRef, useState} from 'react';
-import {TextField, useMediaQuery, useTheme} from "@material-ui/core";
-import {setSearch} from "../../actions";
-import {useDispatch, useSelector} from "react-redux";
-import SignLogIn from "./SignLogIn";
-import {State} from "../../types/State";
-import {makeStyles} from "@material-ui/styles";
-import SortButton from "./SortButton";
+import React from 'react';
+import {TextField} from "@material-ui/core";
 import {sortBy} from "../../App";
 import SortButtonContainer from "./SortButtonContainer";
 import SignLogInContainer from "./SignLogInContainer";
-import {User} from "../../types/User";
 
 
 function Header(props: {
@@ -17,7 +10,8 @@ function Header(props: {
     searchString: string,
     onChange: (e: any) => void,
     logged: boolean,
-    refresh: () => void }) {
+    refresh: () => void
+}) {
     return (
         <div className={props.classes.root}>
             <div className={props.classes.searchBox}>
@@ -36,7 +30,7 @@ function Header(props: {
             <div className={props.classes.sorting}>
                 {sortBy.map((sort, index) => (
                     <SortButtonContainer mobile={false} key={index} sort={sort} refresh={props.refresh}
-                                number={index.toString()}/>
+                                         number={index.toString()}/>
                 ))}
             </div>
         </div>

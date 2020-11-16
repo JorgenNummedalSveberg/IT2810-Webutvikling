@@ -1,7 +1,7 @@
 import {Divider, Paper, Typography} from "@material-ui/core";
 import React from "react";
 
-export default function errorPage(props: {classes: any, myMovies: boolean}){
+export default function errorPage(props: { classes: any, myMovies: boolean }) {
     return (
         <div className={props.classes.errorPage}>
             <Paper className={`${props.classes.details} ${props.classes.gridItem}`} elevation={5}>
@@ -21,8 +21,8 @@ export default function errorPage(props: {classes: any, myMovies: boolean}){
                         </li>
                         <li>
                             <Typography color='error'>
-                                {props.myMovies?
-                                    "You have no movies in your list":
+                                {props.myMovies ?
+                                    "You have no movies in your list" :
                                     "We do not have the movie you're looking for"}
                             </Typography>
                         </li>

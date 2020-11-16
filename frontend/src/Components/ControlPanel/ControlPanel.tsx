@@ -1,11 +1,5 @@
 import React from 'react';
-import {Checkbox, Divider, Paper, useTheme} from '@material-ui/core';
-import {useDispatch, useSelector} from "react-redux";
-import {State} from "../../types/State";
-import {myMovies, setPage} from "../../actions";
-import RangeSlider from "./RangeSlider";
-import GenreSelector from "./GenreSelector";
-import {makeStyles} from "@material-ui/styles";
+import {Checkbox, Divider, Paper} from '@material-ui/core';
 import RangeSliderContainer from "./RangeSliderContainer";
 import GenreSelectorContainer from "./GenreSelectorContainer";
 
@@ -16,7 +10,8 @@ function ControlPanel(props: {
     handleTick: () => void;
     myMoviesState: boolean;
     classes: any;
-    mobile: boolean, refresh: () => void }) {
+    mobile: boolean, refresh: () => void
+}) {
     return (
         <div className={props.classes.root}>
             <div className={props.classes.myMovies}>

@@ -1,8 +1,5 @@
-import React, {useRef} from 'react';
-import {Paper, Slider, useTheme} from '@material-ui/core';
-import {useDispatch} from "react-redux";
-import {setPage, setScore, setYears} from '../../actions';
-import {makeStyles} from '@material-ui/styles';
+import React from 'react';
+import {Paper, Slider} from '@material-ui/core';
 import ImdbIcon from "../Shared/ImdbIcon";
 
 
@@ -10,7 +7,8 @@ export default function RangeSlider(props: {
     value: any,
     handleChange: (e: any, data: number | number[]) => void,
     range: number[],
-    classes: any, score: number[], type: string, refresh: () => void }) {
+    classes: any, score: number[], type: string, refresh: () => void
+}) {
     return (
         <Paper className={props.classes.slider}>
             <Slider

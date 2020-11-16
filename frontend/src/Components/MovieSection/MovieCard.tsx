@@ -1,8 +1,5 @@
 import {Movie} from "../../types/Movie";
-import {useDispatch} from "react-redux";
-import {setPopup, showPopup} from "../../actions";
 import {ButtonBase, Divider, Grid, Paper} from "@material-ui/core";
-import {Skeleton} from "@material-ui/lab";
 import HourglassFullIcon from '@material-ui/icons/HourglassFull';
 import ImdbIcon from "../Shared/ImdbIcon";
 import React from "react";
@@ -13,7 +10,8 @@ export default function MovieCard(props: {
     movie: Movie,
     classes: any,
     duration: string,
-    handleClick: (movie: Movie) => void}) {
+    handleClick: (movie: Movie) => void
+}) {
     return (
         <Grid className={props.classes().gridItem} item>
             <ButtonBase className={props.classes().paperButton} onClick={() => props.handleClick(props.movie)}>

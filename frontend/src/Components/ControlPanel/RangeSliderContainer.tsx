@@ -1,9 +1,8 @@
 import React, {useRef} from 'react';
-import {Paper, Slider, useTheme} from '@material-ui/core';
+import {useTheme} from '@material-ui/core';
 import {useDispatch} from "react-redux";
 import {setPage, setScore, setYears} from '../../actions';
 import {makeStyles} from '@material-ui/styles';
-import ImdbIcon from "../Shared/ImdbIcon";
 import RangeSlider from "./RangeSlider";
 
 

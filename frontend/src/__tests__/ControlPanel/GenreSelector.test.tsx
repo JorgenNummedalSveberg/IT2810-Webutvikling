@@ -1,6 +1,5 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import GenreSelector from "../../Components/ControlPanel/GenreSelector";
 import {Provider} from "react-redux";
 import {store} from "../../reducers/store";
 import GenreSelectorContainer from "../../Components/ControlPanel/GenreSelectorContainer";

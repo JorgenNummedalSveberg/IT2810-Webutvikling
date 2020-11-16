@@ -18,6 +18,7 @@ export function mock() {
 }
 
 test("Snapshot test", () => {
-    const movieSection = render(<Provider store={store}>(<MovieSectionContainer error={false} refresh={mock}/></Provider>);
+    const movieSection = render(<Provider store={store}>(<MovieSectionContainer error={false}
+                                                                                refresh={mock}/></Provider>);
     expect(movieSection).toMatchSnapshot();
 })

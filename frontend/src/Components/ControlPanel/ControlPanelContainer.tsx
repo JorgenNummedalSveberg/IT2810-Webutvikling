@@ -1,13 +1,9 @@
 import React from 'react';
-import {Checkbox, Divider, Paper, useTheme} from '@material-ui/core';
+import {useTheme} from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
 import {myMovies, setPage} from "../../actions";
-import RangeSlider from "./RangeSlider";
-import GenreSelector from "./GenreSelector";
 import {makeStyles} from "@material-ui/styles";
-import RangeSliderContainer from "./RangeSliderContainer";
-import GenreSelectorContainer from "./GenreSelectorContainer";
 import ControlPanel from "./ControlPanel";
 
 // Holder styr på parametere å endre søket etter

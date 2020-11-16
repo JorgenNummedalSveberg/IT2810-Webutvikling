@@ -3,10 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setDesc, setSort} from "../../actions";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
-import {Paper, useTheme} from "@material-ui/core";
+import {useTheme} from "@material-ui/core";
 import SortButton from "./SortButton";
 
 // Knapp som oppdaterer hva kategori vi sorterer etter og hvilken retning vi sorterer i

@@ -4,11 +4,11 @@ import {State} from "./types/State";
 
 export function fetchMovies(
     fetchUpdate: {
-    setIndex: (list: string[]) => void,
-    pushMovies: (list: Movie[]) => void,
-    updatePages: (pages: number) => void,
-    setGenres: (genres: string[]) => void,
-    setError: (error: boolean) => void
+        setIndex: (list: string[]) => void,
+        pushMovies: (list: Movie[]) => void,
+        updatePages: (pages: number) => void,
+        setGenres: (genres: string[]) => void,
+        setError: (error: boolean) => void
     },
     state: State,
     first: boolean,

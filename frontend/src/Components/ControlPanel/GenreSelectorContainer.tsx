@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {setGenre} from "../../actions";
-import {MenuItem, Select, useTheme} from "@material-ui/core";
+import {useTheme} from "@material-ui/core";
 import React from "react";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";

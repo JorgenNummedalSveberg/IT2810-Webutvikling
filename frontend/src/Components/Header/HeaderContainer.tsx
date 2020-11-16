@@ -1,14 +1,10 @@
 import React, {useRef, useState} from 'react';
-import {TextField, useMediaQuery, useTheme} from "@material-ui/core";
+import {useMediaQuery, useTheme} from "@material-ui/core";
 import {setSearch} from "../../actions";
 import {useDispatch, useSelector} from "react-redux";
-import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
 import {makeStyles} from "@material-ui/styles";
-import SortButton from "./SortButton";
 import {sortBy} from "../../App";
-import SortButtonContainer from "./SortButtonContainer";
-import SignLogInContainer from "./SignLogInContainer";
 import Header from "./Header";
 
 

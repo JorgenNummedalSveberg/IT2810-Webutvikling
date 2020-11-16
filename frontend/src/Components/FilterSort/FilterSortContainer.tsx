@@ -1,12 +1,9 @@
 import React, {useState} from "react";
-import FilterSortButton from './FilterSortButton';
 import {makeStyles} from "@material-ui/styles";
 import {useMediaQuery} from "@material-ui/core";
-import TuneIcon from "@material-ui/icons/Tune";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import FilterSort from "./FilterSort";
 
-export default function FilterSortContainer(props: {refresh: () => void}) {
+export default function FilterSortContainer(props: { refresh: () => void }) {
 
     const classes = makeStyles({
         filterButton: {
@@ -41,11 +38,12 @@ export default function FilterSortContainer(props: {refresh: () => void}) {
             classes={{
                 filterButton: classes().filterButton,
                 thin: classes().thin,
-                sorting: classes().sorting}}
+                sorting: classes().sorting
+            }}
             refresh={props.refresh}
             openFilter={openFilter}
             openSorting={openSorting}
             setFilterOpen={setFilterOpen}
-            setSortingOpen={setSortingOpen} />
+            setSortingOpen={setSortingOpen}/>
     )
 }
