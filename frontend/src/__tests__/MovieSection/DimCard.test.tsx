@@ -1,7 +1,7 @@
 import {render} from "@testing-library/react";
 import React from "react";
-import {DimCard} from "../../Components/MovieSection/MovieCard";
 import {mock} from "./MovieSection.test";
+import DimCard from "../../Components/MovieSection/DimCard";
 
 
 describe("A snapshot test for the ImdbIcon", () => {
