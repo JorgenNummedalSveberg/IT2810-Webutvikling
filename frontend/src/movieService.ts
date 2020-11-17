@@ -42,7 +42,7 @@ export function fetchMovies(
         })
     }
 
-    fetch('http://localhost:5000/api/movies/nice', req)
+    fetch('http://localhost:5000/api/movies/index', req)
         .then(response => {
             if (response.ok) {
                 response.json().then((response: any) => {

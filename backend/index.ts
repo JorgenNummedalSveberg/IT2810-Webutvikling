@@ -33,7 +33,7 @@ mongoose
         });
 
         // Henter filmer, filtrert basert på queries, og gir tilbake en sortert index
-        app.post("/api/movies/nice", jsonParser, async (req, res) => {
+        app.post("/api/movies/index", jsonParser, async (req, res) => {
             const sortAtt = ['title', 'year', 'imdbRating', 'duration'];
             const sortBy = ["Name", "Year", "Rating", "Length"];
             try {
