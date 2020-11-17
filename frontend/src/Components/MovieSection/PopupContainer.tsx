@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {login} from "../../actions";
+import {addMyMovie, login, removeMyMovie} from "../../actions";
 import {makeStyles} from "@material-ui/styles";
 import Popup from "./Popup";
 import {onLogin} from "../Shared/userService";
@@ -33,9 +33,9 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             .then(response => {
                 if (response.ok) {
                     if (remove) {
-                        state.user.movies = state.user.movies.filter(movieId => movieId !== state.details.movie._id);
+                        dispatch(removeMyMovie(state.details.movie._id))
                     } else {
-                        state.user.movies.push(state.details.movie._id);
+                        dispatch(addMyMovie(state.details.movie._id))
                     }
                     // Mock function to use on login
                     const mock = () => {}
