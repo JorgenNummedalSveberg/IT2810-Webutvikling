@@ -31,12 +31,10 @@ export function addUser(
     reqUser: User,
     setError: (error: { message: string, name: boolean, password: boolean }) => void,
     login: (user: User) => void): Promise<boolean> | boolean {
-    let returnObject: boolean | string[] = false;
     if (checkInput(reqUser, setError)) {
         return fetch('http://localhost:5000/api/user/add', req(reqUser))
             .then(response => {
                 if (response.ok) {
-                    returnObject = true;
                     login(reqUser);
                     return true;
                 } else {
