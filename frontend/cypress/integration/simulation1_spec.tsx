@@ -2,14 +2,9 @@
 export {}
 
 describe('Simulating a user who wants to log movies he watched', () => {
-    Cypress.config({
-        viewportWidth: 1300,
-        viewportHeight: 800,
-    })
     it('test, pwd works as a test user, l an confirms you are logged in', () => {
         cy.visit('http://localhost:3000/')
-            .wait(1000);
-        cy.get('#HeaderID > div.loginButtons > button').as("LoginButton")
+        cy.get('[data-testid=loginButton]')
             .should('have.text', "Log in/Sign up")
             .click();
         cy.get('#UsernameID')
@@ -20,58 +15,55 @@ describe('Simulating a user who wants to log movies he watched', () => {
             .type('pwd');
         cy.get('#loginButtonID')
             .click();
-        cy.get('@LoginButton')
+        cy.get('[data-testid=logoutButton]')
             .should('have.text', "Log out");
     })
-    it('Searches the movie to add to watched list. Confirms the amount of watched is +1', () => {
-        cy.get('#searchbar')
+    it('Searches the movie to add to watched list. Confirms that watched button is disabled.', () => {
+        cy.get('[data-testid=searcher]')
             .should('have.value', "")
             .type('Black panther')
-            .wait(1000);
-        cy.get('#id_BlackPanther')
-            .should('have.text', 'Black Panther')
+        cy.get('[data-testid=BlackPanther]')
+            .should('contain.text', 'Black Panther')
             .click();
-        cy.get('#watchButton > div').as('watchedNr')
-            .then(($span) => {
-                const number = parseInt($span.text())
-                cy.get('@watchedNr')
-                    .click({force: true})
-                    .should('have.text', (number + 1).toString());
-            })
+        cy.get('[data-testid=watchButton]').as('watchedNr')
+            .click({force: true})
+            .should('be.disabled');
+        cy.get('[data-testid=popupClose]')
+            .click();
     })
     it('Searches for another movie to add to watched', () => {
-        cy.get('#watchButton > button')
-            .should("be.disabled")
-            .wait(1000);
-        cy.get('#backButtonID')
-            .click();
-        cy.get('#searchbar').clear()
+        cy.get('[data-testid=searcher]').clear()
             .should('have.value', "")
             .type('the prestige')
-            .wait(1000);
-        cy.get('#id_ThePrestige')
+        cy.get('[data-testid=ThePrestige]')
+            .should('exist')
             .click();
-        cy.get('#watchButton > div')
+        cy.get('[data-testid=watchButton]')
             .click({force: true})
-        cy.get('#backButtonID')
+        cy.get('[data-testid=popupClose]')
             .click();
-        cy.get('#searchbar').clear();
+        cy.get('[data-testid=searcher]').clear()
     })
-    it('confirm our added movies, and total of 7. then removes them, and confirms their deletion', () => {
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div.Checkbox > div > label').click();
-        cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children().as('movieNr')
-            .should('have.length', 7);
-        cy.get('#id_ThePrestige')
+    it('Confirm our added movies, and count a total of 10. Then removes the 2 we added, and confirms their deletion', () => {
+        cy.get('[data-testid=myMoviesCheckbox]')
+            .click();
+        cy.get('[data-testid=movieGrid]').children().as('movieNr')
+            .should('have.length', 10);
+        cy.get('[data-testid=ThePrestige]')
             .should('exist')
             .click();
-        cy.get('#removeButton').click();
-        cy.get('#backButtonID').click()
-        cy.get('#id_BlackPanther')
+        cy.get('[data-testid=removeButton]')
+            .click({force: true});
+        cy.get('[data-testid=popupClose]')
+            .click();
+        cy.get('[data-testid=BlackPanther]')
             .should('exist')
             .click();
-        cy.get('#removeButton').click();
-        cy.get('#backButtonID').click()
+        cy.get('[data-testid=removeButton]')
+            .click({force: true});
+        cy.get('[data-testid=popupClose]')
+            .click();
         cy.get('@movieNr')
-            .should('have.length', 5);
+            .should('have.length', 8);
     })
 })

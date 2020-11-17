@@ -21,7 +21,7 @@ function SignLogIn(props: {
     return (
         <div>
             <div className={`${props.isLogged ? props.classes.initial : props.classes.none}`}>
-                <Button className={props.classes.loginButton} onClick={() => props.setOpen(true)}>Log in/Sign
+                <Button data-testid='loginButton' className={props.classes.loginButton} onClick={() => props.setOpen(true)}>Log in/Sign
                     up</Button>
                 <Dialog className={props.classes.root} open={props.open} onClose={() => props.setOpen(false)}
                         title='Log in/Sign up'>
@@ -64,7 +64,7 @@ function SignLogIn(props: {
                     props.dispatch(myMovies())
                     props.dispatch(logout())
                     props.refresh()
-                }} className={props.classes.loginButton}>Log out</Button>
+                }} className={props.classes.loginButton} data-testid='logoutButton'>Log out</Button>
             </div>
         </div>
     )

@@ -17,6 +17,7 @@ function Header(props: {
             <div className={props.classes.searchBox}>
                 <h2 className={props.classes.label}>Search by title</h2>
                 <TextField
+                    data-testid='searchbar'
                     variant={'outlined'}
                     inputProps={{'data-testid': 'searcher', className: props.classes.textInput}}
                     value={props.searchString}

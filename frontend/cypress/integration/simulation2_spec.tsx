@@ -2,10 +2,6 @@
 export {}
 
 describe("Simulating a user who wants search and read details about the oldest horror movie with rating above 7", () => {
-    Cypress.config({
-        viewportWidth: 1300,
-        viewportHeight: 800,
-    })
     it("Selects horror as genre, we use nth child to make sure it's the first result, compare year to the other movies", () => {
         cy.visit('http://localhost:3000/');
         cy.get('#dropdownmenu > div:first')

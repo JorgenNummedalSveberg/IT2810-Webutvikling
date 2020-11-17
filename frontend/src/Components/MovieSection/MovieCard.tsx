@@ -14,7 +14,8 @@ export default function MovieCard(props: {
 }) {
     return (
         <Grid className={props.classes.gridItem} item>
-            <ButtonBase className={props.classes.paperButton} onClick={() => props.handleClick(props.movie)}>
+            <ButtonBase data-testid={props.movie.title.replace(/\s/g, "")}
+                        className={props.classes.paperButton} onClick={() => props.handleClick(props.movie)}>
                 <Paper className={props.classes.paper} elevation={5}>
                     <img className={props.classes.poster} alt='Could not display movie poster' width='100%'
                          src={props.movie.posterurl}/>

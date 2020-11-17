@@ -2,10 +2,6 @@
 export {}
 
 describe("Simulating a user on mobile who wants to search up the shortest movie between 1990 and 2005", () => {
-    Cypress.config({
-        viewportWidth: 400,
-        viewportHeight: 800,
-    })
     it('testUser, pwd works as a test user, an confirms you are logged in', () => {
         cy.visit('http://localhost:3000/')
             .wait(1000);
