@@ -12,9 +12,7 @@ exports[`Test to see if the sort button renders with our mock function, and pass
       role="button"
       tabindex="0"
     >
-      <span>
-        ​
-      </span>
+      Select genre...
     </div>
     <input
       aria-hidden="true"

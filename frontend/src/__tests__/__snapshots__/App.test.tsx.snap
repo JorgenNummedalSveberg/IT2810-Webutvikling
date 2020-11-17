@@ -236,9 +236,7 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
               role="button"
               tabindex="0"
             >
-              <span>
-                ​
-              </span>
+              Select genre...
             </div>
             <input
               aria-hidden="true"
@@ -940,52 +938,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1004,52 +970,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1068,52 +1002,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1132,52 +1034,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1196,52 +1066,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1260,52 +1098,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1324,52 +1130,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1388,52 +1162,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1452,52 +1194,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1516,52 +1226,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1580,52 +1258,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
-              >
-                <div
-                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
-                >
-                  <span
-                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-                    style="width: 300px; height: 450px;"
-                  />
-                  <div
-                    class="makeStyles-details-71"
-                  >
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
-                    />
-                    <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1644,20 +1290,20 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
@@ -1676,20 +1322,372 @@ exports[`A snapshot test for the whole App renders, and matches with snapshot 1`
                     class="makeStyles-details-71"
                   >
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 180px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 200px; height: 2px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 170px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
                     />
                     <span
-                      class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
-                      style="width: 130px; height: 40px; margin: 10px;"
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root makeStyles-gridItem-67 MuiGrid-item"
+              >
+                <div
+                  class="MuiPaper-root makeStyles-paper-69 MuiPaper-elevation1 MuiPaper-rounded"
+                >
+                  <span
+                    class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+                    style="width: 300px; height: 450px;"
+                  />
+                  <div
+                    class="makeStyles-details-71"
+                  >
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 180px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 200px; height: 2px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 170px; height: 40px;"
+                    />
+                    <span
+                      class="MuiSkeleton-root MuiSkeleton-text makeStyles-margin10-77 MuiSkeleton-wave"
+                      style="width: 130px; height: 40px;"
                     />
                   </div>
                 </div>
