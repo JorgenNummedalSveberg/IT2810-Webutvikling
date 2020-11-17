@@ -52,7 +52,8 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             margin: '0 20px 0 20px',
             display: state.details.show ? 'flex' : 'none',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            height: '80vh',
         },
         buttons: {
             display: 'flex',

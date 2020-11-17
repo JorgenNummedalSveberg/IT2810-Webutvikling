@@ -25,7 +25,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
         popup: {
             backgroundColor: theme.palette.primary.light,
             textAlign: 'center',
-            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '30vw',
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '40vw',
             height: '100%',
             paddingTop: '5%',
             paddingBottom: '5%'
