@@ -9,6 +9,20 @@ export function setPages(payload: number) {
     }
 }
 
+export function addMyMovie(payload: string) {
+    return {
+        type: 'addMyMovie',
+        payload: payload
+    }
+}
+
+export function removeMyMovie(payload: string) {
+    return {
+        type: 'removeMyMovie',
+        payload: payload
+    }
+}
+
 export function setIndexList(payload: string[]) {
     return {
         type: 'indexList',

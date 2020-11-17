@@ -6,6 +6,7 @@ import {useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
+import {addUser, onLogin} from "../Shared/userService";
 
 function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
 
@@ -22,62 +23,17 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
     // Holder styr på error
     const [error, setError] = useState<false | { message: string, name: boolean, password: boolean }>(false);
 
-    // Lager request for fetch
-    const req = (reqUser: User) => {
-        return ({
-            method: 'POST',
-            body: JSON.stringify(reqUser),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-    }
-
-    function checkInput(reqUser: User): boolean {
-        if (!reqUser.userName && !reqUser.password) {
-            setError({message: 'Username and password is required', name: true, password: true})
-            return false
-        } else if (!reqUser.userName) {
-            setError({message: 'Username is required', name: true, password: false})
-            return false
-        } else if (!reqUser.password) {
-            setError({message: 'Password is required', name: false, password: true})
-            return false
-        }
-        return true
-    }
-
-    // Legger til en bruker på serveren
-    function addUser(reqUser: User) {
-        if (checkInput(reqUser)) {
-            fetch('http://localhost:5000/api/user/add', req(reqUser))
-                .then(response => {
-                    if (response.ok) {
-                        dispatch(login(reqUser));
-                        setOpen(false);
-                    } else {
-                        setError({message: "Username is taken", name: true, password: false});
-                    }
-                })
+    async function handleLogin(reqUser: User) {
+        const result = await onLogin(reqUser, setError, (user: User) => dispatch(login(user)));
+        if (result) {
+            setOpen(false);
         }
     }
 
-    // Logger inn hvis brukeren finnes
-    function onLogin(reqUser: User) {
-        if (checkInput(reqUser)) {
-            fetch('http://localhost:5000/api/user?userName=' + reqUser.userName + '&password=' + reqUser.password)
-                .then(response => {
-                    if (response.ok) {
-                        response.json()
-                            .then(movies => {
-                                reqUser.movies = movies;
-                                dispatch(login(reqUser))
-                                setOpen(false);
-                            })
-                    } else {
-                        setError({message: "Username or password is wrong", name: true, password: true});
-                    }
-                })
+    async function handleSignin(reqUser: User) {
+        const result = await addUser(reqUser, setError, (user: User) => dispatch(login(user)));
+        if (result) {
+            setOpen(false);
         }
     }
 
@@ -93,7 +49,7 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
 
     const theme = useTheme();
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         loginButton: {
             backgroundColor: theme.palette.primary.main,
             '&:hover': {
@@ -118,13 +74,15 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
             }
         }
     })
+    const classes = styles();
+
     return (
         <SignLogIn
-            classes={classes()}
+            classes={classes}
             handlePassword={handlePassword}
             handleName={handleName}
-            onLogin={onLogin}
-            addUser={addUser}
+            onLogin={handleLogin}
+            addUser={handleSignin}
             userName={userName}
             password={password}
             isLogged={!user}

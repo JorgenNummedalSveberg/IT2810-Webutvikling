@@ -12,7 +12,6 @@ export default function RangeSliderContainer(props: { score: number[], type: str
     const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
     const [range] = React.useState<number[]>(props.type === "year" ? [1900, 2020] : [0, 10]);
 
-
     // Nødvendig for redux
     const dispatch = useDispatch();
 
@@ -36,7 +35,7 @@ export default function RangeSliderContainer(props: { score: number[], type: str
     }
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         slider: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.getContrastText(theme.palette.primary.main),
@@ -54,9 +53,10 @@ export default function RangeSliderContainer(props: { score: number[], type: str
             color: theme.palette.info.light
         }
     })
+    const classes = styles();
     return (
         <RangeSlider
-            classes={classes()}
+            classes={classes}
             handleChange={handleChange}
             range={range}
             value={value}

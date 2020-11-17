@@ -33,7 +33,7 @@ function HeaderContainer(props: { refresh: () => void }) {
 
     const theme = useTheme();
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {
             height: useMediaQuery('(max-width: 1400px)').valueOf() ? '220px' : '120px',
             position: 'fixed',
@@ -81,11 +81,12 @@ function HeaderContainer(props: { refresh: () => void }) {
             }
         },
     })
+    const classes = styles();
 
     return (
         <Header
             refresh={props.refresh}
-            classes={classes()}
+            classes={classes}
             onChange={onChange}
             logged={!user}
             searchString={searchString}/>

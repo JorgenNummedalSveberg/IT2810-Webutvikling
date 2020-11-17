@@ -1,24 +1,26 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {State} from "../../types/State";
-import {login} from "../../actions";
+import {addMyMovie, login, removeMyMovie} from "../../actions";
 import {makeStyles} from "@material-ui/styles";
 import Popup from "./Popup";
+import {onLogin} from "../Shared/userService";
+import {User} from "../../types/User";
 
 
 function PopupContainer(props: { refresh: (page: number) => void }) {
 
     // Henter state fra redux
-    const reduxState = useSelector((state: State) => state);
+    const state = useSelector((state: State) => state);
 
     // Nødvendig for redux
     const dispatch = useDispatch();
 
     let req = {};
-    if (!!reduxState.user) {
+    if (!!state.user) {
         req = ({
             method: 'POST',
-            body: JSON.stringify({userName: reduxState.user.userName, movieId: reduxState.details.movie._id}),
+            body: JSON.stringify({userName: state.user.userName, movieId: state.details.movie._id}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -31,21 +33,24 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             .then(response => {
                 if (response.ok) {
                     if (remove) {
-                        reduxState.user.movies = reduxState.user.movies.filter(movieId => movieId !== reduxState.details.movie._id);
+                        dispatch(removeMyMovie(state.details.movie._id))
                     } else {
-                        reduxState.user.movies.push(reduxState.details.movie._id);
+                        dispatch(addMyMovie(state.details.movie._id))
                     }
-                    dispatch(login(reduxState.user));
-                    props.refresh(reduxState.page)
+                    // Mock function to use on login
+                    const mock = () => {
+                    }
+                    onLogin(state.user, mock, (user: User) => dispatch(login(user)));
+                    props.refresh(state.page)
                 }
             })
             .catch(error => console.log(error));
     }
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {
             margin: '0 20px 0 20px',
-            display: reduxState.details.show ? 'flex' : 'none',
+            display: state.details.show ? 'flex' : 'none',
             flexDirection: 'column',
             alignItems: 'center'
         },
@@ -54,13 +59,14 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             flexDirection: 'column',
         }
     })
+    const classes = styles();
 
     return (
         <Popup
-            movie={reduxState.details.movie}
+            movie={state.details.movie}
             changeView={changeView}
-            user={reduxState.user}
-            classes={classes()}
+            user={state.user}
+            classes={classes}
             refresh={props.refresh}/>
     )
 }

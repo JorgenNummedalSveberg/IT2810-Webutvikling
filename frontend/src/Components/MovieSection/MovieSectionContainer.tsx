@@ -13,16 +13,11 @@ import {parseTime} from "../../movieService";
 // Komponent som viser frem alle filmene i en responsiv grid
 function MovieSectionContainer(props: { refresh: (number: number) => void, error: boolean }) {
 
-    const show = useSelector((state: State) => state.details.show);
-    const page = useSelector((state: State) => state.page);
-    const pages = useSelector((state: State) => state.pages);
-    const myMovies = useSelector((state: State) => state.filter.myMovies);
-    let movies = useSelector((state: State) => state.movieCache);
-    let indexList = useSelector((state: State) => state.indexList);
+    // Henter inn redux state
+    const state = useSelector((state: State) => state);
 
     const theme = useTheme();
-
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {marginLeft: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '500px'},
         main: {display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', overflowY: 'auto',},
         pagination: {color: theme.palette.getContrastText('#445585')},
@@ -69,8 +64,10 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
             display: 'flex',
             alignItems: 'center'
         },
-        noMargin: {margin: 0}
+        noMargin: {margin: 0},
+        margin10: {margin: '10px'}
     })
+    const classes = styles();
 
     // Lager en liste med sorte kort som placeholder mens filmene laster
     const dimList = () => {
@@ -93,9 +90,9 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
 
     // Lager en liste av alle MovieCards som skal med i Griden
     let movieCards: any[] = [];
-    const movieList = movies.filter(movie => indexList.includes(movie._id))
-        .sort((a, b) => indexList.indexOf(a._id) - indexList.indexOf(b._id))
-    if (indexList.length > 0) {
+    const movieList = state.movieCache.filter(movie => state.indexList.includes(movie._id))
+        .sort((a, b) => state.indexList.indexOf(a._id) - state.indexList.indexOf(b._id))
+    if (state.indexList.length > 0) {
         movieCards = movieList.map((movie: Movie, index: number) => {
             return (
                 <MovieCard handleClick={handleClick} classes={classes} movie={movie} key={index}
@@ -106,13 +103,13 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
 
     return (
         <MovieSection
-            myMovies={myMovies}
-            page={page}
-            pages={pages}
+            myMovies={state.filter.myMovies}
+            page={state.page}
+            pages={state.pages}
             classes={classes}
             dispatch={useDispatch()}
-            movieCards={movieCards.length === indexList.length && movieCards.length > 0 ? movieCards : dimList()}
-            popupShow={show}
+            movieCards={movieCards.length === state.indexList.length && movieCards.length > 0 ? movieCards : dimList()}
+            popupShow={state.details.show}
             refresh={props.refresh}/>
     )
 }

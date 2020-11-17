@@ -31,7 +31,7 @@ function SortButtonContainer(props: { mobile: boolean, sort: string, refresh: ()
     }
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         div: {
             display: 'flex',
             flexDirection: props.mobile ? 'column' : 'row',
@@ -56,12 +56,13 @@ function SortButtonContainer(props: { mobile: boolean, sort: string, refresh: ()
             color: active ? theme.palette.getContrastText(theme.palette.primary.light) : theme.palette.text.disabled
         }
     })
+    const classes = styles();
 
     return (
         <SortButton
             active={active}
             desc={desc}
-            classes={classes()}
+            classes={classes}
             toggleSort={toggleSort}
             refresh={props.refresh}
             mobile={props.mobile}
