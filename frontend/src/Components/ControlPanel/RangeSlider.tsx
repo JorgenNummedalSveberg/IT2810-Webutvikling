@@ -12,6 +12,7 @@ export default function RangeSlider(props: {
     return (
         <Paper className={props.classes.slider}>
             <Slider
+                data-testid={props.type+'Slider'}
                 className={props.classes.sliderRange}
                 value={props.value}
                 onChange={props.handleChange}

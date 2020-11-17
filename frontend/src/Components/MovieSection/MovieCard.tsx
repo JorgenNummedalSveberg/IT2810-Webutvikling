@@ -25,7 +25,7 @@ export default function MovieCard(props: {
                             <Divider/>
                         </div>
                         <div className={props.classes.description}>
-                            <h3>Year: {props.movie.year}</h3>
+                            <h3 data-testid='year'>Year: {props.movie.year}</h3>
                             <h3>Genres: {props.movie.genres.join(', ')}</h3>
                         </div>
                         <div data-testid='bottomInfo' className={props.classes.bottomInfo}>
