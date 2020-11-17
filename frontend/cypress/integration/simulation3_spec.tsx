@@ -1,23 +1,29 @@
 // For at Typescript annser det som en modul
+import {yearRange} from "./simulation2_spec";
+
 export {}
 
-describe("Simulating a user on mobile who wants to search up the shortest movie between 1990 and 2005", () => {
-    it('testUser, pwd works as a test user, an confirms you are logged in', () => {
-        cy.visit('http://localhost:3000/')
-            .wait(1000);
-        cy.get('#root > div > button').as('filterButton')
-            .click();
-        cy.get('#root > div > div.MainContent > div.MobilePanel > div:nth-child(4) > span > span:nth-child(9)').click();
-        cy.get('#root > div > div.MainContent > div.MobilePanel > div:nth-child(4) > span > span:nth-child(13)').click();
-        cy.get('#root > div > div.MainContent > div.MobilePanel > div:nth-child(4) > span > span:nth-child(18)').click();
-        cy.get('#root > div > div.MainContent > div.MobilePanel > div:nth-child(4) > span > span:nth-child(22)').click();
-        cy.get('#root > div > div.MainContent > div.MobilePanel > div:nth-child(4) > span > span:nth-child(25)').click();
-        cy.get('#root > div > button').as('filterButton')
-            .click();
-        cy.get('#burgerID').click();
-        cy.get('#sortbutton2').click().click();
-        cy.get('#burgerID').click();
-        cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(1) > a > div.extra.content > div > div:nth-child(1)')
-            .should('have.text', "1h21m");
+describe("Simulating a user on mobile who wants to search up the shortest movie between 1985 and 2005", () => {
+    Cypress.config({
+        viewportWidth: 1000,
+        viewportHeight: 800,
+    })
+    it('Filters by year range and sorts by shortes movies first', () => {
+        cy.visit('http://localhost:3000/').wait(1000);
+
+        // Opens filter and inputs 1985 and 2005 to the slider
+        cy.get('[data-testid=FilterButton]').click();
+        cy.get('[data-testid=yearSlider]').find('[data-index=11]').eq(1).click();
+        cy.get('[data-testid=yearSlider]').find('[data-index=17]').eq(1).click();
+        cy.get('[data-testid=yearSlider]').find('[data-index=21]').eq(1).click().wait(1000);
+        cy.get('[data-testid=mobileFilterClose]').click();
+
+        // Opens sort menu and sorts by length ascending
+        cy.get('[data-testid=SortButton]').click();
+        cy.get('[data-testid=sortbutton2]').eq(1).click().click().wait(1000);
+        cy.get('[data-testid=mobileSortClose]').click();
+    })
+    it ('Checks that all the movies are within the year range', () => {
+        cy.checkRange(1985, 2005)
     })
 })

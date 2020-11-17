@@ -7,13 +7,13 @@ describe('Simulating a user who wants to log movies he watched', () => {
         cy.get('[data-testid=loginButton]')
             .should('have.text', "Log in/Sign up")
             .click();
-        cy.get('#UsernameID')
+        cy.get('[data-testid=UsernameID]').find('input')
             .should('have.text', "")
             .type('test');
-        cy.get('#PasswordID')
+        cy.get('[data-testid=PasswordID]').find('input')
             .should('have.text', "")
             .type('pwd');
-        cy.get('#loginButtonID')
+        cy.get('[data-testid=loginButtonID]')
             .click();
         cy.get('[data-testid=logoutButton]')
             .should('have.text', "Log out");

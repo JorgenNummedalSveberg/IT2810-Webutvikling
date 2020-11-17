@@ -23,7 +23,7 @@ export default function FilterSort(props: {
             <FilterSortButton action='Sort' class={props.classes.filterButton} setOpen={props.setSortingOpen}
                               icon={<ExpandMoreIcon/>}/>
             <Drawer anchor={'top'} open={props.openSorting} onClose={() => props.setSortingOpen(false)}>
-                <Button startIcon={<ArrowBackIcon/>} onClick={() => props.setSortingOpen(false)}>Close</Button>
+                <Button data-testid='mobileSortClose' startIcon={<ArrowBackIcon/>} onClick={() => props.setSortingOpen(false)}>Close</Button>
                 <div className={props.classes.sorting}>
                     {sortBy.map((sort, index) => (
                         <SortButtonContainer mobile={true} key={index} sort={sort} refresh={props.refresh}
@@ -32,7 +32,7 @@ export default function FilterSort(props: {
                 </div>
             </Drawer>
             <Drawer anchor={'left'} open={props.openFilter} onClose={() => props.setFilterOpen(false)}>
-                <Button startIcon={<ArrowBackIcon/>} onClick={() => props.setFilterOpen(false)}>Close</Button>
+                <Button data-testid='mobileFilterClose' startIcon={<ArrowBackIcon/>} onClick={() => props.setFilterOpen(false)}>Close</Button>
                 <ControlPanelContainer mobile={true} refresh={props.refresh}/>
             </Drawer>
         </div>

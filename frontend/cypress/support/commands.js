@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('checkRange', (min, max) => {
+    cy.get('[data-testid=movieGrid]').children().each($child => {
+        cy.wrap($child).find('[data-testid=year]').invoke('text').should(text => {
+            const year = parseInt(text.substring(6));
+            expect(year).be.gte(min);
+            expect(year).be.lte(max);
+        });
+    });
+})

@@ -10,7 +10,7 @@ function ControlPanel(props: {
     handleTick: () => void;
     myMoviesState: boolean;
     classes: any;
-    mobile: boolean, refresh: () => void
+    refresh: () => void
 }) {
     return (
         <div className={props.classes.root}>

@@ -52,7 +52,6 @@ export default function ControlPanelContainer(props: { mobile: boolean, refresh:
             year={state.filter.year}
             myMoviesState={state.filter.myMovies}
             handleTick={handleTick}
-            mobile={props.mobile}
             refresh={props.refresh}/>
     );
 }
