@@ -30,7 +30,7 @@ Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoe
 
 ## Beskrivelse
 ### Funksjonalitet og teknologi
-For prosjekt 4 valgte jeg å gå med oppgave B og finpusse nettsiden. Her er en liste av ting som har endret seg.
+For prosjekt 4 valgte jeg å gå med oppgave B og finpusse nettsiden. Her er en liste av ting som har endret seg. For mer innsikt kan man se innom gitlab repoet.
 * Filmene blir nå hentet inn med et caching system som passer på at hver film bare lastes ned en gang.
 * All filtrering og sortering av filmene gjøres nå på backend, der man bare laster inn filmene som vises.
 * Det er nå snapshot tester for alle komponentene
