@@ -6,7 +6,7 @@ import {useTheme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
 import SignLogIn from "./SignLogIn";
 import {State} from "../../types/State";
-import {addUser, onLogin} from "./userService";
+import {addUser, onLogin} from "../Shared/userService";
 
 function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
 

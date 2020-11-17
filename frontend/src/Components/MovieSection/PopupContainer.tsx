@@ -4,6 +4,8 @@ import {State} from "../../types/State";
 import {login} from "../../actions";
 import {makeStyles} from "@material-ui/styles";
 import Popup from "./Popup";
+import {onLogin} from "../Shared/userService";
+import {User} from "../../types/User";
 
 
 function PopupContainer(props: { refresh: (page: number) => void }) {
@@ -35,7 +37,9 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
                     } else {
                         state.user.movies.push(state.details.movie._id);
                     }
-                    dispatch(login(state.user));
+                    // Mock function to use on login
+                    const mock = () => {}
+                    onLogin(state.user, mock, (user: User) => dispatch(login(user)));
                     props.refresh(state.page)
                 }
             })
