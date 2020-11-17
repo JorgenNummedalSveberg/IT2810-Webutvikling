@@ -116,6 +116,7 @@ Object {
             </nav>
             <div
               class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+              data-testid="movieGrid"
             >
               <div
                 class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"
@@ -1052,6 +1053,7 @@ Object {
           </nav>
           <div
             class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+            data-testid="movieGrid"
           >
             <div
               class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"
@@ -1937,6 +1939,7 @@ exports[`Test to see if the sort button renders with our mock function, and pass
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-loginButton-20"
+        data-testid="loginButton"
         tabindex="0"
         type="button"
       >
@@ -1955,6 +1958,7 @@ exports[`Test to see if the sort button renders with our mock function, and pass
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-loginButton-20"
+        data-testid="logoutButton"
         tabindex="0"
         type="button"
       >

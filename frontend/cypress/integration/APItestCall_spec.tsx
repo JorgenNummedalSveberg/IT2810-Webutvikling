@@ -2,16 +2,12 @@
 export {}
 
 describe("Simulating API calls, and checks if the status response is correct. And database updates accordingly", () => {
-    Cypress.config({
-        viewportWidth: 1200,
-        viewportHeight: 800,
-    })
     it('Post/get calls to add/remove movies', () => {
         cy.request({
             method: 'GET',
             url: 'http://localhost:5000/api/user?userName=test&password=pwd',
         }).then(res => {
-            expect(res.body).to.have.length(10)
+            expect(res.body).to.have.length(8)
         })
         cy.request({
             method: 'POST',

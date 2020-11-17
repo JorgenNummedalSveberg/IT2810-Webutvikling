@@ -3,8 +3,9 @@ export {}
 
 describe("Simulating a user who wants search and read details about the highest rated History movie after 1995", () => {
     it("Selects genre, and compare the first 3 movies to check if the score is sorted correctly, then if they are after 1995", () => {
-        cy.visit('http://localhost:3000/');
-        cy.get('[data-testid=genreSelector]').click();
+        cy.viewport(1920, 1080)
+        cy.visit('http://localhost:3000/').wait(1000);
+        cy.get('[data-testid=genreSelector]').click().wait(200);
         cy.get('[data-testid=HistoryOption]').should('exist').click().wait(1000);
         cy.get('[data-testid=sortbutton1]').click().wait(1000);
         cy.get('[data-testid=yearSlider]').find('[data-index=11]').click()
@@ -32,7 +33,7 @@ describe("Simulating a user who wants search and read details about the highest 
                     })
             });
     })
-    it ('Checks that all the movies are within the year range', () => {
+    it('Checks that all the movies are within the year range', () => {
         cy.checkRange(1995, 2020)
     })
 })

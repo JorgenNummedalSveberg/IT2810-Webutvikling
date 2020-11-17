@@ -2,15 +2,15 @@
 const genresReducer = (genres = [
     'Select genre...',
     'Biography', 'Drama',
-    'History',   'Crime',
-    'Fantasy',   'Mystery',
-    'Comedy',    'Romance',
-    'Family',    'Sci-Fi',
+    'History', 'Crime',
+    'Fantasy', 'Mystery',
+    'Comedy', 'Romance',
+    'Family', 'Sci-Fi',
     'Adventure', 'Action',
-    'Thriller',  'War',
-    'Horror',    'Western',
+    'Thriller', 'War',
+    'Horror', 'Western',
     'Animation', 'Musical',
-    'Sport',     'Music'
+    'Sport', 'Music'
 ], action: { type: any; payload: any; }) => {
     switch (action.type) {
         case 'setGenres':

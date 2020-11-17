@@ -1,5 +1,4 @@
 import {Button, Drawer, Grid} from "@material-ui/core";
-import {showPopup} from "../../actions";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import React from "react";
 import ErrorPage from "./ErrorPage";
@@ -22,7 +21,8 @@ export default function MovieSection(props: {
             <ErrorPage classes={props.classes} myMovies={props.myMovies}/>
             <div className={props.classes.moviePage}>
                 <Drawer anchor={'right'} open={props.popupShow} onClose={props.closePopup}>
-                    <Button data-testid='popupClose' startIcon={<ArrowBackIcon/>} onClick={props.closePopup}>Close</Button>
+                    <Button data-testid='popupClose' startIcon={<ArrowBackIcon/>}
+                            onClick={props.closePopup}>Close</Button>
                     <div className={props.classes.popup}>
                         <PopupContainer refresh={props.refresh}/>
                     </div>

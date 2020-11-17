@@ -58,8 +58,6 @@ mongoose
                         }
                     })
                 })
-                console.log(genreList)
-
                 movies = movies
                     .filter(movie =>
                         (movie.genres.includes(genre) || genre === "") &&
@@ -92,6 +90,7 @@ mongoose
                 const userName = req.query.userName as string;
                 const password = req.query.password as string;
                 const user = await User.findOne({'userName': userName, 'password': password}).exec();
+                console.log(user.movies)
                 res.status(200).send(user.movies);
             } catch {
                 res.status(404).json({error: "Couldn't fetch movies"})
