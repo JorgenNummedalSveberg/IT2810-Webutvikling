@@ -62,7 +62,7 @@ export function fetchMovies(
                                             fetchUpdate.pushMovies(movies)
                                             // Bare oppdater sjanger listen hvis det er første gang vi laster inn
                                             if (first) {
-                                                genreUpdate(movies.map((movie: any) => movie.genres), fetchUpdate.setGenres);
+                                                genreUpdate(movies.map((movie: any) => movie.genres), fetchUpdate.setGenres, state.genres);
                                             }
                                         })
                                     } else {
@@ -81,11 +81,11 @@ export function fetchMovies(
 }
 
 // Setter sjangrene i state
-function genreUpdate(movies: any[], setGenres: any) {
-    let genres = ["Select genre..."];
+function genreUpdate(movies: any[], setGenres: any, genreCache: string[]) {
+    let genres: string[] = [];
     movies.forEach((movieGenres: string[]) => {
         movieGenres.forEach((genre: string) => {
-            if (!genres.includes(genre)) {
+            if (!genreCache.includes(genre) && !genres.includes(genre)) {
                 genres.push(genre);
             }
         })
