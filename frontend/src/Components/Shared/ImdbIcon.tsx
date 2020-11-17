@@ -2,12 +2,9 @@ import React from 'react';
 
 // Ikon for å vise imdb rating
 function ImdbIcon(props: { rating: number, height: number }) {
-
-    const heightWidthRatio = 225 / 75;
-
     return (
         <div>
-            <svg width={props.height * heightWidthRatio} height={props.height} viewBox="0 0 225 75" fill="none"
+            <svg width={props.height * (225 / 75)} height={props.height} viewBox="0 0 225 75" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <rect width="225" height="75" fill="#F6C700" rx="8"/>
                 <path d="M15 14.7285H26.0788V62.4747H15V14.7285Z" fill="black"/>
