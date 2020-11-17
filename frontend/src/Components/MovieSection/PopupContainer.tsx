@@ -9,16 +9,16 @@ import Popup from "./Popup";
 function PopupContainer(props: { refresh: (page: number) => void }) {
 
     // Henter state fra redux
-    const reduxState = useSelector((state: State) => state);
+    const state = useSelector((state: State) => state);
 
     // Nødvendig for redux
     const dispatch = useDispatch();
 
     let req = {};
-    if (!!reduxState.user) {
+    if (!!state.user) {
         req = ({
             method: 'POST',
-            body: JSON.stringify({userName: reduxState.user.userName, movieId: reduxState.details.movie._id}),
+            body: JSON.stringify({userName: state.user.userName, movieId: state.details.movie._id}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -31,12 +31,12 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             .then(response => {
                 if (response.ok) {
                     if (remove) {
-                        reduxState.user.movies = reduxState.user.movies.filter(movieId => movieId !== reduxState.details.movie._id);
+                        state.user.movies = state.user.movies.filter(movieId => movieId !== state.details.movie._id);
                     } else {
-                        reduxState.user.movies.push(reduxState.details.movie._id);
+                        state.user.movies.push(state.details.movie._id);
                     }
-                    dispatch(login(reduxState.user));
-                    props.refresh(reduxState.page)
+                    dispatch(login(state.user));
+                    props.refresh(state.page)
                 }
             })
             .catch(error => console.log(error));
@@ -45,7 +45,7 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
     const classes = makeStyles({
         root: {
             margin: '0 20px 0 20px',
-            display: reduxState.details.show ? 'flex' : 'none',
+            display: state.details.show ? 'flex' : 'none',
             flexDirection: 'column',
             alignItems: 'center'
         },
@@ -57,9 +57,9 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
 
     return (
         <Popup
-            movie={reduxState.details.movie}
+            movie={state.details.movie}
             changeView={changeView}
-            user={reduxState.user}
+            user={state.user}
             classes={classes()}
             refresh={props.refresh}/>
     )
