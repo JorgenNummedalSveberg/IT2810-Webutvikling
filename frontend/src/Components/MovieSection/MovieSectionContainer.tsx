@@ -64,7 +64,8 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
             display: 'flex',
             alignItems: 'center'
         },
-        noMargin: {margin: 0}
+        noMargin: {margin: 0},
+        margin10: {margin: '10px'}
     })
 
     // Lager en liste med sorte kort som placeholder mens filmene laster
