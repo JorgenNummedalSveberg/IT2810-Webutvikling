@@ -4,7 +4,7 @@ import ImdbIcon from "../Shared/ImdbIcon";
 
 
 export default function RangeSlider(props: {
-    value: any,
+    value: number[],
     handleChange: (e: any, data: number | number[]) => void,
     range: number[],
     classes: any, score: number[], type: string, refresh: () => void

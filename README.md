@@ -5,7 +5,7 @@ Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoe
 ## Kommandoer
 ### For å kjøre lokalt:
 * Klon repoet fra GitLab 
-`git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-55/prosjekt-3.git`
+`git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-00/p4-07/prosjekt-4-jns.git`
 * Sjekk at du er koblet til [VPN](https://innsida.ntnu.no/wiki/-/wiki/Norsk/Installere+VPN) eller [NTNU sitt nettverk](https://innsida.ntnu.no/wiki/-/wiki/Norsk/Trådløst+nett)
 * Første gang du kjører (eller ved package.json endringer): `npm run firstStart` i rotmappen.
 * Installasjon kan muligens ta en liten stund, varierende fra maskin og nettverk
@@ -25,18 +25,20 @@ Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoe
 
 ### For å kjøre tester:
 * For enhetstester:  `cd frontend` => `npm test`
-* For ende-til-ende tester: `cd frontend` => `npx cypress open`
-    (For å kjøre ende-til-ende testene må både frontend og backend allerede kjøre, og `npm run firstStart` eller `npm run setup` må ha blitt kjørt i rotmappen)
+* For ende-til-ende og ui tester: `cd frontend` => `npx cypress open`
+    (For å kjøre disse testene må både frontend og backend allerede kjøre)
 
 ## Beskrivelse
 ### Funksjonalitet og teknologi
-Per oppgavebeskrivelse er løsningen vår laget gjennom React, og initialisert med create-react-app, med typescript som template. Løsningen vår er en filmdatabase, for å dekke kravene til oppgaven har vi følgende funksjonaliteter:
-* Søkemulighet ved hjelp av input felt
-* Filtrerinsgmuligheter ved hjelp av slider, og sortering
-* Blaing av sider for å ikke presentere alle filmene i databasen på en gang
-* Popup for å gi en mer detaljert beskrivelse av filmen
-* Lagring av brukerdatagenerert ved hjelp av brukerlogging, og lagring/sletting av filmer til en "Movie list" unik for brukeren
-* Satt opp database på virtuell maskin for å håndtere filmer, og brukerdata
+For prosjekt 4 valgte jeg å gå med oppgave B og finpusse nettsiden. Her er en liste av ting som har endret seg.
+* Filmene blir nå hentet inn med et caching system som passer på at hver film bare lastes ned en gang.
+* All filtrering og sortering av filmene gjøres nå på backend
+* Det er nå snapshot tester for alle komponentene
+* Komponentene har blitt delt opp i container komponenter og presentational komponenter
+* Alle tredjepartskomponenter er flyttet over til material ui
+* Fjernet alle CSS filer og inline styling, bruker nå materil ui makeStyles istedenfor
+* Nettsiden har generelt endret utseende
+* 
 
 Under utviklingen har vi brukt Redux for å håndtere states, grunnet valg av Redux var at ingen av gruppemedlemmene hadde erfaring med det, og vi hadde stort ønske om å lære om det. Vi ble også tiltrukket av Redux sin store community, og dens popularitet. Vi likte også veldig godt tanken om én "store", kontra MobX sin minimum to, da vi i starten av utviklingsfasen tenkte det ville være mer hensiktmessig med én. Gjennom litt søking så vi at Redux var ansett som litt mer simplistisk og enkelt å forstå, noe som virket tiltrekkende. Et irritasjonsmoment ved Redux i starten var all boilerplate koden som måtte skrives for å komme i gang, og vi ser at dette muligens var egnet for større og mer komplekse prosjekter, men førsteintrykket vårt var at prosjektet skal by på utfordringer, og da falt valget på Redux.  
 

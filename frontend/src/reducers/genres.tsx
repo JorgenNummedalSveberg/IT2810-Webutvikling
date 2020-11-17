@@ -11,7 +11,7 @@ const genresReducer = (genres = [
     'Horror', 'Western',
     'Animation', 'Musical',
     'Sport', 'Music'
-], action: { type: any; payload: any; }) => {
+], action: { type: string; payload: string[]; }) => {
     switch (action.type) {
         case 'setGenres':
             return genres.concat(action.payload).sort();
