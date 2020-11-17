@@ -71,7 +71,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     const dimList = () => {
         const list = [];
         for (let i = 0; i < 24; i++) {
-            list.push(<DimCard classes={classes} key={i}/>);
+            list.push(<DimCard classes={classes()} key={i}/>);
         }
         return list;
     }
@@ -93,7 +93,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     if (state.indexList.length > 0) {
         movieCards = movieList.map((movie: Movie, index: number) => {
             return (
-                <MovieCard handleClick={handleClick} classes={classes} movie={movie} key={index}
+                <MovieCard handleClick={handleClick} classes={classes()} movie={movie} key={index}
                            duration={parseTime(movie.duration)}/>
             )
         })
