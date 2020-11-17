@@ -22,7 +22,7 @@ function Popup(props: {
             <ImdbIcon rating={props.movie.imdbRating} height={50}/>
             <div className={props.classes.buttons}>
                 {!!props.user ?
-                    <Button id='watchButton'
+                    <Button data-testid='watchButton'
                             variant='contained'
                             disabled={props.user.movies.includes(props.movie._id)}
                             onClick={() => props.changeView(false)}
@@ -31,7 +31,7 @@ function Popup(props: {
                     >Watched</Button>
                     : null}
                 {!!props.user && props.user.movies.includes(props.movie._id) ?
-                    <Button id='removeButton'
+                    <Button data-testid='removeButton'
                             variant='contained'
                             color='secondary'
                             onClick={() => props.changeView(true)}

@@ -21,7 +21,8 @@ function SignLogIn(props: {
     return (
         <div>
             <div className={`${props.isLogged ? props.classes.initial : props.classes.none}`}>
-                <Button className={props.classes.loginButton} onClick={() => props.setOpen(true)}>Log in/Sign
+                <Button data-testid='loginButton' className={props.classes.loginButton}
+                        onClick={() => props.setOpen(true)}>Log in/Sign
                     up</Button>
                 <Dialog className={props.classes.root} open={props.open} onClose={() => props.setOpen(false)}
                         title='Log in/Sign up'>
@@ -31,24 +32,25 @@ function SignLogIn(props: {
                     </DialogContent> : null}
                     <DialogContent>
                         <TextField label='Username' variant='outlined' inputMode='text'
-                                   error={!!props.error && props.error.name} id={"UsernameID"} autoFocus
+                                   error={!!props.error && props.error.name} data-testid="UsernameID" autoFocus
                                    title={"Username"}
                                    onChange={(e) => props.handleName(e.target.value)}
                                    name={"userName"}/>
                     </DialogContent>
                     <DialogContent>
                         <TextField label='Password' variant='outlined' type='password'
-                                   error={!!props.error && props.error.password} id={"PasswordID"} title={"Password"}
+                                   error={!!props.error && props.error.password} data-testid="PasswordID"
+                                   title={"Password"}
                                    onChange={(e) => props.handlePassword(e.target.value)}
                                    name={"password"}/>
                     </DialogContent>
                     <DialogActions>
-                        <Button id={"loginButtonID"} onClick={() => props.onLogin({
+                        <Button data-testid="loginButtonID" onClick={() => props.onLogin({
                             userName: props.userName,
                             password: props.password,
                             movies: []
                         })} type='submit'>Log in</Button>
-                        <Button id={"submitButtonID"}
+                        <Button data-testid="submitButtonID"
                                 onClick={() => props.addUser({
                                     userName: props.userName,
                                     password: props.password,
@@ -64,7 +66,7 @@ function SignLogIn(props: {
                     props.dispatch(myMovies())
                     props.dispatch(logout())
                     props.refresh()
-                }} className={props.classes.loginButton}>Log out</Button>
+                }} className={props.classes.loginButton} data-testid='logoutButton'>Log out</Button>
             </div>
         </div>
     )

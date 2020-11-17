@@ -36,11 +36,7 @@ export default function FilterSortContainer(props: { refresh: () => void }) {
 
     return (
         <FilterSort
-            classes={{
-                filterButton: classes.filterButton,
-                thin: classes.thin,
-                sorting: classes.sorting
-            }}
+            classes={classes}
             refresh={props.refresh}
             openFilter={openFilter}
             openSorting={openSorting}

@@ -14,7 +14,8 @@ export default function MovieCard(props: {
 }) {
     return (
         <Grid className={props.classes.gridItem} item>
-            <ButtonBase className={props.classes.paperButton} onClick={() => props.handleClick(props.movie)}>
+            <ButtonBase data-testid={props.movie.title.replace(/\s/g, "")}
+                        className={props.classes.paperButton} onClick={() => props.handleClick(props.movie)}>
                 <Paper className={props.classes.paper} elevation={5}>
                     <img className={props.classes.poster} alt='Could not display movie poster' width='100%'
                          src={props.movie.posterurl}/>
@@ -24,16 +25,16 @@ export default function MovieCard(props: {
                             <Divider/>
                         </div>
                         <div className={props.classes.description}>
-                            <h3>Year: {props.movie.year}</h3>
+                            <h3 data-testid='year'>Year: {props.movie.year}</h3>
                             <h3>Genres: {props.movie.genres.join(', ')}</h3>
                         </div>
-                        <div className={props.classes.bottomInfo}>
+                        <div data-testid='bottomInfo' className={props.classes.bottomInfo}>
                             <div className={props.classes.duration}>
                                 <HourglassFullIcon className={props.classes.noMargin} fontSize={"large"}/>
-                                <p className={props.classes.noMargin}>{props.duration}</p>
+                                <p data-testid='duration' className={props.classes.noMargin}>{props.duration}</p>
                             </div>
                             <Divider orientation='vertical'/>
-                            <ImdbIcon rating={props.movie.imdbRating} height={35}/>
+                            <ImdbIcon data-testid='rating' rating={props.movie.imdbRating} height={35}/>
                         </div>
                     </div>
                 </Paper>

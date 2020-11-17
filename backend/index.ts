@@ -33,7 +33,7 @@ mongoose
         });
 
         // Henter filmer, filtrert basert på queries, og gir tilbake en sortert index
-        app.post("/api/movies/nice", jsonParser, async (req, res) => {
+        app.post("/api/movies/index", jsonParser, async (req, res) => {
             const sortAtt = ['title', 'year', 'imdbRating', 'duration'];
             const sortBy = ["Name", "Year", "Rating", "Length"];
             try {
@@ -50,7 +50,14 @@ mongoose
                 if (sort === "Name") {
                     movies.reverse();
                 }
-
+                let genreList: string[] = [];
+                movies.forEach(movie => {
+                    movie.genres.forEach((genre: string) => {
+                        if (!genreList.includes(genre)) {
+                            genreList.push(genre);
+                        }
+                    })
+                })
                 movies = movies
                     .filter(movie =>
                         (movie.genres.includes(genre) || genre === "") &&
@@ -83,6 +90,7 @@ mongoose
                 const userName = req.query.userName as string;
                 const password = req.query.password as string;
                 const user = await User.findOne({'userName': userName, 'password': password}).exec();
+                console.log(user.movies)
                 res.status(200).send(user.movies);
             } catch {
                 res.status(404).json({error: "Couldn't fetch movies"})

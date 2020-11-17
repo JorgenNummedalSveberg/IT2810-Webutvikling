@@ -116,6 +116,7 @@ Object {
             </nav>
             <div
               class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+              data-testid="movieGrid"
             >
               <div
                 class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"
@@ -1052,6 +1053,7 @@ Object {
           </nav>
           <div
             class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+            data-testid="movieGrid"
           >
             <div
               class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"

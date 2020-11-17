@@ -78,6 +78,11 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
         return list;
     }
 
+    function closePopup() {
+        dispatch(showPopup(false));
+        props.refresh(state.page);
+    }
+
 
     // Nødvendig for redux
     const dispatch = useDispatch();
@@ -86,6 +91,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     function handleClick(movie: Movie) {
         dispatch(setPopup(movie));
         dispatch(showPopup(true));
+        props.refresh(state.page);
     }
 
     // Lager en liste av alle MovieCards som skal med i Griden
@@ -103,6 +109,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
 
     return (
         <MovieSection
+            closePopup={closePopup}
             myMovies={state.filter.myMovies}
             page={state.page}
             pages={state.pages}

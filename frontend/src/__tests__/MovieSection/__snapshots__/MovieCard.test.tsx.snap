@@ -7,6 +7,7 @@ exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 1`]
   >
     <button
       class="MuiButtonBase-root"
+      data-testid="BlackPanther"
       tabindex="0"
       type="button"
     >
@@ -28,7 +29,9 @@ exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 1`]
             />
           </div>
           <div>
-            <h3>
+            <h3
+              data-testid="year"
+            >
               Year: 
               2018
             </h3>
@@ -37,7 +40,9 @@ exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 1`]
               Action, Adventure, Sci-Fi
             </h3>
           </div>
-          <div>
+          <div
+            data-testid="bottomInfo"
+          >
             <div>
               <svg
                 aria-hidden="true"
@@ -49,7 +54,9 @@ exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 1`]
                   d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6z"
                 />
               </svg>
-              <p />
+              <p
+                data-testid="duration"
+              />
             </div>
             <hr
               class="MuiDivider-root MuiDivider-vertical"
@@ -221,6 +228,7 @@ Object {
             </nav>
             <div
               class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+              data-testid="movieGrid"
             >
               <div
                 class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"
@@ -1157,6 +1165,7 @@ Object {
           </nav>
           <div
             class="MuiGrid-root makeStyles-movieGrid-4 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+            data-testid="movieGrid"
           >
             <div
               class="MuiGrid-root makeStyles-gridItem-9 MuiGrid-item"
