@@ -22,30 +22,14 @@ function App() {
     const [error, setError] = useState(false);
     const [first, setFirst] = useState(true);
 
-    // Samler en del dispatches i et objekt som sendes til fetchMovies
+
+    // Et samlet objekt med funksjoner som fetchMovies skal bruke
     const dispatch = useDispatch();
-
-    function setGenres(genres: string[]) {
-        dispatch(setGenresState(genres))
-    }
-
-    function setIndex(IDs: string[]) {
-        dispatch(setIndexList(IDs))
-    }
-
-    function pushMovies(movies: Movie[]) {
-        dispatch(addMovies(movies))
-    }
-
-    function updatePages(pages: number) {
-        dispatch(setPages(pages))
-    }
-
     const fetchUpdate = {
-        setIndex: setIndex,
-        pushMovies: pushMovies,
-        updatePages: updatePages,
-        setGenres: setGenres,
+        setIndex: (IDs: string[]) => dispatch(setIndexList(IDs)),
+        pushMovies: (movies: Movie[]) => dispatch(addMovies(movies)),
+        updatePages: (pages: number) => dispatch(setPages(pages)),
+        setGenres: (genres: string[]) => dispatch(setGenresState(genres)),
         setError: setError,
     }
 
@@ -54,7 +38,7 @@ function App() {
 
     // Funksjon som refresher filmene
     function refresh(page: number = state.page) {
-        setIndex([])
+        dispatch(setIndexList([]))
         fetchMovies(fetchUpdate, state, false, page)
     }
 
