@@ -1,6 +1,6 @@
 # IT2810 - Team 55 -  Prosjekt 3
-Dette prosjektet er laget ved hjelp av node.js, npm og React med Redux, Material UI og Semeatic UI.
-Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoet med Clone with HTTPS.
+Dette prosjektet er laget ved hjelp av node.js, npm og React med Redux, Material UI.
+Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoet med Clone.
 
 ## Kommandoer
 ### For å kjøre lokalt:
@@ -32,19 +32,16 @@ Det er lagt opp til at vurdering av prosjektet gjøres lokalt ved å klone repoe
 ### Funksjonalitet og teknologi
 For prosjekt 4 valgte jeg å gå med oppgave B og finpusse nettsiden. Her er en liste av ting som har endret seg.
 * Filmene blir nå hentet inn med et caching system som passer på at hver film bare lastes ned en gang.
-* All filtrering og sortering av filmene gjøres nå på backend
+* All filtrering og sortering av filmene gjøres nå på backend, der man bare laster inn filmene som vises.
 * Det er nå snapshot tester for alle komponentene
 * Komponentene har blitt delt opp i container komponenter og presentational komponenter
-* Alle tredjepartskomponenter er flyttet over til material ui
+* Alle Semantic ui komponenter er flyttet over til material ui
 * Fjernet alle CSS filer og inline styling, bruker nå materil ui makeStyles istedenfor
 * Nettsiden har generelt endret utseende
-* 
-
-Under utviklingen har vi brukt Redux for å håndtere states, grunnet valg av Redux var at ingen av gruppemedlemmene hadde erfaring med det, og vi hadde stort ønske om å lære om det. Vi ble også tiltrukket av Redux sin store community, og dens popularitet. Vi likte også veldig godt tanken om én "store", kontra MobX sin minimum to, da vi i starten av utviklingsfasen tenkte det ville være mer hensiktmessig med én. Gjennom litt søking så vi at Redux var ansett som litt mer simplistisk og enkelt å forstå, noe som virket tiltrekkende. Et irritasjonsmoment ved Redux i starten var all boilerplate koden som måtte skrives for å komme i gang, og vi ser at dette muligens var egnet for større og mer komplekse prosjekter, men førsteintrykket vårt var at prosjektet skal by på utfordringer, og da falt valget på Redux.  
-
-For å håndtere databasen vår ble det brukt MongoDB, da det var anbefalt av foreleser. Siden vi har vært borti MySQL i database faget, tenkte vi å ta denne anbefalingen, både for popularitet, og læringen sin skyld. MongoDBCompass bydde også på et pent håndteringsmetode av data, noe som ble veldig godt likt av gruppen.
-
-Vi har satt opp applikasjonen vår til å kjøre en REST server lokalt ved hjelp av Express, og Node.  REST serveren er skrevet i TypeScript og kjører ved hjelp av ts-node pakken. Alternativet GraphQL ga inntrykk av å ha en enklere get/post oppsett, men vi hadde en preferanse for HTTP sine calls. Selv om noen synes det kan være noe upraktisk med håndtering av API calls for HTTP, så har det vært vel etablert i mange år. Ettersom vi har valgt noen nye teknologier tidligere, bestemte vi oss for å ta noe som vi har sett før. Selv om oppsett av serveren blir nytt, er API calls noe kjent fra før av. 
+* Mye any har blitt typet, her utenom MuI styling og slikt der det ikke var hensiktsmessig
+* Testing bruker nå data-testid for å følge Cypress best practice
+* Gitlab pipeline passer på at es-lint og snapshot testene fungerer
+* Restrukturert redux til å opprettholde immutable state
 
 
 ### Testing 
@@ -55,18 +52,19 @@ Cypress er brukt for å automatisere testene, vi har laget simulasjonene med tan
 
 
 
-Etter å ha kjørt `npx cypress open` i frontend vil du muligens bli spurt om å tillate tilgang for cypress, noe som er nødvendig. Deretter vil det være en popup som viser deg alle testene. Brukere kan fritt velge fra listen og kjøre de hver for seg. Her er det viktig å la testene kjøre ferdig. Trykk på navnet på test fila, IKKE "Open in IDE".
+Etter å ha kjørt `npx cypress open` i frontend vil du muligens bli spurt om å tillate tilgang for cypress, noe som er nødvendig. Deretter vil det være en popup som viser deg alle testene. Du kan enten kjøre alle testene ved å trykke på Run all specs, eller fritt velge fra listen og kjøre de hver for seg. Her er det viktig å la testene kjøre ferdig. Trykk på navnet på test fila, IKKE "Open in IDE".
+Hvis testene failer er det mulig de ikke rakk å laste inn filmene. Det funker ofte å kjøre på nytt.
 
 ![](https://i.imgur.com/BUBjJD6.png)
 
 * APItestCall: Simulerer get/post request og sjekker dette opp mot databasen
 * simulation1: Simulerer en bruker som ønsker å legge filmer til watched list
-* simulation2: Simulerer en bruker som ønsker å søke lese detaljer på den eldste filmen med rating 7 eller høyere
-* simulation3: Simulerer en bruke på mobil som ønsker å søke opp den korteste filmen mellom 1990 og 2005
+* simulation2: Simulerer en bruker som ønsker å søke lese detaljer på Historie filmen med høyest rating etter 1995
+* simulation3: Simulerer en bruke på mobil som ønsker å søke opp den korteste filmen mellom 1985 og 2005
 
 ### Ressurser
 - Innholdet fra databasen er tatt fra [FEND16](https://github.com/FEND16/movie-json-data?fbclid=IwAR1x59Rv0NctGe8NrlnWahhZGjgEwLFy0ZiUm_mX6ghofQVg_FJUfim-QHM).
-- For tredjeparts komponenter har vi brukt [Semantic UI](https://react.semantic-ui.com/) og [Material-UI](https://material-ui.com) sine.
+- [Material-UI](https://material-ui.com) sine.
 - I tillegg til Jest, har vi brukt [@testing-libray/user-event](https://github.com/testing-library/user-event) og [Cypress](https://www.cypress.io/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
