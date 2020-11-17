@@ -17,20 +17,20 @@ export default function MovieSection(props: {
     myMovies: boolean
 }) {
     return (
-        <div className={props.classes().root}>
-            <ErrorPage classes={props.classes()} myMovies={props.myMovies}/>
-            <div className={props.classes().moviePage}>
+        <div className={props.classes.root}>
+            <ErrorPage classes={props.classes} myMovies={props.myMovies}/>
+            <div className={props.classes.moviePage}>
                 <Drawer anchor={'right'} open={props.popupShow} onClose={() => props.dispatch(showPopup(false))}>
                     <Button startIcon={<ArrowBackIcon/>} onClick={() => props.dispatch(showPopup(false))}>Close</Button>
-                    <div className={props.classes().popup}>
+                    <div className={props.classes.popup}>
                         <PopupContainer refresh={props.refresh}/>
                     </div>
                 </Drawer>
-                <div className={props.classes().main}>
+                <div className={props.classes.main}>
                     <PagePicker refresh={props.refresh} dispatch={props.dispatch} page={props.page}
                                 pages={props.pages}/>
                     <Grid
-                        className={props.classes().movieGrid}
+                        className={props.classes.movieGrid}
                         container
                         justify="center"
                         alignItems="stretch"

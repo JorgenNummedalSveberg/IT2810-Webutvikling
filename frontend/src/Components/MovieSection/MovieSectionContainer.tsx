@@ -104,7 +104,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
             myMovies={state.filter.myMovies}
             page={state.page}
             pages={state.pages}
-            classes={classes}
+            classes={classes()}
             dispatch={useDispatch()}
             movieCards={movieCards.length === state.indexList.length && movieCards.length > 0 ? movieCards : dimList()}
             popupShow={state.details.show}
