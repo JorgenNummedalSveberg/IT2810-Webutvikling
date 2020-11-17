@@ -17,7 +17,7 @@ function Popup(props: {
     return (
         <div className={props.classes.root}>
             <h1>{props.movie.title}</h1>
-            <img width='400px' alt="movie poster could not load" src={props.movie.posterurl}/>
+            <img width='200px' alt="movie poster could not load" src={props.movie.posterurl}/>
             <h2>{props.movie.year}</h2>
             <ImdbIcon rating={props.movie.imdbRating} height={50}/>
             <div className={props.classes.buttons}>

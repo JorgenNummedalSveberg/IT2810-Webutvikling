@@ -1,25 +1,13 @@
 stages:
-  - install
   - build
   - test
-
-install:
-  stage: install
-  image: node
-  script:
-    - npm run setup
-    - npm prune
-    - cd frontend
-    - npm prune
-    - cd ..
-    - cd backend
-    - npm prune
 
 build:
   stage: build
   image: node
   script:
     - echo "Building.."
+    - npm run setup
     - cd frontend
     - chmod +x node_modules/.bin/react-scripts
     - npm run-script build
@@ -34,6 +22,7 @@ test:
   image: node
   script:
     - echo "Testing.."
+    - npm run setup
     - chmod +x frontend/node_modules/.bin/react-scripts
     - CI=true npm test
     - echo "Test successful"

@@ -25,7 +25,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
         popup: {
             backgroundColor: theme.palette.primary.light,
             textAlign: 'center',
-            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '30vw',
+            width: useMediaQuery('(max-width: 1400px)').valueOf() ? '100%' : '40vw',
             height: '100%',
             paddingTop: '5%',
             paddingBottom: '5%'
@@ -95,7 +95,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     }
 
     // Lager en liste av alle MovieCards som skal med i Griden
-    let movieCards: any[] = [];
+    let movieCards: JSX.Element[] = [];
     const movieList = state.movieCache.filter(movie => state.indexList.includes(movie._id))
         .sort((a, b) => state.indexList.indexOf(a._id) - state.indexList.indexOf(b._id))
     if (state.indexList.length > 0) {

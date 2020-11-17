@@ -123,7 +123,7 @@ exports[`A snapshot test for the ImdbIcon renders, and matches with snapshot 2`]
     <img
       alt="movie poster could not load"
       src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY500_CR0,0,337,500_AL_.jpg"
-      width="400px"
+      width="200px"
     />
     <h2>
       2018
