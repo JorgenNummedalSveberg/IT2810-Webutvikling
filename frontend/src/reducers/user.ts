@@ -1,6 +1,6 @@
 import {User} from "../types/User";
 
-// Reducer for å endre siden vi er på
+// Reducer for å sette aktiv bruker
 const userReducer = (user = null, action: { type: string; payload: User; }) => {
     switch (action.type) {
         case 'login':
