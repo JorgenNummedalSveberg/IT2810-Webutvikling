@@ -46,7 +46,7 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             .catch(error => console.log(error));
     }
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {
             margin: '0 20px 0 20px',
             display: state.details.show ? 'flex' : 'none',
@@ -58,13 +58,14 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
             flexDirection: 'column',
         }
     })
+    const classes = styles();
 
     return (
         <Popup
             movie={state.details.movie}
             changeView={changeView}
             user={state.user}
-            classes={classes()}
+            classes={classes}
             refresh={props.refresh}/>
     )
 }

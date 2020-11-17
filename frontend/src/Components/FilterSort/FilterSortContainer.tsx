@@ -5,7 +5,7 @@ import FilterSort from "./FilterSort";
 
 export default function FilterSortContainer(props: { refresh: () => void }) {
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         filterButton: {
             fontSize: '2em',
             backgroundColor: 'rgb(200, 200, 200, 0.5)',
@@ -29,6 +29,7 @@ export default function FilterSortContainer(props: { refresh: () => void }) {
             }
         },
     })
+    const classes = styles();
 
     const [openSorting, setSortingOpen] = useState(false)
     const [openFilter, setFilterOpen] = useState(false)
@@ -36,9 +37,9 @@ export default function FilterSortContainer(props: { refresh: () => void }) {
     return (
         <FilterSort
             classes={{
-                filterButton: classes().filterButton,
-                thin: classes().thin,
-                sorting: classes().sorting
+                filterButton: classes.filterButton,
+                thin: classes.thin,
+                sorting: classes.sorting
             }}
             refresh={props.refresh}
             openFilter={openFilter}

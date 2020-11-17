@@ -31,16 +31,17 @@ export default function GenreSelectorContainer(props: { refresh: () => void }) {
     }
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         selector: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.getContrastText(theme.palette.primary.main)
         }
     })
+    const classes = styles();
 
     return (
         <GenreSelector
-            classes={classes()}
+            classes={classes}
             genre={genre}
             genreOptions={genreOptions}
             onSearchChange={onSearchChange}

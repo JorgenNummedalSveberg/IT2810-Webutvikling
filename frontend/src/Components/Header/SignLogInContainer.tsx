@@ -49,7 +49,7 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
 
     const theme = useTheme();
 
-    const classes = makeStyles({
+    const styles = makeStyles({
         loginButton: {
             backgroundColor: theme.palette.primary.main,
             '&:hover': {
@@ -74,9 +74,11 @@ function SignLogInContainer(props: { isLogged: boolean, refresh: () => void }) {
             }
         }
     })
+    const classes = styles();
+
     return (
         <SignLogIn
-            classes={classes()}
+            classes={classes}
             handlePassword={handlePassword}
             handleName={handleName}
             onLogin={handleLogin}

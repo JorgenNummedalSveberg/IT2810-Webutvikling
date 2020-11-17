@@ -35,7 +35,7 @@ export default function RangeSliderContainer(props: { score: number[], type: str
     }
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         slider: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.getContrastText(theme.palette.primary.main),
@@ -53,9 +53,10 @@ export default function RangeSliderContainer(props: { score: number[], type: str
             color: theme.palette.info.light
         }
     })
+    const classes = styles();
     return (
         <RangeSlider
-            classes={classes()}
+            classes={classes}
             handleChange={handleChange}
             range={range}
             value={value}

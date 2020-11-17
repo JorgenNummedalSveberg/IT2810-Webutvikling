@@ -17,7 +17,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     const state = useSelector((state: State) => state);
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {marginLeft: useMediaQuery('(max-width: 1400px)').valueOf() ? '' : '500px'},
         main: {display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', overflowY: 'auto',},
         pagination: {color: theme.palette.getContrastText('#445585')},
@@ -67,12 +67,13 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
         noMargin: {margin: 0},
         margin10: {margin: '10px'}
     })
+    const classes = styles();
 
     // Lager en liste med sorte kort som placeholder mens filmene laster
     const dimList = () => {
         const list = [];
         for (let i = 0; i < 24; i++) {
-            list.push(<DimCard classes={classes()} key={i}/>);
+            list.push(<DimCard classes={classes} key={i}/>);
         }
         return list;
     }
@@ -94,7 +95,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
     if (state.indexList.length > 0) {
         movieCards = movieList.map((movie: Movie, index: number) => {
             return (
-                <MovieCard handleClick={handleClick} classes={classes()} movie={movie} key={index}
+                <MovieCard handleClick={handleClick} classes={classes} movie={movie} key={index}
                            duration={parseTime(movie.duration)}/>
             )
         })
@@ -105,7 +106,7 @@ function MovieSectionContainer(props: { refresh: (number: number) => void, error
             myMovies={state.filter.myMovies}
             page={state.page}
             pages={state.pages}
-            classes={classes()}
+            classes={classes}
             dispatch={useDispatch()}
             movieCards={movieCards.length === state.indexList.length && movieCards.length > 0 ? movieCards : dimList()}
             popupShow={state.details.show}

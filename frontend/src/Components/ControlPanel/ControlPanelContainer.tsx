@@ -21,7 +21,7 @@ export default function ControlPanelContainer(props: { mobile: boolean, refresh:
     }
 
     const theme = useTheme();
-    const classes = makeStyles({
+    const styles = makeStyles({
         root: {
             position: (props.mobile ? 'initial' : 'fixed'),
             minWidth: '500px',
@@ -43,10 +43,11 @@ export default function ControlPanelContainer(props: { mobile: boolean, refresh:
             display: !!state.user ? 'flex' : 'none',
         }
     });
+    const classes = styles();
 
     return (
         <ControlPanel
-            classes={classes()}
+            classes={classes}
             score={state.filter.score}
             year={state.filter.year}
             myMoviesState={state.filter.myMovies}
