@@ -38,7 +38,8 @@ function PopupContainer(props: { refresh: (page: number) => void }) {
                         dispatch(addMyMovie(state.details.movie._id))
                     }
                     // Mock function to use on login
-                    const mock = () => {}
+                    const mock = () => {
+                    }
                     onLogin(state.user, mock, (user: User) => dispatch(login(user)));
                     props.refresh(state.page)
                 }

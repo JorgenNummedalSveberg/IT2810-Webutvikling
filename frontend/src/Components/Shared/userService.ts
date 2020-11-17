@@ -1,6 +1,5 @@
 // Legger til en bruker på serveren
 import {User} from "../../types/User";
-import {login} from "../../actions";
 
 // Lager request for fetch
 const req = (reqUser: User) => {
@@ -14,7 +13,7 @@ const req = (reqUser: User) => {
 }
 
 // Sjekker user input og setter error
-function checkInput(reqUser: User, setError: (error: {message: string, name: boolean, password: boolean}) => void): boolean {
+function checkInput(reqUser: User, setError: (error: { message: string, name: boolean, password: boolean }) => void): boolean {
     if (!reqUser.userName && !reqUser.password) {
         setError({message: 'Username and password is required', name: true, password: true})
         return false
@@ -30,7 +29,7 @@ function checkInput(reqUser: User, setError: (error: {message: string, name: boo
 
 export function addUser(
     reqUser: User,
-    setError: (error: {message: string, name: boolean, password: boolean}) => void,
+    setError: (error: { message: string, name: boolean, password: boolean }) => void,
     login: (user: User) => void): Promise<boolean> | boolean {
     let returnObject: boolean | string[] = false;
     if (checkInput(reqUser, setError)) {
@@ -52,7 +51,7 @@ export function addUser(
 // Logger inn hvis brukeren finnes
 export function onLogin(
     reqUser: User,
-    setError: (error: {message: string, name: boolean, password: boolean}) => void,
+    setError: (error: { message: string, name: boolean, password: boolean }) => void,
     login: (user: User) => void): Promise<boolean> | boolean {
     if (checkInput(reqUser, setError)) {
         return fetch('http://localhost:5000/api/user?userName=' + reqUser.userName + '&password=' + reqUser.password)
