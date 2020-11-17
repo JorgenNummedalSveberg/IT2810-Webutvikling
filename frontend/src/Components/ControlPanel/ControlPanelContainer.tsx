@@ -10,12 +10,9 @@ import ControlPanel from "./ControlPanel";
 export default function ControlPanelContainer(props: { mobile: boolean, refresh: () => void }) {
 
     const dispatch = useDispatch();
-    // Henter inn score fra redux state
-    const score = useSelector((state: State) => state.filter.score);
-    // Henter årstall fra redux state
-    const year = useSelector((state: State) => state.filter.year);
-    const user = useSelector((state: State) => state.user);
-    const myMoviesState = useSelector((state: State) => state.filter.myMovies);
+
+    // Henter state fra dedux
+    const state = useSelector((state: State) => state);
 
     function handleTick() {
         dispatch(setPage(0))
@@ -43,16 +40,16 @@ export default function ControlPanelContainer(props: { mobile: boolean, refresh:
             flexDirection: 'row',
         },
         none: {
-            display: !!user ? 'flex' : 'none',
+            display: !!state.user ? 'flex' : 'none',
         }
     });
 
     return (
         <ControlPanel
             classes={classes()}
-            score={score}
-            year={year}
-            myMoviesState={myMoviesState}
+            score={state.filter.score}
+            year={state.filter.year}
+            myMoviesState={state.filter.myMovies}
             handleTick={handleTick}
             mobile={props.mobile}
             refresh={props.refresh}/>

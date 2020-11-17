@@ -12,7 +12,6 @@ export default function RangeSliderContainer(props: { score: number[], type: str
     const [value, setValue] = React.useState<number[]>([props.score[0], props.score[1]]);
     const [range] = React.useState<number[]>(props.type === "year" ? [1900, 2020] : [0, 10]);
 
-
     // Nødvendig for redux
     const dispatch = useDispatch();
 
