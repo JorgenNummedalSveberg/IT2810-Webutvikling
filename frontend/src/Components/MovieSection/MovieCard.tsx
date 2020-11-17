@@ -28,13 +28,13 @@ export default function MovieCard(props: {
                             <h3>Year: {props.movie.year}</h3>
                             <h3>Genres: {props.movie.genres.join(', ')}</h3>
                         </div>
-                        <div className={props.classes.bottomInfo}>
+                        <div data-testid='bottomInfo' className={props.classes.bottomInfo}>
                             <div className={props.classes.duration}>
                                 <HourglassFullIcon className={props.classes.noMargin} fontSize={"large"}/>
-                                <p className={props.classes.noMargin}>{props.duration}</p>
+                                <p data-testid='duration' className={props.classes.noMargin}>{props.duration}</p>
                             </div>
                             <Divider orientation='vertical'/>
-                            <ImdbIcon rating={props.movie.imdbRating} height={35}/>
+                            <ImdbIcon data-testid='rating' rating={props.movie.imdbRating} height={35}/>
                         </div>
                     </div>
                 </Paper>

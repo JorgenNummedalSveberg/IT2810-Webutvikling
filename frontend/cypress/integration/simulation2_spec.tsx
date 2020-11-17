@@ -1,48 +1,31 @@
 // For at Typescript annser det som en modul
 export {}
 
-describe("Simulating a user who wants search and read details about the oldest horror movie with rating above 7", () => {
-    it("Selects horror as genre, we use nth child to make sure it's the first result, compare year to the other movies", () => {
+describe("Simulating a user who wants search and read details about the highest rated History movie over 2 hours", () => {
+    it("Selects genre, and compare the first 3 movies to check if the score is sorted correctly", () => {
         cy.visit('http://localhost:3000/');
-        cy.get('#dropdownmenu > div:first')
-            .should('have.text', 'Select genre...')
-            .click();
-        cy.get('#Horror')
-            .click();
-        cy.get('#sortbutton3')
-            .click()
-            .click();
-    })
-    it('Check the amount of movies corresponds to filtering', () => {
-        cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children()
-            .should('have.length', 4);
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(7)')
-            .click();
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(13)')
-            .click();
-        cy.get('#root > div > div.MainContent > div.ControlPanel > div:nth-child(3) > span > span:nth-child(18)')
-            .click();
-        cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div').children()
-            .should('have.length', 3);
-    })
-    it('Check if the movies are sorted from oldest to latest', () => {
-        cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(1) > a >' +
-            'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-            const year = parseInt($span.text().slice(7, 11));
-            cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(2) > a >' +
-                'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-                expect(parseInt($span.text().slice(7, 11))).greaterThan(year);
-            })
-            cy.get('#root > div > div.MainContent > div.GridView > div:nth-child(2) > div > div:nth-child(3) > a >' +
-                'div:nth-child(2) > div.description > div:nth-child(2)').then(($span) => {
-                expect(parseInt($span.text().slice(7, 11))).greaterThan(year);
-            })
-        })
-    })
-    it('Check the last movie for correct information, and popup', () => {
-        cy.get('#id_Dedjävulska')
-            .should('have.text', 'De djävulska')
-            .wait(500)
-            .click();
+        cy.get('[data-testid=genreSelector]').click();
+        cy.get('[data-testid=HistoryOption]').should('exist').click().wait(1000);
+        cy.get('[data-testid=sortbutton1]').click().wait(1000);
+        cy.get('[data-testid=movieGrid]').children()
+            .eq(0).as('firstMovie')
+            .next().as('secondMovie')
+            .next().as('thirdMovie');
+        cy.get('@firstMovie').find('div').find('div').children().eq(2).find('text').as('firstRating');
+        cy.get('@secondMovie').find('div').find('div').children().eq(2).find('text').as('secondRating');
+        cy.get('@thirdMovie').find('div').find('div').children().eq(2).find('text').as('thirdRating');
+        cy.get('@firstRating').invoke('text').then(parseFloat)
+            .then(score1 => {
+                cy.get('@secondRating').invoke('text').then(parseFloat)
+                    .should(score2 => {
+                        cy.get('@thirdRating').invoke('text').then(parseFloat)
+                            .should(score3 => {
+                                expect(score2).to.be.gte(score3)
+                            })
+                    })
+                    .should(score2 => {
+                        expect(score1).to.be.gte(score2)
+                    })
+            });
     })
 })

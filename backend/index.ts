@@ -50,6 +50,15 @@ mongoose
                 if (sort === "Name") {
                     movies.reverse();
                 }
+                let genreList: string[] = [];
+                movies.forEach(movie => {
+                    movie.genres.forEach((genre: string) => {
+                        if (!genreList.includes(genre)) {
+                            genreList.push(genre);
+                        }
+                    })
+                })
+                console.log(genreList)
 
                 movies = movies
                     .filter(movie =>

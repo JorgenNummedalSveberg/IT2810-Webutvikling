@@ -17,7 +17,7 @@ function GenreSelector(props: {
             autoWidth={true}
             data-testid='genreSelector'
         >
-            {props.genreOptions.map((genreOption, index) => <MenuItem key={index}
+            {props.genreOptions.map((genreOption, index) => <MenuItem data-testid={genreOption.value+'Option'} key={index}
                                                                       value={genreOption.value}>{genreOption.text}</MenuItem>)}
         </Select>
     )
